@@ -76,5 +76,12 @@ namespace DanceStudioBookingSystem
         {
 
         }
+
+        private void mnuBook_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmBookClass child = new frmBookClass(this);
+            child.Show();
+        }
     }
 }

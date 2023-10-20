@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,9 +77,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
+            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -144,6 +144,26 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(111, 89);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(106, 19);
+            this.label34.TabIndex = 12;
+            this.label34.Text = "MemberGender";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(19, 89);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(61, 19);
+            this.label35.TabIndex = 11;
+            this.label35.Text = "Gender: ";
             // 
             // label9
             // 
@@ -609,7 +629,7 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.profileToolStripMenuItem,
-            this.bookToolStripMenuItem});
+            this.mnuBook});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -630,34 +650,15 @@
             this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 51);
             this.profileToolStripMenuItem.Text = "Profile ";
             // 
-            // bookToolStripMenuItem
+            // mnuBook
             // 
-            this.bookToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.bookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(163, 51);
-            this.bookToolStripMenuItem.Text = "Book";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(111, 89);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(106, 19);
-            this.label34.TabIndex = 12;
-            this.label34.Text = "MemberGender";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(19, 89);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(61, 19);
-            this.label35.TabIndex = 11;
-            this.label35.Text = "Gender: ";
+            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBook.Name = "mnuBook";
+            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.mnuBook.Size = new System.Drawing.Size(163, 51);
+            this.mnuBook.Text = "Book";
+            this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
             // frmMemberProfile
             // 
@@ -741,7 +742,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuBook;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
     }

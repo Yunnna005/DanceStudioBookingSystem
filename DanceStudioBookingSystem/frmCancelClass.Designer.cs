@@ -28,400 +28,396 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.classesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scheduleClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.analyseYearlyRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.analysePopularDanceStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCancelClass));
+            this.grpSelectClass = new System.Windows.Forms.GroupBox();
+            this.dgvClasses = new System.Windows.Forms.DataGridView();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.lblType = new System.Windows.Forms.Label();
+            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
+            this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmnuScheduleClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmnuModifyClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmnuCancelClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStatisticsTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblCancelClass = new System.Windows.Forms.Label();
+            this.grpSelectedClassDetails = new System.Windows.Forms.GroupBox();
+            this.lblWritePrice = new System.Windows.Forms.Label();
+            this.lblWriteCapacity = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblCapacity = new System.Windows.Forms.Label();
+            this.lblWriteInstructor = new System.Windows.Forms.Label();
+            this.lblWriteDate = new System.Windows.Forms.Label();
+            this.lblWriteTime = new System.Windows.Forms.Label();
+            this.lblWriteType = new System.Windows.Forms.Label();
+            this.lblInstructor = new System.Windows.Forms.Label();
+            this.lblDateSelected = new System.Windows.Forms.Label();
+            this.lblTimeSelected = new System.Windows.Forms.Label();
+            this.lblTypeSelected = new System.Windows.Forms.Label();
+            this.btnCancelClass = new System.Windows.Forms.Button();
+            this.grpSelectClass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            this.mnuMainMenu.SuspendLayout();
+            this.grpSelectedClassDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // grpSelectClass
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(16, 81);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 218);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Select Class ";
+            this.grpSelectClass.BackColor = System.Drawing.Color.White;
+            this.grpSelectClass.Controls.Add(this.dgvClasses);
+            this.grpSelectClass.Controls.Add(this.btnSelect);
+            this.grpSelectClass.Controls.Add(this.lblType);
+            this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSelectClass.Location = new System.Drawing.Point(24, 125);
+            this.grpSelectClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpSelectClass.Name = "grpSelectClass";
+            this.grpSelectClass.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpSelectClass.Size = new System.Drawing.Size(810, 402);
+            this.grpSelectClass.TabIndex = 17;
+            this.grpSelectClass.TabStop = false;
+            this.grpSelectClass.Text = "Select Class ";
             // 
-            // comboBox1
+            // dgvClasses
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(209, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 25);
-            this.comboBox1.TabIndex = 24;
+            this.dgvClasses.AllowUserToAddRows = false;
+            this.dgvClasses.AllowUserToDeleteRows = false;
+            this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.type,
+            this.date,
+            this.time});
+            this.dgvClasses.Location = new System.Drawing.Point(53, 42);
+            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvClasses.Name = "dgvClasses";
+            this.dgvClasses.ReadOnly = true;
+            this.dgvClasses.RowHeadersWidth = 62;
+            this.dgvClasses.Size = new System.Drawing.Size(705, 283);
+            this.dgvClasses.TabIndex = 30;
             // 
-            // comboBox2
+            // type
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(209, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 25);
-            this.comboBox2.TabIndex = 23;
+            this.type.HeaderText = "TYPE";
+            this.type.MinimumWidth = 8;
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            this.type.Width = 150;
             // 
-            // label3
+            // date
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(106, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 21);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Date:";
+            this.date.HeaderText = "DATE";
+            this.date.MinimumWidth = 8;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 150;
             // 
-            // comboBox3
+            // time
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(209, 42);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 25);
-            this.comboBox3.TabIndex = 19;
+            this.time.HeaderText = "TIME";
+            this.time.MinimumWidth = 8;
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            this.time.Width = 150;
             // 
-            // button1
+            // btnSelect
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(152, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 31);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(336, 335);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(126, 48);
+            this.btnSelect.TabIndex = 18;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // lblType
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(106, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 21);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Time:";
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(159, 65);
+            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(0, 32);
+            this.lblType.TabIndex = 16;
             // 
-            // label7
+            // mnuMainMenu
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(106, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 21);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Type: ";
+            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuClasses,
+            this.mnuStatisticsTool,
+            this.mnuBack});
+            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mnuMainMenu.Size = new System.Drawing.Size(859, 48);
+            this.mnuMainMenu.TabIndex = 14;
+            this.mnuMainMenu.Text = "Menu";
             // 
-            // menuStrip1
+            // mnuClasses
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.classesToolStripMenuItem,
-            this.statisticsToolStripMenuItem,
-            this.backToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(442, 33);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuClasses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tmnuScheduleClass,
+            this.tmnuModifyClass,
+            this.tmnuCancelClass});
+            this.mnuClasses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuClasses.Name = "mnuClasses";
+            this.mnuClasses.Size = new System.Drawing.Size(124, 44);
+            this.mnuClasses.Text = "Classes";
             // 
-            // classesToolStripMenuItem
+            // tmnuScheduleClass
             // 
-            this.classesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.scheduleClassToolStripMenuItem,
-            this.modifyClassToolStripMenuItem,
-            this.cancelClassToolStripMenuItem});
-            this.classesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
-            this.classesToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.classesToolStripMenuItem.Text = "Classes";
+            this.tmnuScheduleClass.Name = "tmnuScheduleClass";
+            this.tmnuScheduleClass.Size = new System.Drawing.Size(310, 48);
+            this.tmnuScheduleClass.Text = "Schedule Class";
             // 
-            // scheduleClassToolStripMenuItem
+            // tmnuModifyClass
             // 
-            this.scheduleClassToolStripMenuItem.Name = "scheduleClassToolStripMenuItem";
-            this.scheduleClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.scheduleClassToolStripMenuItem.Text = "Schedule Class";
+            this.tmnuModifyClass.Name = "tmnuModifyClass";
+            this.tmnuModifyClass.Size = new System.Drawing.Size(310, 48);
+            this.tmnuModifyClass.Text = "Modify Class";
             // 
-            // modifyClassToolStripMenuItem
+            // tmnuCancelClass
             // 
-            this.modifyClassToolStripMenuItem.Name = "modifyClassToolStripMenuItem";
-            this.modifyClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.modifyClassToolStripMenuItem.Text = "Modify Class";
+            this.tmnuCancelClass.Name = "tmnuCancelClass";
+            this.tmnuCancelClass.Size = new System.Drawing.Size(310, 48);
+            this.tmnuCancelClass.Text = "Cancel Class";
             // 
-            // cancelClassToolStripMenuItem
+            // mnuStatisticsTool
             // 
-            this.cancelClassToolStripMenuItem.Name = "cancelClassToolStripMenuItem";
-            this.cancelClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.cancelClassToolStripMenuItem.Text = "Cancel Class";
+            this.mnuStatisticsTool.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuStatisticsTool.Name = "mnuStatisticsTool";
+            this.mnuStatisticsTool.Size = new System.Drawing.Size(143, 44);
+            this.mnuStatisticsTool.Text = "Statistics";
             // 
-            // statisticsToolStripMenuItem
+            // mnuBack
             // 
-            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.analyseYearlyRevenueToolStripMenuItem,
-            this.analysePopularDanceStyleToolStripMenuItem});
-            this.statisticsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
+            this.mnuBack.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBack.Name = "mnuBack";
+            this.mnuBack.Size = new System.Drawing.Size(92, 44);
+            this.mnuBack.Text = "Back";
             // 
-            // analyseYearlyRevenueToolStripMenuItem
+            // lblCancelClass
             // 
-            this.analyseYearlyRevenueToolStripMenuItem.Name = "analyseYearlyRevenueToolStripMenuItem";
-            this.analyseYearlyRevenueToolStripMenuItem.Size = new System.Drawing.Size(321, 30);
-            this.analyseYearlyRevenueToolStripMenuItem.Text = "Analyse Yearly Revenue";
+            this.lblCancelClass.AutoSize = true;
+            this.lblCancelClass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCancelClass.Location = new System.Drawing.Point(340, 80);
+            this.lblCancelClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCancelClass.Name = "lblCancelClass";
+            this.lblCancelClass.Size = new System.Drawing.Size(183, 40);
+            this.lblCancelClass.TabIndex = 15;
+            this.lblCancelClass.Text = "Cancel Class";
             // 
-            // analysePopularDanceStyleToolStripMenuItem
+            // grpSelectedClassDetails
             // 
-            this.analysePopularDanceStyleToolStripMenuItem.Name = "analysePopularDanceStyleToolStripMenuItem";
-            this.analysePopularDanceStyleToolStripMenuItem.Size = new System.Drawing.Size(321, 30);
-            this.analysePopularDanceStyleToolStripMenuItem.Text = "Analyse Popular Dance Style";
+            this.grpSelectedClassDetails.BackColor = System.Drawing.Color.White;
+            this.grpSelectedClassDetails.Controls.Add(this.lblWritePrice);
+            this.grpSelectedClassDetails.Controls.Add(this.lblWriteCapacity);
+            this.grpSelectedClassDetails.Controls.Add(this.lblPrice);
+            this.grpSelectedClassDetails.Controls.Add(this.lblCapacity);
+            this.grpSelectedClassDetails.Controls.Add(this.lblWriteInstructor);
+            this.grpSelectedClassDetails.Controls.Add(this.lblWriteDate);
+            this.grpSelectedClassDetails.Controls.Add(this.lblWriteTime);
+            this.grpSelectedClassDetails.Controls.Add(this.lblWriteType);
+            this.grpSelectedClassDetails.Controls.Add(this.lblInstructor);
+            this.grpSelectedClassDetails.Controls.Add(this.lblDateSelected);
+            this.grpSelectedClassDetails.Controls.Add(this.lblTimeSelected);
+            this.grpSelectedClassDetails.Controls.Add(this.lblTypeSelected);
+            this.grpSelectedClassDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSelectedClassDetails.Location = new System.Drawing.Point(25, 537);
+            this.grpSelectedClassDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpSelectedClassDetails.Name = "grpSelectedClassDetails";
+            this.grpSelectedClassDetails.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpSelectedClassDetails.Size = new System.Drawing.Size(809, 426);
+            this.grpSelectedClassDetails.TabIndex = 18;
+            this.grpSelectedClassDetails.TabStop = false;
+            this.grpSelectedClassDetails.Text = "Selected Class Details";
             // 
-            // backToolStripMenuItem
+            // lblWritePrice
             // 
-            this.backToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(63, 29);
-            this.backToolStripMenuItem.Text = "Back";
+            this.lblWritePrice.AutoSize = true;
+            this.lblWritePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWritePrice.Location = new System.Drawing.Point(138, 360);
+            this.lblWritePrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWritePrice.Name = "lblWritePrice";
+            this.lblWritePrice.Size = new System.Drawing.Size(67, 32);
+            this.lblWritePrice.TabIndex = 27;
+            this.lblWritePrice.Text = "price";
             // 
-            // label1
+            // lblWriteCapacity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(163, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Cancel Class";
+            this.lblWriteCapacity.AutoSize = true;
+            this.lblWriteCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWriteCapacity.Location = new System.Drawing.Point(134, 301);
+            this.lblWriteCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteCapacity.Name = "lblWriteCapacity";
+            this.lblWriteCapacity.Size = new System.Drawing.Size(101, 32);
+            this.lblWriteCapacity.TabIndex = 26;
+            this.lblWriteCapacity.Text = "capacity";
             // 
-            // groupBox1
+            // lblPrice
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 305);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(413, 199);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Selected Class Details";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(16, 360);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(71, 32);
+            this.lblPrice.TabIndex = 25;
+            this.lblPrice.Text = "Price:";
             // 
-            // label9
+            // lblCapacity
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(92, 157);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 21);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Selected Instructor";
+            this.lblCapacity.AutoSize = true;
+            this.lblCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCapacity.Location = new System.Drawing.Point(12, 301);
+            this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCapacity.Name = "lblCapacity";
+            this.lblCapacity.Size = new System.Drawing.Size(117, 32);
+            this.lblCapacity.TabIndex = 24;
+            this.lblCapacity.Text = "Capacity: ";
             // 
-            // label10
+            // lblWriteInstructor
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(92, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 21);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Selected Date";
+            this.lblWriteInstructor.AutoSize = true;
+            this.lblWriteInstructor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWriteInstructor.Location = new System.Drawing.Point(138, 242);
+            this.lblWriteInstructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteInstructor.Name = "lblWriteInstructor";
+            this.lblWriteInstructor.Size = new System.Drawing.Size(214, 32);
+            this.lblWriteInstructor.TabIndex = 23;
+            this.lblWriteInstructor.Text = "Selected Instructor";
             // 
-            // label11
+            // lblWriteDate
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(92, 118);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 21);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Selected Time";
+            this.lblWriteDate.AutoSize = true;
+            this.lblWriteDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWriteDate.Location = new System.Drawing.Point(138, 123);
+            this.lblWriteDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteDate.Name = "lblWriteDate";
+            this.lblWriteDate.Size = new System.Drawing.Size(163, 32);
+            this.lblWriteDate.TabIndex = 22;
+            this.lblWriteDate.Text = "Selected Date";
             // 
-            // label12
+            // lblWriteTime
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(92, 37);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 21);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Selected Type";
+            this.lblWriteTime.AutoSize = true;
+            this.lblWriteTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWriteTime.Location = new System.Drawing.Point(138, 182);
+            this.lblWriteTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteTime.Name = "lblWriteTime";
+            this.lblWriteTime.Size = new System.Drawing.Size(166, 32);
+            this.lblWriteTime.TabIndex = 21;
+            this.lblWriteTime.Text = "Selected Time";
             // 
-            // label2
+            // lblWriteType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 21);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Instructor:";
+            this.lblWriteType.AutoSize = true;
+            this.lblWriteType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWriteType.Location = new System.Drawing.Point(138, 57);
+            this.lblWriteType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteType.Name = "lblWriteType";
+            this.lblWriteType.Size = new System.Drawing.Size(164, 32);
+            this.lblWriteType.TabIndex = 20;
+            this.lblWriteType.Text = "Selected Type";
             // 
-            // label4
+            // lblInstructor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Date:";
+            this.lblInstructor.AutoSize = true;
+            this.lblInstructor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstructor.Location = new System.Drawing.Point(12, 242);
+            this.lblInstructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstructor.Name = "lblInstructor";
+            this.lblInstructor.Size = new System.Drawing.Size(121, 32);
+            this.lblInstructor.TabIndex = 19;
+            this.lblInstructor.Text = "Instructor:";
             // 
-            // label6
+            // lblDateSelected
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 21);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Time:";
+            this.lblDateSelected.AutoSize = true;
+            this.lblDateSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateSelected.Location = new System.Drawing.Point(12, 123);
+            this.lblDateSelected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateSelected.Name = "lblDateSelected";
+            this.lblDateSelected.Size = new System.Drawing.Size(70, 32);
+            this.lblDateSelected.TabIndex = 17;
+            this.lblDateSelected.Text = "Date:";
             // 
-            // label8
+            // lblTimeSelected
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 21);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Type: ";
+            this.lblTimeSelected.AutoSize = true;
+            this.lblTimeSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeSelected.Location = new System.Drawing.Point(12, 182);
+            this.lblTimeSelected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTimeSelected.Name = "lblTimeSelected";
+            this.lblTimeSelected.Size = new System.Drawing.Size(73, 32);
+            this.lblTimeSelected.TabIndex = 15;
+            this.lblTimeSelected.Text = "Time:";
             // 
-            // button2
+            // lblTypeSelected
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(159, 525);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 31);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Cancel Class";
-            this.button2.UseVisualStyleBackColor = false;
+            this.lblTypeSelected.AutoSize = true;
+            this.lblTypeSelected.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeSelected.Location = new System.Drawing.Point(10, 57);
+            this.lblTypeSelected.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTypeSelected.Name = "lblTypeSelected";
+            this.lblTypeSelected.Size = new System.Drawing.Size(78, 32);
+            this.lblTypeSelected.TabIndex = 14;
+            this.lblTypeSelected.Text = "Type: ";
             // 
-            // label13
+            // btnCancelClass
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(315, 107);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 21);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "price";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(315, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 21);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "capacity";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(233, 107);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(47, 21);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "Price:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(233, 64);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 21);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Capacity: ";
+            this.btnCancelClass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnCancelClass.FlatAppearance.BorderSize = 0;
+            this.btnCancelClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelClass.ForeColor = System.Drawing.Color.White;
+            this.btnCancelClass.Location = new System.Drawing.Point(335, 988);
+            this.btnCancelClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelClass.Name = "btnCancelClass";
+            this.btnCancelClass.Size = new System.Drawing.Size(170, 48);
+            this.btnCancelClass.TabIndex = 19;
+            this.btnCancelClass.Text = "Cancel Class";
+            this.btnCancelClass.UseVisualStyleBackColor = false;
             // 
             // frmCancelClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(442, 579);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(859, 1050);
+            this.Controls.Add(this.btnCancelClass);
+            this.Controls.Add(this.grpSelectedClassDetails);
+            this.Controls.Add(this.grpSelectClass);
+            this.Controls.Add(this.mnuMainMenu);
+            this.Controls.Add(this.lblCancelClass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCancelClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCancelClass";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "Cancel Class";
+            this.grpSelectClass.ResumeLayout(false);
+            this.grpSelectClass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
+            this.mnuMainMenu.ResumeLayout(false);
+            this.mnuMainMenu.PerformLayout();
+            this.grpSelectedClassDetails.ResumeLayout(false);
+            this.grpSelectedClassDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,37 +425,34 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem classesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scheduleClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem analyseYearlyRevenueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem analysePopularDanceStyleToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox grpSelectClass;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.MenuStrip mnuMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuClasses;
+        private System.Windows.Forms.ToolStripMenuItem tmnuScheduleClass;
+        private System.Windows.Forms.ToolStripMenuItem tmnuModifyClass;
+        private System.Windows.Forms.ToolStripMenuItem tmnuCancelClass;
+        private System.Windows.Forms.ToolStripMenuItem mnuStatisticsTool;
+        private System.Windows.Forms.Label lblCancelClass;
+        private System.Windows.Forms.GroupBox grpSelectedClassDetails;
+        private System.Windows.Forms.Label lblInstructor;
+        private System.Windows.Forms.Label lblDateSelected;
+        private System.Windows.Forms.Label lblTimeSelected;
+        private System.Windows.Forms.Label lblTypeSelected;
+        private System.Windows.Forms.Button btnCancelClass;
+        private System.Windows.Forms.Label lblWriteInstructor;
+        private System.Windows.Forms.Label lblWriteDate;
+        private System.Windows.Forms.Label lblWriteTime;
+        private System.Windows.Forms.Label lblWriteType;
+        private System.Windows.Forms.ToolStripMenuItem mnuBack;
+        private System.Windows.Forms.Label lblWritePrice;
+        private System.Windows.Forms.Label lblWriteCapacity;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblCapacity;
+        private System.Windows.Forms.DataGridView dgvClasses;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time;
     }
 }

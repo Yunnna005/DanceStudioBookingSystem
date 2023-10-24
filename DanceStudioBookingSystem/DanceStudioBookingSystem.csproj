@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAnalysePopularDanceStyle.cs">
+    <Compile Include="frmStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAnalysePopularDanceStyle.Designer.cs">
-      <DependentUpon>frmAnalysePopularDanceStyle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAnalyseYearlyRevenue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAnalyseYearlyRevenue.Designer.cs">
-      <DependentUpon>frmAnalyseYearlyRevenue.cs</DependentUpon>
+    <Compile Include="frmStatistics.Designer.cs">
+      <DependentUpon>frmStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBookClass.cs">
       <SubType>Form</SubType>
@@ -120,11 +114,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAnalysePopularDanceStyle.resx">
-      <DependentUpon>frmAnalysePopularDanceStyle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAnalyseYearlyRevenue.resx">
-      <DependentUpon>frmAnalyseYearlyRevenue.cs</DependentUpon>
+    <EmbeddedResource Include="frmStatistics.resx">
+      <DependentUpon>frmStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookClass.resx">
       <DependentUpon>frmBookClass.cs</DependentUpon>

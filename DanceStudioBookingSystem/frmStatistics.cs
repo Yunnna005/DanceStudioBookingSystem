@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DanceStudioBookingSystem
 {
-    public partial class frmAnalyseYearlyRevenue : Form
+    public partial class frmStatistics : Form
     {
-        public frmAnalyseYearlyRevenue()
+        public frmStatistics()
         {
             InitializeComponent();
         }

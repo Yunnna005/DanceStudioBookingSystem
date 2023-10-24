@@ -13,6 +13,11 @@ namespace DanceStudioBookingSystem
     public partial class frmBookClass : Form
     {
         Form parentForm;
+
+        public frmBookClass() {
+            InitializeComponent();
+
+        }
         public frmBookClass(Form parentForm)
         {
             this.parentForm = parentForm;

@@ -29,386 +29,416 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateAccount));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.lblCreateAccont = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.pnlUsername = new System.Windows.Forms.Panel();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
+            this.pnlEmail = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.pnlPhone = new System.Windows.Forms.Panel();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.pnlPassword = new System.Windows.Forms.Panel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.lblPrivacyPolicy = new System.Windows.Forms.Label();
+            this.lblTextAnd = new System.Windows.Forms.Label();
+            this.lblTermsService = new System.Windows.Forms.Label();
+            this.lblBottomText = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.chkMale = new System.Windows.Forms.CheckBox();
+            this.chkFemale = new System.Windows.Forms.CheckBox();
+            this.chkOther = new System.Windows.Forms.CheckBox();
+            this.pnlGender = new System.Windows.Forms.Panel();
+            this.pnlUsername.SuspendLayout();
+            this.pnlEmail.SuspendLayout();
+            this.pnlPhone.SuspendLayout();
+            this.pnlPassword.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
+            this.pnlGender.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblCreateAccont
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.label1.Location = new System.Drawing.Point(100, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Create your account";
+            this.lblCreateAccont.AutoSize = true;
+            this.lblCreateAccont.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateAccont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.lblCreateAccont.Location = new System.Drawing.Point(150, 35);
+            this.lblCreateAccont.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreateAccont.Name = "lblCreateAccont";
+            this.lblCreateAccont.Size = new System.Drawing.Size(468, 65);
+            this.lblCreateAccont.TabIndex = 0;
+            this.lblCreateAccont.Text = "Create your account";
             // 
-            // label2
+            // lblDescription
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(414, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Create an account to view and manage your dance classes.";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(82, 120);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(642, 32);
+            this.lblDescription.TabIndex = 1;
+            this.lblDescription.Text = "Create an account to view and manage your dance classes.";
+            this.lblDescription.Click += new System.EventHandler(this.label2_Click);
             // 
-            // panel1
+            // pnlUsername
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(91, 155);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 43);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnlUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.pnlUsername.Controls.Add(this.txtUsername);
+            this.pnlUsername.Location = new System.Drawing.Point(136, 238);
+            this.pnlUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlUsername.Name = "pnlUsername";
+            this.pnlUsername.Size = new System.Drawing.Size(500, 66);
+            this.pnlUsername.TabIndex = 2;
+            this.pnlUsername.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(10, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 26);
-            this.textBox1.TabIndex = 0;
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(15, 14);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(470, 38);
+            this.txtUsername.TabIndex = 0;
             // 
-            // label3
+            // lblUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(94, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Forename";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(141, 203);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(117, 31);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "Username";
             // 
-            // label5
+            // lblDOB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(296, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 20);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Date of birth";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.Location = new System.Drawing.Point(444, 326);
+            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(143, 31);
+            this.lblDOB.TabIndex = 7;
+            this.lblDOB.Text = "Date of birth";
+            this.lblDOB.Click += new System.EventHandler(this.label5_Click);
             // 
-            // panel4
+            // pnlEmail
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Location = new System.Drawing.Point(91, 308);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(333, 43);
-            this.panel4.TabIndex = 8;
+            this.pnlEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.pnlEmail.Controls.Add(this.txtEmail);
+            this.pnlEmail.Location = new System.Drawing.Point(136, 474);
+            this.pnlEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlEmail.Name = "pnlEmail";
+            this.pnlEmail.Size = new System.Drawing.Size(500, 66);
+            this.pnlEmail.TabIndex = 8;
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(10, 9);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(313, 26);
-            this.textBox4.TabIndex = 0;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(15, 14);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(470, 38);
+            this.txtEmail.TabIndex = 0;
             // 
-            // label6
+            // lblEmail
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(94, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Email";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(141, 438);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(70, 31);
+            this.lblEmail.TabIndex = 9;
+            this.lblEmail.Text = "Email";
             // 
-            // panel5
+            // pnlPhone
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Location = new System.Drawing.Point(91, 388);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 43);
-            this.panel5.TabIndex = 10;
+            this.pnlPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.pnlPhone.Controls.Add(this.txtPhone);
+            this.pnlPhone.Location = new System.Drawing.Point(136, 597);
+            this.pnlPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlPhone.Name = "pnlPhone";
+            this.pnlPhone.Size = new System.Drawing.Size(500, 66);
+            this.pnlPhone.TabIndex = 10;
             // 
-            // textBox5
+            // txtPhone
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(10, 9);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(313, 26);
-            this.textBox5.TabIndex = 0;
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.ForeColor = System.Drawing.Color.Black;
+            this.txtPhone.Location = new System.Drawing.Point(15, 14);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(470, 38);
+            this.txtPhone.TabIndex = 0;
             // 
-            // label7
+            // lblPhone
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(94, 365);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 20);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Phone";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(141, 562);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(78, 31);
+            this.lblPhone.TabIndex = 11;
+            this.lblPhone.Text = "Phone";
             // 
-            // label8
+            // lblPassword
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(94, 448);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Password";
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(141, 689);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(110, 31);
+            this.lblPassword.TabIndex = 13;
+            this.lblPassword.Text = "Password";
             // 
-            // panel6
+            // pnlPassword
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.panel6.Controls.Add(this.textBox6);
-            this.panel6.Location = new System.Drawing.Point(91, 471);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(333, 43);
-            this.panel6.TabIndex = 12;
+            this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.pnlPassword.Controls.Add(this.txtPassword);
+            this.pnlPassword.Location = new System.Drawing.Point(136, 725);
+            this.pnlPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlPassword.Name = "pnlPassword";
+            this.pnlPassword.Size = new System.Drawing.Size(500, 66);
+            this.pnlPassword.TabIndex = 12;
             // 
-            // textBox6
+            // txtPassword
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Black;
-            this.textBox6.Location = new System.Drawing.Point(10, 9);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(313, 26);
-            this.textBox6.TabIndex = 0;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(15, 14);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(470, 38);
+            this.txtPassword.TabIndex = 0;
             // 
-            // button1
+            // btnCreateAccount
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(155, 556);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 47);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Create your account";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreateAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnCreateAccount.FlatAppearance.BorderSize = 0;
+            this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAccount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.Location = new System.Drawing.Point(232, 855);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(300, 72);
+            this.btnCreateAccount.TabIndex = 14;
+            this.btnCreateAccount.Text = "Create your account";
+            this.btnCreateAccount.UseVisualStyleBackColor = false;
+            this.btnCreateAccount.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel7
+            // pnlBottom
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.label10);
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 639);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(514, 54);
-            this.panel7.TabIndex = 15;
+            this.pnlBottom.BackColor = System.Drawing.Color.White;
+            this.pnlBottom.Controls.Add(this.lblPrivacyPolicy);
+            this.pnlBottom.Controls.Add(this.lblTextAnd);
+            this.pnlBottom.Controls.Add(this.lblTermsService);
+            this.pnlBottom.Controls.Add(this.lblBottomText);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 967);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(771, 83);
+            this.pnlBottom.TabIndex = 15;
             // 
-            // label12
+            // lblPrivacyPolicy
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
-            this.label12.Location = new System.Drawing.Point(373, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 13);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Privacy Policy.";
+            this.lblPrivacyPolicy.AutoSize = true;
+            this.lblPrivacyPolicy.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrivacyPolicy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
+            this.lblPrivacyPolicy.Location = new System.Drawing.Point(560, 32);
+            this.lblPrivacyPolicy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrivacyPolicy.Name = "lblPrivacyPolicy";
+            this.lblPrivacyPolicy.Size = new System.Drawing.Size(122, 23);
+            this.lblPrivacyPolicy.TabIndex = 3;
+            this.lblPrivacyPolicy.Text = "Privacy Policy.";
             // 
-            // label11
+            // lblTextAnd
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(352, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "and";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.lblTextAnd.AutoSize = true;
+            this.lblTextAnd.Location = new System.Drawing.Point(528, 32);
+            this.lblTextAnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTextAnd.Name = "lblTextAnd";
+            this.lblTextAnd.Size = new System.Drawing.Size(36, 20);
+            this.lblTextAnd.TabIndex = 2;
+            this.lblTextAnd.Text = "and";
+            this.lblTextAnd.Click += new System.EventHandler(this.label11_Click);
             // 
-            // label10
+            // lblTermsService
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
-            this.label10.Location = new System.Drawing.Point(265, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Terms of Service";
+            this.lblTermsService.AutoSize = true;
+            this.lblTermsService.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTermsService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
+            this.lblTermsService.Location = new System.Drawing.Point(385, 32);
+            this.lblTermsService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTermsService.Name = "lblTermsService";
+            this.lblTermsService.Size = new System.Drawing.Size(142, 23);
+            this.lblTermsService.TabIndex = 1;
+            this.lblTermsService.Text = "Terms of Service";
             // 
-            // label9
+            // lblBottomText
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(56, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(215, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "By creating an account you agree to our ";
+            this.lblBottomText.AutoSize = true;
+            this.lblBottomText.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBottomText.Location = new System.Drawing.Point(67, 32);
+            this.lblBottomText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBottomText.Name = "lblBottomText";
+            this.lblBottomText.Size = new System.Drawing.Size(323, 23);
+            this.lblBottomText.TabIndex = 0;
+            this.lblBottomText.Text = "By creating an account you agree to our ";
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(12, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 23);
-            this.button2.TabIndex = 17;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(18, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(36, 35);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBack.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // lblGender
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(94, 212);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Gender";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(141, 326);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(89, 31);
+            this.lblGender.TabIndex = 19;
+            this.lblGender.Text = "Gender";
             // 
-            // dateTimePicker2
+            // dtpDOB
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(297, 235);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(124, 29);
-            this.dateTimePicker2.TabIndex = 21;
-            this.dateTimePicker2.Value = new System.DateTime(2023, 10, 18, 15, 36, 16, 0);
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDOB.Location = new System.Drawing.Point(446, 362);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDOB.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(184, 39);
+            this.dtpDOB.TabIndex = 21;
+            this.dtpDOB.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
+            this.dtpDOB.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // checkBox1
+            // chkMale
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(3, 12);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 21);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "Male";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkMale.AutoSize = true;
+            this.chkMale.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMale.Location = new System.Drawing.Point(4, 18);
+            this.chkMale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkMale.Name = "chkMale";
+            this.chkMale.Size = new System.Drawing.Size(81, 32);
+            this.chkMale.TabIndex = 22;
+            this.chkMale.Text = "Male";
+            this.chkMale.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkFemale
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(64, 12);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(68, 21);
-            this.checkBox2.TabIndex = 23;
-            this.checkBox2.Text = "Female";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkFemale.AutoSize = true;
+            this.chkFemale.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFemale.Location = new System.Drawing.Point(96, 18);
+            this.chkFemale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkFemale.Name = "chkFemale";
+            this.chkFemale.Size = new System.Drawing.Size(100, 32);
+            this.chkFemale.TabIndex = 23;
+            this.chkFemale.Text = "Female";
+            this.chkFemale.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkOther
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(138, 12);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(60, 21);
-            this.checkBox3.TabIndex = 24;
-            this.checkBox3.Text = "Other";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkOther.AutoSize = true;
+            this.chkOther.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOther.Location = new System.Drawing.Point(207, 18);
+            this.chkOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkOther.Name = "chkOther";
+            this.chkOther.Size = new System.Drawing.Size(88, 32);
+            this.chkOther.TabIndex = 24;
+            this.chkOther.Text = "Other";
+            this.chkOther.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // pnlGender
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.checkBox1);
-            this.panel2.Controls.Add(this.checkBox3);
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Location = new System.Drawing.Point(90, 230);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 43);
-            this.panel2.TabIndex = 25;
+            this.pnlGender.BackColor = System.Drawing.Color.White;
+            this.pnlGender.Controls.Add(this.chkMale);
+            this.pnlGender.Controls.Add(this.chkOther);
+            this.pnlGender.Controls.Add(this.chkFemale);
+            this.pnlGender.Location = new System.Drawing.Point(135, 354);
+            this.pnlGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlGender.Name = "pnlGender";
+            this.pnlGender.Size = new System.Drawing.Size(300, 66);
+            this.pnlGender.TabIndex = 25;
             // 
             // frmCreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(514, 693);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(771, 1050);
+            this.Controls.Add(this.pnlGender);
+            this.Controls.Add(this.dtpDOB);
+            this.Controls.Add(this.lblGender);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.pnlBottom);
+            this.Controls.Add(this.btnCreateAccount);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.pnlPassword);
+            this.Controls.Add(this.lblPhone);
+            this.Controls.Add(this.pnlPhone);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.pnlEmail);
+            this.Controls.Add(this.lblDOB);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.pnlUsername);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.lblCreateAccont);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Account";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlUsername.ResumeLayout(false);
+            this.pnlUsername.PerformLayout();
+            this.pnlEmail.ResumeLayout(false);
+            this.pnlEmail.PerformLayout();
+            this.pnlPhone.ResumeLayout(false);
+            this.pnlPhone.PerformLayout();
+            this.pnlPassword.ResumeLayout(false);
+            this.pnlPassword.PerformLayout();
+            this.pnlBottom.ResumeLayout(false);
+            this.pnlBottom.PerformLayout();
+            this.pnlGender.ResumeLayout(false);
+            this.pnlGender.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,33 +446,33 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblCreateAccont;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.Panel pnlUsername;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.Panel pnlEmail;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Panel pnlPhone;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Panel pnlPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnCreateAccount;
+        private System.Windows.Forms.Panel pnlBottom;
+        private System.Windows.Forms.Label lblTermsService;
+        private System.Windows.Forms.Label lblBottomText;
+        private System.Windows.Forms.Label lblTextAnd;
+        private System.Windows.Forms.Label lblPrivacyPolicy;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.CheckBox chkMale;
+        private System.Windows.Forms.CheckBox chkFemale;
+        private System.Windows.Forms.CheckBox chkOther;
+        private System.Windows.Forms.Panel pnlGender;
     }
 }

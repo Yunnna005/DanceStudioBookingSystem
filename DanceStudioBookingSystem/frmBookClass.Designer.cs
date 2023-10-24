@@ -29,510 +29,552 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookClass));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblBookYourClass = new System.Windows.Forms.Label();
+            this.pnlBookClass = new System.Windows.Forms.Panel();
+            this.pnlPayment = new System.Windows.Forms.Panel();
+            this.pnlCVC = new System.Windows.Forms.Panel();
+            this.txtCVC = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lblCVC = new System.Windows.Forms.Label();
+            this.pnlExpireDate = new System.Windows.Forms.Panel();
+            this.txtExpireDate = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lblExpireDate = new System.Windows.Forms.Label();
+            this.pnlCardHolder = new System.Windows.Forms.Panel();
+            this.txtCardHolder = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.lblCardHolder = new System.Windows.Forms.Label();
+            this.pnlCardNumber = new System.Windows.Forms.Panel();
+            this.txtCardNumber = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.lblCardNumber = new System.Windows.Forms.Label();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.lblPayment = new System.Windows.Forms.Label();
+            this.dgvClasses = new System.Windows.Forms.DataGridView();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.lblBookAClass = new System.Windows.Forms.Label();
+            this.btnBook = new System.Windows.Forms.Button();
+            this.lblTYpe = new System.Windows.Forms.Label();
+            this.cboType = new System.Windows.Forms.ComboBox();
+            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
+            this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.pnlHeader.SuspendLayout();
+            this.pnlBookClass.SuspendLayout();
+            this.pnlPayment.SuspendLayout();
+            this.pnlCVC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel11.SuspendLayout();
+            this.pnlExpireDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel12.SuspendLayout();
+            this.pnlCardHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel13.SuspendLayout();
+            this.pnlCardNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // pnlHeader
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(171, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(630, 72);
-            this.panel2.TabIndex = 3;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pnlHeader.Controls.Add(this.lblBookYourClass);
+            this.pnlHeader.Location = new System.Drawing.Point(256, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(945, 111);
+            this.pnlHeader.TabIndex = 3;
             // 
-            // label1
+            // lblBookYourClass
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(154, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "- BOOK YOUR CLASS -";
+            this.lblBookYourClass.AutoSize = true;
+            this.lblBookYourClass.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookYourClass.ForeColor = System.Drawing.Color.White;
+            this.lblBookYourClass.Location = new System.Drawing.Point(231, 28);
+            this.lblBookYourClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBookYourClass.Name = "lblBookYourClass";
+            this.lblBookYourClass.Size = new System.Drawing.Size(498, 60);
+            this.lblBookYourClass.TabIndex = 0;
+            this.lblBookYourClass.Text = "- BOOK YOUR CLASS -";
             // 
-            // panel4
+            // pnlBookClass
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.panel3);
-            this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(184, 78);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(609, 436);
-            this.panel4.TabIndex = 4;
+            this.pnlBookClass.BackColor = System.Drawing.Color.White;
+            this.pnlBookClass.Controls.Add(this.pnlPayment);
+            this.pnlBookClass.Controls.Add(this.dgvClasses);
+            this.pnlBookClass.Controls.Add(this.lblBookAClass);
+            this.pnlBookClass.Controls.Add(this.btnBook);
+            this.pnlBookClass.Controls.Add(this.lblTYpe);
+            this.pnlBookClass.Controls.Add(this.cboType);
+            this.pnlBookClass.ForeColor = System.Drawing.Color.Black;
+            this.pnlBookClass.Location = new System.Drawing.Point(277, 121);
+            this.pnlBookClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBookClass.Name = "pnlBookClass";
+            this.pnlBookClass.Size = new System.Drawing.Size(914, 671);
+            this.pnlBookClass.TabIndex = 4;
             // 
-            // label9
+            // pnlPayment
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(220, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(132, 30);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Book a class";
+            this.pnlPayment.Controls.Add(this.pnlCVC);
+            this.pnlPayment.Controls.Add(this.lblCVC);
+            this.pnlPayment.Controls.Add(this.pnlExpireDate);
+            this.pnlPayment.Controls.Add(this.lblExpireDate);
+            this.pnlPayment.Controls.Add(this.pnlCardHolder);
+            this.pnlPayment.Controls.Add(this.lblCardHolder);
+            this.pnlPayment.Controls.Add(this.pnlCardNumber);
+            this.pnlPayment.Controls.Add(this.lblCardNumber);
+            this.pnlPayment.Controls.Add(this.btnPay);
+            this.pnlPayment.Controls.Add(this.lblPayment);
+            this.pnlPayment.Location = new System.Drawing.Point(4, 5);
+            this.pnlPayment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlPayment.Name = "pnlPayment";
+            this.pnlPayment.Size = new System.Drawing.Size(904, 666);
+            this.pnlPayment.TabIndex = 30;
+            this.pnlPayment.Visible = false;
             // 
-            // button2
+            // pnlCVC
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(234, 324);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 39);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "BOOK";
-            this.button2.UseVisualStyleBackColor = false;
+            this.pnlCVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.pnlCVC.Controls.Add(this.txtCVC);
+            this.pnlCVC.Controls.Add(this.pictureBox5);
+            this.pnlCVC.Location = new System.Drawing.Point(465, 454);
+            this.pnlCVC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlCVC.Name = "pnlCVC";
+            this.pnlCVC.Size = new System.Drawing.Size(178, 57);
+            this.pnlCVC.TabIndex = 38;
             // 
-            // label2
+            // txtCVC
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(187, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Type";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(277, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.profileToolStripMenuItem,
-            this.bookToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 100, 10, 2);
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.ShowItemToolTips = true;
-            this.menuStrip1.Size = new System.Drawing.Size(179, 522);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // profileToolStripMenuItem
-            // 
-            this.profileToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.profileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(152, 51);
-            this.profileToolStripMenuItem.Text = "Profile ";
-            // 
-            // bookToolStripMenuItem
-            // 
-            this.bookToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.bookToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookToolStripMenuItem.Name = "bookToolStripMenuItem";
-            this.bookToolStripMenuItem.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.bookToolStripMenuItem.Size = new System.Drawing.Size(163, 51);
-            this.bookToolStripMenuItem.Text = "Book";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.panel1.Location = new System.Drawing.Point(157, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(22, 523);
-            this.panel1.TabIndex = 13;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(42, 482);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 28);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Log out";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.date,
-            this.time,
-            this.instructor,
-            this.price});
-            this.dataGridView1.Location = new System.Drawing.Point(175, 150);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(223, 150);
-            this.dataGridView1.TabIndex = 29;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "DATE";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "TIME";
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            // 
-            // instructor
-            // 
-            this.instructor.HeaderText = "INSTRUCTOR";
-            this.instructor.Name = "instructor";
-            this.instructor.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "PRICE";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.panel11);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.panel12);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.panel13);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(603, 433);
-            this.panel3.TabIndex = 30;
-            this.panel3.Visible = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.panel10.Controls.Add(this.textBox5);
-            this.panel10.Controls.Add(this.pictureBox5);
-            this.panel10.Location = new System.Drawing.Point(310, 295);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(119, 37);
-            this.panel10.TabIndex = 38;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(7, 6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(105, 26);
-            this.textBox5.TabIndex = 1;
+            this.txtCVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCVC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCVC.Location = new System.Drawing.Point(10, 9);
+            this.txtCVC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCVC.Name = "txtCVC";
+            this.txtCVC.Size = new System.Drawing.Size(158, 38);
+            this.txtCVC.TabIndex = 1;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox5.Location = new System.Drawing.Point(552, 51);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox5.Size = new System.Drawing.Size(40, 37);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // label3
+            // lblCVC
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(353, 271);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 21);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "CVC";
+            this.lblCVC.AutoSize = true;
+            this.lblCVC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCVC.Location = new System.Drawing.Point(530, 417);
+            this.lblCVC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCVC.Name = "lblCVC";
+            this.lblCVC.Size = new System.Drawing.Size(59, 32);
+            this.lblCVC.TabIndex = 37;
+            this.lblCVC.Text = "CVC";
             // 
-            // panel11
+            // pnlExpireDate
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.panel11.Controls.Add(this.textBox6);
-            this.panel11.Controls.Add(this.pictureBox6);
-            this.panel11.Location = new System.Drawing.Point(172, 295);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(119, 37);
-            this.panel11.TabIndex = 36;
+            this.pnlExpireDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.pnlExpireDate.Controls.Add(this.txtExpireDate);
+            this.pnlExpireDate.Controls.Add(this.pictureBox6);
+            this.pnlExpireDate.Location = new System.Drawing.Point(258, 454);
+            this.pnlExpireDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlExpireDate.Name = "pnlExpireDate";
+            this.pnlExpireDate.Size = new System.Drawing.Size(178, 57);
+            this.pnlExpireDate.TabIndex = 36;
             // 
-            // textBox6
+            // txtExpireDate
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(7, 6);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(105, 26);
-            this.textBox6.TabIndex = 1;
+            this.txtExpireDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExpireDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExpireDate.Location = new System.Drawing.Point(10, 9);
+            this.txtExpireDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtExpireDate.Name = "txtExpireDate";
+            this.txtExpireDate.Size = new System.Drawing.Size(158, 38);
+            this.txtExpireDate.TabIndex = 1;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox6.Location = new System.Drawing.Point(552, 51);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox6.Size = new System.Drawing.Size(40, 37);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
             // 
-            // label4
+            // lblExpireDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(186, 271);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 21);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Expire date";
+            this.lblExpireDate.AutoSize = true;
+            this.lblExpireDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpireDate.Location = new System.Drawing.Point(279, 417);
+            this.lblExpireDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExpireDate.Name = "lblExpireDate";
+            this.lblExpireDate.Size = new System.Drawing.Size(133, 32);
+            this.lblExpireDate.TabIndex = 35;
+            this.lblExpireDate.Text = "Expire date";
             // 
-            // panel12
+            // pnlCardHolder
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.panel12.Controls.Add(this.textBox7);
-            this.panel12.Controls.Add(this.pictureBox7);
-            this.panel12.Location = new System.Drawing.Point(164, 217);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(272, 41);
-            this.panel12.TabIndex = 34;
+            this.pnlCardHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.pnlCardHolder.Controls.Add(this.txtCardHolder);
+            this.pnlCardHolder.Controls.Add(this.pictureBox7);
+            this.pnlCardHolder.Location = new System.Drawing.Point(246, 334);
+            this.pnlCardHolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlCardHolder.Name = "pnlCardHolder";
+            this.pnlCardHolder.Size = new System.Drawing.Size(408, 63);
+            this.pnlCardHolder.TabIndex = 34;
             // 
-            // textBox7
+            // txtCardHolder
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(8, 9);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(257, 26);
-            this.textBox7.TabIndex = 1;
+            this.txtCardHolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCardHolder.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardHolder.Location = new System.Drawing.Point(12, 14);
+            this.txtCardHolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCardHolder.Name = "txtCardHolder";
+            this.txtCardHolder.Size = new System.Drawing.Size(386, 38);
+            this.txtCardHolder.TabIndex = 1;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox7.Location = new System.Drawing.Point(552, 51);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox7.Size = new System.Drawing.Size(40, 37);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
             // 
-            // label5
+            // lblCardHolder
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(247, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 21);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Card holder";
+            this.lblCardHolder.AutoSize = true;
+            this.lblCardHolder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardHolder.Location = new System.Drawing.Point(370, 297);
+            this.lblCardHolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCardHolder.Name = "lblCardHolder";
+            this.lblCardHolder.Size = new System.Drawing.Size(140, 32);
+            this.lblCardHolder.TabIndex = 33;
+            this.lblCardHolder.Text = "Card holder";
             // 
-            // panel13
+            // pnlCardNumber
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.panel13.Controls.Add(this.textBox8);
-            this.panel13.Controls.Add(this.pictureBox8);
-            this.panel13.Location = new System.Drawing.Point(164, 139);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(272, 41);
-            this.panel13.TabIndex = 32;
+            this.pnlCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.pnlCardNumber.Controls.Add(this.txtCardNumber);
+            this.pnlCardNumber.Controls.Add(this.pictureBox8);
+            this.pnlCardNumber.Location = new System.Drawing.Point(246, 214);
+            this.pnlCardNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlCardNumber.Name = "pnlCardNumber";
+            this.pnlCardNumber.Size = new System.Drawing.Size(408, 63);
+            this.pnlCardNumber.TabIndex = 32;
             // 
-            // textBox8
+            // txtCardNumber
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(9, 8);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(257, 26);
-            this.textBox8.TabIndex = 1;
+            this.txtCardNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCardNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardNumber.Location = new System.Drawing.Point(14, 12);
+            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(386, 38);
+            this.txtCardNumber.TabIndex = 1;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox8.Location = new System.Drawing.Point(552, 51);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox8.Size = new System.Drawing.Size(40, 37);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
-            // label6
+            // lblCardNumber
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(247, 115);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(102, 21);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Card number";
+            this.lblCardNumber.AutoSize = true;
+            this.lblCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCardNumber.Location = new System.Drawing.Point(370, 177);
+            this.lblCardNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCardNumber.Name = "lblCardNumber";
+            this.lblCardNumber.Size = new System.Drawing.Size(155, 32);
+            this.lblCardNumber.TabIndex = 29;
+            this.lblCardNumber.Text = "Card number";
             // 
-            // button1
+            // btnPay
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(256, 351);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 39);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "PAY";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnPay.FlatAppearance.BorderSize = 0;
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.Location = new System.Drawing.Point(384, 540);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(124, 60);
+            this.btnPay.TabIndex = 31;
+            this.btnPay.Text = "PAY";
+            this.btnPay.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // lblPayment
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(251, 64);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 30);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Payment";
+            this.lblPayment.AutoSize = true;
+            this.lblPayment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayment.Location = new System.Drawing.Point(376, 98);
+            this.lblPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPayment.Name = "lblPayment";
+            this.lblPayment.Size = new System.Drawing.Size(150, 45);
+            this.lblPayment.TabIndex = 30;
+            this.lblPayment.Text = "Payment";
+            // 
+            // dgvClasses
+            // 
+            this.dgvClasses.AllowUserToAddRows = false;
+            this.dgvClasses.AllowUserToDeleteRows = false;
+            this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.date,
+            this.time,
+            this.instructor,
+            this.price});
+            this.dgvClasses.Location = new System.Drawing.Point(135, 237);
+            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvClasses.Name = "dgvClasses";
+            this.dgvClasses.ReadOnly = true;
+            this.dgvClasses.RowHeadersWidth = 62;
+            this.dgvClasses.Size = new System.Drawing.Size(661, 231);
+            this.dgvClasses.TabIndex = 29;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "DATE";
+            this.date.MinimumWidth = 8;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 150;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "TIME";
+            this.time.MinimumWidth = 8;
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            this.time.Width = 150;
+            // 
+            // instructor
+            // 
+            this.instructor.HeaderText = "INSTRUCTOR";
+            this.instructor.MinimumWidth = 8;
+            this.instructor.Name = "instructor";
+            this.instructor.ReadOnly = true;
+            this.instructor.Width = 150;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "PRICE";
+            this.price.MinimumWidth = 8;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 150;
+            // 
+            // lblBookAClass
+            // 
+            this.lblBookAClass.AutoSize = true;
+            this.lblBookAClass.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookAClass.Location = new System.Drawing.Point(368, 57);
+            this.lblBookAClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBookAClass.Name = "lblBookAClass";
+            this.lblBookAClass.Size = new System.Drawing.Size(203, 45);
+            this.lblBookAClass.TabIndex = 11;
+            this.lblBookAClass.Text = "Book a class";
+            // 
+            // btnBook
+            // 
+            this.btnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnBook.FlatAppearance.BorderSize = 0;
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBook.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.ForeColor = System.Drawing.Color.White;
+            this.btnBook.Location = new System.Drawing.Point(392, 498);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(141, 60);
+            this.btnBook.TabIndex = 10;
+            this.btnBook.Text = "BOOK";
+            this.btnBook.UseVisualStyleBackColor = false;
+            // 
+            // lblTYpe
+            // 
+            this.lblTYpe.AutoSize = true;
+            this.lblTYpe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTYpe.Location = new System.Drawing.Point(280, 165);
+            this.lblTYpe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTYpe.Name = "lblTYpe";
+            this.lblTYpe.Size = new System.Drawing.Size(66, 32);
+            this.lblTYpe.TabIndex = 1;
+            this.lblTYpe.Text = "Type";
+            // 
+            // cboType
+            // 
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(416, 165);
+            this.cboType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(180, 28);
+            this.cboType.TabIndex = 0;
+            // 
+            // mnuMainMenu
+            // 
+            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
+            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuProfile,
+            this.mnuBook});
+            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 154, 15, 3);
+            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnuMainMenu.ShowItemToolTips = true;
+            this.mnuMainMenu.Size = new System.Drawing.Size(243, 803);
+            this.mnuMainMenu.TabIndex = 12;
+            this.mnuMainMenu.Text = "Menu";
+            // 
+            // mnuProfile
+            // 
+            this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuProfile.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuProfile.ForeColor = System.Drawing.Color.Black;
+            this.mnuProfile.Name = "mnuProfile";
+            this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.mnuProfile.Size = new System.Drawing.Size(219, 75);
+            this.mnuProfile.Text = "Profile ";
+            // 
+            // mnuBook
+            // 
+            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBook.Name = "mnuBook";
+            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.mnuBook.Size = new System.Drawing.Size(212, 75);
+            this.mnuBook.Text = "Book";
+            // 
+            // pnlBlueLine
+            // 
+            this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pnlBlueLine.Location = new System.Drawing.Point(236, 0);
+            this.pnlBlueLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBlueLine.Name = "pnlBlueLine";
+            this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
+            this.pnlBlueLine.TabIndex = 13;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(63, 742);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(114, 43);
+            this.btnLogOut.TabIndex = 14;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
             // 
             // frmBookClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(800, 522);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1200, 803);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.pnlBlueLine);
+            this.Controls.Add(this.mnuMainMenu);
+            this.Controls.Add(this.pnlBookClass);
+            this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmBookClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBookClass";
+            this.Text = "Book Class";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBookClass_FormClosing);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
+            this.pnlBookClass.ResumeLayout(false);
+            this.pnlBookClass.PerformLayout();
+            this.pnlPayment.ResumeLayout(false);
+            this.pnlPayment.PerformLayout();
+            this.pnlCVC.ResumeLayout(false);
+            this.pnlCVC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.pnlExpireDate.ResumeLayout(false);
+            this.pnlExpireDate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            this.pnlCardHolder.ResumeLayout(false);
+            this.pnlCardHolder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
+            this.pnlCardNumber.ResumeLayout(false);
+            this.pnlCardNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
+            this.mnuMainMenu.ResumeLayout(false);
+            this.mnuMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Label lblBookYourClass;
+        private System.Windows.Forms.Panel pnlBookClass;
+        private System.Windows.Forms.Label lblBookAClass;
+        private System.Windows.Forms.Button btnBook;
+        private System.Windows.Forms.Label lblTYpe;
+        private System.Windows.Forms.ComboBox cboType;
+        private System.Windows.Forms.MenuStrip mnuMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuProfile;
+        private System.Windows.Forms.ToolStripMenuItem mnuBook;
+        private System.Windows.Forms.Panel pnlBlueLine;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.DataGridView dgvClasses;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel pnlPayment;
+        private System.Windows.Forms.Panel pnlCVC;
+        private System.Windows.Forms.TextBox txtCVC;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label lblCVC;
+        private System.Windows.Forms.Panel pnlExpireDate;
+        private System.Windows.Forms.TextBox txtExpireDate;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label lblExpireDate;
+        private System.Windows.Forms.Panel pnlCardHolder;
+        private System.Windows.Forms.TextBox txtCardHolder;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label lblCardHolder;
+        private System.Windows.Forms.Panel pnlCardNumber;
+        private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCardNumber;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Label lblPayment;
     }
 }

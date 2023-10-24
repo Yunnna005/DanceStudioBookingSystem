@@ -29,109 +29,98 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.classesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scheduleClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.analyseYearlyRevenueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.analysePopularDanceStyleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenuAdmin));
+            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
+            this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnutScheduleClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnutModifyClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnutCancelClass = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuStatistics = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpClasses = new System.Windows.Forms.GroupBox();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
             this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.mnuMainMenu.SuspendLayout();
+            this.grpClasses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnuMainMenu
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.classesToolStripMenuItem,
-            this.statisticsToolStripMenuItem});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(442, 33);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuClasses,
+            this.mnuStatistics});
+            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mnuMainMenu.Size = new System.Drawing.Size(663, 50);
+            this.mnuMainMenu.TabIndex = 0;
+            this.mnuMainMenu.Text = "Menu";
             // 
-            // classesToolStripMenuItem
+            // mnuClasses
             // 
-            this.classesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.scheduleClassToolStripMenuItem,
-            this.modifyClassToolStripMenuItem,
-            this.cancelClassToolStripMenuItem});
-            this.classesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
-            this.classesToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.classesToolStripMenuItem.Text = "Classes";
+            this.mnuClasses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnutScheduleClass,
+            this.mnutModifyClass,
+            this.mnutCancelClass});
+            this.mnuClasses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuClasses.Name = "mnuClasses";
+            this.mnuClasses.Size = new System.Drawing.Size(124, 44);
+            this.mnuClasses.Text = "Classes";
             // 
-            // scheduleClassToolStripMenuItem
+            // mnutScheduleClass
             // 
-            this.scheduleClassToolStripMenuItem.Name = "scheduleClassToolStripMenuItem";
-            this.scheduleClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.scheduleClassToolStripMenuItem.Text = "Schedule Class";
+            this.mnutScheduleClass.Name = "mnutScheduleClass";
+            this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutScheduleClass.Text = "Schedule Class";
             // 
-            // modifyClassToolStripMenuItem
+            // mnutModifyClass
             // 
-            this.modifyClassToolStripMenuItem.Name = "modifyClassToolStripMenuItem";
-            this.modifyClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.modifyClassToolStripMenuItem.Text = "Modify Class";
+            this.mnutModifyClass.Name = "mnutModifyClass";
+            this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutModifyClass.Text = "Modify Class";
             // 
-            // cancelClassToolStripMenuItem
+            // mnutCancelClass
             // 
-            this.cancelClassToolStripMenuItem.Name = "cancelClassToolStripMenuItem";
-            this.cancelClassToolStripMenuItem.Size = new System.Drawing.Size(209, 30);
-            this.cancelClassToolStripMenuItem.Text = "Cancel Class";
+            this.mnutCancelClass.Name = "mnutCancelClass";
+            this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutCancelClass.Text = "Cancel Class";
             // 
-            // statisticsToolStripMenuItem
+            // mnuStatistics
             // 
-            this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.analyseYearlyRevenueToolStripMenuItem,
-            this.analysePopularDanceStyleToolStripMenuItem});
-            this.statisticsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(96, 29);
-            this.statisticsToolStripMenuItem.Text = "Statistics";
-            // 
-            // analyseYearlyRevenueToolStripMenuItem
-            // 
-            this.analyseYearlyRevenueToolStripMenuItem.Name = "analyseYearlyRevenueToolStripMenuItem";
-            this.analyseYearlyRevenueToolStripMenuItem.Size = new System.Drawing.Size(321, 30);
-            this.analyseYearlyRevenueToolStripMenuItem.Text = "Analyse Yearly Revenue";
-            // 
-            // analysePopularDanceStyleToolStripMenuItem
-            // 
-            this.analysePopularDanceStyleToolStripMenuItem.Name = "analysePopularDanceStyleToolStripMenuItem";
-            this.analysePopularDanceStyleToolStripMenuItem.Size = new System.Drawing.Size(321, 30);
-            this.analysePopularDanceStyleToolStripMenuItem.Text = "Analyse Popular Dance Style";
+            this.mnuStatistics.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuStatistics.Name = "mnuStatistics";
+            this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
+            this.mnuStatistics.Text = "Statistics";
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // groupBox1
+            // grpClasses
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dgvClasses);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 323);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Classes";
+            this.grpClasses.BackColor = System.Drawing.Color.White;
+            this.grpClasses.Controls.Add(this.dgvClasses);
+            this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpClasses.Location = new System.Drawing.Point(21, 80);
+            this.grpClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpClasses.Name = "grpClasses";
+            this.grpClasses.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpClasses.Size = new System.Drawing.Size(621, 497);
+            this.grpClasses.TabIndex = 2;
+            this.grpClasses.TabStop = false;
+            this.grpClasses.Text = "Classes";
             // 
             // dgvClasses
             // 
@@ -141,49 +130,61 @@
             this.Type,
             this.Date,
             this.Time});
-            this.dgvClasses.Location = new System.Drawing.Point(6, 28);
+            this.dgvClasses.Location = new System.Drawing.Point(9, 43);
+            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.Size = new System.Drawing.Size(402, 289);
+            this.dgvClasses.RowHeadersWidth = 62;
+            this.dgvClasses.Size = new System.Drawing.Size(603, 445);
             this.dgvClasses.TabIndex = 0;
             // 
             // Class
             // 
             this.Class.HeaderText = "Class";
+            this.Class.MinimumWidth = 8;
             this.Class.Name = "Class";
+            this.Class.Width = 150;
             // 
             // Type
             // 
             this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
             this.Type.Name = "Type";
+            this.Type.Width = 150;
             // 
             // Date
             // 
             this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 8;
             this.Date.Name = "Date";
+            this.Date.Width = 150;
             // 
             // Time
             // 
             this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 8;
             this.Time.Name = "Time";
+            this.Time.Width = 150;
             // 
             // frmMainMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(442, 387);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(663, 595);
+            this.Controls.Add(this.grpClasses);
+            this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.mnuMainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMainMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMainMenuAdmin";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.Text = "Main Menu Admin";
+            this.mnuMainMenu.ResumeLayout(false);
+            this.mnuMainMenu.PerformLayout();
+            this.grpClasses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,16 +193,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem classesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip mnuMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuClasses;
+        private System.Windows.Forms.ToolStripMenuItem mnuStatistics;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem scheduleClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifyClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cancelClassToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem analyseYearlyRevenueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem analysePopularDanceStyleToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripMenuItem mnutScheduleClass;
+        private System.Windows.Forms.ToolStripMenuItem mnutModifyClass;
+        private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
+        private System.Windows.Forms.GroupBox grpClasses;
         private System.Windows.Forms.DataGridView dgvClasses;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;

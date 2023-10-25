@@ -18,6 +18,7 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
 
         }
+
         public frmBookClass(Form parentForm)
         {
             this.parentForm = parentForm;

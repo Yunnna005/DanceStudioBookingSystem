@@ -40,7 +40,7 @@
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.picLock2 = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnResetPassword = new System.Windows.Forms.Button();
             this.pnlUsername = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -78,7 +78,6 @@
             this.lblResetPassword.Size = new System.Drawing.Size(290, 48);
             this.lblResetPassword.TabIndex = 20;
             this.lblResetPassword.Text = "Reset Password ";
-            this.lblResetPassword.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblDescription
             // 
@@ -179,21 +178,21 @@
             this.picLock2.TabIndex = 0;
             this.picLock2.TabStop = false;
             // 
-            // btnReset
+            // btnResetPassword
             // 
-            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(252, 648);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(300, 66);
-            this.btnReset.TabIndex = 24;
-            this.btnReset.Text = "Reset Password";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.button1_Click);
+            this.btnResetPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnResetPassword.FlatAppearance.BorderSize = 0;
+            this.btnResetPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.ForeColor = System.Drawing.Color.White;
+            this.btnResetPassword.Location = new System.Drawing.Point(252, 648);
+            this.btnResetPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(300, 66);
+            this.btnResetPassword.TabIndex = 24;
+            this.btnResetPassword.Text = "Reset Password";
+            this.btnResetPassword.UseVisualStyleBackColor = false;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // pnlUsername
             // 
@@ -246,7 +245,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(825, 765);
             this.Controls.Add(this.pnlUsername);
-            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.pnlConfirmPassword);
             this.Controls.Add(this.pnlNewPassword);
             this.Controls.Add(this.lblDescription);
@@ -285,7 +284,7 @@
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.PictureBox picLock2;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Panel pnlUsername;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblUsername;

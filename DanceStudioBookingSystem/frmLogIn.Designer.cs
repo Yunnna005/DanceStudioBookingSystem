@@ -62,7 +62,6 @@
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAvatar.TabIndex = 0;
             this.picAvatar.TabStop = false;
-            this.picAvatar.Click += new System.EventHandler(this.picbAvatar_Click);
             // 
             // lblSignIn
             // 
@@ -75,7 +74,6 @@
             this.lblSignIn.Size = new System.Drawing.Size(153, 54);
             this.lblSignIn.TabIndex = 1;
             this.lblSignIn.Text = "Sign In";
-            this.lblSignIn.Click += new System.EventHandler(this.lblSignIn_Click);
             // 
             // pnlUsername
             // 
@@ -88,7 +86,6 @@
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(484, 89);
             this.pnlUsername.TabIndex = 2;
-            this.pnlUsername.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUserName_Paint);
             // 
             // lblUsername
             // 
@@ -137,7 +134,6 @@
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(484, 89);
             this.pnlPassword.TabIndex = 3;
-            this.pnlPassword.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblPassword
             // 
@@ -163,7 +159,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(394, 26);
             this.txtPassword.TabIndex = 4;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // picLock
             // 
@@ -215,7 +210,6 @@
             this.lblCreateAccount.Size = new System.Drawing.Size(190, 32);
             this.lblCreateAccount.TabIndex = 1;
             this.lblCreateAccount.Text = "Create Account";
-            this.lblCreateAccount.Click += new System.EventHandler(this.lblCreateAccount_Click);
             // 
             // lblNotAMember
             // 
@@ -239,6 +233,7 @@
             this.lblForgotPassword.Size = new System.Drawing.Size(153, 25);
             this.lblForgotPassword.TabIndex = 6;
             this.lblForgotPassword.Text = "Forgot Pasword?";
+            this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
             // frmLogIn
             // 
@@ -261,7 +256,6 @@
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
-            this.Load += new System.EventHandler(this.frmLogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.pnlUsername.ResumeLayout(false);
             this.pnlUsername.PerformLayout();

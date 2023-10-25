@@ -17,59 +17,19 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
         }
 
-        private void lblSignIn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmLogIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picbAvatar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlUserName_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblCreateAccount_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "Anna" & txtPassword.Text == "anna"){
+            if(txtUsername.Text != "Anna" & txtPassword.Text != "123"){
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsername.Focus();
                 return;
             }
+        }
 
-
-
-
+        private void lblForgotPassword_Click(object sender, EventArgs e)
+        {
+            frmResetPassword newForm = new frmResetPassword();
+            newForm.Show();
         }
     }
 }

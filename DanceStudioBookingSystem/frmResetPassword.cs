@@ -17,14 +17,14 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnResetPassword_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            if (txtUsername.Text != "Anna" && txtNewPassword != txtConfirmPassword)
+            {
+                MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Focus();
+                return;
+            }
         }
     }
 }

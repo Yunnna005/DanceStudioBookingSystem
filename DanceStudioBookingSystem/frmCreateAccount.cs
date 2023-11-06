@@ -17,39 +17,20 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            frmLogIn fLogIn = new frmLogIn();
+            fLogIn.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Account was created. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+            frmLogIn fLogIn = new frmLogIn();
+            fLogIn.Show();
+            
         }
     }
 }

@@ -87,7 +87,6 @@
             this.lblDescription.Size = new System.Drawing.Size(642, 32);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Create an account to view and manage your dance classes.";
-            this.lblDescription.Click += new System.EventHandler(this.label2_Click);
             // 
             // pnlUsername
             // 
@@ -98,7 +97,6 @@
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(500, 66);
             this.pnlUsername.TabIndex = 2;
-            this.pnlUsername.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtUsername
             // 
@@ -133,7 +131,6 @@
             this.lblDOB.Size = new System.Drawing.Size(143, 31);
             this.lblDOB.TabIndex = 7;
             this.lblDOB.Text = "Date of birth";
-            this.lblDOB.Click += new System.EventHandler(this.label5_Click);
             // 
             // pnlEmail
             // 
@@ -248,7 +245,7 @@
             this.btnCreateAccount.TabIndex = 14;
             this.btnCreateAccount.Text = "Create your account";
             this.btnCreateAccount.UseVisualStyleBackColor = false;
-            this.btnCreateAccount.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
             // pnlBottom
             // 
@@ -285,7 +282,6 @@
             this.lblTextAnd.Size = new System.Drawing.Size(36, 20);
             this.lblTextAnd.TabIndex = 2;
             this.lblTextAnd.Text = "and";
-            this.lblTextAnd.Click += new System.EventHandler(this.label11_Click);
             // 
             // lblTermsService
             // 
@@ -323,6 +319,7 @@
             this.btnBack.TabIndex = 17;
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblGender
             // 
@@ -346,7 +343,6 @@
             this.dtpDOB.Size = new System.Drawing.Size(184, 39);
             this.dtpDOB.TabIndex = 21;
             this.dtpDOB.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
-            this.dtpDOB.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // chkMale
             // 

@@ -44,22 +44,22 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.grpBookedClasses = new System.Windows.Forms.GroupBox();
-            this.pnlBlueLine = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
-            this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCancelClass = new System.Windows.Forms.Button();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelClass = new System.Windows.Forms.Button();
+            this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
+            this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
-            this.mnuMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -83,7 +83,6 @@
             this.lblProfile.Size = new System.Drawing.Size(265, 60);
             this.lblProfile.TabIndex = 0;
             this.lblProfile.Text = "- PROFILE -";
-            this.lblProfile.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnEdit
             // 
@@ -98,7 +97,6 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.button4_Click);
             // 
             // grpDetails
             // 
@@ -190,7 +188,6 @@
             this.lblWriteUsername.Size = new System.Drawing.Size(138, 28);
             this.lblWriteUsername.TabIndex = 7;
             this.lblWriteUsername.Text = "MemberName";
-            this.lblWriteUsername.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblDOB
             // 
@@ -213,7 +210,6 @@
             this.lblEmail.Size = new System.Drawing.Size(68, 28);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email: ";
-            this.lblEmail.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblPhone
             // 
@@ -225,7 +221,6 @@
             this.lblPhone.Size = new System.Drawing.Size(76, 28);
             this.lblPhone.TabIndex = 4;
             this.lblPhone.Text = "Phone: ";
-            this.lblPhone.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblUsername
             // 
@@ -253,84 +248,6 @@
             this.grpBookedClasses.TabIndex = 4;
             this.grpBookedClasses.TabStop = false;
             this.grpBookedClasses.Text = "Booked Classes";
-            // 
-            // pnlBlueLine
-            // 
-            this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.pnlBlueLine.Location = new System.Drawing.Point(236, -2);
-            this.pnlBlueLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlBlueLine.Name = "pnlBlueLine";
-            this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
-            this.pnlBlueLine.TabIndex = 20;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(64, 740);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(114, 43);
-            this.btnLogOut.TabIndex = 19;
-            this.btnLogOut.Text = "Log out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            // 
-            // mnuMainMenu
-            // 
-            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
-            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuProfile,
-            this.mnuBook});
-            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 154, 15, 3);
-            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnuMainMenu.ShowItemToolTips = true;
-            this.mnuMainMenu.Size = new System.Drawing.Size(243, 803);
-            this.mnuMainMenu.TabIndex = 18;
-            this.mnuMainMenu.Text = "menuStrip1";
-            // 
-            // mnuProfile
-            // 
-            this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mnuProfile.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuProfile.ForeColor = System.Drawing.Color.Black;
-            this.mnuProfile.Name = "mnuProfile";
-            this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.mnuProfile.Size = new System.Drawing.Size(219, 75);
-            this.mnuProfile.Text = "Profile ";
-            // 
-            // mnuBook
-            // 
-            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuBook.Name = "mnuBook";
-            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.mnuBook.Size = new System.Drawing.Size(212, 75);
-            this.mnuBook.Text = "Book";
-            this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
-            // 
-            // btnCancelClass
-            // 
-            this.btnCancelClass.BackColor = System.Drawing.Color.White;
-            this.btnCancelClass.FlatAppearance.BorderSize = 0;
-            this.btnCancelClass.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCancelClass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelClass.Location = new System.Drawing.Point(764, 176);
-            this.btnCancelClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancelClass.Name = "btnCancelClass";
-            this.btnCancelClass.Size = new System.Drawing.Size(126, 49);
-            this.btnCancelClass.TabIndex = 15;
-            this.btnCancelClass.Text = "Cancel Class";
-            this.btnCancelClass.UseVisualStyleBackColor = false;
             // 
             // dgvClasses
             // 
@@ -383,6 +300,85 @@
             this.instructor.ReadOnly = true;
             this.instructor.Width = 150;
             // 
+            // btnCancelClass
+            // 
+            this.btnCancelClass.BackColor = System.Drawing.Color.White;
+            this.btnCancelClass.FlatAppearance.BorderSize = 0;
+            this.btnCancelClass.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelClass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelClass.Location = new System.Drawing.Point(764, 176);
+            this.btnCancelClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelClass.Name = "btnCancelClass";
+            this.btnCancelClass.Size = new System.Drawing.Size(126, 49);
+            this.btnCancelClass.TabIndex = 15;
+            this.btnCancelClass.Text = "Cancel Class";
+            this.btnCancelClass.UseVisualStyleBackColor = false;
+            // 
+            // pnlBlueLine
+            // 
+            this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pnlBlueLine.Location = new System.Drawing.Point(236, -2);
+            this.pnlBlueLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBlueLine.Name = "pnlBlueLine";
+            this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
+            this.pnlBlueLine.TabIndex = 20;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(64, 740);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(114, 43);
+            this.btnLogOut.TabIndex = 19;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // mnuMainMenu
+            // 
+            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
+            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuProfile,
+            this.mnuBook});
+            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 154, 15, 3);
+            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnuMainMenu.ShowItemToolTips = true;
+            this.mnuMainMenu.Size = new System.Drawing.Size(243, 803);
+            this.mnuMainMenu.TabIndex = 18;
+            this.mnuMainMenu.Text = "menuStrip1";
+            // 
+            // mnuProfile
+            // 
+            this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuProfile.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuProfile.ForeColor = System.Drawing.Color.Black;
+            this.mnuProfile.Name = "mnuProfile";
+            this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.mnuProfile.Size = new System.Drawing.Size(219, 75);
+            this.mnuProfile.Text = "Profile ";
+            // 
+            // mnuBook
+            // 
+            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBook.Name = "mnuBook";
+            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.mnuBook.Size = new System.Drawing.Size(212, 75);
+            this.mnuBook.Text = "Book";
+            this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
+            // 
             // frmMemberProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -406,9 +402,9 @@
             this.grpDetails.ResumeLayout(false);
             this.grpDetails.PerformLayout();
             this.grpBookedClasses.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

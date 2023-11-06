@@ -66,6 +66,7 @@
             this.btnBack.TabIndex = 19;
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblResetPassword
             // 
@@ -111,6 +112,7 @@
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(519, 42);
             this.txtNewPassword.TabIndex = 1;
+            this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // lblNewPassword
             // 
@@ -133,6 +135,7 @@
             this.picLock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLock.TabIndex = 0;
             this.picLock.TabStop = false;
+            this.picLock.Click += new System.EventHandler(this.picLock_Click);
             // 
             // pnlConfirmPassword
             // 
@@ -155,6 +158,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(519, 42);
             this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // lblConfirmPassword
             // 
@@ -177,6 +181,7 @@
             this.picLock2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLock2.TabIndex = 0;
             this.picLock2.TabStop = false;
+            this.picLock2.Click += new System.EventHandler(this.picLock2_Click);
             // 
             // btnResetPassword
             // 

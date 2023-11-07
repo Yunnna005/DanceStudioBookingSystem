@@ -38,6 +38,7 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.lblModifyClass = new System.Windows.Forms.Label();
             this.grpUpdateDetails = new System.Windows.Forms.GroupBox();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtType = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblCapacity = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.mnuMainMenu.SuspendLayout();
             this.grpUpdateDetails.SuspendLayout();
             this.grpSelectClass.SuspendLayout();
@@ -67,6 +67,7 @@
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
@@ -75,10 +76,9 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(777, 50);
+            this.mnuMainMenu.Size = new System.Drawing.Size(1166, 75);
             this.mnuMainMenu.TabIndex = 9;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -98,18 +98,21 @@
             this.mnutScheduleClass.Name = "mnutScheduleClass";
             this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
             this.mnutScheduleClass.Text = "Schedule Class";
+            this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
             this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
             this.mnutModifyClass.Text = "Modify Class";
+            this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
             this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
             this.mnutCancelClass.Text = "Cancel Class";
+            this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
             // mnuStatistics
             // 
@@ -117,6 +120,7 @@
             this.mnuStatistics.Name = "mnuStatistics";
             this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
             this.mnuStatistics.Text = "Statistics";
+            this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
             // mnuBack
             // 
@@ -124,6 +128,7 @@
             this.mnuBack.Name = "mnuBack";
             this.mnuBack.Size = new System.Drawing.Size(92, 44);
             this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // lblModifyClass
             // 
@@ -135,7 +140,6 @@
             this.lblModifyClass.Size = new System.Drawing.Size(193, 40);
             this.lblModifyClass.TabIndex = 10;
             this.lblModifyClass.Text = "Modify Class";
-            this.lblModifyClass.Click += new System.EventHandler(this.label1_Click);
             // 
             // grpUpdateDetails
             // 
@@ -163,6 +167,18 @@
             this.grpUpdateDetails.TabStop = false;
             this.grpUpdateDetails.Text = "Update Current Class Details";
             // 
+            // dtpDate
+            // 
+            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(217, 150);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(148, 39);
+            this.dtpDate.TabIndex = 36;
+            this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
+            // 
             // txtType
             // 
             this.txtType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
@@ -182,7 +198,6 @@
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(97, 33);
             this.txtCapacity.TabIndex = 34;
-            this.txtCapacity.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lblCapacity
             // 
@@ -225,7 +240,6 @@
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(148, 33);
             this.txtTime.TabIndex = 24;
-            this.txtTime.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtInstructor
             // 
@@ -367,18 +381,6 @@
             this.btnSelect.TabIndex = 18;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(217, 150);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dtpDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(148, 39);
-            this.dtpDate.TabIndex = 36;
-            this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
             // 
             // frmModifyClass
             // 

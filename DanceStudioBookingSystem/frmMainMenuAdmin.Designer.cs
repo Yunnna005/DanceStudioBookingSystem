@@ -52,6 +52,7 @@
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
@@ -59,7 +60,6 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mnuMainMenu.Size = new System.Drawing.Size(663, 50);
@@ -82,18 +82,21 @@
             this.mnutScheduleClass.Name = "mnutScheduleClass";
             this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
             this.mnutScheduleClass.Text = "Schedule Class";
+            this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
             this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
             this.mnutModifyClass.Text = "Modify Class";
+            this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
             this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
             this.mnutCancelClass.Text = "Cancel Class";
+            this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
             // mnuStatistics
             // 
@@ -101,6 +104,7 @@
             this.mnuStatistics.Name = "mnuStatistics";
             this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
             this.mnuStatistics.Text = "Statistics";
+            this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
             // contextMenuStrip1
             // 
@@ -113,11 +117,11 @@
             this.grpClasses.BackColor = System.Drawing.Color.White;
             this.grpClasses.Controls.Add(this.dgvClasses);
             this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpClasses.Location = new System.Drawing.Point(21, 80);
+            this.grpClasses.Location = new System.Drawing.Point(13, 73);
             this.grpClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpClasses.Name = "grpClasses";
             this.grpClasses.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpClasses.Size = new System.Drawing.Size(621, 497);
+            this.grpClasses.Size = new System.Drawing.Size(621, 508);
             this.grpClasses.TabIndex = 2;
             this.grpClasses.TabStop = false;
             this.grpClasses.Text = "Classes";

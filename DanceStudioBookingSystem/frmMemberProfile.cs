@@ -33,8 +33,5 @@ namespace DanceStudioBookingSystem
             frmEditMemberProfile fEditProfile = new frmEditMemberProfile();
             fEditProfile.Show();
         }
-
-
-        
     }
 }

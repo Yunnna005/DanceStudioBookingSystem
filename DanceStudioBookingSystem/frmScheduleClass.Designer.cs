@@ -166,7 +166,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPrice
             // 
@@ -177,7 +177,6 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(97, 33);
             this.txtPrice.TabIndex = 5;
-            this.txtPrice.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtTime
             // 
@@ -199,7 +198,6 @@
             this.lblPrice.Size = new System.Drawing.Size(71, 32);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "Price:";
-            this.lblPrice.Click += new System.EventHandler(this.label4_Click);
             // 
             // lblTime
             // 
@@ -269,18 +267,21 @@
             this.mnutScheduleClass.Name = "mnutScheduleClass";
             this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
             this.mnutScheduleClass.Text = "Schedule Class";
+            this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
             this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
             this.mnutModifyClass.Text = "Modify Class";
+            this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
             this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
             this.mnutCancelClass.Text = "Cancel Class";
+            this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
             // mnuStatistics
             // 
@@ -288,6 +289,7 @@
             this.mnuStatistics.Name = "mnuStatistics";
             this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
             this.mnuStatistics.Text = "Statistics";
+            this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
             // mnuBack
             // 
@@ -295,6 +297,7 @@
             this.mnuBack.Name = "mnuBack";
             this.mnuBack.Size = new System.Drawing.Size(92, 44);
             this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // frmScheduleClass
             // 

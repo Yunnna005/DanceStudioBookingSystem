@@ -17,24 +17,29 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-
+            UtilFunctions.DisplayScheduleClass(this);
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-
+            UtilFunctions.DisplayModifyClass(this);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-
+            UtilFunctions.DisplayCancelClass(this);
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void mnuStatistics_Click(object sender, EventArgs e)
         {
+            UtilFunctions.DisplayStatistics(this);
+        }
 
+        private void mnuBack_Click(object sender, EventArgs e)
+        {
+            UtilFunctions.DisplayMainMenuAdmin(this);
         }
     }
 }

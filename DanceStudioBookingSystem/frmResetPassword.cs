@@ -40,9 +40,7 @@ namespace DanceStudioBookingSystem
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogIn fLogIn = new frmLogIn();
-            fLogIn.Show();
+            UtilFunctions.PerformBackToLogIn(this);
         }
 
         private void txtNewPassword_TextChanged(object sender, EventArgs e)

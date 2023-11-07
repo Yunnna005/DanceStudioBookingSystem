@@ -182,18 +182,21 @@
             this.tmnuScheduleClass.Name = "tmnuScheduleClass";
             this.tmnuScheduleClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuScheduleClass.Text = "Schedule Class";
+            this.tmnuScheduleClass.Click += new System.EventHandler(this.tmnuScheduleClass_Click);
             // 
             // tmnuModifyClass
             // 
             this.tmnuModifyClass.Name = "tmnuModifyClass";
             this.tmnuModifyClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuModifyClass.Text = "Modify Class";
+            this.tmnuModifyClass.Click += new System.EventHandler(this.tmnuModifyClass_Click);
             // 
             // tmnuCancelClass
             // 
             this.tmnuCancelClass.Name = "tmnuCancelClass";
             this.tmnuCancelClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuCancelClass.Text = "Cancel Class";
+            this.tmnuCancelClass.Click += new System.EventHandler(this.tmnuCancelClass_Click);
             // 
             // mnuStatisticsTool
             // 
@@ -201,6 +204,7 @@
             this.mnuStatisticsTool.Name = "mnuStatisticsTool";
             this.mnuStatisticsTool.Size = new System.Drawing.Size(143, 44);
             this.mnuStatisticsTool.Text = "Statistics";
+            this.mnuStatisticsTool.Click += new System.EventHandler(this.mnuStatisticsTool_Click);
             // 
             // mnuBack
             // 
@@ -208,6 +212,7 @@
             this.mnuBack.Name = "mnuBack";
             this.mnuBack.Size = new System.Drawing.Size(92, 44);
             this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // lblCancelClass
             // 
@@ -391,6 +396,7 @@
             this.btnCancelClass.TabIndex = 19;
             this.btnCancelClass.Text = "Cancel Class";
             this.btnCancelClass.UseVisualStyleBackColor = false;
+            this.btnCancelClass.Click += new System.EventHandler(this.btnCancelClass_Click);
             // 
             // frmCancelClass
             // 

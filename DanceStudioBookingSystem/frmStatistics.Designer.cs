@@ -78,6 +78,7 @@
             this.btnCalculate.TabIndex = 21;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // cboYear
             // 
@@ -100,7 +101,6 @@
             this.lblYear.Size = new System.Drawing.Size(79, 32);
             this.lblYear.TabIndex = 0;
             this.lblYear.Text = "Year: ";
-            this.lblYear.Click += new System.EventHandler(this.label1_Click);
             // 
             // mnuClasses
             // 
@@ -118,18 +118,21 @@
             this.tmnuScheduleClass.Name = "tmnuScheduleClass";
             this.tmnuScheduleClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuScheduleClass.Text = "Schedule Class";
+            this.tmnuScheduleClass.Click += new System.EventHandler(this.tmnuScheduleClass_Click);
             // 
             // tmnuModifyClass
             // 
             this.tmnuModifyClass.Name = "tmnuModifyClass";
             this.tmnuModifyClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuModifyClass.Text = "Modify Class";
+            this.tmnuModifyClass.Click += new System.EventHandler(this.tmnuModifyClass_Click);
             // 
             // tmnuCancelClass
             // 
             this.tmnuCancelClass.Name = "tmnuCancelClass";
             this.tmnuCancelClass.Size = new System.Drawing.Size(310, 48);
             this.tmnuCancelClass.Text = "Cancel Class";
+            this.tmnuCancelClass.Click += new System.EventHandler(this.tmnuCancelClass_Click);
             // 
             // mnuStatistics
             // 
@@ -137,11 +140,13 @@
             this.mnuStatistics.Name = "mnuStatistics";
             this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
             this.mnuStatistics.Text = "Statistics";
+            this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
             // mnuMainMenu
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
@@ -150,10 +155,9 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(663, 50);
+            this.mnuMainMenu.Size = new System.Drawing.Size(663, 48);
             this.mnuMainMenu.TabIndex = 1;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -163,6 +167,7 @@
             this.mnuBack.Name = "mnuBack";
             this.mnuBack.Size = new System.Drawing.Size(92, 44);
             this.mnuBack.Text = "Back";
+            this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
             // grpAnalyzePopularDanceStyle
             // 
@@ -193,6 +198,7 @@
             this.btnFind.TabIndex = 21;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // lblFindPopularDanceStyle
             // 

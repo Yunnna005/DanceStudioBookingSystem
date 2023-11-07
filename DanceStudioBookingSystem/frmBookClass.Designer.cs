@@ -33,6 +33,7 @@
             this.lblBookYourClass = new System.Windows.Forms.Label();
             this.pnlBookClass = new System.Windows.Forms.Panel();
             this.pnlPayment = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pnlCVC = new System.Windows.Forms.Panel();
             this.txtCVC = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -64,8 +65,6 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlBookClass.SuspendLayout();
             this.pnlPayment.SuspendLayout();
@@ -138,6 +137,21 @@
             this.pnlPayment.Size = new System.Drawing.Size(904, 666);
             this.pnlPayment.TabIndex = 30;
             this.pnlPayment.Visible = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(19, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(36, 35);
+            this.btnBack.TabIndex = 39;
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // pnlCVC
             // 
@@ -484,43 +498,12 @@
             this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
             this.pnlBlueLine.TabIndex = 13;
             // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(63, 742);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(114, 43);
-            this.btnLogOut.TabIndex = 14;
-            this.btnLogOut.Text = "Log out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(19, 18);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(36, 35);
-            this.btnBack.TabIndex = 39;
-            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // frmBookClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1200, 803);
-            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.pnlBlueLine);
             this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.pnlBookClass);
@@ -569,7 +552,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuProfile;
         private System.Windows.Forms.ToolStripMenuItem mnuBook;
         private System.Windows.Forms.Panel pnlBlueLine;
-        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.DataGridView dgvClasses;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;

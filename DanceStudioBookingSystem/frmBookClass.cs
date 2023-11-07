@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DanceStudioBookingSystem
@@ -18,8 +17,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuProfile_Click(object sender, EventArgs e)
         {
-            
-
+            UtilFunctions.PerformMenuBook(this);
         }
 
         private void btnBook_Click(object sender, EventArgs e)

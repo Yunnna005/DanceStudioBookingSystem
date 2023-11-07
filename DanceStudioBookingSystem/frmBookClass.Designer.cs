@@ -65,6 +65,7 @@
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.pnlBookClass.SuspendLayout();
             this.pnlPayment.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             // pnlPayment
             // 
+            this.pnlPayment.Controls.Add(this.btnBack);
             this.pnlPayment.Controls.Add(this.pnlCVC);
             this.pnlPayment.Controls.Add(this.lblCVC);
             this.pnlPayment.Controls.Add(this.pnlExpireDate);
@@ -130,7 +132,7 @@
             this.pnlPayment.Controls.Add(this.lblCardNumber);
             this.pnlPayment.Controls.Add(this.btnPay);
             this.pnlPayment.Controls.Add(this.lblPayment);
-            this.pnlPayment.Location = new System.Drawing.Point(4, 5);
+            this.pnlPayment.Location = new System.Drawing.Point(6, 5);
             this.pnlPayment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPayment.Name = "pnlPayment";
             this.pnlPayment.Size = new System.Drawing.Size(904, 666);
@@ -411,6 +413,7 @@
             this.btnBook.TabIndex = 10;
             this.btnBook.Text = "BOOK";
             this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // lblTYpe
             // 
@@ -461,6 +464,7 @@
             this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.mnuProfile.Size = new System.Drawing.Size(219, 75);
             this.mnuProfile.Text = "Profile ";
+            this.mnuProfile.Click += new System.EventHandler(this.mnuProfile_Click);
             // 
             // mnuBook
             // 
@@ -495,6 +499,21 @@
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(19, 18);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(36, 35);
+            this.btnBack.TabIndex = 39;
+            this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // frmBookClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -512,7 +531,6 @@
             this.Name = "frmBookClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Class";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBookClass_FormClosing);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.pnlBookClass.ResumeLayout(false);
@@ -576,5 +594,6 @@
         private System.Windows.Forms.Label lblCardNumber;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.Button btnBack;
     }
 }

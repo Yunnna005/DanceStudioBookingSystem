@@ -53,12 +53,12 @@
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHeader.SuspendLayout();
             this.grpEditProfileDetails.SuspendLayout();
             this.pnlPassword.SuspendLayout();
@@ -95,7 +95,7 @@
             this.grpEditProfileDetails.Controls.Add(this.pnlPassword);
             this.grpEditProfileDetails.Controls.Add(this.pnlDetails);
             this.grpEditProfileDetails.Controls.Add(this.btnCancel);
-            this.grpEditProfileDetails.Controls.Add(this.btnEdit);
+            this.grpEditProfileDetails.Controls.Add(this.btnSave);
             this.grpEditProfileDetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEditProfileDetails.Location = new System.Drawing.Point(276, 120);
             this.grpEditProfileDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -120,6 +120,7 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // pnlPassword
             // 
@@ -351,21 +352,23 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnEdit
+            // btnSave
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(714, 557);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(159, 49);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(714, 557);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(159, 49);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button5
             // 
@@ -381,6 +384,7 @@
             this.button5.TabIndex = 16;
             this.button5.Text = "Log out";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // mnuMainMenu
             // 
@@ -411,15 +415,7 @@
             this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.mnuProfile.Size = new System.Drawing.Size(219, 75);
             this.mnuProfile.Text = "Profile ";
-            // 
-            // mnuBook
-            // 
-            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuBook.Name = "mnuBook";
-            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.mnuBook.Size = new System.Drawing.Size(212, 75);
-            this.mnuBook.Text = "Book";
+            this.mnuProfile.Click += new System.EventHandler(this.mnuProfile_Click);
             // 
             // pnlBlueLine
             // 
@@ -429,6 +425,16 @@
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
             this.pnlBlueLine.TabIndex = 17;
+            // 
+            // mnuBook
+            // 
+            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBook.Name = "mnuBook";
+            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.mnuBook.Size = new System.Drawing.Size(212, 75);
+            this.mnuBook.Text = "Book";
+            this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
             // frmEditMemberProfile
             // 
@@ -467,7 +473,7 @@
         private System.Windows.Forms.Label lblProfile;
         private System.Windows.Forms.GroupBox grpEditProfileDetails;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel pnlPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.TextBox txtOldPassword;
@@ -491,7 +497,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.MenuStrip mnuMainMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuProfile;
-        private System.Windows.Forms.ToolStripMenuItem mnuBook;
         private System.Windows.Forms.Panel pnlBlueLine;
+        private System.Windows.Forms.ToolStripMenuItem mnuBook;
     }
 }

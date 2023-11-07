@@ -12,22 +12,25 @@ namespace DanceStudioBookingSystem
 {
     public partial class frmBookClass : Form
     {
-        Form parentForm;
-
         public frmBookClass() {
             InitializeComponent();
+        }
+
+        private void mnuProfile_Click(object sender, EventArgs e)
+        {
+            
 
         }
 
-        public frmBookClass(Form parentForm)
+        private void btnBook_Click(object sender, EventArgs e)
         {
-            this.parentForm = parentForm;
-            InitializeComponent();
+            pnlPayment.Visible = true; 
         }
 
-        private void frmBookClass_FormClosing(object sender, FormClosingEventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            parentForm.Show();
+            pnlPayment.Visible = false;
+
         }
     }
 }

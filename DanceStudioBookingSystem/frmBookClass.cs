@@ -17,7 +17,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuProfile_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformMenuBook(this);
+            UtilFunctions.PerformMenuProfile(this);
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -29,6 +29,12 @@ namespace DanceStudioBookingSystem
         {
             pnlPayment.Visible = false;
 
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The class was booked. Go to Profile.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UtilFunctions.PerformMenuProfile(this);
         }
     }
 }

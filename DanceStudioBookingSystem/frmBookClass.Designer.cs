@@ -98,7 +98,7 @@
             this.lblBookYourClass.Location = new System.Drawing.Point(231, 28);
             this.lblBookYourClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookYourClass.Name = "lblBookYourClass";
-            this.lblBookYourClass.Size = new System.Drawing.Size(498, 60);
+            this.lblBookYourClass.Size = new System.Drawing.Size(329, 40);
             this.lblBookYourClass.TabIndex = 0;
             this.lblBookYourClass.Text = "- BOOK YOUR CLASS -";
             // 
@@ -171,7 +171,7 @@
             this.txtCVC.Location = new System.Drawing.Point(10, 9);
             this.txtCVC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCVC.Name = "txtCVC";
-            this.txtCVC.Size = new System.Drawing.Size(158, 38);
+            this.txtCVC.Size = new System.Drawing.Size(158, 26);
             this.txtCVC.TabIndex = 1;
             // 
             // pictureBox5
@@ -192,7 +192,7 @@
             this.lblCVC.Location = new System.Drawing.Point(530, 417);
             this.lblCVC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCVC.Name = "lblCVC";
-            this.lblCVC.Size = new System.Drawing.Size(59, 32);
+            this.lblCVC.Size = new System.Drawing.Size(40, 21);
             this.lblCVC.TabIndex = 37;
             this.lblCVC.Text = "CVC";
             // 
@@ -214,7 +214,7 @@
             this.txtExpireDate.Location = new System.Drawing.Point(10, 9);
             this.txtExpireDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtExpireDate.Name = "txtExpireDate";
-            this.txtExpireDate.Size = new System.Drawing.Size(158, 38);
+            this.txtExpireDate.Size = new System.Drawing.Size(158, 26);
             this.txtExpireDate.TabIndex = 1;
             // 
             // pictureBox6
@@ -235,7 +235,7 @@
             this.lblExpireDate.Location = new System.Drawing.Point(279, 417);
             this.lblExpireDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpireDate.Name = "lblExpireDate";
-            this.lblExpireDate.Size = new System.Drawing.Size(133, 32);
+            this.lblExpireDate.Size = new System.Drawing.Size(86, 21);
             this.lblExpireDate.TabIndex = 35;
             this.lblExpireDate.Text = "Expire date";
             // 
@@ -257,7 +257,7 @@
             this.txtCardHolder.Location = new System.Drawing.Point(12, 14);
             this.txtCardHolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCardHolder.Name = "txtCardHolder";
-            this.txtCardHolder.Size = new System.Drawing.Size(386, 38);
+            this.txtCardHolder.Size = new System.Drawing.Size(386, 26);
             this.txtCardHolder.TabIndex = 1;
             // 
             // pictureBox7
@@ -278,7 +278,7 @@
             this.lblCardHolder.Location = new System.Drawing.Point(370, 297);
             this.lblCardHolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCardHolder.Name = "lblCardHolder";
-            this.lblCardHolder.Size = new System.Drawing.Size(140, 32);
+            this.lblCardHolder.Size = new System.Drawing.Size(92, 21);
             this.lblCardHolder.TabIndex = 33;
             this.lblCardHolder.Text = "Card holder";
             // 
@@ -300,7 +300,7 @@
             this.txtCardNumber.Location = new System.Drawing.Point(14, 12);
             this.txtCardNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(386, 38);
+            this.txtCardNumber.Size = new System.Drawing.Size(386, 26);
             this.txtCardNumber.TabIndex = 1;
             // 
             // pictureBox8
@@ -321,7 +321,7 @@
             this.lblCardNumber.Location = new System.Drawing.Point(370, 177);
             this.lblCardNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCardNumber.Name = "lblCardNumber";
-            this.lblCardNumber.Size = new System.Drawing.Size(155, 32);
+            this.lblCardNumber.Size = new System.Drawing.Size(102, 21);
             this.lblCardNumber.TabIndex = 29;
             this.lblCardNumber.Text = "Card number";
             // 
@@ -339,6 +339,7 @@
             this.btnPay.TabIndex = 31;
             this.btnPay.Text = "PAY";
             this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // lblPayment
             // 
@@ -347,7 +348,7 @@
             this.lblPayment.Location = new System.Drawing.Point(376, 98);
             this.lblPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(150, 45);
+            this.lblPayment.Size = new System.Drawing.Size(98, 30);
             this.lblPayment.TabIndex = 30;
             this.lblPayment.Text = "Payment";
             // 
@@ -409,7 +410,7 @@
             this.lblBookAClass.Location = new System.Drawing.Point(368, 57);
             this.lblBookAClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookAClass.Name = "lblBookAClass";
-            this.lblBookAClass.Size = new System.Drawing.Size(203, 45);
+            this.lblBookAClass.Size = new System.Drawing.Size(132, 30);
             this.lblBookAClass.TabIndex = 11;
             this.lblBookAClass.Text = "Book a class";
             // 
@@ -436,7 +437,7 @@
             this.lblTYpe.Location = new System.Drawing.Point(280, 165);
             this.lblTYpe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTYpe.Name = "lblTYpe";
-            this.lblTYpe.Size = new System.Drawing.Size(66, 32);
+            this.lblTYpe.Size = new System.Drawing.Size(42, 21);
             this.lblTYpe.TabIndex = 1;
             this.lblTYpe.Text = "Type";
             // 
@@ -465,7 +466,7 @@
             this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 154, 15, 3);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.ShowItemToolTips = true;
-            this.mnuMainMenu.Size = new System.Drawing.Size(243, 803);
+            this.mnuMainMenu.Size = new System.Drawing.Size(187, 803);
             this.mnuMainMenu.TabIndex = 12;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -476,7 +477,7 @@
             this.mnuProfile.ForeColor = System.Drawing.Color.Black;
             this.mnuProfile.Name = "mnuProfile";
             this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.mnuProfile.Size = new System.Drawing.Size(219, 75);
+            this.mnuProfile.Size = new System.Drawing.Size(152, 51);
             this.mnuProfile.Text = "Profile ";
             this.mnuProfile.Click += new System.EventHandler(this.mnuProfile_Click);
             // 
@@ -486,7 +487,7 @@
             this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuBook.Name = "mnuBook";
             this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.mnuBook.Size = new System.Drawing.Size(212, 75);
+            this.mnuBook.Size = new System.Drawing.Size(163, 51);
             this.mnuBook.Text = "Book";
             // 
             // pnlBlueLine

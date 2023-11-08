@@ -36,5 +36,10 @@ namespace DanceStudioBookingSystem
         {
             UtilFunctions.DisplayStatistics(this);
         }
+
+        private void mnuLogOut_Click(object sender, EventArgs e)
+        {
+            UtilFunctions.PerformLogOut(this);
+        }
     }
 }

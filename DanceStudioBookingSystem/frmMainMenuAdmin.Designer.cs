@@ -43,6 +43,7 @@
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMainMenu.SuspendLayout();
             this.grpClasses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
@@ -52,17 +53,17 @@
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
-            this.mnuStatistics});
+            this.mnuStatistics,
+            this.mnuLogOut});
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(663, 50);
+            this.mnuMainMenu.Size = new System.Drawing.Size(663, 33);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -74,27 +75,27 @@
             this.mnutCancelClass});
             this.mnuClasses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuClasses.Name = "mnuClasses";
-            this.mnuClasses.Size = new System.Drawing.Size(124, 44);
+            this.mnuClasses.Size = new System.Drawing.Size(85, 29);
             this.mnuClasses.Text = "Classes";
             // 
             // mnutScheduleClass
             // 
             this.mnutScheduleClass.Name = "mnutScheduleClass";
-            this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutScheduleClass.Size = new System.Drawing.Size(209, 30);
             this.mnutScheduleClass.Text = "Schedule Class";
             this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
-            this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutModifyClass.Size = new System.Drawing.Size(209, 30);
             this.mnutModifyClass.Text = "Modify Class";
             this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
-            this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutCancelClass.Size = new System.Drawing.Size(209, 30);
             this.mnutCancelClass.Text = "Cancel Class";
             this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
@@ -102,7 +103,7 @@
             // 
             this.mnuStatistics.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuStatistics.Name = "mnuStatistics";
-            this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
+            this.mnuStatistics.Size = new System.Drawing.Size(96, 29);
             this.mnuStatistics.Text = "Statistics";
             this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
@@ -169,6 +170,15 @@
             this.Time.Name = "Time";
             this.Time.Width = 150;
             // 
+            // mnuLogOut
+            // 
+            this.mnuLogOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuLogOut.Name = "mnuLogOut";
+            this.mnuLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mnuLogOut.Size = new System.Drawing.Size(91, 29);
+            this.mnuLogOut.Text = "Log Out";
+            this.mnuLogOut.Click += new System.EventHandler(this.mnuLogOut_Click);
+            // 
             // frmMainMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -210,5 +220,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
     }
 }

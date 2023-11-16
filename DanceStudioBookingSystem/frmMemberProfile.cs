@@ -33,5 +33,14 @@ namespace DanceStudioBookingSystem
             frmEditMemberProfile fEditProfile = new frmEditMemberProfile();
             fEditProfile.Show();
         }
+
+        internal void SetLabelText(string username, string DOB, string Genger, string Phone, string Email)
+        {
+            lblWriteUsername.Text = username;
+            lblWriteDOB.Text = DOB;
+            lblWriteGender.Text = Genger;
+            lblWritePhone.Text = Phone;
+            lblWriteEmail.Text = Email;
+        }
     }
 }

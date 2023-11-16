@@ -121,7 +121,7 @@
   <data name="picAvatar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHW8SURBVHhe7d0J
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAHW8SURBVHhe7d0J
         nNPVvf5xbbWttnbXLnaz9fbaa9dLQTZ1RERZBhgggOzrgFivvff21raKRlAWUZCdYQdZR1kH6WJbaqtd
         6fUPk3MyiIjV2l5t3Tf2/J+TnDCZ5Ht+k8zkl/V5Xq/PaxAwZ4BM3rNkkjM4juM4juM4juM4juM4juM4
         juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4
@@ -630,7 +630,7 @@
   <data name="picUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADe+SURBVHhe7d0L
+        0QAADdEBwivf4wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADe+SURBVHhe7d0L
         2K9jmfdxa8eyUktIyCZSKqOawrztE9rTRNKUNkqolDYqlaLNMETakLep3oroGOYV0UY1TCrGtJtKo512
         qHkrbURk1/s7D9dzuLr9nrWe//687/t7HsfnOBynZT3ndd3nfV6e5/n/7/8af/nLXwC0lGJNua/sLvvL
         q+RweYecJKfIWfIF+Q/5rvxMrpY/F/HPkYt/F38m/mz8N/Hfxt8Rf1f8nfF3x9eIrxVfc01XE4B2sEkA
@@ -875,7 +875,7 @@
   <data name="picLock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACQeSURBVHhe7d0J
+        vgAADr4B6kKxwAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACQeSURBVHhe7d0J
         uH11Xe9xBnEAxBEzKDVMNA1RyMxyKhUptasplWmSw8XyolROpVaoOA+JpjmnmOF0tcQshyxzKE2ccsgx
         TVAgHCEFEbqf7w3iXvj9//ucfc5ae63ffr2e5/08PMD/nPM/67fW+Z6917ALAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAA9G2fdFD62XTv9JD02PRH6cT0tvSBC/vn9LkLOz197cLqny/69/X/XPT/15+t

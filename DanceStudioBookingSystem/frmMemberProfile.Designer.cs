@@ -66,10 +66,9 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.pnlHeader.Controls.Add(this.lblProfile);
-            this.pnlHeader.Location = new System.Drawing.Point(266, 0);
-            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlHeader.Location = new System.Drawing.Point(177, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(936, 111);
+            this.pnlHeader.Size = new System.Drawing.Size(624, 72);
             this.pnlHeader.TabIndex = 1;
             // 
             // lblProfile
@@ -77,10 +76,9 @@
             this.lblProfile.AutoSize = true;
             this.lblProfile.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfile.ForeColor = System.Drawing.Color.White;
-            this.lblProfile.Location = new System.Drawing.Point(327, 25);
-            this.lblProfile.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProfile.Location = new System.Drawing.Point(218, 16);
             this.lblProfile.Name = "lblProfile";
-            this.lblProfile.Size = new System.Drawing.Size(265, 60);
+            this.lblProfile.Size = new System.Drawing.Size(176, 40);
             this.lblProfile.TabIndex = 0;
             this.lblProfile.Text = "- PROFILE -";
             // 
@@ -90,10 +88,9 @@
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(824, 26);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEdit.Location = new System.Drawing.Point(549, 17);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(84, 49);
+            this.btnEdit.Size = new System.Drawing.Size(56, 32);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -115,11 +112,9 @@
             this.grpDetails.Controls.Add(this.btnEdit);
             this.grpDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDetails.ForeColor = System.Drawing.Color.Black;
-            this.grpDetails.Location = new System.Drawing.Point(274, 120);
-            this.grpDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpDetails.Location = new System.Drawing.Point(183, 78);
             this.grpDetails.Name = "grpDetails";
-            this.grpDetails.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpDetails.Size = new System.Drawing.Size(916, 291);
+            this.grpDetails.Size = new System.Drawing.Size(611, 189);
             this.grpDetails.TabIndex = 3;
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "Details";
@@ -128,10 +123,9 @@
             // 
             this.lblWriteGender.AutoSize = true;
             this.lblWriteGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWriteGender.Location = new System.Drawing.Point(166, 137);
-            this.lblWriteGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteGender.Location = new System.Drawing.Point(111, 89);
             this.lblWriteGender.Name = "lblWriteGender";
-            this.lblWriteGender.Size = new System.Drawing.Size(150, 28);
+            this.lblWriteGender.Size = new System.Drawing.Size(106, 19);
             this.lblWriteGender.TabIndex = 12;
             this.lblWriteGender.Text = "MemberGender";
             // 
@@ -139,10 +133,9 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(28, 137);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblGender.Location = new System.Drawing.Point(19, 89);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(85, 28);
+            this.lblGender.Size = new System.Drawing.Size(61, 19);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender: ";
             // 
@@ -150,10 +143,9 @@
             // 
             this.lblWriteEmail.AutoSize = true;
             this.lblWriteEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWriteEmail.Location = new System.Drawing.Point(166, 232);
-            this.lblWriteEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteEmail.Location = new System.Drawing.Point(111, 151);
             this.lblWriteEmail.Name = "lblWriteEmail";
-            this.lblWriteEmail.Size = new System.Drawing.Size(133, 28);
+            this.lblWriteEmail.Size = new System.Drawing.Size(93, 19);
             this.lblWriteEmail.TabIndex = 10;
             this.lblWriteEmail.Text = "MemberEmail";
             // 
@@ -161,10 +153,9 @@
             // 
             this.lblWritePhone.AutoSize = true;
             this.lblWritePhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWritePhone.Location = new System.Drawing.Point(166, 183);
-            this.lblWritePhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWritePhone.Location = new System.Drawing.Point(111, 119);
             this.lblWritePhone.Name = "lblWritePhone";
-            this.lblWritePhone.Size = new System.Drawing.Size(141, 28);
+            this.lblWritePhone.Size = new System.Drawing.Size(100, 19);
             this.lblWritePhone.TabIndex = 9;
             this.lblWritePhone.Text = "MemberPhone";
             // 
@@ -172,10 +163,9 @@
             // 
             this.lblWriteDOB.AutoSize = true;
             this.lblWriteDOB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWriteDOB.Location = new System.Drawing.Point(166, 94);
-            this.lblWriteDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteDOB.Location = new System.Drawing.Point(111, 61);
             this.lblWriteDOB.Name = "lblWriteDOB";
-            this.lblWriteDOB.Size = new System.Drawing.Size(126, 28);
+            this.lblWriteDOB.Size = new System.Drawing.Size(90, 19);
             this.lblWriteDOB.TabIndex = 8;
             this.lblWriteDOB.Text = "MemberDOB";
             // 
@@ -183,10 +173,9 @@
             // 
             this.lblWriteUsername.AutoSize = true;
             this.lblWriteUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWriteUsername.Location = new System.Drawing.Point(166, 46);
-            this.lblWriteUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWriteUsername.Location = new System.Drawing.Point(111, 30);
             this.lblWriteUsername.Name = "lblWriteUsername";
-            this.lblWriteUsername.Size = new System.Drawing.Size(138, 28);
+            this.lblWriteUsername.Size = new System.Drawing.Size(97, 19);
             this.lblWriteUsername.TabIndex = 7;
             this.lblWriteUsername.Text = "MemberName";
             // 
@@ -194,10 +183,9 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(28, 94);
-            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDOB.Location = new System.Drawing.Point(19, 61);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(61, 28);
+            this.lblDOB.Size = new System.Drawing.Size(45, 19);
             this.lblDOB.TabIndex = 6;
             this.lblDOB.Text = "DOB: ";
             // 
@@ -205,10 +193,9 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(28, 232);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Location = new System.Drawing.Point(19, 151);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(68, 28);
+            this.lblEmail.Size = new System.Drawing.Size(48, 19);
             this.lblEmail.TabIndex = 5;
             this.lblEmail.Text = "Email: ";
             // 
@@ -216,10 +203,9 @@
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(28, 183);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPhone.Location = new System.Drawing.Point(19, 119);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(76, 28);
+            this.lblPhone.Size = new System.Drawing.Size(55, 19);
             this.lblPhone.TabIndex = 4;
             this.lblPhone.Text = "Phone: ";
             // 
@@ -227,10 +213,9 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(28, 46);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Location = new System.Drawing.Point(19, 30);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(103, 28);
+            this.lblUsername.Size = new System.Drawing.Size(74, 19);
             this.lblUsername.TabIndex = 3;
             this.lblUsername.Text = "Username:";
             // 
@@ -241,11 +226,9 @@
             this.grpBookedClasses.Controls.Add(this.btnCancelClass);
             this.grpBookedClasses.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBookedClasses.ForeColor = System.Drawing.Color.Black;
-            this.grpBookedClasses.Location = new System.Drawing.Point(274, 420);
-            this.grpBookedClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpBookedClasses.Location = new System.Drawing.Point(183, 273);
             this.grpBookedClasses.Name = "grpBookedClasses";
-            this.grpBookedClasses.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpBookedClasses.Size = new System.Drawing.Size(916, 375);
+            this.grpBookedClasses.Size = new System.Drawing.Size(611, 244);
             this.grpBookedClasses.TabIndex = 4;
             this.grpBookedClasses.TabStop = false;
             this.grpBookedClasses.Text = "Booked Classes";
@@ -261,12 +244,11 @@
             this.date,
             this.time,
             this.instructor});
-            this.dgvClasses.Location = new System.Drawing.Point(23, 42);
-            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvClasses.Location = new System.Drawing.Point(15, 27);
             this.dgvClasses.Name = "dgvClasses";
             this.dgvClasses.ReadOnly = true;
             this.dgvClasses.RowHeadersWidth = 62;
-            this.dgvClasses.Size = new System.Drawing.Size(719, 321);
+            this.dgvClasses.Size = new System.Drawing.Size(479, 209);
             this.dgvClasses.TabIndex = 32;
             // 
             // type
@@ -307,10 +289,9 @@
             this.btnCancelClass.FlatAppearance.BorderSize = 0;
             this.btnCancelClass.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCancelClass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelClass.Location = new System.Drawing.Point(764, 176);
-            this.btnCancelClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelClass.Location = new System.Drawing.Point(509, 114);
             this.btnCancelClass.Name = "btnCancelClass";
-            this.btnCancelClass.Size = new System.Drawing.Size(126, 49);
+            this.btnCancelClass.Size = new System.Drawing.Size(84, 32);
             this.btnCancelClass.TabIndex = 15;
             this.btnCancelClass.Text = "Cancel Class";
             this.btnCancelClass.UseVisualStyleBackColor = false;
@@ -318,10 +299,9 @@
             // pnlBlueLine
             // 
             this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.pnlBlueLine.Location = new System.Drawing.Point(236, -2);
-            this.pnlBlueLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlBlueLine.Location = new System.Drawing.Point(157, -1);
             this.pnlBlueLine.Name = "pnlBlueLine";
-            this.pnlBlueLine.Size = new System.Drawing.Size(33, 805);
+            this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 20;
             // 
             // btnLogOut
@@ -331,10 +311,9 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(64, 740);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogOut.Location = new System.Drawing.Point(43, 481);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(114, 43);
+            this.btnLogOut.Size = new System.Drawing.Size(76, 28);
             this.btnLogOut.TabIndex = 19;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = false;
@@ -353,10 +332,10 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(9, 154, 15, 3);
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(6, 100, 10, 2);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.ShowItemToolTips = true;
-            this.mnuMainMenu.Size = new System.Drawing.Size(243, 803);
+            this.mnuMainMenu.Size = new System.Drawing.Size(179, 522);
             this.mnuMainMenu.TabIndex = 18;
             this.mnuMainMenu.Text = "menuStrip1";
             // 
@@ -367,7 +346,7 @@
             this.mnuProfile.ForeColor = System.Drawing.Color.Black;
             this.mnuProfile.Name = "mnuProfile";
             this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.mnuProfile.Size = new System.Drawing.Size(219, 75);
+            this.mnuProfile.Size = new System.Drawing.Size(152, 51);
             this.mnuProfile.Text = "Profile ";
             // 
             // mnuBook
@@ -376,16 +355,16 @@
             this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuBook.Name = "mnuBook";
             this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.mnuBook.Size = new System.Drawing.Size(212, 75);
+            this.mnuBook.Size = new System.Drawing.Size(163, 51);
             this.mnuBook.Text = "Book";
             this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
             // frmMemberProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1200, 803);
+            this.ClientSize = new System.Drawing.Size(800, 522);
             this.Controls.Add(this.pnlBlueLine);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.mnuMainMenu);
@@ -394,7 +373,6 @@
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMemberProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Profile";

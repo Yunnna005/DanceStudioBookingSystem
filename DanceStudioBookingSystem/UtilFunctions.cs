@@ -20,6 +20,7 @@ namespace DanceStudioBookingSystem
             activeForm.Hide();
             frmMemberProfile fMemberProfile = new frmMemberProfile();
             fMemberProfile.Show();
+
         }
 
         public static void PerformMenuBook(Form activeForm)
@@ -79,5 +80,7 @@ namespace DanceStudioBookingSystem
             frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
             fMainMenuAdmin.Show();
         }
+
+
     }
 }

@@ -20,7 +20,7 @@ namespace DanceStudioBookingSystem
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text == "Anna" & txtPassword.Text == "123"){
-                this.Hide();
+                this.Close();
                 frmMemberProfile fMemberProfile = new frmMemberProfile();
                 fMemberProfile.Show();
 
@@ -36,7 +36,7 @@ namespace DanceStudioBookingSystem
             }
             else if(txtUsername.Text == "Admin1" & txtPassword.Text == "123")
             {
-                this.Hide();
+                this.Close();
                 frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
                 fMainMenuAdmin.Show();
             }
@@ -52,21 +52,16 @@ namespace DanceStudioBookingSystem
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             frmResetPassword fResetPassword = new frmResetPassword();
             fResetPassword.Show();
         }
 
         private void lblCreateAccount_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             frmCreateAccount fCreateAccount = new frmCreateAccount();
             fCreateAccount.Show();
-        }
-
-        private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            System.Environment.Exit(0);
         }
     }
 }

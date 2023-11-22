@@ -26,7 +26,7 @@ namespace DanceStudioBookingSystem
             if (txtUsername.Text == "Anna1" && txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
+                this.Close();
                 frmLogIn fLogIn = new frmLogIn();
                 fLogIn.Show();
             }

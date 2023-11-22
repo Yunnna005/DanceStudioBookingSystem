@@ -54,9 +54,9 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.pnlGender = new System.Windows.Forms.Panel();
+            this.radOther = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
-            this.radOther = new System.Windows.Forms.RadioButton();
             this.pnlUsername.SuspendLayout();
             this.pnlEmail.SuspendLayout();
             this.pnlPhone.SuspendLayout();
@@ -314,11 +314,12 @@
             this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(297, 235);
-            this.dtpDOB.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dtpDOB.MaxDate = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
+            this.dtpDOB.MinDate = new System.DateTime(1953, 12, 31, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(124, 29);
             this.dtpDOB.TabIndex = 21;
-            this.dtpDOB.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
+            this.dtpDOB.Value = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
             // 
             // pnlGender
             // 
@@ -330,6 +331,16 @@
             this.pnlGender.Name = "pnlGender";
             this.pnlGender.Size = new System.Drawing.Size(200, 43);
             this.pnlGender.TabIndex = 25;
+            // 
+            // radOther
+            // 
+            this.radOther.AutoSize = true;
+            this.radOther.Location = new System.Drawing.Point(138, 15);
+            this.radOther.Name = "radOther";
+            this.radOther.Size = new System.Drawing.Size(51, 17);
+            this.radOther.TabIndex = 28;
+            this.radOther.Text = "Other";
+            this.radOther.UseVisualStyleBackColor = true;
             // 
             // radMale
             // 
@@ -352,16 +363,6 @@
             this.radFemale.TabIndex = 27;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
-            // 
-            // radOther
-            // 
-            this.radOther.AutoSize = true;
-            this.radOther.Location = new System.Drawing.Point(138, 15);
-            this.radOther.Name = "radOther";
-            this.radOther.Size = new System.Drawing.Size(51, 17);
-            this.radOther.TabIndex = 28;
-            this.radOther.Text = "Other";
-            this.radOther.UseVisualStyleBackColor = true;
             // 
             // frmCreateAccount
             // 

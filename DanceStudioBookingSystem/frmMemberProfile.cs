@@ -29,7 +29,7 @@ namespace DanceStudioBookingSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             frmEditMemberProfile fEditProfile = new frmEditMemberProfile();
             fEditProfile.Show();
         }

@@ -11,13 +11,13 @@ namespace DanceStudioBookingSystem
     {
         public static void PerformBackToLogIn(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmLogIn fLogIn = new frmLogIn();
             fLogIn.Show();
         }
         public static void PerformMenuProfile(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmMemberProfile fMemberProfile = new frmMemberProfile();
             fMemberProfile.Show();
 
@@ -25,7 +25,7 @@ namespace DanceStudioBookingSystem
 
         public static void PerformMenuBook(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmBookClass fBookClass = new frmBookClass();
             fBookClass.Show();
         }
@@ -37,7 +37,7 @@ namespace DanceStudioBookingSystem
             {
                 MessageBox.Show("You loged out. Go to Log in.", "Log Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                activeForm.Hide();
+                activeForm.Close();
                 frmLogIn fLogIn = new frmLogIn();
                 fLogIn.Show();
             }
@@ -49,34 +49,34 @@ namespace DanceStudioBookingSystem
 
         public static void DisplayScheduleClass(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmScheduleClass fScheduleClass = new frmScheduleClass();
             fScheduleClass.Show();
         }
 
         public static void DisplayModifyClass(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmModifyClass fModifyClass = new frmModifyClass();
             fModifyClass.Show();
         }
         public static void DisplayCancelClass(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmCancelClass fCancelClass = new frmCancelClass();
             fCancelClass.Show();
         }
 
         public static void DisplayStatistics(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmStatistics fStatistics = new frmStatistics();
             fStatistics.Show();
         }
 
         public static void DisplayMainMenuAdmin(Form activeForm)
         {
-            activeForm.Hide();
+            activeForm.Close();
             frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
             fMainMenuAdmin.Show();
         }

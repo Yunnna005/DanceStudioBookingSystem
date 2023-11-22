@@ -21,7 +21,7 @@ namespace DanceStudioBookingSystem
         {
             DialogResult result = MessageBox.Show("Do you want to go to your profile? \n\nYour changes will not be saved.", "Edit Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes){
-                this.Hide();
+                this.Close();
                 frmMemberProfile fMemberProfile = new frmMemberProfile();
                 fMemberProfile.Show();
             }
@@ -43,7 +43,7 @@ namespace DanceStudioBookingSystem
             {
                 MessageBox.Show("You loged out. Go to Log in.", "Log Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Hide();
+                this.Close();
                 frmLogIn fLogIn = new frmLogIn();
                 fLogIn.Show();
             }
@@ -58,7 +58,7 @@ namespace DanceStudioBookingSystem
             DialogResult result = MessageBox.Show("Do you want to delete you profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
                 frmLogIn fLogIn = new frmLogIn();
                 fLogIn.Show();
                 MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -73,7 +73,7 @@ namespace DanceStudioBookingSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your chandes was not saved.", "Cancel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+            this.Close();
             frmMemberProfile fMemberProfile = new frmMemberProfile();
             fMemberProfile.Show();
         }
@@ -81,7 +81,7 @@ namespace DanceStudioBookingSystem
         private void btnSave_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your chandes was saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+            this.Close();
             frmMemberProfile fMemberProfile = new frmMemberProfile();
             fMemberProfile.Show();
         }

@@ -80,7 +80,5 @@ namespace DanceStudioBookingSystem
             frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
             fMainMenuAdmin.Show();
         }
-
-
     }
 }

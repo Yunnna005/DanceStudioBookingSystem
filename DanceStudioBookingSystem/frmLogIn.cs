@@ -12,9 +12,12 @@ namespace DanceStudioBookingSystem
 {
     public partial class frmLogIn : Form
     {
+        private Timer timer = new Timer();
+        private int showPasswordDuration = 1000;
         public frmLogIn()
         {
             InitializeComponent();
+            timer.Tick += Timer_Tick;
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -62,6 +65,23 @@ namespace DanceStudioBookingSystem
             this.Close();
             frmCreateAccount fCreateAccount = new frmCreateAccount();
             fCreateAccount.Show();
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = '*';
+        }
+
+        private void picLock_Click(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = '\0';
+            timer.Interval = showPasswordDuration;
+            timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = '*';
+            timer.Stop();
         }
     }
 }

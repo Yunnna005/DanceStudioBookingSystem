@@ -36,17 +36,20 @@
             this.mnutModifyClass = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutCancelClass = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStatistics = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.grpClasses = new System.Windows.Forms.GroupBox();
-            this.dgvClasses = new System.Windows.Forms.DataGridView();
-            this.Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvClassesAdmin = new System.Windows.Forms.DataGridView();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnuMainMenu.SuspendLayout();
             this.grpClasses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClassesAdmin)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuMainMenu
@@ -61,9 +64,10 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(663, 33);
+            this.mnuMainMenu.Size = new System.Drawing.Size(770, 31);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -107,69 +111,6 @@
             this.mnuStatistics.Text = "Statistics";
             this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // grpClasses
-            // 
-            this.grpClasses.BackColor = System.Drawing.Color.White;
-            this.grpClasses.Controls.Add(this.dgvClasses);
-            this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpClasses.Location = new System.Drawing.Point(13, 73);
-            this.grpClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpClasses.Name = "grpClasses";
-            this.grpClasses.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpClasses.Size = new System.Drawing.Size(621, 508);
-            this.grpClasses.TabIndex = 2;
-            this.grpClasses.TabStop = false;
-            this.grpClasses.Text = "Classes";
-            // 
-            // dgvClasses
-            // 
-            this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Class,
-            this.Type,
-            this.Date,
-            this.Time});
-            this.dgvClasses.Location = new System.Drawing.Point(9, 43);
-            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.RowHeadersWidth = 62;
-            this.dgvClasses.Size = new System.Drawing.Size(603, 445);
-            this.dgvClasses.TabIndex = 0;
-            // 
-            // Class
-            // 
-            this.Class.HeaderText = "Class";
-            this.Class.MinimumWidth = 8;
-            this.Class.Name = "Class";
-            this.Class.Width = 150;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 8;
-            this.Type.Name = "Type";
-            this.Type.Width = 150;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 8;
-            this.Date.Name = "Date";
-            this.Date.Width = 150;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.MinimumWidth = 8;
-            this.Time.Name = "Time";
-            this.Time.Width = 150;
-            // 
             // mnuLogOut
             // 
             this.mnuLogOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,27 +120,111 @@
             this.mnuLogOut.Text = "Log Out";
             this.mnuLogOut.Click += new System.EventHandler(this.mnuLogOut_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // grpClasses
+            // 
+            this.grpClasses.BackColor = System.Drawing.Color.White;
+            this.grpClasses.Controls.Add(this.dgvClassesAdmin);
+            this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpClasses.Location = new System.Drawing.Point(0, 47);
+            this.grpClasses.Name = "grpClasses";
+            this.grpClasses.Size = new System.Drawing.Size(770, 330);
+            this.grpClasses.TabIndex = 2;
+            this.grpClasses.TabStop = false;
+            this.grpClasses.Text = "Classes";
+            // 
+            // dgvClassesAdmin
+            // 
+            this.dgvClassesAdmin.AllowUserToAddRows = false;
+            this.dgvClassesAdmin.AllowUserToDeleteRows = false;
+            this.dgvClassesAdmin.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvClassesAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClassesAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Type,
+            this.Date,
+            this.Time,
+            this.INSTRUCTOR,
+            this.CAPACITY,
+            this.PRICE});
+            this.dgvClassesAdmin.Location = new System.Drawing.Point(6, 28);
+            this.dgvClassesAdmin.Name = "dgvClassesAdmin";
+            this.dgvClassesAdmin.ReadOnly = true;
+            this.dgvClassesAdmin.RowHeadersWidth = 62;
+            this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 289);
+            this.dgvClassesAdmin.TabIndex = 0;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Name";
+            this.Name.MinimumWidth = 8;
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 8;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 8;
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.ReadOnly = true;
+            // 
+            // CAPACITY
+            // 
+            this.CAPACITY.HeaderText = "Capacity";
+            this.CAPACITY.Name = "CAPACITY";
+            this.CAPACITY.ReadOnly = true;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.ReadOnly = true;
+            // 
             // frmMainMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(663, 595);
+            this.ClientSize = new System.Drawing.Size(770, 387);
             this.Controls.Add(this.grpClasses);
             this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMainMenuAdmin";
+            //this.Name = "frmMainMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu Admin";
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.grpClasses.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClasses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClassesAdmin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,11 +240,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnutModifyClass;
         private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
         private System.Windows.Forms.GroupBox grpClasses;
-        private System.Windows.Forms.DataGridView dgvClasses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Class;
+        private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
+        private System.Windows.Forms.DataGridView dgvClassesAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
     }
 }

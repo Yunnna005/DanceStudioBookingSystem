@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
@@ -19,7 +20,7 @@ namespace DanceStudioBookingSystem
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayScheduleClass(this);
+            MessageBox.Show("You are already on this page.", "Schedule Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
@@ -44,7 +45,46 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Class was created.", "Class created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Get the data from the text boxes
+            string name = txtName.Text;
+            string type = txtType.Text;
+            DateTime date = dtpDate.Value;
+            string time = txtTime.Text;
+            string instructor = txtInstructor.Text;
+            int capacity = Convert.ToInt32(txtCapacity.Text);
+            decimal price = Convert.ToDecimal(txtPrice.Text);
+
+            // Create a new ClassInfo object
+            ClassInfo newClass = new ClassInfo
+            {
+                Name = name,
+                Type = type,
+                Date = date,
+                Time = time,
+                Instructor = instructor,
+                Capacity = capacity,
+                Price = price
+            };
+
+            MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Add the new class to the storage
+            ClassDataStorage.Classes.Add(newClass);
+
+            // Refresh the DataGridView in frmMainMenuAdmin
+            RefreshDataGridViewInMainMenuAdmin();
+
+            frmMainMenuAdmin frmMainMenuAdmin = new frmMainMenuAdmin();
+            this.Hide();
+            frmMainMenuAdmin.Show();
+        }
+
+        private void RefreshDataGridViewInMainMenuAdmin()
+        {
+            if (Application.OpenForms["frmMainMenuAdmin"] is frmMainMenuAdmin mainMenuAdmin)
+            {
+                mainMenuAdmin.RefreshDataGridView();
+            }
         }
     }
+    
 }

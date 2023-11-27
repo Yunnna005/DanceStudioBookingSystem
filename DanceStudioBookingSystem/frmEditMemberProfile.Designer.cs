@@ -40,6 +40,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblOldPassword = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.radOther = new System.Windows.Forms.RadioButton();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.radMale = new System.Windows.Forms.RadioButton();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.lblGender = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -56,9 +59,6 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
-            this.radMale = new System.Windows.Forms.RadioButton();
-            this.radFemale = new System.Windows.Forms.RadioButton();
-            this.radOther = new System.Windows.Forms.RadioButton();
             this.pnlHeader.SuspendLayout();
             this.grpEditProfileDetails.SuspendLayout();
             this.pnlPassword.SuspendLayout();
@@ -196,16 +196,52 @@
             this.pnlDetails.Size = new System.Drawing.Size(287, 269);
             this.pnlDetails.TabIndex = 14;
             // 
+            // radOther
+            // 
+            this.radOther.AutoSize = true;
+            this.radOther.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radOther.Location = new System.Drawing.Point(222, 89);
+            this.radOther.Name = "radOther";
+            this.radOther.Size = new System.Drawing.Size(55, 19);
+            this.radOther.TabIndex = 30;
+            this.radOther.TabStop = true;
+            this.radOther.Text = "Other";
+            this.radOther.UseVisualStyleBackColor = true;
+            // 
+            // radFemale
+            // 
+            this.radFemale.AutoSize = true;
+            this.radFemale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radFemale.Location = new System.Drawing.Point(153, 88);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.Size = new System.Drawing.Size(63, 19);
+            this.radFemale.TabIndex = 29;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "Female";
+            this.radFemale.UseVisualStyleBackColor = true;
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMale.Location = new System.Drawing.Point(96, 89);
+            this.radMale.Name = "radMale";
+            this.radMale.Size = new System.Drawing.Size(51, 19);
+            this.radMale.TabIndex = 28;
+            this.radMale.TabStop = true;
+            this.radMale.Text = "Male";
+            this.radMale.UseVisualStyleBackColor = true;
+            // 
             // dtpDOB
             // 
             this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDOB.Location = new System.Drawing.Point(96, 135);
-            this.dtpDOB.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
+            this.dtpDOB.MaxDate = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(182, 29);
             this.dtpDOB.TabIndex = 27;
-            this.dtpDOB.Value = new System.DateTime(2023, 10, 18, 15, 36, 16, 0);
+            this.dtpDOB.Value = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
             // 
             // lblGender
             // 
@@ -374,42 +410,6 @@
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 17;
-            // 
-            // radMale
-            // 
-            this.radMale.AutoSize = true;
-            this.radMale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radMale.Location = new System.Drawing.Point(96, 89);
-            this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(51, 19);
-            this.radMale.TabIndex = 28;
-            this.radMale.TabStop = true;
-            this.radMale.Text = "Male";
-            this.radMale.UseVisualStyleBackColor = true;
-            // 
-            // radFemale
-            // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radFemale.Location = new System.Drawing.Point(153, 88);
-            this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(63, 19);
-            this.radFemale.TabIndex = 29;
-            this.radFemale.TabStop = true;
-            this.radFemale.Text = "Female";
-            this.radFemale.UseVisualStyleBackColor = true;
-            // 
-            // radOther
-            // 
-            this.radOther.AutoSize = true;
-            this.radOther.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radOther.Location = new System.Drawing.Point(222, 89);
-            this.radOther.Name = "radOther";
-            this.radOther.Size = new System.Drawing.Size(55, 19);
-            this.radOther.TabIndex = 30;
-            this.radOther.TabStop = true;
-            this.radOther.Text = "Other";
-            this.radOther.UseVisualStyleBackColor = true;
             // 
             // frmEditMemberProfile
             // 

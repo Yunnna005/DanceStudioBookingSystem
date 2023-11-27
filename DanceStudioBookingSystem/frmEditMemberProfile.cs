@@ -80,10 +80,34 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Your chandes was saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-            frmMemberProfile fMemberProfile = new frmMemberProfile();
-            fMemberProfile.Show();
+            string validationMemberDetails = UtilFunctions.ValidatonMemberDetails(txtUsername.Text, txtEmail.Text, txtPhone.Text, radMale.Checked, radFemale.Checked, radOther.Checked);
+            if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
+            {
+                if (txtOldPassword.Text == null || txtOldPassword.Text.Length < 8)
+                {
+                    MessageBox.Show("The password must contain at least 8 characters", "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtOldPassword.Focus();
+                }
+                else if (txtOldPassword.Text != txtNewPassword.Text)
+                {
+                    MessageBox.Show("The passwords do not the same.", "Error",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtOldPassword.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Your chandes was saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    this.Close();
+                                    frmMemberProfile fMemberProfile = new frmMemberProfile();
+                                    fMemberProfile.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show(UtilFunctions.ValidatonMemberDetails(txtUsername.Text, txtEmail.Text, txtPhone.Text, radMale.Checked, radFemale.Checked, radOther.Checked), "Error",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -39,8 +39,8 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblCVC = new System.Windows.Forms.Label();
             this.pnlExpireDate = new System.Windows.Forms.Panel();
-            this.dtpExpireDate = new System.Windows.Forms.DateTimePicker();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.cboMonth = new System.Windows.Forms.ComboBox();
             this.lblExpireDate = new System.Windows.Forms.Label();
             this.pnlCardHolder = new System.Windows.Forms.Panel();
             this.txtCardHolder = new System.Windows.Forms.TextBox();
@@ -72,7 +72,6 @@
             this.pnlCVC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pnlExpireDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnlCardHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.pnlCardNumber.SuspendLayout();
@@ -191,34 +190,59 @@
             // pnlExpireDate
             // 
             this.pnlExpireDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.pnlExpireDate.Controls.Add(this.dtpExpireDate);
-            this.pnlExpireDate.Controls.Add(this.pictureBox6);
+            this.pnlExpireDate.Controls.Add(this.cboYear);
+            this.pnlExpireDate.Controls.Add(this.cboMonth);
             this.pnlExpireDate.Location = new System.Drawing.Point(172, 295);
             this.pnlExpireDate.Name = "pnlExpireDate";
             this.pnlExpireDate.Size = new System.Drawing.Size(119, 37);
             this.pnlExpireDate.TabIndex = 36;
             // 
-            // dtpExpireDate
+            // cboYear
             // 
-            this.dtpExpireDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpExpireDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpireDate.Location = new System.Drawing.Point(5, 6);
-            this.dtpExpireDate.MaxDate = new System.DateTime(2023, 11, 24, 0, 0, 0, 0);
-            this.dtpExpireDate.Name = "dtpExpireDate";
-            this.dtpExpireDate.Size = new System.Drawing.Size(111, 26);
-            this.dtpExpireDate.TabIndex = 1;
-            this.dtpExpireDate.Value = new System.DateTime(2023, 11, 24, 0, 0, 0, 0);
-            this.dtpExpireDate.ValueChanged += new System.EventHandler(this.dtpExpireDate_ValueChanged);
+            this.cboYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.Items.AddRange(new object[] {
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33"});
+            this.cboYear.Location = new System.Drawing.Point(61, 3);
+            this.cboYear.Margin = new System.Windows.Forms.Padding(2);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(55, 29);
+            this.cboYear.TabIndex = 1;
+            this.cboYear.Text = "Year";
             // 
-            // pictureBox6
+            // cboMonth
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(368, 33);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(27, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.cboMonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMonth.FormattingEnabled = true;
+            this.cboMonth.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cboMonth.Location = new System.Drawing.Point(2, 3);
+            this.cboMonth.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMonth.Name = "cboMonth";
+            this.cboMonth.Size = new System.Drawing.Size(55, 29);
+            this.cboMonth.TabIndex = 0;
+            this.cboMonth.Text = "Month";
             // 
             // lblExpireDate
             // 
@@ -356,8 +380,10 @@
             // 
             this.Name.FillWeight = 50F;
             this.Name.HeaderText = "NAME";
+            this.Name.MinimumWidth = 8;
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
+            this.Name.Width = 150;
             // 
             // date
             // 
@@ -366,6 +392,7 @@
             this.date.MinimumWidth = 8;
             this.date.Name = "date";
             this.date.ReadOnly = true;
+            this.date.Width = 150;
             // 
             // time
             // 
@@ -373,6 +400,7 @@
             this.time.MinimumWidth = 8;
             this.time.Name = "time";
             this.time.ReadOnly = true;
+            this.time.Width = 150;
             // 
             // instructor
             // 
@@ -380,6 +408,7 @@
             this.instructor.MinimumWidth = 8;
             this.instructor.Name = "instructor";
             this.instructor.ReadOnly = true;
+            this.instructor.Width = 150;
             // 
             // price
             // 
@@ -387,6 +416,7 @@
             this.price.MinimumWidth = 8;
             this.price.Name = "price";
             this.price.ReadOnly = true;
+            this.price.Width = 150;
             // 
             // lblBookAClass
             // 
@@ -435,6 +465,7 @@
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(121, 21);
             this.cboType.TabIndex = 0;
+            this.cboType.Text = "Choose type";
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
             // mnuMainMenu
@@ -497,7 +528,7 @@
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmBookClass";
+            //this.Name = "frmBookClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Class";
             this.pnlHeader.ResumeLayout(false);
@@ -510,7 +541,6 @@
             this.pnlCVC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pnlExpireDate.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnlCardHolder.ResumeLayout(false);
             this.pnlCardHolder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -544,7 +574,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lblCVC;
         private System.Windows.Forms.Panel pnlExpireDate;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lblExpireDate;
         private System.Windows.Forms.Panel pnlCardHolder;
         private System.Windows.Forms.TextBox txtCardHolder;
@@ -562,6 +591,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DateTimePicker dtpExpireDate;
+        private System.Windows.Forms.ComboBox cboMonth;
+        private System.Windows.Forms.ComboBox cboYear;
     }
 }

@@ -45,10 +45,11 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.grpBookedClasses = new System.Windows.Forms.GroupBox();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelClass = new System.Windows.Forms.Button();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -240,48 +241,51 @@
             this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.type,
+            this.Name,
             this.date,
             this.time,
-            this.instructor});
-            this.dgvClasses.Location = new System.Drawing.Point(15, 27);
+            this.instructor,
+            this.price});
+            this.dgvClasses.Location = new System.Drawing.Point(12, 30);
             this.dgvClasses.Name = "dgvClasses";
-            this.dgvClasses.ReadOnly = true;
             this.dgvClasses.RowHeadersWidth = 62;
-            this.dgvClasses.Size = new System.Drawing.Size(479, 209);
-            this.dgvClasses.TabIndex = 32;
+            this.dgvClasses.Size = new System.Drawing.Size(491, 206);
+            this.dgvClasses.TabIndex = 30;
             // 
-            // type
+            // Name
             // 
-            this.type.HeaderText = "TYPE";
-            this.type.MinimumWidth = 8;
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            this.type.Width = 150;
+            this.Name.FillWeight = 50F;
+            this.Name.HeaderText = "NAME";
+            this.Name.MinimumWidth = 8;
+            this.Name.Name = "Name";
             // 
             // date
             // 
+            this.date.FillWeight = 50F;
             this.date.HeaderText = "DATE";
             this.date.MinimumWidth = 8;
             this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 150;
+            this.date.Width = 80;
             // 
             // time
             // 
             this.time.HeaderText = "TIME";
             this.time.MinimumWidth = 8;
             this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Width = 150;
+            this.time.Width = 80;
             // 
             // instructor
             // 
             this.instructor.HeaderText = "INSTRUCTOR";
             this.instructor.MinimumWidth = 8;
             this.instructor.Name = "instructor";
-            this.instructor.ReadOnly = true;
-            this.instructor.Width = 150;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "PRICE";
+            this.price.MinimumWidth = 8;
+            this.price.Name = "price";
+            this.price.Width = 50;
             // 
             // btnCancelClass
             // 
@@ -295,6 +299,7 @@
             this.btnCancelClass.TabIndex = 15;
             this.btnCancelClass.Text = "Cancel Class";
             this.btnCancelClass.UseVisualStyleBackColor = false;
+            this.btnCancelClass.Click += new System.EventHandler(this.btnCancelClass_Click);
             // 
             // pnlBlueLine
             // 
@@ -373,7 +378,7 @@
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmMemberProfile";
+            //this.Name = "frmMemberProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Profile";
             this.pnlHeader.ResumeLayout(false);
@@ -412,9 +417,10 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Button btnCancelClass;
         private System.Windows.Forms.DataGridView dgvClasses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }

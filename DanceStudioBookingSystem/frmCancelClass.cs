@@ -39,7 +39,7 @@ namespace DanceStudioBookingSystem
 
         private void tmnuCancelClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayCancelClass(this);
+            MessageBox.Show("You are already on this page.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCancelClass_Click(object sender, EventArgs e)

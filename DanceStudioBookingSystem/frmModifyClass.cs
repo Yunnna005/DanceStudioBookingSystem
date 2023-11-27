@@ -24,7 +24,7 @@ namespace DanceStudioBookingSystem
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayModifyClass(this);
+            MessageBox.Show("You are already on this page.", "Modify Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)

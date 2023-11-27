@@ -34,7 +34,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayStatistics(this);
+            MessageBox.Show("You already on this page", "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void mnuBack_Click(object sender, EventArgs e)

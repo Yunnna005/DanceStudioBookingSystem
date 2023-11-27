@@ -129,11 +129,5 @@ namespace DanceStudioBookingSystem
         {
             InsertDataIntoDataGridView();
         }
-
-        private void dtpExpireDate_ValueChanged(object sender, EventArgs e) //NOT done
-        {
-            dtpExpireDate.Format = DateTimePickerFormat.Short;
-            dtpExpireDate.Location = new Point(100, 100);
-        }
     }
 }

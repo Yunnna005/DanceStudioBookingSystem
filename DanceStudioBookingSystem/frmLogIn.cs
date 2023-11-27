@@ -23,18 +23,9 @@ namespace DanceStudioBookingSystem
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text == "Anna" & txtPassword.Text == "123"){
-                this.Close();
+                this.Hide();
                 frmMemberProfile fMemberProfile = new frmMemberProfile();
                 fMemberProfile.Show();
-
-
-                //Members Details
-                string username = txtUsername.Text;
-                string DOB = "24/08/2005";
-                string Gender = "Female";
-                string Phone = "+353852022777";
-                string Email = "anna.kovalenko@students.ittralee.ie";
-                fMemberProfile.SetLabelText(username, DOB, Gender, Phone, Email);
 
             }
             else if(txtUsername.Text == "Admin1" & txtPassword.Text == "123")
@@ -83,5 +74,6 @@ namespace DanceStudioBookingSystem
             txtPassword.PasswordChar = '*';
             timer.Stop();
         }
+
     }
 }

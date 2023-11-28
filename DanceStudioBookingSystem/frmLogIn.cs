@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
@@ -23,16 +24,11 @@ namespace DanceStudioBookingSystem
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             if(txtUsername.Text == "Anna" & txtPassword.Text == "123"){
-                this.Hide();
-                frmMemberProfile fMemberProfile = new frmMemberProfile();
-                fMemberProfile.Show();
-
+                traverseForm(this, new frmMemberProfile(this));
             }
             else if(txtUsername.Text == "Admin1" & txtPassword.Text == "123")
             {
-                this.Close();
-                frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
-                fMainMenuAdmin.Show();
+                traverseForm(this, new frmMainMenuAdmin(this));
             }
             else
             {
@@ -40,22 +36,16 @@ namespace DanceStudioBookingSystem
                 txtUsername.Focus();
                 return;
             }
-
-
         }
 
         private void lblForgotPassword_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmResetPassword fResetPassword = new frmResetPassword();
-            fResetPassword.Show();
+            traverseForm(this, new frmResetPassword(this));
         }
 
         private void lblCreateAccount_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmCreateAccount fCreateAccount = new frmCreateAccount();
-            fCreateAccount.Show();
+            traverseForm(this, new frmCreateAccount(this));
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)

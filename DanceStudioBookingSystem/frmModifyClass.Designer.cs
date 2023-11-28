@@ -67,7 +67,6 @@
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
@@ -76,9 +75,10 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(1166, 75);
+            this.mnuMainMenu.Size = new System.Drawing.Size(518, 31);
             this.mnuMainMenu.TabIndex = 9;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -90,27 +90,27 @@
             this.mnutCancelClass});
             this.mnuClasses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuClasses.Name = "mnuClasses";
-            this.mnuClasses.Size = new System.Drawing.Size(124, 44);
+            this.mnuClasses.Size = new System.Drawing.Size(85, 29);
             this.mnuClasses.Text = "Classes";
             // 
             // mnutScheduleClass
             // 
             this.mnutScheduleClass.Name = "mnutScheduleClass";
-            this.mnutScheduleClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutScheduleClass.Size = new System.Drawing.Size(209, 30);
             this.mnutScheduleClass.Text = "Schedule Class";
             this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
-            this.mnutModifyClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutModifyClass.Size = new System.Drawing.Size(209, 30);
             this.mnutModifyClass.Text = "Modify Class";
             this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
-            this.mnutCancelClass.Size = new System.Drawing.Size(310, 48);
+            this.mnutCancelClass.Size = new System.Drawing.Size(209, 30);
             this.mnutCancelClass.Text = "Cancel Class";
             this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
@@ -118,7 +118,7 @@
             // 
             this.mnuStatistics.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuStatistics.Name = "mnuStatistics";
-            this.mnuStatistics.Size = new System.Drawing.Size(143, 44);
+            this.mnuStatistics.Size = new System.Drawing.Size(96, 29);
             this.mnuStatistics.Text = "Statistics";
             this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
@@ -126,7 +126,7 @@
             // 
             this.mnuBack.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuBack.Name = "mnuBack";
-            this.mnuBack.Size = new System.Drawing.Size(92, 44);
+            this.mnuBack.Size = new System.Drawing.Size(63, 29);
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
@@ -134,10 +134,9 @@
             // 
             this.lblModifyClass.AutoSize = true;
             this.lblModifyClass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModifyClass.Location = new System.Drawing.Point(244, 71);
-            this.lblModifyClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModifyClass.Location = new System.Drawing.Point(163, 46);
             this.lblModifyClass.Name = "lblModifyClass";
-            this.lblModifyClass.Size = new System.Drawing.Size(193, 40);
+            this.lblModifyClass.Size = new System.Drawing.Size(124, 25);
             this.lblModifyClass.TabIndex = 10;
             this.lblModifyClass.Text = "Modify Class";
             // 
@@ -158,11 +157,9 @@
             this.grpUpdateDetails.Controls.Add(this.lblTime);
             this.grpUpdateDetails.Controls.Add(this.lblType);
             this.grpUpdateDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpUpdateDetails.Location = new System.Drawing.Point(24, 599);
-            this.grpUpdateDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpUpdateDetails.Location = new System.Drawing.Point(16, 389);
             this.grpUpdateDetails.Name = "grpUpdateDetails";
-            this.grpUpdateDetails.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpUpdateDetails.Size = new System.Drawing.Size(740, 437);
+            this.grpUpdateDetails.Size = new System.Drawing.Size(493, 284);
             this.grpUpdateDetails.TabIndex = 12;
             this.grpUpdateDetails.TabStop = false;
             this.grpUpdateDetails.Text = "Update Current Class Details";
@@ -171,11 +168,10 @@
             // 
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(217, 150);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDate.Location = new System.Drawing.Point(145, 97);
             this.dtpDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(148, 39);
+            this.dtpDate.Size = new System.Drawing.Size(100, 29);
             this.dtpDate.TabIndex = 36;
             this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
             // 
@@ -183,30 +179,27 @@
             // 
             this.txtType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(217, 89);
-            this.txtType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtType.Location = new System.Drawing.Point(145, 58);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(148, 33);
+            this.txtType.Size = new System.Drawing.Size(100, 25);
             this.txtType.TabIndex = 35;
             // 
             // txtCapacity
             // 
             this.txtCapacity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.Location = new System.Drawing.Point(549, 143);
-            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCapacity.Location = new System.Drawing.Point(366, 93);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(97, 33);
+            this.txtCapacity.Size = new System.Drawing.Size(66, 25);
             this.txtCapacity.TabIndex = 34;
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
             this.lblCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapacity.Location = new System.Drawing.Point(415, 149);
-            this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCapacity.Location = new System.Drawing.Point(277, 97);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(110, 32);
+            this.lblCapacity.Size = new System.Drawing.Size(72, 21);
             this.lblCapacity.TabIndex = 33;
             this.lblCapacity.Text = "Capacity:";
             // 
@@ -214,20 +207,18 @@
             // 
             this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(549, 208);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrice.Location = new System.Drawing.Point(366, 135);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(97, 33);
+            this.txtPrice.Size = new System.Drawing.Size(66, 25);
             this.txtPrice.TabIndex = 32;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(415, 214);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrice.Location = new System.Drawing.Point(277, 139);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(71, 32);
+            this.lblPrice.Size = new System.Drawing.Size(47, 21);
             this.lblPrice.TabIndex = 31;
             this.lblPrice.Text = "Price:";
             // 
@@ -235,30 +226,27 @@
             // 
             this.txtTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTime.Location = new System.Drawing.Point(217, 208);
-            this.txtTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTime.Location = new System.Drawing.Point(145, 135);
             this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(148, 33);
+            this.txtTime.Size = new System.Drawing.Size(100, 25);
             this.txtTime.TabIndex = 24;
             // 
             // txtInstructor
             // 
             this.txtInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtInstructor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructor.Location = new System.Drawing.Point(217, 268);
-            this.txtInstructor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtInstructor.Location = new System.Drawing.Point(145, 174);
             this.txtInstructor.Name = "txtInstructor";
-            this.txtInstructor.Size = new System.Drawing.Size(148, 33);
+            this.txtInstructor.Size = new System.Drawing.Size(100, 25);
             this.txtInstructor.TabIndex = 22;
             // 
             // lblInstructor
             // 
             this.lblInstructor.AutoSize = true;
             this.lblInstructor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructor.Location = new System.Drawing.Point(97, 274);
-            this.lblInstructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInstructor.Location = new System.Drawing.Point(65, 178);
             this.lblInstructor.Name = "lblInstructor";
-            this.lblInstructor.Size = new System.Drawing.Size(121, 32);
+            this.lblInstructor.Size = new System.Drawing.Size(80, 21);
             this.lblInstructor.TabIndex = 21;
             this.lblInstructor.Text = "Instructor:";
             // 
@@ -266,10 +254,9 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(97, 155);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Location = new System.Drawing.Point(65, 101);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(70, 32);
+            this.lblDate.Size = new System.Drawing.Size(45, 21);
             this.lblDate.TabIndex = 20;
             this.lblDate.Text = "Date:";
             // 
@@ -280,10 +267,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(305, 355);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(203, 231);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(126, 48);
+            this.btnUpdate.Size = new System.Drawing.Size(84, 31);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -292,10 +278,9 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(97, 214);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTime.Location = new System.Drawing.Point(65, 139);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(73, 32);
+            this.lblTime.Size = new System.Drawing.Size(47, 21);
             this.lblTime.TabIndex = 17;
             this.lblTime.Text = "Time:";
             // 
@@ -303,10 +288,9 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(97, 89);
-            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Location = new System.Drawing.Point(65, 58);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(78, 32);
+            this.lblType.Size = new System.Drawing.Size(49, 21);
             this.lblType.TabIndex = 16;
             this.lblType.Text = "Type: ";
             // 
@@ -316,11 +300,9 @@
             this.grpSelectClass.Controls.Add(this.dgvClasses);
             this.grpSelectClass.Controls.Add(this.btnSelect);
             this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSelectClass.Location = new System.Drawing.Point(24, 114);
-            this.grpSelectClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpSelectClass.Location = new System.Drawing.Point(16, 74);
             this.grpSelectClass.Name = "grpSelectClass";
-            this.grpSelectClass.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpSelectClass.Size = new System.Drawing.Size(740, 475);
+            this.grpSelectClass.Size = new System.Drawing.Size(493, 309);
             this.grpSelectClass.TabIndex = 13;
             this.grpSelectClass.TabStop = false;
             this.grpSelectClass.Text = "Select Class ";
@@ -335,12 +317,11 @@
             this.type,
             this.date,
             this.time});
-            this.dgvClasses.Location = new System.Drawing.Point(21, 72);
-            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvClasses.Location = new System.Drawing.Point(14, 47);
             this.dgvClasses.Name = "dgvClasses";
             this.dgvClasses.ReadOnly = true;
             this.dgvClasses.RowHeadersWidth = 62;
-            this.dgvClasses.Size = new System.Drawing.Size(691, 283);
+            this.dgvClasses.Size = new System.Drawing.Size(461, 184);
             this.dgvClasses.TabIndex = 31;
             // 
             // type
@@ -374,32 +355,31 @@
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(305, 396);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSelect.Location = new System.Drawing.Point(203, 257);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(126, 48);
+            this.btnSelect.Size = new System.Drawing.Size(84, 31);
             this.btnSelect.TabIndex = 18;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
             // 
             // frmModifyClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(777, 1050);
+            this.ClientSize = new System.Drawing.Size(518, 682);
             this.Controls.Add(this.grpSelectClass);
             this.Controls.Add(this.grpUpdateDetails);
             this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.lblModifyClass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmModifyClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modify Class";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModifyClass_FormClosed);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.grpUpdateDetails.ResumeLayout(false);

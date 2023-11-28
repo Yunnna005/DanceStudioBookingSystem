@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduleClass));
             this.pnlScheduleClass = new System.Windows.Forms.Panel();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtType = new System.Windows.Forms.TextBox();
             this.txtInstructor = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.mnutCancelClass = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStatistics = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
             this.pnlScheduleClass.SuspendLayout();
             this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,25 @@
             this.pnlScheduleClass.Name = "pnlScheduleClass";
             this.pnlScheduleClass.Size = new System.Drawing.Size(420, 312);
             this.pnlScheduleClass.TabIndex = 8;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(199, 18);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(124, 25);
+            this.txtName.TabIndex = 24;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(96, 18);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(59, 21);
+            this.lblName.TabIndex = 23;
+            this.lblName.Text = "Name: ";
             // 
             // dtpDate
             // 
@@ -288,25 +307,6 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(199, 18);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(124, 25);
-            this.txtName.TabIndex = 24;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(96, 18);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(59, 21);
-            this.lblName.TabIndex = 23;
-            this.lblName.Text = "Name: ";
-            // 
             // frmScheduleClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +323,7 @@
             this.Name = "frmScheduleClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schedule Class";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmScheduleClass_FormClosed);
             this.pnlScheduleClass.ResumeLayout(false);
             this.pnlScheduleClass.PerformLayout();
             this.mnuMainMenu.ResumeLayout(false);

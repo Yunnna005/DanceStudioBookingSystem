@@ -6,18 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmBookClass : Form
     {
-        public frmBookClass() {
+        Form parent;
+        public frmBookClass(Form parentForm)
+        {
+            parent = parentForm;
             InitializeComponent();
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformMenuProfile(this);
+            traverseForm(this, new frmMemberProfile(this));
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -49,12 +53,15 @@ namespace DanceStudioBookingSystem
                     }
                 }
             }
-            UtilFunctions.PerformMenuProfile(this);
+            traverseForm(this, new frmMemberProfile(this));
         }
 
+        private void frmBookClass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
+        }
 
-
-        private void InsertDataIntoDataGridView()
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvClasses.Rows.Clear();
 
@@ -73,7 +80,8 @@ namespace DanceStudioBookingSystem
                 {
                     dgvClasses.Rows.Add(rowData.ToArray());
                 }
-            }else if (cboType.SelectedIndex == 1)
+            }
+            else if (cboType.SelectedIndex == 1)
             {
                 List<List<string>> latinDataList = new List<List<string>>()
                 {
@@ -86,7 +94,8 @@ namespace DanceStudioBookingSystem
                 {
                     dgvClasses.Rows.Add(rowData.ToArray());
                 }
-            }else if(cboType.SelectedIndex == 2) 
+            }
+            else if (cboType.SelectedIndex == 2)
             {
                 List<List<string>> BalletDataList = new List<List<string>>()
                 {
@@ -98,7 +107,8 @@ namespace DanceStudioBookingSystem
                 {
                     dgvClasses.Rows.Add(rowData.ToArray());
                 }
-            }else if (cboType.SelectedIndex == 3)
+            }
+            else if (cboType.SelectedIndex == 3)
             {
                 List<List<string>> HipHopDataList = new List<List<string>>()
                 {
@@ -123,11 +133,6 @@ namespace DanceStudioBookingSystem
                     dgvClasses.Rows.Add(rowData.ToArray());
                 }
             }
-        }
-
-        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            InsertDataIntoDataGridView();
         }
     }
 }

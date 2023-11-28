@@ -7,34 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmCancelClass : Form
     {
-        public frmCancelClass()
+        Form parentForm;
+        public frmCancelClass(Form parent)
         {
+            parentForm = parent;
             InitializeComponent();
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayMainMenuAdmin(this);
+            traverseForm(this, new frmMainMenuAdmin(this));
         }
 
         private void mnuStatisticsTool_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayStatistics(this);
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void tmnuScheduleClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayScheduleClass(this);
+            traverseForm(this, new frmScheduleClass(this));
         }
 
         private void tmnuModifyClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayModifyClass(this);
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void tmnuCancelClass_Click(object sender, EventArgs e)
@@ -49,6 +52,11 @@ namespace DanceStudioBookingSystem
             {
                 MessageBox.Show("The Class was canceled.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentForm.Show();
         }
     }
 }

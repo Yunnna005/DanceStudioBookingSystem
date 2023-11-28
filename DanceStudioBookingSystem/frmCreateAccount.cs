@@ -7,21 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmCreateAccount : Form
-    {     
-        public frmCreateAccount()
+    {
+        Form parent;
+        public frmCreateAccount(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmLogIn fLogIn = new frmLogIn();
-            fLogIn.Show();
+            traverseForm(this, new frmLogIn());
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -39,9 +40,7 @@ namespace DanceStudioBookingSystem
                 else
                 {
                     MessageBox.Show("Account was created. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
-                                    frmLogIn fLogIn = new frmLogIn();
-                                    fLogIn.Show();
+                    traverseForm(this, new frmLogIn());
                 }
             }
             else
@@ -49,6 +48,11 @@ namespace DanceStudioBookingSystem
                 MessageBox.Show(UtilFunctions.ValidatonMemberDetails(txtUsername.Text, txtEmail.Text, txtPhone.Text, radMale.Checked, radFemale.Checked, radOther.Checked), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frmCreateAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

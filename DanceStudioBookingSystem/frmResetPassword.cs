@@ -8,15 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using Timer = System.Windows.Forms.Timer;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmResetPassword : Form
     {
+        Form parent;
+
         private Timer timer = new Timer();
         private int showPasswordDuration = 1000;
-        public frmResetPassword()
+        public frmResetPassword(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
             timer.Tick += Timer_Tick;
         }
@@ -26,9 +30,7 @@ namespace DanceStudioBookingSystem
             if (txtUsername.Text == "Anna1" && txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                frmLogIn fLogIn = new frmLogIn();
-                fLogIn.Show();
+                traverseForm(this, new frmLogIn());
             }
             else
             {
@@ -40,7 +42,7 @@ namespace DanceStudioBookingSystem
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformBackToLogIn(this);
+            traverseForm(this, new frmLogIn());
         }
 
         private void txtNewPassword_TextChanged(object sender, EventArgs e)
@@ -72,6 +74,11 @@ namespace DanceStudioBookingSystem
             txtConfirmPassword.PasswordChar = '\0';
             timer.Interval = showPasswordDuration;
             timer.Start();
+        }
+
+        private void frmResetPassword_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

@@ -7,53 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmMemberProfile : Form
     {
-        public frmMemberProfile()
+        Form parent;
+        public frmMemberProfile(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
             lblWriteUsername.Text = "Anna";
             lblWriteDOB.Text = "24/08/2005";
             lblWriteGender.Text = "Female";
             lblWritePhone.Text = "+353852022777";
             lblWriteEmail.Text = "anna.kovalenko@students.ittralee.ie";
-            InsertDataIntoDataGridView();
         }
 
         private void mnuBook_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformMenuBook(this);
+            traverseForm(this, new frmBookClass(this));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformLogOut(this);
+            PerformLogOut(this);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmEditMemberProfile fEditProfile = new frmEditMemberProfile();
-            fEditProfile.Show();
-        }
-
-        private void InsertDataIntoDataGridView()
-        {
-            List<List<string>> MemberClassesDataList = new List<List<string>>()
-                {
-                    new List<string> { "K-pop (Advance)", "2023-11-24", "10:00 AM", "Ji-min Lee", "$15" },
-                    new List<string> { "Latin (Intermidiate)", "2023-11-25", "02:30 PM", "Isabella Martinez", "$25" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "03:30 PM", "Jasmine Williams", "$15" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-26", "02:30 PM", "Malik Johnson", "$15" },
-                 };
-
-            foreach (var rowData in MemberClassesDataList)
-            {
-                dgvClasses.Rows.Add(rowData.ToArray());
-            }
+            traverseForm(this, new frmEditMemberProfile(this));
         }
 
         private void btnCancelClass_Click(object sender, EventArgs e)
@@ -67,6 +51,11 @@ namespace DanceStudioBookingSystem
             {
                 return;
             }
+        }
+
+        private void frmMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

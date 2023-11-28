@@ -74,7 +74,7 @@
             this.lblResetPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
             this.lblResetPassword.Location = new System.Drawing.Point(171, 43);
             this.lblResetPassword.Name = "lblResetPassword";
-            this.lblResetPassword.Size = new System.Drawing.Size(197, 32);
+            this.lblResetPassword.Size = new System.Drawing.Size(198, 32);
             this.lblResetPassword.TabIndex = 20;
             this.lblResetPassword.Text = "Reset Password ";
             // 
@@ -245,6 +245,7 @@
             this.Name = "frmResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reset Password";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmResetPassword_FormClosed);
             this.pnlNewPassword.ResumeLayout(false);
             this.pnlNewPassword.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLock)).EndInit();

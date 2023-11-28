@@ -10,30 +10,10 @@ namespace DanceStudioBookingSystem
 {
     class UtilFunctions
     {
-
-        //Forms: frmResetPassword
-        public static void PerformBackToLogIn(Form activeForm)
+        public static void traverseForm(Form prevForm, Form nextForm)
         {
-            activeForm.Close();
-            frmLogIn fLogIn = new frmLogIn();
-            fLogIn.Show();
-        }
-
-        //Forms: frmBookClass
-        public static void PerformMenuProfile(Form activeForm)
-        {
-            activeForm.Close();
-            frmMemberProfile fMemberProfile = new frmMemberProfile();
-            fMemberProfile.Show();
-
-        }
-
-        //Forms: frmMemberProfile
-        public static void PerformMenuBook(Form activeForm)
-        {
-            activeForm.Close();
-            frmBookClass fBookClass = new frmBookClass();
-            fBookClass.Show();
+                nextForm.Show();
+                prevForm.Close();
         }
 
         //Forms: frmMainMenuAdmin, frmMemberProfile
@@ -43,54 +23,12 @@ namespace DanceStudioBookingSystem
             if (result == DialogResult.Yes)
             {
                 MessageBox.Show("You loged out. Go to Log in.", "Log Out", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                activeForm.Close();
-                frmLogIn fLogIn = new frmLogIn();
-                fLogIn.Show();
+                traverseForm(activeForm, new frmLogIn());
             }
             else if (result == DialogResult.No)
             {
                 return;
             }
-        }
-        //Forms: frmModifyClass,frmCancelClass, frmMainMenuAdmin, frmStatistics
-        public static void DisplayScheduleClass(Form activeForm)
-        {
-            activeForm.Close();
-            frmScheduleClass fScheduleClass = new frmScheduleClass();
-            fScheduleClass.Show();
-        }
-
-        //Forms: frmScheduleClass,frmCancelClass, frmMainMenuAdmin, frmStatistics
-        public static void DisplayModifyClass(Form activeForm)
-        {
-            activeForm.Close();
-            frmModifyClass fModifyClass = new frmModifyClass();
-            fModifyClass.Show();
-        }
-
-        //Forms: frmScheduleClass, frmModifyClass, frmMainMenuAdmin, frmStatistics
-        public static void DisplayCancelClass(Form activeForm)
-        {
-            activeForm.Close();
-            frmCancelClass fCancelClass = new frmCancelClass();
-            fCancelClass.Show();
-        }
-
-        //Forms: frmScheduleClass, frmModifyClass, frmCancelClass, frmMainMenuAdmin
-        public static void DisplayStatistics(Form activeForm)
-        {
-            activeForm.Close();
-            frmStatistics fStatistics = new frmStatistics();
-            fStatistics.Show();
-        }
-
-        //Forms: frmScheduleClass, frmModifyClass, frmCancelClass, frmStatistics
-        public static void DisplayMainMenuAdmin(Form activeForm)
-        {
-            activeForm.Close();
-            frmMainMenuAdmin fMainMenuAdmin = new frmMainMenuAdmin();
-            fMainMenuAdmin.Show();
         }
 
 
@@ -129,25 +67,6 @@ namespace DanceStudioBookingSystem
                     return gender;
                 } 
             }  
-        }
-
-
-
-        //Forms: frmMainMenuAdmin, frmScheduleClass
-        public static class ClassDataStorage
-        {
-            public static List<ClassInfo> Classes { get; } = new List<ClassInfo>();
-        }
-
-        public class ClassInfo
-        {
-            public string Name { get; set; }
-            public string Type { get; set; }
-            public DateTime Date { get; set; }
-            public string Time { get; set; }
-            public string Instructor { get; set; }
-            public int Capacity { get; set; }
-            public decimal Price { get; set; }
         }
     }
 }

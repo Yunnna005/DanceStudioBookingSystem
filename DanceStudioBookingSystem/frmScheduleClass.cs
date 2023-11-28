@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
 
+
 namespace DanceStudioBookingSystem
 {
     public partial class frmScheduleClass : Form
     {
-        public frmScheduleClass()
+        Form parent;
+        public frmScheduleClass(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
         }
 
@@ -25,65 +28,37 @@ namespace DanceStudioBookingSystem
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayModifyClass(this);
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayCancelClass(this);
+            traverseForm(this, new frmCancelClass(this));
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayStatistics(this);
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayMainMenuAdmin(this);
+            traverseForm(this, new frmMainMenuAdmin(this));
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            // Get the data from the text boxes
-            string name = txtName.Text;
-            string type = txtType.Text;
-            DateTime date = dtpDate.Value;
-            string time = txtTime.Text;
-            string instructor = txtInstructor.Text;
-            int capacity = Convert.ToInt32(txtCapacity.Text);
-            decimal price = Convert.ToDecimal(txtPrice.Text);
-
-            // Create a new ClassInfo object
-            ClassInfo newClass = new ClassInfo
-            {
-                Name = name,
-                Type = type,
-                Date = date,
-                Time = time,
-                Instructor = instructor,
-                Capacity = capacity,
-                Price = price
-            };
-
+            frmMainMenuAdmin frmMainMenuAdmin = new frmMainMenuAdmin(this);
+            frmMainMenuAdmin.dgvClassesAdmin.Rows.Add(txtName.Text, txtType.Text, dtpDate.Value, txtTime.Text, txtInstructor.Text, txtCapacity.Text, txtPrice.Text);
             MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Add the new class to the storage
-            ClassDataStorage.Classes.Add(newClass);
 
-            // Refresh the DataGridView in frmMainMenuAdmin
-            RefreshDataGridViewInMainMenuAdmin();
-
-            frmMainMenuAdmin frmMainMenuAdmin = new frmMainMenuAdmin();
-            this.Hide();
-            frmMainMenuAdmin.Show();
+            traverseForm(this, new frmMainMenuAdmin(this));
         }
 
-        private void RefreshDataGridViewInMainMenuAdmin()
+        private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (Application.OpenForms["frmMainMenuAdmin"] is frmMainMenuAdmin mainMenuAdmin)
-            {
-                mainMenuAdmin.RefreshDataGridView();
-            }
+            parent.Show();
         }
     }
     

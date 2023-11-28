@@ -11,56 +11,46 @@ using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
+
     public partial class frmMainMenuAdmin : Form
     {
-        public frmMainMenuAdmin()
+        public System.Windows.Forms.DataGridView dgvClassesAdmin;
+        Form parent;
+        public frmMainMenuAdmin(Form parentForm)
         {
+
+            parent = parentForm;
             InitializeComponent();
-            RefreshDataGridView();
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayScheduleClass(this);
+            traverseForm(this, new frmScheduleClass(this));
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayModifyClass(this);
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayCancelClass(this);
+            traverseForm(this, new frmCancelClass(this));
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayStatistics(this);
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void mnuLogOut_Click(object sender, EventArgs e)
         {
-            UtilFunctions.PerformLogOut(this);
+            PerformLogOut(this);
         }
 
-
-        public void RefreshDataGridView()
+        private void frmMainMenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            dgvClassesAdmin.Rows.Clear();
-
-            foreach (ClassInfo classInfo in ClassDataStorage.Classes)
-            {
-                dgvClassesAdmin.Rows.Add(
-                    classInfo.Name,
-                    classInfo.Type,
-                    classInfo.Date,
-                    classInfo.Time,
-                    classInfo.Instructor,
-                    classInfo.Capacity,
-                    classInfo.Price
-                );
-            }
+            parent.Show();
         }
     }
 }

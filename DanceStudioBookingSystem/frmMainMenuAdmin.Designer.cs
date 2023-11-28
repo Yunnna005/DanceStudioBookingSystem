@@ -221,6 +221,7 @@
             //this.Name = "frmMainMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu Admin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenuAdmin_FormClosed);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.grpClasses.ResumeLayout(false);
@@ -241,7 +242,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
         private System.Windows.Forms.GroupBox grpClasses;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
-        private System.Windows.Forms.DataGridView dgvClassesAdmin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;

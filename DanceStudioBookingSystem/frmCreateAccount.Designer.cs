@@ -394,6 +394,7 @@
             this.Name = "frmCreateAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Account";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreateAccount_FormClosed);
             this.pnlUsername.ResumeLayout(false);
             this.pnlUsername.PerformLayout();
             this.pnlEmail.ResumeLayout(false);

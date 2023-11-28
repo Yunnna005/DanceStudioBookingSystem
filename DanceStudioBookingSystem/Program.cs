@@ -16,7 +16,7 @@ namespace DanceStudioBookingSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainMenuAdmin());
+            Application.Run(new frmLogIn());
 
 
 

@@ -381,6 +381,7 @@
             //this.Name = "frmMemberProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Profile";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMemberProfile_FormClosed);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.grpDetails.ResumeLayout(false);

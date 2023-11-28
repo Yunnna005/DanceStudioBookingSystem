@@ -427,6 +427,7 @@
             this.Name = "frmEditMemberProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Member Profile";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditMemberProfile_FormClosed);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.grpEditProfileDetails.ResumeLayout(false);

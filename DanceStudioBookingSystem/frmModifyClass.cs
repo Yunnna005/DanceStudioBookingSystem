@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmModifyClass : Form
     {
-        public frmModifyClass()
+        Form parent;
+        public frmModifyClass(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayScheduleClass(this);
+            traverseForm(this, new frmScheduleClass(this));
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
@@ -29,17 +32,22 @@ namespace DanceStudioBookingSystem
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayCancelClass(this);
+            traverseForm(this, new frmCancelClass(this));
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayStatistics(this);
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            UtilFunctions.DisplayMainMenuAdmin(this);
+            traverseForm(this, new frmMainMenuAdmin(this));
+        }
+
+        private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
         }
     }
 }

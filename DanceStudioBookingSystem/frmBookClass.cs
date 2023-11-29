@@ -38,7 +38,7 @@ namespace DanceStudioBookingSystem
         private void btnPay_Click(object sender, EventArgs e)
         {
             int isNumeric = 0, isNOTNumeric = 0;
-            if (string.IsNullOrEmpty(txtCardNumber.Text) || txtCardNumber.Text.Length<10)
+            if (string.IsNullOrEmpty(txtCardNumber.Text) || txtCardNumber.Text.Length<16)
             {
                 MessageBox.Show("Please enter a valid card number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -52,8 +52,9 @@ namespace DanceStudioBookingSystem
                         return; 
                     }
                 }
+                traverseForm(this, new frmMemberProfile(this));
             }
-            traverseForm(this, new frmMemberProfile(this));
+            
         }
 
         private void frmBookClass_FormClosed(object sender, FormClosedEventArgs e)

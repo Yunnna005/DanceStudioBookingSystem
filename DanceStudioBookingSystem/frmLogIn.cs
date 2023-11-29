@@ -65,5 +65,9 @@ namespace DanceStudioBookingSystem
             timer.Stop();
         }
 
+        private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

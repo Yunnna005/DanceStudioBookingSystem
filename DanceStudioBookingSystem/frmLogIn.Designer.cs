@@ -243,6 +243,7 @@
             this.Name = "frmLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogIn_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.pnlUsername.ResumeLayout(false);
             this.pnlUsername.PerformLayout();

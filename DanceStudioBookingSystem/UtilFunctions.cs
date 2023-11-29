@@ -13,10 +13,9 @@ namespace DanceStudioBookingSystem
         public static void traverseForm(Form prevForm, Form nextForm)
         {
                 nextForm.Show();
-                prevForm.Close();
+                prevForm.Hide();
         }
 
-        //Forms: frmMainMenuAdmin, frmMemberProfile
         public static void PerformLogOut(Form activeForm)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -32,7 +31,6 @@ namespace DanceStudioBookingSystem
         }
 
 
-        //Forms: frmCreateAccount, frmEditMemberProfile
         public static string ValidatonMemberDetails(string username, string email, string phone, bool genderMale, bool genderFemale, bool genderOther)
         {
             string gender;

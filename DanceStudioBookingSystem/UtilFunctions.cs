@@ -31,12 +31,21 @@ namespace DanceStudioBookingSystem
         }
 
 
-        public static string ValidatonMemberDetails(string username, string email, string phone, bool genderMale, bool genderFemale, bool genderOther)
+        public static string ValidatonMemberDetails(string firstname, string secondname, string email, string phone, bool genderMale, bool genderFemale, bool genderOther)
         {
             string gender;
-            if (username == null || username.Length < 8 || char.IsDigit(username[0]))
+            if (secondname == null || firstname == null)
             {
-                return "Please enter the username: \n\n1. More than 8 characters\n2. Does not start from number\n3. Does not start from symbol";
+                if (CheckGigits(firstname) == false)
+                {
+                    return "The Firstname must not contain numbers";
+                }
+                if (CheckGigits(secondname) == false)
+                {
+                    return "The Secondname must not contain numbers";
+                }
+
+                return "Please enter valid Full Name.";
             }
             else if (email == null || !Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
@@ -65,6 +74,20 @@ namespace DanceStudioBookingSystem
                     return gender;
                 } 
             }  
+        }
+        public static bool CheckGigits(string text)
+        {
+            if (text != null)
+            {
+                foreach (char c in text)
+                {
+                    if (c >= '1' && c <= '9')
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }

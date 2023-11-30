@@ -23,17 +23,17 @@ namespace DanceStudioBookingSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "Anna" & txtPassword.Text == "123"){
+            if(txtFullName.Text == "Anna" & txtPassword.Text == "123"){
                 traverseForm(this, new frmMemberProfile(this));
             }
-            else if(txtUsername.Text == "Admin1" & txtPassword.Text == "123")
+            else if(txtFullName.Text == "Admin1" & txtPassword.Text == "123")
             {
                 traverseForm(this, new frmMainMenuAdmin(this));
             }
             else
             {
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Focus();
+                txtFullName.Focus();
                 return;
             }
         }

@@ -39,8 +39,10 @@
             this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.grpClasses = new System.Windows.Forms.GroupBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvClassesAdmin = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,6 +131,8 @@
             // grpClasses
             // 
             this.grpClasses.BackColor = System.Drawing.Color.White;
+            this.grpClasses.Controls.Add(this.lblType);
+            this.grpClasses.Controls.Add(this.cboType);
             this.grpClasses.Controls.Add(this.dgvClassesAdmin);
             this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpClasses.Location = new System.Drawing.Point(0, 47);
@@ -138,6 +142,32 @@
             this.grpClasses.TabStop = false;
             this.grpClasses.Text = "Classes";
             // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(271, 25);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(42, 21);
+            this.lblType.TabIndex = 3;
+            this.lblType.Text = "Type";
+            // 
+            // cboType
+            // 
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Items.AddRange(new object[] {
+            "All",
+            "K-pop",
+            "Latin",
+            "Ballet",
+            "Hip-Hop"});
+            this.cboType.Location = new System.Drawing.Point(361, 25);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(121, 29);
+            this.cboType.TabIndex = 2;
+            this.cboType.Text = "Choose type";
+            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
+            // 
             // dgvClassesAdmin
             // 
             this.dgvClassesAdmin.AllowUserToAddRows = false;
@@ -145,26 +175,25 @@
             this.dgvClassesAdmin.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvClassesAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClassesAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.CLASSNAME,
             this.Type,
             this.Date,
             this.Time,
             this.INSTRUCTOR,
             this.CAPACITY,
             this.PRICE});
-            this.dgvClassesAdmin.Location = new System.Drawing.Point(6, 28);
+            this.dgvClassesAdmin.Location = new System.Drawing.Point(6, 60);
             this.dgvClassesAdmin.Name = "dgvClassesAdmin";
             this.dgvClassesAdmin.ReadOnly = true;
             this.dgvClassesAdmin.RowHeadersWidth = 62;
-            this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 289);
+            this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 257);
             this.dgvClassesAdmin.TabIndex = 0;
             // 
-            // Name
+            // CLASSNAME
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 8;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
             // 
             // Type
             // 
@@ -218,13 +247,14 @@
             this.MainMenuStrip = this.mnuMainMenu;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "frmMainMenuAdmin";
+            this.Name = "frmMainMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenuAdmin_FormClosed);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.grpClasses.ResumeLayout(false);
+            this.grpClasses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassesAdmin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,12 +272,14 @@
         private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
         private System.Windows.Forms.GroupBox grpClasses;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Time;
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.ComboBox cboType;
     }
 }

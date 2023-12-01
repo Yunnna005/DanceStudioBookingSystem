@@ -52,5 +52,10 @@ namespace DanceStudioBookingSystem
         {
             parent.Show();
         }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InsertDataGridAdminView(dgvClassesAdmin, cboType);
+        }
     }
 }

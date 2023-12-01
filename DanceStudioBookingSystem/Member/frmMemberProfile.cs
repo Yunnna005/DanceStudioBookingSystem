@@ -23,6 +23,10 @@ namespace DanceStudioBookingSystem
             lblWriteGender.Text = "Female";
             lblWritePhone.Text = "+353852022777";
             lblWriteEmail.Text = "anna.kovalenko@students.ittralee.ie";
+
+            dgvClassesMember.Rows.Add("K-pop (Beginer)", "K-POP", "2023-11-26", "06:30 PM", "Ji-min Lee", "$10");
+            dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "K-POP", "2023-11-24", "12:30 AM", "Hyun-woo Park", "$10");
+            dgvClassesMember.Rows.Add("Latin (Beginer)", "LATIN", "2023-11-27", "03:30 PM", "Rafael Lopez", "$20");
         }
 
         private void mnuBook_Click(object sender, EventArgs e)

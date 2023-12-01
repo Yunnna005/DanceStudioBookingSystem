@@ -49,8 +49,6 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmMainMenuAdmin frmMainMenuAdmin = new frmMainMenuAdmin(this);
-            frmMainMenuAdmin.dgvClassesAdmin.Rows.Add(txtName.Text, txtType.Text, dtpDate.Value, txtTime.Text, txtInstructor.Text, txtCapacity.Text, txtPrice.Text);
             MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             traverseForm(this, new frmMainMenuAdmin(this));

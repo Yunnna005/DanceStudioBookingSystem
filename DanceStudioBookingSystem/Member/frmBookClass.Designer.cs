@@ -53,11 +53,6 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.lblPayment = new System.Windows.Forms.Label();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBookAClass = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.lblTYpe = new System.Windows.Forms.Label();
@@ -66,6 +61,11 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.pnlBookClass.SuspendLayout();
             this.pnlPayment.SuspendLayout();
@@ -128,7 +128,7 @@
             this.pnlPayment.Controls.Add(this.lblCardNumber);
             this.pnlPayment.Controls.Add(this.btnPay);
             this.pnlPayment.Controls.Add(this.lblPayment);
-            this.pnlPayment.Location = new System.Drawing.Point(3, 3);
+            this.pnlPayment.Location = new System.Drawing.Point(6, 3);
             this.pnlPayment.Name = "pnlPayment";
             this.pnlPayment.Size = new System.Drawing.Size(603, 433);
             this.pnlPayment.TabIndex = 30;
@@ -364,7 +364,7 @@
             this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.CLASSNAME,
             this.date,
             this.time,
             this.instructor,
@@ -375,48 +375,6 @@
             this.dgvClasses.RowHeadersWidth = 62;
             this.dgvClasses.Size = new System.Drawing.Size(587, 184);
             this.dgvClasses.TabIndex = 29;
-            // 
-            // Name
-            // 
-            this.Name.FillWeight = 50F;
-            this.Name.HeaderText = "NAME";
-            this.Name.MinimumWidth = 8;
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Width = 150;
-            // 
-            // date
-            // 
-            this.date.FillWeight = 50F;
-            this.date.HeaderText = "DATE";
-            this.date.MinimumWidth = 8;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 150;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "TIME";
-            this.time.MinimumWidth = 8;
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Width = 150;
-            // 
-            // instructor
-            // 
-            this.instructor.HeaderText = "INSTRUCTOR";
-            this.instructor.MinimumWidth = 8;
-            this.instructor.Name = "instructor";
-            this.instructor.ReadOnly = true;
-            this.instructor.Width = 150;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "PRICE";
-            this.price.MinimumWidth = 8;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 150;
             // 
             // lblBookAClass
             // 
@@ -516,6 +474,45 @@
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 13;
             // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 120;
+            // 
+            // date
+            // 
+            this.date.FillWeight = 50F;
+            this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 8;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 80;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Time";
+            this.time.MinimumWidth = 8;
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            this.time.Width = 80;
+            // 
+            // instructor
+            // 
+            this.instructor.HeaderText = "Instructor";
+            this.instructor.MinimumWidth = 8;
+            this.instructor.Name = "instructor";
+            this.instructor.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 8;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 80;
+            // 
             // frmBookClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +525,7 @@
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmBookClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Class";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBookClass_FormClosed);
@@ -586,12 +584,12 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.ComboBox cboMonth;
+        private System.Windows.Forms.ComboBox cboYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.ComboBox cboMonth;
-        private System.Windows.Forms.ComboBox cboYear;
     }
 }

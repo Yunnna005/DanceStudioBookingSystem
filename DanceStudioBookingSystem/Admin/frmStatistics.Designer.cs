@@ -55,9 +55,11 @@
             this.grpAnalyzeYearlyRevenue.Controls.Add(this.cboYear);
             this.grpAnalyzeYearlyRevenue.Controls.Add(this.lblYear);
             this.grpAnalyzeYearlyRevenue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAnalyzeYearlyRevenue.Location = new System.Drawing.Point(12, 46);
+            this.grpAnalyzeYearlyRevenue.Location = new System.Drawing.Point(18, 71);
+            this.grpAnalyzeYearlyRevenue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpAnalyzeYearlyRevenue.Name = "grpAnalyzeYearlyRevenue";
-            this.grpAnalyzeYearlyRevenue.Size = new System.Drawing.Size(414, 175);
+            this.grpAnalyzeYearlyRevenue.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpAnalyzeYearlyRevenue.Size = new System.Drawing.Size(621, 269);
             this.grpAnalyzeYearlyRevenue.TabIndex = 3;
             this.grpAnalyzeYearlyRevenue.TabStop = false;
             this.grpAnalyzeYearlyRevenue.Text = "Analyze Yearly Revenue";
@@ -69,10 +71,11 @@
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(154, 103);
+            this.btnCalculate.Location = new System.Drawing.Point(231, 158);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(95, 31);
-            this.btnCalculate.TabIndex = 21;
+            this.btnCalculate.Size = new System.Drawing.Size(142, 48);
+            this.btnCalculate.TabIndex = 2;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -82,16 +85,18 @@
             this.cboYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.cboYear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYear.FormattingEnabled = true;
-            this.cboYear.Location = new System.Drawing.Point(182, 54);
+            this.cboYear.Location = new System.Drawing.Point(273, 83);
+            this.cboYear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(100, 25);
-            this.cboYear.TabIndex = 20;
+            this.cboYear.Size = new System.Drawing.Size(148, 25);
+            this.cboYear.TabIndex = 1;
             // 
             // lblYear
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(124, 58);
+            this.lblYear.Location = new System.Drawing.Point(186, 89);
+            this.lblYear.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(52, 21);
             this.lblYear.TabIndex = 0;
@@ -149,10 +154,9 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(442, 31);
+            this.mnuMainMenu.Size = new System.Drawing.Size(663, 33);
             this.mnuMainMenu.TabIndex = 1;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -170,9 +174,11 @@
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.btnFind);
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.lblFindPopularDanceStyle);
             this.grpAnalyzePopularDanceStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAnalyzePopularDanceStyle.Location = new System.Drawing.Point(12, 227);
+            this.grpAnalyzePopularDanceStyle.Location = new System.Drawing.Point(18, 349);
+            this.grpAnalyzePopularDanceStyle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grpAnalyzePopularDanceStyle.Name = "grpAnalyzePopularDanceStyle";
-            this.grpAnalyzePopularDanceStyle.Size = new System.Drawing.Size(414, 148);
+            this.grpAnalyzePopularDanceStyle.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpAnalyzePopularDanceStyle.Size = new System.Drawing.Size(621, 228);
             this.grpAnalyzePopularDanceStyle.TabIndex = 6;
             this.grpAnalyzePopularDanceStyle.TabStop = false;
             this.grpAnalyzePopularDanceStyle.Text = "Analyze Popular Dance Style";
@@ -184,10 +190,11 @@
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(157, 93);
+            this.btnFind.Location = new System.Drawing.Point(236, 143);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(95, 31);
-            this.btnFind.TabIndex = 21;
+            this.btnFind.Size = new System.Drawing.Size(142, 48);
+            this.btnFind.TabIndex = 3;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
@@ -196,7 +203,8 @@
             // 
             this.lblFindPopularDanceStyle.AutoSize = true;
             this.lblFindPopularDanceStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFindPopularDanceStyle.Location = new System.Drawing.Point(108, 58);
+            this.lblFindPopularDanceStyle.Location = new System.Drawing.Point(202, 89);
+            this.lblFindPopularDanceStyle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFindPopularDanceStyle.Name = "lblFindPopularDanceStyle";
             this.lblFindPopularDanceStyle.Size = new System.Drawing.Size(201, 21);
             this.lblFindPopularDanceStyle.TabIndex = 0;
@@ -204,15 +212,16 @@
             // 
             // frmStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(442, 384);
+            this.ClientSize = new System.Drawing.Size(663, 591);
             this.Controls.Add(this.grpAnalyzePopularDanceStyle);
             this.Controls.Add(this.grpAnalyzeYearlyRevenue);
             this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmStatistics";

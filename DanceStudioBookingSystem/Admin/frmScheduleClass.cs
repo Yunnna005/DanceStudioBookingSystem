@@ -51,37 +51,14 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtName.Text)) 
-            {
-                MessageBox.Show("Invalid class name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-            }
-            else if (string.IsNullOrEmpty(txtType.Text))
-            {
-                MessageBox.Show("Invalid type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtType.Focus();
-            }
-            else if (cboTime.SelectedItem == null)
-            {
-                MessageBox.Show("Choose Time", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if (cboInstructor.SelectedItem == null)
-            {
-                MessageBox.Show("Choose Instructor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (string.IsNullOrEmpty(txtCapacity.Text) || !int.TryParse(txtCapacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0)
-            {
-                MessageBox.Show("Invalid Capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtCapacity.Focus();
-            }
-            else if (string.IsNullOrEmpty(txtPrice.Text) || !IsValidPriceFormat(txtPrice.Text))
-            {
-                MessageBox.Show("Invalid Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPrice.Focus();
-            }
-            else
+            if (ValidClassDetails(txtName,txtType, cboTime, cboInstructor, txtCapacity, txtPrice) == "valid") 
             {
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 traverseForm(this, new frmMainMenuAdmin(this));
+            }
+            else
+            {
+                MessageBox.Show(ValidClassDetails(txtName, txtType, cboTime, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
         }
 

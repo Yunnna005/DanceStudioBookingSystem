@@ -32,7 +32,8 @@ namespace DanceStudioBookingSystem
         }
 
 
-        public static string ValidatonMemberDetails(string firstname, string secondname, string email, string phone, bool genderMale, bool genderFemale, bool genderOther)
+        public static string ValidationMemberDetails(TextBox firstname, TextBox secondname, TextBox email, TextBox phone, 
+            RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther)
         {
             string gender;
             if (secondname == null || firstname == null)
@@ -48,23 +49,23 @@ namespace DanceStudioBookingSystem
 
                 return "Please enter valid Full Name.";
             }
-            else if (email == null || !Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            else if (email == null || !Regex.IsMatch(email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
                 return "Please enter valid email address";
             }
-            else if (phone == null || phone.Length < 9 || !phone.StartsWith("+"))
+            else if (phone == null || phone.Text.Length < 9 || !phone.Text.StartsWith("+"))
             {
                 return "Please enter valid phone number that starts from +";
             }
             else
             {
                 
-                if (genderMale)
+                if (genderMale.Checked)
                 {
                     gender = "Male";
                     return gender;
                 }
-                else if (genderFemale)
+                else if (genderFemale.Checked)
                 {
                     gender = "Female";
                     return gender;
@@ -76,11 +77,11 @@ namespace DanceStudioBookingSystem
                 } 
             }  
         }
-        public static bool CheckGigits(string text)
+        public static bool CheckGigits(TextBox text)
         {
             if (text != null)
             {
-                foreach (char c in text)
+                foreach (char c in text.Text)
                 {
                     if (c >= '1' && c <= '9')
                     {
@@ -107,6 +108,18 @@ namespace DanceStudioBookingSystem
                 string[] instructors = {"Hyun-Woo Park","Isabella Martinez","Jasmine Williams","Ji-Min Lee","Malik Johnson","Olivia Smith",
                     "Rafael Lopez","Soo-Jin Kim","Xavier Ortiz"};
                 comboBox.Items.AddRange(instructors);
+            }else if (comboBox.Name == "cboYear")
+            {
+                string[] year = {"2018","2019","2020","2021","2022","2023"};
+                comboBox.Items.AddRange(year);
+            }else if (comboBox.Name == "cboMonth")
+            {
+                string[] month = { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
+                comboBox.Items.AddRange(month);
+            }else if (comboBox.Name == "cboYearCard")
+            {
+                string[] yearCard = { "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34" };
+                comboBox.Items.AddRange(yearCard);
             }
             
         }
@@ -293,6 +306,42 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        public static string ValidClassDetails(TextBox name, TextBox type,  ComboBox time, ComboBox instructor, TextBox capacity, TextBox price)
+        {
+            if (string.IsNullOrEmpty(name.Text))
+            {
+                return "Invalid class name";
+                name.Focus();
+            }
+            else if (string.IsNullOrEmpty(type.Text))
+            {
+                return "Invalid type";
+                type.Focus();
+            }
+            else if (time.SelectedItem == null)
+            {
+                return "Choose Time";
+            }
+            else if (instructor.SelectedItem == null)
+            {
+                return "Choose Instructor";
+            }
+            else if (string.IsNullOrEmpty(capacity.Text) || !int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0)
+            {
+                return "Invalid Capacity";
+                capacity.Focus();
+            }
+            else if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
+            {
+                return "Invalid Price";
+                price.Focus();
+            }
+            else
+            {
+                return "valid";
+            }
+        }
+
         public static bool IsValidPriceFormat(string price)
         {
             string format = @"^\d{2}\.\d{2}$"; //Format 00.00
@@ -301,6 +350,33 @@ namespace DanceStudioBookingSystem
                 return true;
             }
             return false;
+        }
+
+        public static string ValidationCardDetails(TextBox cardNumber, TextBox cardHolder, ComboBox month, ComboBox year, TextBox cvc)
+        {
+            if (string.IsNullOrEmpty(cardNumber.Text) || cardNumber.Text.Length < 16)
+            {
+                return "Please enter a valid card number.\nThe card number must have 16 digits.";
+            } else if (!CheckGigits(cardNumber))
+            {
+                return "Please enter a valid card number (only numeric digits are allowed)";
+            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigits(cardHolder))
+            {
+                return "Invalid name";
+            } else if (month.SelectedItem == null)
+            {
+                return "Please choose month";
+            } else if (year.SelectedItem == null)
+            {
+                return "Please choose year";
+            } else if (string.IsNullOrEmpty(cvc.Text) || cvc.Text.Length != 3)
+            {
+                return "The cvc must have 3 digits";
+            }
+            else
+            {
+                return "valid";
+            }
         }
     }
 }

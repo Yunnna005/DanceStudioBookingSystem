@@ -18,6 +18,7 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
+            InsertDataToComboBox(cboYear);
         }
 
         private void tmnuScheduleClass_Click(object sender, EventArgs e)
@@ -47,12 +48,21 @@ namespace DanceStudioBookingSystem
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Yearly revenue is: 10000$", "Yearly Revenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (cboYear.SelectedItem != null)
+            {
+                MessageBox.Show("Yearly revenue is: 10000$", "Yearly Revenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please choose year", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The most popular dance style is Ballet\n\nStatistics of the addendance of other styles:", "Yearly Revenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("The most popular dance style is Hip-Hop\n\nStatistics of the addendance of the dance styles:"+
+                "\n\nHip-Hop: 10065\nK-pop: 6678\nLatin: 4432\nBallet: 121", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void frmStatistics_FormClosed(object sender, FormClosedEventArgs e)

@@ -17,6 +17,9 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
+            InsertDataToComboBox(cboType);
+            InsertDataToComboBox(cboMonth);
+            InsertDataToComboBox(cboYearCard);
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)
@@ -26,7 +29,15 @@ namespace DanceStudioBookingSystem
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            pnlPayment.Visible = true; 
+            if (cboType.SelectedItem!=null)
+            {
+                pnlPayment.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please choose the class", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+             
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -37,24 +48,15 @@ namespace DanceStudioBookingSystem
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            int isNumeric = 0, isNOTNumeric = 0;
-            if (string.IsNullOrEmpty(txtCardNumber.Text) || txtCardNumber.Text.Length<16)
+            if (ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC)=="valid")
             {
-                MessageBox.Show("Please enter a valid card number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thank you. The class was bought.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                traverseForm(this, new frmMemberProfile(this));
             }
             else
             {
-                foreach (char c in txtCardNumber.Text)
-                {
-                    if (!char.IsDigit(c))
-                    {
-                        MessageBox.Show("Please enter a valid card number (only numeric digits are allowed)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return; 
-                    }
-                }
-                traverseForm(this, new frmMemberProfile(this));
-            }
-            
+                MessageBox.Show(ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
 
         private void frmBookClass_FormClosed(object sender, FormClosedEventArgs e)

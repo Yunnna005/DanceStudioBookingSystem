@@ -63,7 +63,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(36, 35);
-            this.btnBack.TabIndex = 19;
+            this.btnBack.TabIndex = 5;
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -76,7 +76,7 @@
             this.lblResetPassword.Location = new System.Drawing.Point(256, 66);
             this.lblResetPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResetPassword.Name = "lblResetPassword";
-            this.lblResetPassword.Size = new System.Drawing.Size(290, 48);
+            this.lblResetPassword.Size = new System.Drawing.Size(198, 32);
             this.lblResetPassword.TabIndex = 20;
             this.lblResetPassword.Text = "Reset Password ";
             // 
@@ -87,7 +87,7 @@
             this.lblDescription.Location = new System.Drawing.Point(128, 131);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(563, 31);
+            this.lblDescription.Size = new System.Drawing.Size(364, 20);
             this.lblDescription.TabIndex = 21;
             this.lblDescription.Text = "Enter your username below and create new password.";
             // 
@@ -110,8 +110,8 @@
             this.txtNewPassword.Location = new System.Drawing.Point(14, 48);
             this.txtNewPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(519, 42);
-            this.txtNewPassword.TabIndex = 1;
+            this.txtNewPassword.Size = new System.Drawing.Size(519, 28);
+            this.txtNewPassword.TabIndex = 2;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // lblNewPassword
@@ -121,7 +121,7 @@
             this.lblNewPassword.Location = new System.Drawing.Point(18, 15);
             this.lblNewPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(127, 25);
+            this.lblNewPassword.Size = new System.Drawing.Size(84, 15);
             this.lblNewPassword.TabIndex = 3;
             this.lblNewPassword.Text = "New Password";
             // 
@@ -156,8 +156,8 @@
             this.txtConfirmPassword.Location = new System.Drawing.Point(14, 48);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(519, 42);
-            this.txtConfirmPassword.TabIndex = 1;
+            this.txtConfirmPassword.Size = new System.Drawing.Size(519, 28);
+            this.txtConfirmPassword.TabIndex = 3;
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // lblConfirmPassword
@@ -167,7 +167,7 @@
             this.lblConfirmPassword.Location = new System.Drawing.Point(18, 15);
             this.lblConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(156, 25);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(104, 15);
             this.lblConfirmPassword.TabIndex = 3;
             this.lblConfirmPassword.Text = "Confirm Password";
             // 
@@ -194,7 +194,7 @@
             this.btnResetPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(300, 66);
-            this.btnResetPassword.TabIndex = 24;
+            this.btnResetPassword.TabIndex = 4;
             this.btnResetPassword.Text = "Reset Password";
             this.btnResetPassword.UseVisualStyleBackColor = false;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -219,9 +219,8 @@
             this.txtFullName.Location = new System.Drawing.Point(14, 48);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(519, 42);
+            this.txtFullName.Size = new System.Drawing.Size(519, 28);
             this.txtFullName.TabIndex = 1;
-            this.txtFullName.Text = "Enter full name without space";
             // 
             // lblFullName
             // 
@@ -230,7 +229,7 @@
             this.lblFullName.Location = new System.Drawing.Point(18, 15);
             this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(91, 25);
+            this.lblFullName.Size = new System.Drawing.Size(61, 15);
             this.lblFullName.TabIndex = 3;
             this.lblFullName.Text = "Full Name";
             // 

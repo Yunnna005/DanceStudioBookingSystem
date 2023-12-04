@@ -74,7 +74,7 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = UtilFunctions.ValidatonMemberDetails(txtSecondName.Text, txtFirstName.Text, txtEmail.Text, txtPhone.Text, radMale.Checked, radFemale.Checked, radOther.Checked);
+            string validationMemberDetails = UtilFunctions.ValidationMemberDetails(txtSecondName, txtFirstName, txtEmail, txtPhone, radMale, radFemale, radOther);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {
                 if (txtOldPassword.Text == null || txtOldPassword.Text.Length < 8)
@@ -97,7 +97,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(UtilFunctions.ValidatonMemberDetails(txtSecondName.Text,txtFirstName.Text, txtEmail.Text, txtPhone.Text, radMale.Checked, radFemale.Checked, radOther.Checked), "Error",
+                MessageBox.Show(UtilFunctions.ValidationMemberDetails(txtSecondName,txtFirstName, txtEmail, txtPhone, radMale, radFemale, radOther), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -57,5 +57,28 @@ namespace DanceStudioBookingSystem
         {
             InsertDataGridAdminView(dgvModifyClassesAdmin,cboType);
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (ValidClassDetails(txtName, txtType, cboTime, cboInstructor, txtCapacity, txtPrice) == "valid")
+            {
+                MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtName.Clear(); txtType.Clear(); txtCapacity.Clear(); txtPrice.Clear();
+
+                grpUpdateDetails.Visible = false;
+
+                dgvModifyClassesAdmin.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show(ValidClassDetails(txtName, txtType, cboTime, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            grpUpdateDetails.Visible = true;
+        }
     }
 }

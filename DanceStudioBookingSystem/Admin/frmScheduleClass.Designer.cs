@@ -75,9 +75,10 @@
             this.pnlScheduleClass.Controls.Add(this.lblPrice);
             this.pnlScheduleClass.Controls.Add(this.lblTime);
             this.pnlScheduleClass.Controls.Add(this.lblType);
-            this.pnlScheduleClass.Location = new System.Drawing.Point(11, 73);
+            this.pnlScheduleClass.Location = new System.Drawing.Point(16, 112);
+            this.pnlScheduleClass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlScheduleClass.Name = "pnlScheduleClass";
-            this.pnlScheduleClass.Size = new System.Drawing.Size(420, 312);
+            this.pnlScheduleClass.Size = new System.Drawing.Size(630, 480);
             this.pnlScheduleClass.TabIndex = 8;
             // 
             // cboInstructor
@@ -88,10 +89,11 @@
             this.cboInstructor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboInstructor.FormattingEnabled = true;
             this.cboInstructor.IntegralHeight = false;
-            this.cboInstructor.Location = new System.Drawing.Point(199, 176);
+            this.cboInstructor.Location = new System.Drawing.Point(298, 271);
+            this.cboInstructor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboInstructor.MaxDropDownItems = 4;
             this.cboInstructor.Name = "cboInstructor";
-            this.cboInstructor.Size = new System.Drawing.Size(124, 25);
+            this.cboInstructor.Size = new System.Drawing.Size(184, 25);
             this.cboInstructor.Sorted = true;
             this.cboInstructor.TabIndex = 5;
             // 
@@ -102,25 +104,28 @@
             this.cboTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTime.FormattingEnabled = true;
             this.cboTime.IntegralHeight = false;
-            this.cboTime.Location = new System.Drawing.Point(199, 137);
+            this.cboTime.Location = new System.Drawing.Point(298, 211);
+            this.cboTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboTime.Name = "cboTime";
-            this.cboTime.Size = new System.Drawing.Size(124, 25);
+            this.cboTime.Size = new System.Drawing.Size(184, 25);
             this.cboTime.TabIndex = 4;
             // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(199, 18);
+            this.txtName.Location = new System.Drawing.Point(298, 28);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(124, 25);
+            this.txtName.Size = new System.Drawing.Size(184, 25);
             this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(96, 18);
+            this.lblName.Location = new System.Drawing.Point(144, 28);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(59, 21);
             this.lblName.TabIndex = 23;
@@ -130,10 +135,11 @@
             // 
             this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(199, 94);
+            this.dtpDate.Location = new System.Drawing.Point(298, 145);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(124, 29);
+            this.dtpDate.Size = new System.Drawing.Size(184, 29);
             this.dtpDate.TabIndex = 3;
             this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
             // 
@@ -141,16 +147,18 @@
             // 
             this.txtType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(199, 56);
+            this.txtType.Location = new System.Drawing.Point(298, 86);
+            this.txtType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(124, 25);
+            this.txtType.Size = new System.Drawing.Size(184, 25);
             this.txtType.TabIndex = 2;
             // 
             // lblInstructor
             // 
             this.lblInstructor.AutoSize = true;
             this.lblInstructor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructor.Location = new System.Drawing.Point(96, 176);
+            this.lblInstructor.Location = new System.Drawing.Point(144, 271);
+            this.lblInstructor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInstructor.Name = "lblInstructor";
             this.lblInstructor.Size = new System.Drawing.Size(80, 21);
             this.lblInstructor.TabIndex = 12;
@@ -160,16 +168,18 @@
             // 
             this.txtCapacity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtCapacity.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCapacity.Location = new System.Drawing.Point(134, 225);
+            this.txtCapacity.Location = new System.Drawing.Point(201, 346);
+            this.txtCapacity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCapacity.Name = "txtCapacity";
-            this.txtCapacity.Size = new System.Drawing.Size(52, 25);
+            this.txtCapacity.Size = new System.Drawing.Size(76, 25);
             this.txtCapacity.TabIndex = 6;
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
             this.lblCapacity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapacity.Location = new System.Drawing.Point(51, 229);
+            this.lblCapacity.Location = new System.Drawing.Point(76, 352);
+            this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacity.Name = "lblCapacity";
             this.lblCapacity.Size = new System.Drawing.Size(72, 21);
             this.lblCapacity.TabIndex = 10;
@@ -179,7 +189,8 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(96, 99);
+            this.lblDate.Location = new System.Drawing.Point(144, 152);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(45, 21);
             this.lblDate.TabIndex = 8;
@@ -192,9 +203,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(154, 271);
+            this.btnAdd.Location = new System.Drawing.Point(231, 417);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(84, 31);
+            this.btnAdd.Size = new System.Drawing.Size(126, 48);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -204,16 +216,18 @@
             // 
             this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(280, 225);
+            this.txtPrice.Location = new System.Drawing.Point(420, 346);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(66, 25);
+            this.txtPrice.Size = new System.Drawing.Size(97, 25);
             this.txtPrice.TabIndex = 7;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(227, 229);
+            this.lblPrice.Location = new System.Drawing.Point(340, 352);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(47, 21);
             this.lblPrice.TabIndex = 2;
@@ -223,7 +237,8 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(96, 137);
+            this.lblTime.Location = new System.Drawing.Point(144, 211);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(47, 21);
             this.lblTime.TabIndex = 1;
@@ -233,7 +248,8 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(96, 56);
+            this.lblType.Location = new System.Drawing.Point(144, 86);
+            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(49, 21);
             this.lblType.TabIndex = 0;
@@ -243,7 +259,8 @@
             // 
             this.lblScheduleClass.AutoSize = true;
             this.lblScheduleClass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScheduleClass.Location = new System.Drawing.Point(146, 45);
+            this.lblScheduleClass.Location = new System.Drawing.Point(263, 69);
+            this.lblScheduleClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScheduleClass.Name = "lblScheduleClass";
             this.lblScheduleClass.Size = new System.Drawing.Size(140, 25);
             this.lblScheduleClass.TabIndex = 7;
@@ -261,10 +278,9 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(442, 31);
+            this.mnuMainMenu.Size = new System.Drawing.Size(663, 33);
             this.mnuMainMenu.TabIndex = 6;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -318,15 +334,16 @@
             // 
             // frmScheduleClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(442, 387);
+            this.ClientSize = new System.Drawing.Size(663, 595);
             this.Controls.Add(this.pnlScheduleClass);
             this.Controls.Add(this.lblScheduleClass);
             this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmScheduleClass";

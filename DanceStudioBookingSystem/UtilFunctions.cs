@@ -91,13 +91,31 @@ namespace DanceStudioBookingSystem
             return false;
         }
 
+        public static void InsertDataToComboBox(ComboBox comboBox)
+        {
+            if (comboBox.Name == "cboType")
+            {
+                string[] types = { "All","K-pop","Latin","Ballet","Hip-Hop"};
+                comboBox.Items.AddRange(types);
+            }else if(comboBox.Name == "cboTime")
+            {
+                string[] time = { "10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00",
+                    "17:30","18:00","18:30"};
+                comboBox.Items.AddRange(time);
+            }else if (comboBox.Name == "cboInstructor")
+            {
+                string[] instructors = {"Hyun-Woo Park","Isabella Martinez","Jasmine Williams","Ji-Min Lee","Malik Johnson","Olivia Smith",
+                    "Rafael Lopez","Soo-Jin Kim","Xavier Ortiz"};
+                comboBox.Items.AddRange(instructors);
+            }
+            
+        }
+
         public static void InsertDataGridMemberView(DataGridView datagrit, ComboBox comboBox)
         {
             datagrit.Rows.Clear();
 
-            if (comboBox.SelectedIndex == 0)
-            {
-                List<List<string>> kpopDataList = new List<List<string>>()
+            List<List<string>> kpopDataList = new List<List<string>>()
                 {
                     new List<string> { "K-pop (Advance)", "2023-11-24", "10:00 AM", "Ji-min Lee", "$15" },
                     new List<string> { "K-pop (Intermidiate)", "2023-11-25", "02:30 PM", "Hyun-woo Park", "$15" },
@@ -106,41 +124,20 @@ namespace DanceStudioBookingSystem
                     new List<string> { "K-pop (Intermidiate)", "2023-11-24", "12:30 AM", "Hyun-woo Park", "$10" },
                 };
 
-                foreach (var rowData in kpopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 1)
-            {
-                List<List<string>> latinDataList = new List<List<string>>()
+            List<List<string>> latinDataList = new List<List<string>>()
                 {
                     new List<string> { "Latin (Advance)", "2023-11-24", "11:00 AM", "Rafael Lopez", "$25" },
                     new List<string> { "Latin (Intermidiate)", "2023-11-25", "02:30 PM", "Isabella Martinez", "$25" },
                     new List<string> { "Latin (Beginer)", "2023-11-27", "03:30 PM", "Rafael Lopez", "$20" },
                 };
 
-                foreach (var rowData in latinDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 2)
-            {
-                List<List<string>> BalletDataList = new List<List<string>>()
+            List<List<string>> BalletDataList = new List<List<string>>()
                 {
                     new List<string> { "Ballet (Advance)", "2024-01-24", "11:00 AM", "Olivia Smith", "$35" },
 
                 };
 
-                foreach (var rowData in BalletDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 3)
-            {
-                List<List<string>> HipHopDataList = new List<List<string>>()
+            List<List<string>> HipHopDataList = new List<List<string>>()
                 {
                     new List<string> { "HipHop (Advance)", "2023-11-24", "10:00 AM", "Xavier Ortiz", "$15" },
                     new List<string> { "HipHop (Advance)", "2023-11-25", "10:00 AM", "Jasmine Williams", "$15" },
@@ -158,6 +155,47 @@ namespace DanceStudioBookingSystem
 
                 };
 
+            if (comboBox.SelectedIndex == 1)
+            {
+                foreach (var rowData in kpopDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+            }
+            else if (comboBox.SelectedIndex == 2)
+            {
+                foreach (var rowData in latinDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+            }
+            else if (comboBox.SelectedIndex == 3)
+            {
+                foreach (var rowData in BalletDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+            }
+            else if (comboBox.SelectedIndex == 4)
+            {
+                foreach (var rowData in HipHopDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+            }else if (comboBox.SelectedIndex == 0)
+            {
+                foreach (var rowData in kpopDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+                foreach (var rowData in latinDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
+                foreach (var rowData in BalletDataList)
+                {
+                    datagrit.Rows.Add(rowData.ToArray());
+                }
                 foreach (var rowData in HipHopDataList)
                 {
                     datagrit.Rows.Add(rowData.ToArray());
@@ -253,6 +291,16 @@ namespace DanceStudioBookingSystem
                     datagrit.Rows.Add(rowData.ToArray());
                 }
             }
+        }
+
+        public static bool IsValidPriceFormat(string price)
+        {
+            string format = @"^\d{2}\.\d{2}$"; //Format 00.00
+            if (Regex.IsMatch(price, format))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

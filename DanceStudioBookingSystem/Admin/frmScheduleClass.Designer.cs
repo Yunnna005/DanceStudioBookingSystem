@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduleClass));
             this.pnlScheduleClass = new System.Windows.Forms.Panel();
+            this.cboInstructor = new System.Windows.Forms.ComboBox();
+            this.cboTime = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtType = new System.Windows.Forms.TextBox();
-            this.txtInstructor = new System.Windows.Forms.TextBox();
             this.lblInstructor = new System.Windows.Forms.Label();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
@@ -60,18 +60,18 @@
             // pnlScheduleClass
             // 
             this.pnlScheduleClass.BackColor = System.Drawing.Color.White;
+            this.pnlScheduleClass.Controls.Add(this.cboInstructor);
+            this.pnlScheduleClass.Controls.Add(this.cboTime);
             this.pnlScheduleClass.Controls.Add(this.txtName);
             this.pnlScheduleClass.Controls.Add(this.lblName);
             this.pnlScheduleClass.Controls.Add(this.dtpDate);
             this.pnlScheduleClass.Controls.Add(this.txtType);
-            this.pnlScheduleClass.Controls.Add(this.txtInstructor);
             this.pnlScheduleClass.Controls.Add(this.lblInstructor);
             this.pnlScheduleClass.Controls.Add(this.txtCapacity);
             this.pnlScheduleClass.Controls.Add(this.lblCapacity);
             this.pnlScheduleClass.Controls.Add(this.lblDate);
             this.pnlScheduleClass.Controls.Add(this.btnAdd);
             this.pnlScheduleClass.Controls.Add(this.txtPrice);
-            this.pnlScheduleClass.Controls.Add(this.txtTime);
             this.pnlScheduleClass.Controls.Add(this.lblPrice);
             this.pnlScheduleClass.Controls.Add(this.lblTime);
             this.pnlScheduleClass.Controls.Add(this.lblType);
@@ -80,6 +80,33 @@
             this.pnlScheduleClass.Size = new System.Drawing.Size(420, 312);
             this.pnlScheduleClass.TabIndex = 8;
             // 
+            // cboInstructor
+            // 
+            this.cboInstructor.DropDownHeight = 80;
+            this.cboInstructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInstructor.DropDownWidth = 124;
+            this.cboInstructor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboInstructor.FormattingEnabled = true;
+            this.cboInstructor.IntegralHeight = false;
+            this.cboInstructor.Location = new System.Drawing.Point(199, 176);
+            this.cboInstructor.MaxDropDownItems = 4;
+            this.cboInstructor.Name = "cboInstructor";
+            this.cboInstructor.Size = new System.Drawing.Size(124, 25);
+            this.cboInstructor.Sorted = true;
+            this.cboInstructor.TabIndex = 5;
+            // 
+            // cboTime
+            // 
+            this.cboTime.DropDownHeight = 80;
+            this.cboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTime.FormattingEnabled = true;
+            this.cboTime.IntegralHeight = false;
+            this.cboTime.Location = new System.Drawing.Point(199, 137);
+            this.cboTime.Name = "cboTime";
+            this.cboTime.Size = new System.Drawing.Size(124, 25);
+            this.cboTime.TabIndex = 4;
+            // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
@@ -87,7 +114,7 @@
             this.txtName.Location = new System.Drawing.Point(199, 18);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(124, 25);
-            this.txtName.TabIndex = 24;
+            this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
@@ -107,7 +134,7 @@
             this.dtpDate.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(124, 29);
-            this.dtpDate.TabIndex = 22;
+            this.dtpDate.TabIndex = 3;
             this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
             // 
             // txtType
@@ -117,16 +144,7 @@
             this.txtType.Location = new System.Drawing.Point(199, 56);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(124, 25);
-            this.txtType.TabIndex = 14;
-            // 
-            // txtInstructor
-            // 
-            this.txtInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtInstructor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInstructor.Location = new System.Drawing.Point(199, 172);
-            this.txtInstructor.Name = "txtInstructor";
-            this.txtInstructor.Size = new System.Drawing.Size(124, 25);
-            this.txtInstructor.TabIndex = 13;
+            this.txtType.TabIndex = 2;
             // 
             // lblInstructor
             // 
@@ -145,7 +163,7 @@
             this.txtCapacity.Location = new System.Drawing.Point(134, 225);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(52, 25);
-            this.txtCapacity.TabIndex = 11;
+            this.txtCapacity.TabIndex = 6;
             // 
             // lblCapacity
             // 
@@ -177,7 +195,7 @@
             this.btnAdd.Location = new System.Drawing.Point(154, 271);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 31);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -189,16 +207,7 @@
             this.txtPrice.Location = new System.Drawing.Point(280, 225);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(66, 25);
-            this.txtPrice.TabIndex = 5;
-            // 
-            // txtTime
-            // 
-            this.txtTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTime.Location = new System.Drawing.Point(199, 133);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(124, 25);
-            this.txtTime.TabIndex = 4;
+            this.txtPrice.TabIndex = 7;
             // 
             // lblPrice
             // 
@@ -341,7 +350,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtTime;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblType;
@@ -352,12 +360,13 @@
         private System.Windows.Forms.ToolStripMenuItem mnutModifyClass;
         private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
         private System.Windows.Forms.ToolStripMenuItem mnuStatistics;
-        private System.Windows.Forms.TextBox txtInstructor;
         private System.Windows.Forms.Label lblInstructor;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.ComboBox cboInstructor;
+        private System.Windows.Forms.ComboBox cboTime;
     }
 }

@@ -19,6 +19,8 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
+            InsertDataToComboBox(cboTime);
+            InsertDataToComboBox(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -49,9 +51,38 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            traverseForm(this, new frmMainMenuAdmin(this));
+            if (string.IsNullOrEmpty(txtName.Text)) 
+            {
+                MessageBox.Show("Invalid class name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtType.Text))
+            {
+                MessageBox.Show("Invalid type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtType.Focus();
+            }
+            else if (cboTime.SelectedItem == null)
+            {
+                MessageBox.Show("Choose Time", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if (cboInstructor.SelectedItem == null)
+            {
+                MessageBox.Show("Choose Instructor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrEmpty(txtCapacity.Text) || !int.TryParse(txtCapacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0)
+            {
+                MessageBox.Show("Invalid Capacity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCapacity.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtPrice.Text) || !IsValidPriceFormat(txtPrice.Text))
+            {
+                MessageBox.Show("Invalid Price", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPrice.Focus();
+            }
+            else
+            {
+                MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                traverseForm(this, new frmMainMenuAdmin(this));
+            } 
         }
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,5 +90,4 @@ namespace DanceStudioBookingSystem
             parent.Show();
         }
     }
-    
 }

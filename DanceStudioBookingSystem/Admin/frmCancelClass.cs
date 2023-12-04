@@ -18,6 +18,7 @@ namespace DanceStudioBookingSystem
         {
             parentForm = parent;
             InitializeComponent();
+            InsertDataToComboBox(cboType);
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace DanceStudioBookingSystem
         private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)
         {
             parentForm.Show();
+        }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InsertDataGridAdminView(dgvCancelClassesAdmin, cboType);
         }
     }
 }

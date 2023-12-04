@@ -18,6 +18,9 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
+            InsertDataToComboBox(cboType);
+            InsertDataToComboBox(cboTime);
+            InsertDataToComboBox(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -48,6 +51,11 @@ namespace DanceStudioBookingSystem
         private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            InsertDataGridAdminView(dgvModifyClassesAdmin,cboType);
         }
     }
 }

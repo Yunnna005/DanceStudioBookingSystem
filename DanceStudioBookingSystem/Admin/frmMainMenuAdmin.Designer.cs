@@ -155,12 +155,6 @@
             // cboType
             // 
             this.cboType.FormattingEnabled = true;
-            this.cboType.Items.AddRange(new object[] {
-            "All",
-            "K-pop",
-            "Latin",
-            "Ballet",
-            "Hip-Hop"});
             this.cboType.Location = new System.Drawing.Point(361, 25);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(121, 29);

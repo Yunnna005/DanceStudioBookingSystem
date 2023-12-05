@@ -19,6 +19,7 @@ namespace DanceStudioBookingSystem
             parent = parentForm;
             InitializeComponent();
             InsertDataToComboBox(cboYear);
+            InsertDataToComboBox(cboYearPopularStyle);
         }
 
         private void tmnuScheduleClass_Click(object sender, EventArgs e)
@@ -48,21 +49,71 @@ namespace DanceStudioBookingSystem
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+
             if (cboYear.SelectedItem != null)
             {
-                MessageBox.Show("Yearly revenue is: 10000$", "Yearly Revenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string selectedYear = cboYear.SelectedItem.ToString();
+                string revenue = "";
+
+                if (selectedYear.Equals("2023"))
+                {
+                    revenue = "Yearly revenue is: 80000.56 $";
+                }
+                else if (selectedYear.Equals("2022"))
+                {
+                    revenue = "Yearly revenue is: 23400.456 $";
+                }
+                else if (selectedYear.Equals("2021"))
+                {
+                    revenue = "Yearly revenue is: 56400.4523 $";
+                }
+                else
+                {
+                    revenue = "No Data Found";
+                }
+
+                MessageBox.Show(revenue, "Yearly Revenue", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Please choose year", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please choose a year", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The most popular dance style is Hip-Hop\n\nStatistics of the addendance of the dance styles:"+
-                "\n\nHip-Hop: 10065\nK-pop: 6678\nLatin: 4432\nBallet: 121", "Attendance", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (cboYearPopularStyle.SelectedItem != null)
+            {
+                string selectedYear = cboYearPopularStyle.SelectedItem.ToString();
+                string popularDanceStyle = "";
+
+                if (selectedYear.Equals("2023"))
+                {
+                    popularDanceStyle = "The most popular dance style is Ballet\n\nStatistics of the attendance of the dance styles:" +
+                        "\n\nBallet: 9065\nK-pop: 6348\nHip-Hop: 4432\nLatin: 121";
+                }
+                else if (selectedYear.Equals("2022"))
+                {
+                    popularDanceStyle = "The most popular dance style is K-pop\n\nStatistics of the attendance of the dance styles:" +
+                        "\n\nK-pop: 11065\nBallet: 7648\nHip-Hop: 5432\nLatin: 331";
+                }
+                else if (selectedYear.Equals("2021"))
+                {
+                    popularDanceStyle = "The most popular dance style is Latin\n\nStatistics of the attendance of the dance styles:" +
+                        "\n\nLatin: 12265\nK-pop: 9948\nHip-Hop: 7632\nBallet: 3451";
+                }
+                else
+                {
+                    popularDanceStyle = "No Data Found";
+                }
+
+                MessageBox.Show(popularDanceStyle, "Statistics", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please choose a year", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void frmStatistics_FormClosed(object sender, FormClosedEventArgs e)

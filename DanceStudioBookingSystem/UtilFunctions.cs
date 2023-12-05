@@ -39,27 +39,27 @@ namespace DanceStudioBookingSystem
             RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
         {
             DateTime selectedDate = dob.Value.Date; // Get the selected date without time
-            int curentAge = DateTime.Now.Date.Year - selectedDate.Year;
+            int curentAge = DateTime.Now.Date.Year - selectedDate.Year; 
 
             if (string.IsNullOrEmpty(firstname.Text))
             {
                 firstname.Focus();
                 return "Please enter valid First Name.";
             }
-            else if (CheckGigitsLettersSymbolls(firstname) != "Letters")
+            else if (CheckGigits_Letters_Symbolls(firstname) != "Letters")
             {
                 firstname.Focus();
-                return "The Firstname must not contain numbers";
+                return "The Firstname must not contain numbers or symbols.";
             }
             else if (string.IsNullOrEmpty(secondname.Text))
             {
                 secondname.Focus();
                 return "Please enter valid Second Name.";
             }
-            else if (CheckGigitsLettersSymbolls(secondname) != "Letters")
+            else if (CheckGigits_Letters_Symbolls(secondname) != "Letters")
             {
                 secondname.Focus();
-                return "The Secondname must not contain numbers";
+                return "The Secondname must not contain numbers or symbols.";
             }
             else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
@@ -70,7 +70,7 @@ namespace DanceStudioBookingSystem
             {
                 phone.Focus();
                 return "Please enter valid phone number.";
-            }else if (CheckGigitsLettersSymbolls(phone) != "Digits")
+            }else if (CheckGigits_Letters_Symbolls(phone) != "Digits")
             {
                 phone.Focus();
                 return "The phone number can not contain letters or symbols.";
@@ -98,7 +98,7 @@ namespace DanceStudioBookingSystem
             }
             return gender;
         }
-        public static string CheckGigitsLettersSymbolls(TextBox text)
+        public static string CheckGigits_Letters_Symbolls(TextBox text)
         {
             int digits = 0, letters = 0, symbols = 0;
             if (!string.IsNullOrEmpty(text.Text))
@@ -150,7 +150,7 @@ namespace DanceStudioBookingSystem
                 string[] instructors = {"Hyun-Woo Park","Isabella Martinez","Jasmine Williams","Ji-Min Lee","Malik Johnson","Olivia Smith",
                     "Rafael Lopez","Soo-Jin Kim","Xavier Ortiz"};
                 comboBox.Items.AddRange(instructors);
-            }else if (comboBox.Name == "cboYear")
+            }else if (comboBox.Name == "cboYear" || comboBox.Name == "cboYearPopularStyle")
             {
                 string[] year = {"2018","2019","2020","2021","2022","2023"};
                 comboBox.Items.AddRange(year);
@@ -352,31 +352,34 @@ namespace DanceStudioBookingSystem
         {
             if (string.IsNullOrEmpty(name.Text))
             {
-                return "Invalid class name";
                 name.Focus();
+                return "Invalid class name";
             }
             else if (string.IsNullOrEmpty(type.Text))
             {
-                return "Invalid type";
                 type.Focus();
+                return "Invalid type";
+            }else if (CheckGigits_Letters_Symbolls(type) != "Letters")
+            {
+                return "The type name must only has letters";
             }
             else if (time.SelectedItem == null)
             {
-                return "Choose Time";
+                return "Please choose the Time";
             }
             else if (instructor.SelectedItem == null)
             {
-                return "Choose Instructor";
+                return "Please choose the Instructor";
             }
-            else if (string.IsNullOrEmpty(capacity.Text) || !int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0)
+            else if (string.IsNullOrEmpty(capacity.Text) || (!int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0))
             {
-                return "Invalid Capacity";
                 capacity.Focus();
+                return "Invalid Capacity";
             }
             else if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
             {
-                return "Invalid Price";
                 price.Focus();
+                return "Invalid Price";
             }
             else
             {
@@ -400,28 +403,28 @@ namespace DanceStudioBookingSystem
             {
                 cardNumber.Focus();
                 return "Please enter a valid card number.\nThe card number must have 16 digits.";
-            } else if (CheckGigitsLettersSymbolls(cardNumber) != "Digits")
+            } else if (CheckGigits_Letters_Symbolls(cardNumber) != "Digits")
             {
                 cardNumber.Focus();
                 return "Please enter a valid card number\n (only numbers are allowed)";
-            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigitsLettersSymbolls(cardHolder) != "Letters")
+            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigits_Letters_Symbolls(cardHolder) != "Letters")
             {
                 cardHolder.Focus();
-                return "Invalid name";
+                return "Invalid Card Holder Name";
             } else if (month.SelectedItem == null)
             {
-                return "Please choose month";
+                return "Please choose the month";
             } else if (year.SelectedItem == null)
             {
-                return "Please choose year";
+                return "Please choose the year";
             } else if (string.IsNullOrEmpty(cvc.Text) || cvc.Text.Length != 3)
             {
                 cvc.Focus();
                 return "Invalid CVC number.";
-            }else if (CheckGigitsLettersSymbolls(cvc) != "Digits")
+            }else if (CheckGigits_Letters_Symbolls(cvc) != "Digits")
             {
                 cvc.Focus();
-                return "The CVC number nust have only numbers.";
+                return "The CVC number must have only numbers.";
             }
             else
             {

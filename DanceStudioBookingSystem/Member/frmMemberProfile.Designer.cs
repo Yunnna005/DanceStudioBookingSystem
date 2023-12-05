@@ -48,18 +48,18 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.grpBookedClasses = new System.Windows.Forms.GroupBox();
             this.dgvClassesMember = new System.Windows.Forms.DataGridView();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelClass = new System.Windows.Forms.Button();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
@@ -280,40 +280,6 @@
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
             this.dgvClassesMember.TabIndex = 0;
             // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            // 
-            // TYPE
-            // 
-            this.TYPE.HeaderText = "Type";
-            this.TYPE.Name = "TYPE";
-            this.TYPE.Width = 80;
-            // 
-            // DATE
-            // 
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            this.DATE.Width = 80;
-            // 
-            // TIME
-            // 
-            this.TIME.HeaderText = "Time";
-            this.TIME.Name = "TIME";
-            this.TIME.Width = 80;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.Width = 80;
-            // 
             // btnCancelClass
             // 
             this.btnCancelClass.BackColor = System.Drawing.Color.White;
@@ -390,6 +356,41 @@
             this.mnuBook.Size = new System.Drawing.Size(163, 51);
             this.mnuBook.Text = "Book";
             this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
+            // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.Width = 120;
+            // 
+            // TYPE
+            // 
+            this.TYPE.HeaderText = "Type";
+            this.TYPE.Name = "TYPE";
+            this.TYPE.Width = 80;
+            // 
+            // DATE
+            // 
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            this.DATE.Width = 80;
+            // 
+            // TIME
+            // 
+            this.TIME.HeaderText = "Time";
+            this.TIME.Name = "TIME";
+            this.TIME.Width = 80;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.Width = 60;
             // 
             // frmMemberProfile
             // 

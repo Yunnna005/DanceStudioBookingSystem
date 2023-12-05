@@ -48,10 +48,17 @@ namespace DanceStudioBookingSystem
 
         private void btnCancelClass_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to cancel class?", "Cancel Class", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (cboType.SelectedItem == null)
             {
-                MessageBox.Show("The Class was canceled.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please choose the class you want to cancel.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to cancel class?", "Cancel Class", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

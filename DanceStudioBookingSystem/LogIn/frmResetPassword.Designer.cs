@@ -42,8 +42,8 @@
             this.picLock2 = new System.Windows.Forms.PictureBox();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.pnlFullName = new System.Windows.Forms.Panel();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblFullName = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.pnlNewPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLock)).BeginInit();
@@ -190,33 +190,33 @@
             // pnlFullName
             // 
             this.pnlFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
-            this.pnlFullName.Controls.Add(this.txtFullName);
-            this.pnlFullName.Controls.Add(this.lblFullName);
+            this.pnlFullName.Controls.Add(this.txtEmail);
+            this.pnlFullName.Controls.Add(this.lblEmail);
             this.pnlFullName.Controls.Add(this.picUser);
             this.pnlFullName.Location = new System.Drawing.Point(74, 132);
             this.pnlFullName.Name = "pnlFullName";
             this.pnlFullName.Size = new System.Drawing.Size(402, 71);
             this.pnlFullName.TabIndex = 2;
             // 
-            // txtFullName
+            // txtEmail
             // 
-            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.ForeColor = System.Drawing.Color.Black;
-            this.txtFullName.Location = new System.Drawing.Point(9, 31);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(346, 28);
-            this.txtFullName.TabIndex = 1;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(9, 31);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(346, 28);
+            this.txtEmail.TabIndex = 1;
             // 
-            // lblFullName
+            // lblEmail
             // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(12, 10);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(61, 15);
-            this.lblFullName.TabIndex = 0;
-            this.lblFullName.Text = "Full Name";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(12, 10);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(36, 15);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
             // 
             // picUser
             // 
@@ -276,8 +276,8 @@
         private System.Windows.Forms.PictureBox picLock2;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Panel pnlFullName;
-        private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.Label lblFullName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.PictureBox picUser;
     }
 }

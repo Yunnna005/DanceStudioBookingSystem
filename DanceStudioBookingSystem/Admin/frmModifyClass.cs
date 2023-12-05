@@ -78,7 +78,14 @@ namespace DanceStudioBookingSystem
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            grpUpdateDetails.Visible = true;
+            if (cboType.SelectedItem == null)
+            {
+                MessageBox.Show("Please choose the class you want to modify.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                grpUpdateDetails.Visible = true;
+            }
         }
     }
 }

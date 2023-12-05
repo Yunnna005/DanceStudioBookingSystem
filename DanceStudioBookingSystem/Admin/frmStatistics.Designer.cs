@@ -41,6 +41,8 @@
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.grpAnalyzePopularDanceStyle = new System.Windows.Forms.GroupBox();
+            this.cboYearPopularStyle = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
             this.lblFindPopularDanceStyle = new System.Windows.Forms.Label();
             this.grpAnalyzeYearlyRevenue.SuspendLayout();
@@ -54,7 +56,7 @@
             this.grpAnalyzeYearlyRevenue.Controls.Add(this.btnCalculate);
             this.grpAnalyzeYearlyRevenue.Controls.Add(this.cboYear);
             this.grpAnalyzeYearlyRevenue.Controls.Add(this.lblYear);
-            this.grpAnalyzeYearlyRevenue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAnalyzeYearlyRevenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAnalyzeYearlyRevenue.Location = new System.Drawing.Point(12, 46);
             this.grpAnalyzeYearlyRevenue.Name = "grpAnalyzeYearlyRevenue";
             this.grpAnalyzeYearlyRevenue.Size = new System.Drawing.Size(414, 175);
@@ -173,15 +175,41 @@
             // grpAnalyzePopularDanceStyle
             // 
             this.grpAnalyzePopularDanceStyle.BackColor = System.Drawing.Color.White;
+            this.grpAnalyzePopularDanceStyle.Controls.Add(this.cboYearPopularStyle);
+            this.grpAnalyzePopularDanceStyle.Controls.Add(this.label1);
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.btnFind);
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.lblFindPopularDanceStyle);
-            this.grpAnalyzePopularDanceStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpAnalyzePopularDanceStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAnalyzePopularDanceStyle.Location = new System.Drawing.Point(12, 227);
             this.grpAnalyzePopularDanceStyle.Name = "grpAnalyzePopularDanceStyle";
-            this.grpAnalyzePopularDanceStyle.Size = new System.Drawing.Size(414, 148);
+            this.grpAnalyzePopularDanceStyle.Size = new System.Drawing.Size(414, 187);
             this.grpAnalyzePopularDanceStyle.TabIndex = 2;
             this.grpAnalyzePopularDanceStyle.TabStop = false;
             this.grpAnalyzePopularDanceStyle.Text = "Analyze Popular Dance Style";
+            // 
+            // cboYearPopularStyle
+            // 
+            this.cboYearPopularStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.cboYearPopularStyle.DropDownHeight = 80;
+            this.cboYearPopularStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYearPopularStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboYearPopularStyle.FormattingEnabled = true;
+            this.cboYearPopularStyle.IntegralHeight = false;
+            this.cboYearPopularStyle.ItemHeight = 17;
+            this.cboYearPopularStyle.Location = new System.Drawing.Point(182, 88);
+            this.cboYearPopularStyle.Name = "cboYearPopularStyle";
+            this.cboYearPopularStyle.Size = new System.Drawing.Size(100, 25);
+            this.cboYearPopularStyle.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(124, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 21);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Year: ";
             // 
             // btnFind
             // 
@@ -190,7 +218,7 @@
             this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFind.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFind.ForeColor = System.Drawing.Color.White;
-            this.btnFind.Location = new System.Drawing.Point(157, 93);
+            this.btnFind.Location = new System.Drawing.Point(154, 140);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(95, 31);
             this.btnFind.TabIndex = 1;
@@ -202,7 +230,7 @@
             // 
             this.lblFindPopularDanceStyle.AutoSize = true;
             this.lblFindPopularDanceStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFindPopularDanceStyle.Location = new System.Drawing.Point(135, 58);
+            this.lblFindPopularDanceStyle.Location = new System.Drawing.Point(112, 45);
             this.lblFindPopularDanceStyle.Name = "lblFindPopularDanceStyle";
             this.lblFindPopularDanceStyle.Size = new System.Drawing.Size(201, 21);
             this.lblFindPopularDanceStyle.TabIndex = 0;
@@ -213,7 +241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(442, 384);
+            this.ClientSize = new System.Drawing.Size(442, 426);
             this.Controls.Add(this.grpAnalyzePopularDanceStyle);
             this.Controls.Add(this.grpAnalyzeYearlyRevenue);
             this.Controls.Add(this.mnuMainMenu);
@@ -251,5 +279,7 @@
         private System.Windows.Forms.GroupBox grpAnalyzePopularDanceStyle;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label lblFindPopularDanceStyle;
+        private System.Windows.Forms.ComboBox cboYearPopularStyle;
+        private System.Windows.Forms.Label label1;
     }
 }

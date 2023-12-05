@@ -134,7 +134,7 @@
             this.grpClasses.Controls.Add(this.lblType);
             this.grpClasses.Controls.Add(this.cboType);
             this.grpClasses.Controls.Add(this.dgvClassesAdmin);
-            this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpClasses.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpClasses.Location = new System.Drawing.Point(0, 47);
             this.grpClasses.Name = "grpClasses";
             this.grpClasses.Size = new System.Drawing.Size(770, 330);
@@ -217,6 +217,7 @@
             this.INSTRUCTOR.HeaderText = "Instructor";
             this.INSTRUCTOR.Name = "INSTRUCTOR";
             this.INSTRUCTOR.ReadOnly = true;
+            this.INSTRUCTOR.Width = 120;
             // 
             // CAPACITY
             // 

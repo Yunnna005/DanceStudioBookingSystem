@@ -57,6 +57,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvModifyClassesAdmin = new System.Windows.Forms.DataGridView();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +65,6 @@
             this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.mnuMainMenu.SuspendLayout();
             this.grpUpdateDetails.SuspendLayout();
             this.grpSelectClass.SuspendLayout();
@@ -170,7 +170,7 @@
             this.grpUpdateDetails.Controls.Add(this.btnUpdate);
             this.grpUpdateDetails.Controls.Add(this.lblTime);
             this.grpUpdateDetails.Controls.Add(this.lblType);
-            this.grpUpdateDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpUpdateDetails.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpUpdateDetails.Location = new System.Drawing.Point(16, 415);
             this.grpUpdateDetails.Name = "grpUpdateDetails";
             this.grpUpdateDetails.Size = new System.Drawing.Size(627, 284);
@@ -340,7 +340,7 @@
             this.grpSelectClass.Controls.Add(this.cboType);
             this.grpSelectClass.Controls.Add(this.dgvModifyClassesAdmin);
             this.grpSelectClass.Controls.Add(this.btnSelect);
-            this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSelectClass.Location = new System.Drawing.Point(16, 74);
             this.grpSelectClass.Name = "grpSelectClass";
             this.grpSelectClass.Size = new System.Drawing.Size(627, 335);
@@ -392,55 +392,6 @@
             this.dgvModifyClassesAdmin.Size = new System.Drawing.Size(615, 231);
             this.dgvModifyClassesAdmin.TabIndex = 2;
             // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class Name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 8;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 80;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 8;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 60;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.MinimumWidth = 8;
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 60;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            this.INSTRUCTOR.ReadOnly = true;
-            // 
-            // CAPACITY
-            // 
-            this.CAPACITY.HeaderText = "Capacity";
-            this.CAPACITY.Name = "CAPACITY";
-            this.CAPACITY.ReadOnly = true;
-            this.CAPACITY.Width = 80;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.ReadOnly = true;
-            // 
             // btnSelect
             // 
             this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
@@ -455,6 +406,57 @@
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 150;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 8;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 120;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 8;
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Width = 80;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.ReadOnly = true;
+            this.INSTRUCTOR.Width = 120;
+            // 
+            // CAPACITY
+            // 
+            this.CAPACITY.HeaderText = "Capacity";
+            this.CAPACITY.Name = "CAPACITY";
+            this.CAPACITY.ReadOnly = true;
+            this.CAPACITY.Width = 70;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 60;
             // 
             // frmModifyClass
             // 

@@ -34,13 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvCancelClassesAdmin = new System.Windows.Forms.DataGridView();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
             this.tmnuScheduleClass = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +42,13 @@
             this.mnuStatisticsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCancelClass = new System.Windows.Forms.Label();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpSelectClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancelClassesAdmin)).BeginInit();
             this.mnuMainMenu.SuspendLayout();
@@ -61,10 +61,10 @@
             this.grpSelectClass.Controls.Add(this.label1);
             this.grpSelectClass.Controls.Add(this.cboType);
             this.grpSelectClass.Controls.Add(this.dgvCancelClassesAdmin);
-            this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSelectClass.Location = new System.Drawing.Point(16, 81);
+            this.grpSelectClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpSelectClass.Location = new System.Drawing.Point(5, 81);
             this.grpSelectClass.Name = "grpSelectClass";
-            this.grpSelectClass.Size = new System.Drawing.Size(681, 351);
+            this.grpSelectClass.Size = new System.Drawing.Size(701, 351);
             this.grpSelectClass.TabIndex = 2;
             this.grpSelectClass.TabStop = false;
             this.grpSelectClass.Text = "Select Class ";
@@ -121,60 +121,12 @@
             this.INSTRUCTOR,
             this.CAPACITY,
             this.PRICE});
-            this.dgvCancelClassesAdmin.Location = new System.Drawing.Point(16, 66);
+            this.dgvCancelClassesAdmin.Location = new System.Drawing.Point(6, 66);
             this.dgvCancelClassesAdmin.Name = "dgvCancelClassesAdmin";
             this.dgvCancelClassesAdmin.ReadOnly = true;
             this.dgvCancelClassesAdmin.RowHeadersWidth = 62;
-            this.dgvCancelClassesAdmin.Size = new System.Drawing.Size(659, 227);
+            this.dgvCancelClassesAdmin.Size = new System.Drawing.Size(690, 227);
             this.dgvCancelClassesAdmin.TabIndex = 3;
-            // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class Name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.ReadOnly = true;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 8;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            this.Type.Width = 80;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 8;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 80;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.MinimumWidth = 8;
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 80;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            this.INSTRUCTOR.ReadOnly = true;
-            // 
-            // CAPACITY
-            // 
-            this.CAPACITY.HeaderText = "Capacity";
-            this.CAPACITY.Name = "CAPACITY";
-            this.CAPACITY.ReadOnly = true;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.ReadOnly = true;
             // 
             // mnuMainMenu
             // 
@@ -256,6 +208,55 @@
             this.lblCancelClass.Size = new System.Drawing.Size(118, 25);
             this.lblCancelClass.TabIndex = 1;
             this.lblCancelClass.Text = "Cancel Class";
+            // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 150;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 8;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 8;
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.ReadOnly = true;
+            this.INSTRUCTOR.Width = 120;
+            // 
+            // CAPACITY
+            // 
+            this.CAPACITY.HeaderText = "Capacity";
+            this.CAPACITY.Name = "CAPACITY";
+            this.CAPACITY.ReadOnly = true;
+            this.CAPACITY.Width = 80;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 60;
             // 
             // frmCancelClass
             // 

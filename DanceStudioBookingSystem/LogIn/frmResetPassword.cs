@@ -27,15 +27,23 @@ namespace DanceStudioBookingSystem
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Text == "Anna" && txtNewPassword.Text == txtConfirmPassword.Text)
+            if (txtEmail.Text == "Anna@gmail.com" && txtNewPassword.Text == txtConfirmPassword.Text)
             {
-                MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                traverseForm(this, new frmLogIn());
+                if (string.IsNullOrEmpty(txtNewPassword.Text) && string.IsNullOrEmpty(txtConfirmPassword.Text))
+                {
+                    MessageBox.Show("Please enter the password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtNewPassword.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    traverseForm(this, new frmLogIn());
+                }
             }
             else
             {
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtFullName.Focus();
+                txtEmail.Focus();
                 return;
             }
         }

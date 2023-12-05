@@ -18,11 +18,11 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
-            lblWriteUsername.Text = "Anna";
+            lblWriteUsername.Text = "Anna Kovalenko";
             lblWriteDOB.Text = "24/08/2005";
             lblWriteGender.Text = "Female";
             lblWritePhone.Text = "+353852022777";
-            lblWriteEmail.Text = "anna.kovalenko@students.ittralee.ie";
+            lblWriteEmail.Text = "Anna@gmail.com";
 
             dgvClassesMember.Rows.Add("K-pop (Beginer)", "K-POP", "2023-11-26", "06:30 PM", "Ji-min Lee", "$10");
             dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "K-POP", "2023-11-24", "12:30 AM", "Hyun-woo Park", "$10");

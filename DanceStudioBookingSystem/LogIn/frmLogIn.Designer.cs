@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogIn));
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.lblSignIn = new System.Windows.Forms.Label();
-            this.pnlUsername = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.pnlEmail = new System.Windows.Forms.Panel();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.pnlPassword = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,7 +46,7 @@
             this.lblNotAMember = new System.Windows.Forms.Label();
             this.lblForgotPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
-            this.pnlUsername.SuspendLayout();
+            this.pnlEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.pnlPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,39 +75,39 @@
             this.lblSignIn.TabIndex = 0;
             this.lblSignIn.Text = "Sign In";
             // 
-            // pnlUsername
+            // pnlEmail
             // 
-            this.pnlUsername.BackColor = System.Drawing.Color.White;
-            this.pnlUsername.Controls.Add(this.lblUsername);
-            this.pnlUsername.Controls.Add(this.txtFullName);
-            this.pnlUsername.Controls.Add(this.picUser);
-            this.pnlUsername.Location = new System.Drawing.Point(97, 283);
-            this.pnlUsername.Name = "pnlUsername";
-            this.pnlUsername.Size = new System.Drawing.Size(323, 63);
-            this.pnlUsername.TabIndex = 1;
+            this.pnlEmail.BackColor = System.Drawing.Color.White;
+            this.pnlEmail.Controls.Add(this.lblEmail);
+            this.pnlEmail.Controls.Add(this.txtEmail);
+            this.pnlEmail.Controls.Add(this.picUser);
+            this.pnlEmail.Location = new System.Drawing.Point(97, 283);
+            this.pnlEmail.Name = "pnlEmail";
+            this.pnlEmail.Size = new System.Drawing.Size(323, 63);
+            this.pnlEmail.TabIndex = 1;
             // 
-            // lblUsername
+            // lblEmail
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.White;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.Black;
-            this.lblUsername.Location = new System.Drawing.Point(52, 9);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(71, 17);
-            this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Full Name";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.Color.White;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.Black;
+            this.lblEmail.Location = new System.Drawing.Point(52, 9);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(42, 17);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Email";
             // 
-            // txtFullName
+            // txtEmail
             // 
-            this.txtFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.ForeColor = System.Drawing.Color.Black;
-            this.txtFullName.Location = new System.Drawing.Point(51, 35);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(263, 22);
-            this.txtFullName.TabIndex = 1;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(51, 35);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(263, 22);
+            this.txtEmail.TabIndex = 1;
             // 
             // picUser
             // 
@@ -161,14 +161,14 @@
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(52, 31);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(263, 22);
+            this.txtPassword.Size = new System.Drawing.Size(237, 22);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // picLock
             // 
             this.picLock.Image = ((System.Drawing.Image)(resources.GetObject("picLock.Image")));
-            this.picLock.Location = new System.Drawing.Point(293, 7);
+            this.picLock.Location = new System.Drawing.Point(292, 31);
             this.picLock.Name = "picLock";
             this.picLock.Size = new System.Drawing.Size(22, 23);
             this.picLock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +247,7 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.pnlPassword);
-            this.Controls.Add(this.pnlUsername);
+            this.Controls.Add(this.pnlEmail);
             this.Controls.Add(this.lblSignIn);
             this.Controls.Add(this.picAvatar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -259,8 +259,8 @@
             this.Text = "Log In";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogIn_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
-            this.pnlUsername.ResumeLayout(false);
-            this.pnlUsername.PerformLayout();
+            this.pnlEmail.ResumeLayout(false);
+            this.pnlEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.pnlPassword.ResumeLayout(false);
             this.pnlPassword.PerformLayout();
@@ -277,14 +277,14 @@
 
         private System.Windows.Forms.PictureBox picAvatar;
         private System.Windows.Forms.Label lblSignIn;
-        private System.Windows.Forms.Panel pnlUsername;
+        private System.Windows.Forms.Panel pnlEmail;
         private System.Windows.Forms.PictureBox picUser;
-        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel pnlPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox picLock;
         private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Panel pnlBottom;
         private System.Windows.Forms.Label lblForgotPassword;

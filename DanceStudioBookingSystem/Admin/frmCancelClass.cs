@@ -58,6 +58,7 @@ namespace DanceStudioBookingSystem
                 if (result == DialogResult.Yes)
                 {
                     MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvCancelClassesAdmin.Rows.Clear();
                 }
             }
         }

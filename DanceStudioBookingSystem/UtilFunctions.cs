@@ -399,7 +399,7 @@ namespace DanceStudioBookingSystem
 
         public static string ValidationCardDetails(TextBox cardNumber, TextBox cardHolder, ComboBox month, ComboBox year, TextBox cvc)
         {
-            if (string.IsNullOrEmpty(cardNumber.Text) || cardNumber.Text.Length < 16)
+            if (string.IsNullOrEmpty(cardNumber.Text) || cardNumber.Text.Length != 16)
             {
                 cardNumber.Focus();
                 return "Please enter a valid card number.\nThe card number must have 16 digits.";

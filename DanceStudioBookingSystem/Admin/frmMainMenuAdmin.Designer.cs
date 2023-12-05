@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenuAdmin));
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,9 +66,10 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(1155, 33);
+            this.mnuMainMenu.Size = new System.Drawing.Size(770, 31);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -136,12 +135,10 @@
             this.grpClasses.Controls.Add(this.cboType);
             this.grpClasses.Controls.Add(this.dgvClassesAdmin);
             this.grpClasses.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpClasses.Location = new System.Drawing.Point(0, 72);
-            this.grpClasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grpClasses.Location = new System.Drawing.Point(0, 47);
             this.grpClasses.Name = "grpClasses";
-            this.grpClasses.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grpClasses.Size = new System.Drawing.Size(1155, 508);
-            this.grpClasses.TabIndex = 2;
+            this.grpClasses.Size = new System.Drawing.Size(770, 330);
+            this.grpClasses.TabIndex = 1;
             this.grpClasses.TabStop = false;
             this.grpClasses.Text = "Classes";
             // 
@@ -149,23 +146,21 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(406, 38);
-            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Location = new System.Drawing.Point(271, 25);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(42, 21);
-            this.lblType.TabIndex = 3;
+            this.lblType.TabIndex = 0;
             this.lblType.Text = "Type";
             // 
             // cboType
             // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(542, 38);
-            this.cboType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboType.Location = new System.Drawing.Point(361, 25);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(180, 25);
-            this.cboType.TabIndex = 2;
-            this.cboType.Text = "Choose type";
+            this.cboType.Size = new System.Drawing.Size(121, 25);
+            this.cboType.TabIndex = 1;
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
             // dgvClassesAdmin
@@ -173,14 +168,6 @@
             this.dgvClassesAdmin.AllowUserToAddRows = false;
             this.dgvClassesAdmin.AllowUserToDeleteRows = false;
             this.dgvClassesAdmin.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClassesAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClassesAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClassesAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CLASSNAME,
@@ -190,27 +177,19 @@
             this.INSTRUCTOR,
             this.CAPACITY,
             this.PRICE});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClassesAdmin.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClassesAdmin.Location = new System.Drawing.Point(9, 92);
-            this.dgvClassesAdmin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvClassesAdmin.Location = new System.Drawing.Point(6, 60);
             this.dgvClassesAdmin.Name = "dgvClassesAdmin";
             this.dgvClassesAdmin.ReadOnly = true;
             this.dgvClassesAdmin.RowHeadersWidth = 62;
-            this.dgvClassesAdmin.Size = new System.Drawing.Size(1128, 395);
-            this.dgvClassesAdmin.TabIndex = 0;
+            this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 257);
+            this.dgvClassesAdmin.TabIndex = 2;
             // 
             // CLASSNAME
             // 
             this.CLASSNAME.HeaderText = "Class Name";
             this.CLASSNAME.Name = "CLASSNAME";
             this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 150;
             // 
             // Type
             // 
@@ -241,28 +220,30 @@
             // 
             // CAPACITY
             // 
+            this.CAPACITY.FillWeight = 60F;
             this.CAPACITY.HeaderText = "Capacity";
             this.CAPACITY.Name = "CAPACITY";
             this.CAPACITY.ReadOnly = true;
+            this.CAPACITY.Width = 80;
             // 
             // PRICE
             // 
             this.PRICE.HeaderText = "Price";
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 60;
             // 
             // frmMainMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(1155, 595);
+            this.ClientSize = new System.Drawing.Size(770, 387);
             this.Controls.Add(this.grpClasses);
             this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMainMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMainMenuAdmin";
@@ -290,6 +271,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnutCancelClass;
         private System.Windows.Forms.GroupBox grpClasses;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.ComboBox cboType;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
@@ -297,7 +280,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.ComboBox cboType;
     }
 }

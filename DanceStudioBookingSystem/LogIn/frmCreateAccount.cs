@@ -27,7 +27,7 @@ namespace DanceStudioBookingSystem
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther);
+            string validationMemberDetails = ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {
                 if (txtPassword.Text == null || txtPassword.Text.Length < 8)
@@ -45,7 +45,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther), "Error",
+                MessageBox.Show(ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

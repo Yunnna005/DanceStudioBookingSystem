@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMemberProfile));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblProfile = new System.Windows.Forms.Label();
@@ -72,7 +74,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(177, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(678, 72);
-            this.pnlHeader.TabIndex = 1;
+            this.pnlHeader.TabIndex = 2;
             // 
             // lblProfile
             // 
@@ -94,7 +96,7 @@
             this.btnEdit.Location = new System.Drawing.Point(603, 17);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(56, 32);
-            this.btnEdit.TabIndex = 2;
+            this.btnEdit.TabIndex = 10;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -129,7 +131,7 @@
             this.lblWriteGender.Location = new System.Drawing.Point(111, 89);
             this.lblWriteGender.Name = "lblWriteGender";
             this.lblWriteGender.Size = new System.Drawing.Size(106, 19);
-            this.lblWriteGender.TabIndex = 12;
+            this.lblWriteGender.TabIndex = 5;
             this.lblWriteGender.Text = "MemberGender";
             // 
             // lblGender
@@ -139,7 +141,7 @@
             this.lblGender.Location = new System.Drawing.Point(19, 89);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(61, 19);
-            this.lblGender.TabIndex = 11;
+            this.lblGender.TabIndex = 4;
             this.lblGender.Text = "Gender: ";
             // 
             // lblWriteEmail
@@ -149,7 +151,7 @@
             this.lblWriteEmail.Location = new System.Drawing.Point(111, 151);
             this.lblWriteEmail.Name = "lblWriteEmail";
             this.lblWriteEmail.Size = new System.Drawing.Size(93, 19);
-            this.lblWriteEmail.TabIndex = 10;
+            this.lblWriteEmail.TabIndex = 9;
             this.lblWriteEmail.Text = "MemberEmail";
             // 
             // lblWritePhone
@@ -159,7 +161,7 @@
             this.lblWritePhone.Location = new System.Drawing.Point(111, 119);
             this.lblWritePhone.Name = "lblWritePhone";
             this.lblWritePhone.Size = new System.Drawing.Size(100, 19);
-            this.lblWritePhone.TabIndex = 9;
+            this.lblWritePhone.TabIndex = 7;
             this.lblWritePhone.Text = "MemberPhone";
             // 
             // lblWriteDOB
@@ -169,7 +171,7 @@
             this.lblWriteDOB.Location = new System.Drawing.Point(111, 61);
             this.lblWriteDOB.Name = "lblWriteDOB";
             this.lblWriteDOB.Size = new System.Drawing.Size(90, 19);
-            this.lblWriteDOB.TabIndex = 8;
+            this.lblWriteDOB.TabIndex = 3;
             this.lblWriteDOB.Text = "MemberDOB";
             // 
             // lblWriteUsername
@@ -179,7 +181,7 @@
             this.lblWriteUsername.Location = new System.Drawing.Point(111, 30);
             this.lblWriteUsername.Name = "lblWriteUsername";
             this.lblWriteUsername.Size = new System.Drawing.Size(97, 19);
-            this.lblWriteUsername.TabIndex = 7;
+            this.lblWriteUsername.TabIndex = 1;
             this.lblWriteUsername.Text = "MemberName";
             // 
             // lblDOB
@@ -189,7 +191,7 @@
             this.lblDOB.Location = new System.Drawing.Point(19, 61);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(45, 19);
-            this.lblDOB.TabIndex = 6;
+            this.lblDOB.TabIndex = 2;
             this.lblDOB.Text = "DOB: ";
             // 
             // lblEmail
@@ -199,7 +201,7 @@
             this.lblEmail.Location = new System.Drawing.Point(19, 151);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 19);
-            this.lblEmail.TabIndex = 5;
+            this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "Email: ";
             // 
             // lblPhone
@@ -209,7 +211,7 @@
             this.lblPhone.Location = new System.Drawing.Point(19, 119);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(55, 19);
-            this.lblPhone.TabIndex = 4;
+            this.lblPhone.TabIndex = 6;
             this.lblPhone.Text = "Phone: ";
             // 
             // lblFullName
@@ -219,7 +221,7 @@
             this.lblFullName.Location = new System.Drawing.Point(19, 30);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(73, 19);
-            this.lblFullName.TabIndex = 3;
+            this.lblFullName.TabIndex = 0;
             this.lblFullName.Text = "Full Name:";
             // 
             // grpBookedClasses
@@ -241,6 +243,14 @@
             this.dgvClassesMember.AllowUserToAddRows = false;
             this.dgvClassesMember.AllowUserToDeleteRows = false;
             this.dgvClassesMember.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClassesMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClassesMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClassesMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CLASSNAME,
@@ -249,18 +259,26 @@
             this.TIME,
             this.INSTRUCTOR,
             this.PRICE});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClassesMember.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClassesMember.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClassesMember.Location = new System.Drawing.Point(6, 29);
             this.dgvClassesMember.Name = "dgvClassesMember";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClassesMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
-            this.dgvClassesMember.TabIndex = 16;
+            this.dgvClassesMember.TabIndex = 0;
             // 
             // CLASSNAME
             // 
@@ -305,7 +323,7 @@
             this.btnCancelClass.Location = new System.Drawing.Point(575, 115);
             this.btnCancelClass.Name = "btnCancelClass";
             this.btnCancelClass.Size = new System.Drawing.Size(84, 32);
-            this.btnCancelClass.TabIndex = 15;
+            this.btnCancelClass.TabIndex = 1;
             this.btnCancelClass.Text = "Cancel Class";
             this.btnCancelClass.UseVisualStyleBackColor = false;
             this.btnCancelClass.Click += new System.EventHandler(this.btnCancelClass_Click);
@@ -316,7 +334,7 @@
             this.pnlBlueLine.Location = new System.Drawing.Point(157, -1);
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
-            this.pnlBlueLine.TabIndex = 20;
+            this.pnlBlueLine.TabIndex = 1;
             // 
             // btnLogOut
             // 
@@ -328,7 +346,7 @@
             this.btnLogOut.Location = new System.Drawing.Point(43, 481);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(76, 28);
-            this.btnLogOut.TabIndex = 19;
+            this.btnLogOut.TabIndex = 5;
             this.btnLogOut.Text = "Log out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -350,7 +368,7 @@
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.ShowItemToolTips = true;
             this.mnuMainMenu.Size = new System.Drawing.Size(179, 522);
-            this.mnuMainMenu.TabIndex = 18;
+            this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "menuStrip1";
             // 
             // mnuProfile

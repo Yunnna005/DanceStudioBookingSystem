@@ -27,7 +27,7 @@ namespace DanceStudioBookingSystem
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Text == "Anna1" && txtNewPassword.Text == txtConfirmPassword.Text)
+            if (txtFullName.Text == "Anna" && txtNewPassword.Text == txtConfirmPassword.Text)
             {
                 MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 traverseForm(this, new frmLogIn());

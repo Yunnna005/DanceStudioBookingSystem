@@ -36,6 +36,7 @@
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.picUser = new System.Windows.Forms.PictureBox();
             this.pnlPassword = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.picLock = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             this.pnlUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.pnlPassword.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLock)).BeginInit();
             this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             this.lblSignIn.Location = new System.Drawing.Point(200, 224);
             this.lblSignIn.Name = "lblSignIn";
             this.lblSignIn.Size = new System.Drawing.Size(105, 37);
-            this.lblSignIn.TabIndex = 1;
+            this.lblSignIn.TabIndex = 0;
             this.lblSignIn.Text = "Sign In";
             // 
             // pnlUsername
@@ -93,7 +95,7 @@
             this.lblUsername.Location = new System.Drawing.Point(52, 9);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(71, 17);
-            this.lblUsername.TabIndex = 1;
+            this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Full Name";
             // 
             // txtFullName
@@ -110,9 +112,9 @@
             // picUser
             // 
             this.picUser.Image = ((System.Drawing.Image)(resources.GetObject("picUser.Image")));
-            this.picUser.Location = new System.Drawing.Point(5, 13);
+            this.picUser.Location = new System.Drawing.Point(5, 9);
             this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(32, 32);
+            this.picUser.Size = new System.Drawing.Size(42, 48);
             this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUser.TabIndex = 3;
             this.picUser.TabStop = false;
@@ -120,6 +122,7 @@
             // pnlPassword
             // 
             this.pnlPassword.BackColor = System.Drawing.Color.White;
+            this.pnlPassword.Controls.Add(this.pictureBox1);
             this.pnlPassword.Controls.Add(this.lblPassword);
             this.pnlPassword.Controls.Add(this.txtPassword);
             this.pnlPassword.Controls.Add(this.picLock);
@@ -127,6 +130,16 @@
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(323, 58);
             this.pnlPassword.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(5, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // lblPassword
             // 
@@ -137,7 +150,7 @@
             this.lblPassword.Location = new System.Drawing.Point(52, 9);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(66, 17);
-            this.lblPassword.TabIndex = 2;
+            this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password";
             // 
             // txtPassword
@@ -149,15 +162,15 @@
             this.txtPassword.Location = new System.Drawing.Point(52, 31);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(263, 22);
-            this.txtPassword.TabIndex = 2;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // picLock
             // 
             this.picLock.Image = ((System.Drawing.Image)(resources.GetObject("picLock.Image")));
-            this.picLock.Location = new System.Drawing.Point(6, 9);
+            this.picLock.Location = new System.Drawing.Point(293, 7);
             this.picLock.Name = "picLock";
-            this.picLock.Size = new System.Drawing.Size(40, 40);
+            this.picLock.Size = new System.Drawing.Size(22, 23);
             this.picLock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLock.TabIndex = 3;
             this.picLock.TabStop = false;
@@ -173,7 +186,7 @@
             this.btnLogIn.Location = new System.Drawing.Point(188, 458);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(143, 37);
-            this.btnLogIn.TabIndex = 3;
+            this.btnLogIn.TabIndex = 4;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
@@ -184,9 +197,9 @@
             this.pnlBottom.Controls.Add(this.lblCreateAccount);
             this.pnlBottom.Controls.Add(this.lblNotAMember);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 516);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 513);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(513, 62);
+            this.pnlBottom.Size = new System.Drawing.Size(513, 64);
             this.pnlBottom.TabIndex = 5;
             // 
             // lblCreateAccount
@@ -197,7 +210,7 @@
             this.lblCreateAccount.Location = new System.Drawing.Point(254, 24);
             this.lblCreateAccount.Name = "lblCreateAccount";
             this.lblCreateAccount.Size = new System.Drawing.Size(126, 21);
-            this.lblCreateAccount.TabIndex = 5;
+            this.lblCreateAccount.TabIndex = 1;
             this.lblCreateAccount.Text = "Create Account";
             this.lblCreateAccount.Click += new System.EventHandler(this.lblCreateAccount_Click);
             // 
@@ -208,18 +221,19 @@
             this.lblNotAMember.Location = new System.Drawing.Point(145, 25);
             this.lblNotAMember.Name = "lblNotAMember";
             this.lblNotAMember.Size = new System.Drawing.Size(117, 20);
-            this.lblNotAMember.TabIndex = 5;
+            this.lblNotAMember.TabIndex = 0;
             this.lblNotAMember.Text = "Not a Member? ";
             // 
             // lblForgotPassword
             // 
             this.lblForgotPassword.AutoSize = true;
+            this.lblForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPassword.ForeColor = System.Drawing.Color.Black;
             this.lblForgotPassword.Location = new System.Drawing.Point(322, 422);
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(99, 15);
-            this.lblForgotPassword.TabIndex = 4;
+            this.lblForgotPassword.TabIndex = 3;
             this.lblForgotPassword.Text = "Forgot Pasword?";
             this.lblForgotPassword.Click += new System.EventHandler(this.lblForgotPassword_Click);
             // 
@@ -228,7 +242,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(513, 578);
+            this.ClientSize = new System.Drawing.Size(513, 577);
             this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.btnLogIn);
@@ -250,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.pnlPassword.ResumeLayout(false);
             this.pnlPassword.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLock)).EndInit();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
@@ -275,6 +290,7 @@
         private System.Windows.Forms.Label lblForgotPassword;
         private System.Windows.Forms.Label lblNotAMember;
         private System.Windows.Forms.Label lblCreateAccount;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

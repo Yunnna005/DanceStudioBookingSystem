@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ namespace DanceStudioBookingSystem
 {
     class UtilFunctions
     {
+        private static string gender;
         public static void traverseForm(Form prevForm, Form nextForm)
         {
                 nextForm.Show();
@@ -32,64 +35,103 @@ namespace DanceStudioBookingSystem
         }
 
 
-        public static string ValidationMemberDetails(TextBox firstname, TextBox secondname, TextBox email, TextBox phone, 
-            RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther)
+        public static string ValidationMemberDetails(TextBox firstname, TextBox secondname, TextBox email, TextBox phone,
+            RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
         {
-            string gender;
-            if (secondname == null || firstname == null)
-            {
-                if (CheckGigits(firstname) == false)
-                {
-                    return "The Firstname must not contain numbers";
-                }
-                if (CheckGigits(secondname) == false)
-                {
-                    return "The Secondname must not contain numbers";
-                }
+            DateTime selectedDate = dob.Value.Date; // Get the selected date without time
+            int curentAge = DateTime.Now.Date.Year - selectedDate.Year;
 
-                return "Please enter valid Full Name.";
-            }
-            else if (email == null || !Regex.IsMatch(email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (string.IsNullOrEmpty(firstname.Text))
             {
+                firstname.Focus();
+                return "Please enter valid First Name.";
+            }
+            else if (CheckGigitsLettersSymbolls(firstname) != "Letters")
+            {
+                firstname.Focus();
+                return "The Firstname must not contain numbers";
+            }
+            else if (string.IsNullOrEmpty(secondname.Text))
+            {
+                secondname.Focus();
+                return "Please enter valid Second Name.";
+            }
+            else if (CheckGigitsLettersSymbolls(secondname) != "Letters")
+            {
+                secondname.Focus();
+                return "The Secondname must not contain numbers";
+            }
+            else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                email.Focus();
                 return "Please enter valid email address";
             }
-            else if (phone == null || phone.Text.Length < 9 || !phone.Text.StartsWith("+"))
+            else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 9)
             {
-                return "Please enter valid phone number that starts from +";
+                phone.Focus();
+                return "Please enter valid phone number.";
+            }else if (CheckGigitsLettersSymbolls(phone) != "Digits")
+            {
+                phone.Focus();
+                return "The phone number can not contain letters or symbols.";
+            }
+            else if (curentAge<18 || curentAge > 65)
+            {
+                return "Your age must be between 18 and 65 included";
             }
             else
-            {
-                
+            { 
                 if (genderMale.Checked)
                 {
                     gender = "Male";
-                    return gender;
                 }
                 else if (genderFemale.Checked)
                 {
                     gender = "Female";
-                    return gender;
+                    
                 }
-                else
+                else if (genderOther.Checked)
                 {
                     gender = "Other";
-                    return gender;
-                } 
-            }  
+                   
+                }
+            }
+            return gender;
         }
-        public static bool CheckGigits(TextBox text)
+        public static string CheckGigitsLettersSymbolls(TextBox text)
         {
-            if (text != null)
+            int digits = 0, letters = 0, symbols = 0;
+            if (!string.IsNullOrEmpty(text.Text))
             {
                 foreach (char c in text.Text)
                 {
-                    if (c >= '1' && c <= '9')
+                    if (char.IsDigit(c))
                     {
-                        return true;
+                        digits++;
+                    }
+                    else if (char.IsLetter(c))
+                    {
+                        letters++;
+                    }
+                    else
+                    {
+                        symbols++;
                     }
                 }
+               
+                if (digits > 0 && letters == 0 && symbols==0) // string has only digits
+                {
+                    return "Digits";
+                }
+                else if(letters > 0 && digits == 0 && symbols == 0)// string has only letters
+                {
+                    return "Letters";
+                }else if (symbols>0 && digits == 0 && letters == 0)
+                {
+                    return "Symbols";
+                }
             }
-            return false;
+            return "empty";
         }
 
         public static void InsertDataToComboBox(ComboBox comboBox)
@@ -356,12 +398,15 @@ namespace DanceStudioBookingSystem
         {
             if (string.IsNullOrEmpty(cardNumber.Text) || cardNumber.Text.Length < 16)
             {
+                cardNumber.Focus();
                 return "Please enter a valid card number.\nThe card number must have 16 digits.";
-            } else if (!CheckGigits(cardNumber))
+            } else if (CheckGigitsLettersSymbolls(cardNumber) != "Digits")
             {
-                return "Please enter a valid card number (only numeric digits are allowed)";
-            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigits(cardHolder))
+                cardNumber.Focus();
+                return "Please enter a valid card number\n (only numbers are allowed)";
+            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigitsLettersSymbolls(cardHolder) != "Letters")
             {
+                cardHolder.Focus();
                 return "Invalid name";
             } else if (month.SelectedItem == null)
             {
@@ -371,7 +416,12 @@ namespace DanceStudioBookingSystem
                 return "Please choose year";
             } else if (string.IsNullOrEmpty(cvc.Text) || cvc.Text.Length != 3)
             {
-                return "The cvc must have 3 digits";
+                cvc.Focus();
+                return "Invalid CVC number.";
+            }else if (CheckGigitsLettersSymbolls(cvc) != "Digits")
+            {
+                cvc.Focus();
+                return "The CVC number nust have only numbers.";
             }
             else
             {

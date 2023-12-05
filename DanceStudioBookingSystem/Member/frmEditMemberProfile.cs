@@ -37,7 +37,7 @@ namespace DanceStudioBookingSystem
             MessageBox.Show("You cannot book class in edit profile mode.", "Edit Profile", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
@@ -74,10 +74,10 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = UtilFunctions.ValidationMemberDetails(txtSecondName, txtFirstName, txtEmail, txtPhone, radMale, radFemale, radOther);
+            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {
-                if (txtOldPassword.Text == null || txtOldPassword.Text.Length < 8)
+                if (string.IsNullOrEmpty(txtOldPassword.Text) && txtOldPassword.Text.Length < 8)
                 {
                     MessageBox.Show("The password must contain at least 8 characters", "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,7 +97,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(UtilFunctions.ValidationMemberDetails(txtSecondName,txtFirstName, txtEmail, txtPhone, radMale, radFemale, radOther), "Error",
+                MessageBox.Show(ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -37,7 +37,6 @@
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.lblNewPassword = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblOldPassword = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.txtSecondName = new System.Windows.Forms.TextBox();
@@ -45,22 +44,22 @@
             this.radOther = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
-            this.lblGender = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblGender = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblDOB = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblFirstNAme = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.pnlHeader.SuspendLayout();
             this.grpEditProfileDetails.SuspendLayout();
             this.pnlPassword.SuspendLayout();
@@ -75,7 +74,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(177, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(624, 72);
-            this.pnlHeader.TabIndex = 3;
+            this.pnlHeader.TabIndex = 2;
             // 
             // lblProfile
             // 
@@ -97,10 +96,10 @@
             this.grpEditProfileDetails.Controls.Add(this.btnCancel);
             this.grpEditProfileDetails.Controls.Add(this.btnSave);
             this.grpEditProfileDetails.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpEditProfileDetails.Location = new System.Drawing.Point(184, 78);
+            this.grpEditProfileDetails.Location = new System.Drawing.Point(185, 78);
             this.grpEditProfileDetails.Name = "grpEditProfileDetails";
             this.grpEditProfileDetails.Size = new System.Drawing.Size(609, 437);
-            this.grpEditProfileDetails.TabIndex = 4;
+            this.grpEditProfileDetails.TabIndex = 3;
             this.grpEditProfileDetails.TabStop = false;
             this.grpEditProfileDetails.Text = "Edit Profile Details";
             // 
@@ -111,10 +110,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(25, 370);
+            this.btnDelete.Location = new System.Drawing.Point(25, 362);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(76, 28);
-            this.btnDelete.TabIndex = 16;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -125,12 +124,11 @@
             this.pnlPassword.Controls.Add(this.txtNewPassword);
             this.pnlPassword.Controls.Add(this.txtOldPassword);
             this.pnlPassword.Controls.Add(this.lblNewPassword);
-            this.pnlPassword.Controls.Add(this.label7);
             this.pnlPassword.Controls.Add(this.lblOldPassword);
-            this.pnlPassword.Location = new System.Drawing.Point(311, 52);
+            this.pnlPassword.Location = new System.Drawing.Point(316, 53);
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(287, 269);
-            this.pnlPassword.TabIndex = 15;
+            this.pnlPassword.TabIndex = 1;
             // 
             // txtNewPassword
             // 
@@ -138,7 +136,7 @@
             this.txtNewPassword.Location = new System.Drawing.Point(37, 159);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(231, 29);
-            this.txtNewPassword.TabIndex = 12;
+            this.txtNewPassword.TabIndex = 3;
             // 
             // txtOldPassword
             // 
@@ -146,7 +144,7 @@
             this.txtOldPassword.Location = new System.Drawing.Point(37, 90);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.Size = new System.Drawing.Size(231, 29);
-            this.txtOldPassword.TabIndex = 11;
+            this.txtOldPassword.TabIndex = 1;
             // 
             // lblNewPassword
             // 
@@ -155,18 +153,8 @@
             this.lblNewPassword.Location = new System.Drawing.Point(94, 137);
             this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new System.Drawing.Size(115, 19);
-            this.lblNewPassword.TabIndex = 10;
+            this.lblNewPassword.TabIndex = 2;
             this.lblNewPassword.Text = "New password: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 308);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 19);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Email: ";
             // 
             // lblOldPassword
             // 
@@ -175,30 +163,30 @@
             this.lblOldPassword.Location = new System.Drawing.Point(99, 68);
             this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Size = new System.Drawing.Size(105, 19);
-            this.lblOldPassword.TabIndex = 7;
+            this.lblOldPassword.TabIndex = 0;
             this.lblOldPassword.Text = "Old password:";
             // 
             // pnlDetails
             // 
             this.pnlDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.pnlDetails.Controls.Add(this.dtpDOB);
             this.pnlDetails.Controls.Add(this.txtSecondName);
             this.pnlDetails.Controls.Add(this.lblSecondName);
             this.pnlDetails.Controls.Add(this.radOther);
             this.pnlDetails.Controls.Add(this.radFemale);
             this.pnlDetails.Controls.Add(this.radMale);
-            this.pnlDetails.Controls.Add(this.dtpDOB);
-            this.pnlDetails.Controls.Add(this.lblGender);
+            this.pnlDetails.Controls.Add(this.lblEmail);
             this.pnlDetails.Controls.Add(this.txtEmail);
+            this.pnlDetails.Controls.Add(this.lblGender);
             this.pnlDetails.Controls.Add(this.txtPhone);
             this.pnlDetails.Controls.Add(this.txtFirstName);
             this.pnlDetails.Controls.Add(this.lblDOB);
-            this.pnlDetails.Controls.Add(this.lblEmail);
             this.pnlDetails.Controls.Add(this.lblPhone);
             this.pnlDetails.Controls.Add(this.lblFirstNAme);
             this.pnlDetails.Location = new System.Drawing.Point(10, 53);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(287, 269);
-            this.pnlDetails.TabIndex = 14;
+            this.pnlDetails.TabIndex = 0;
             // 
             // txtSecondName
             // 
@@ -206,7 +194,7 @@
             this.txtSecondName.Location = new System.Drawing.Point(107, 61);
             this.txtSecondName.Name = "txtSecondName";
             this.txtSecondName.Size = new System.Drawing.Size(170, 29);
-            this.txtSecondName.TabIndex = 32;
+            this.txtSecondName.TabIndex = 3;
             // 
             // lblSecondName
             // 
@@ -215,7 +203,7 @@
             this.lblSecondName.Location = new System.Drawing.Point(11, 67);
             this.lblSecondName.Name = "lblSecondName";
             this.lblSecondName.Size = new System.Drawing.Size(102, 19);
-            this.lblSecondName.TabIndex = 31;
+            this.lblSecondName.TabIndex = 2;
             this.lblSecondName.Text = "SecondName:";
             // 
             // radOther
@@ -225,19 +213,19 @@
             this.radOther.Location = new System.Drawing.Point(221, 109);
             this.radOther.Name = "radOther";
             this.radOther.Size = new System.Drawing.Size(55, 19);
-            this.radOther.TabIndex = 30;
-            this.radOther.TabStop = true;
+            this.radOther.TabIndex = 7;
             this.radOther.Text = "Other";
             this.radOther.UseVisualStyleBackColor = true;
             // 
             // radFemale
             // 
             this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
             this.radFemale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radFemale.Location = new System.Drawing.Point(152, 107);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(63, 19);
-            this.radFemale.TabIndex = 29;
+            this.radFemale.TabIndex = 6;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
@@ -249,21 +237,27 @@
             this.radMale.Location = new System.Drawing.Point(95, 109);
             this.radMale.Name = "radMale";
             this.radMale.Size = new System.Drawing.Size(51, 19);
-            this.radMale.TabIndex = 28;
-            this.radMale.TabStop = true;
+            this.radMale.TabIndex = 5;
             this.radMale.Text = "Male";
             this.radMale.UseVisualStyleBackColor = true;
             // 
-            // dtpDOB
+            // lblEmail
             // 
-            this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDOB.Location = new System.Drawing.Point(95, 153);
-            this.dtpDOB.MaxDate = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(182, 29);
-            this.dtpDOB.TabIndex = 27;
-            this.dtpDOB.Value = new System.DateTime(2006, 1, 1, 0, 0, 0, 0);
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(12, 199);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(53, 19);
+            this.lblEmail.TabIndex = 10;
+            this.lblEmail.Text = "Email: ";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(96, 192);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(182, 29);
+            this.txtEmail.TabIndex = 11;
             // 
             // lblGender
             // 
@@ -272,24 +266,16 @@
             this.lblGender.Location = new System.Drawing.Point(11, 107);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(65, 20);
-            this.lblGender.TabIndex = 26;
+            this.lblGender.TabIndex = 4;
             this.lblGender.Text = "Gender:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(95, 235);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(182, 29);
-            this.txtEmail.TabIndex = 13;
             // 
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(96, 193);
+            this.txtPhone.Location = new System.Drawing.Point(96, 229);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(182, 29);
-            this.txtPhone.TabIndex = 12;
+            this.txtPhone.TabIndex = 13;
             // 
             // txtFirstName
             // 
@@ -297,7 +283,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(96, 18);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(182, 29);
-            this.txtFirstName.TabIndex = 11;
+            this.txtFirstName.TabIndex = 1;
             // 
             // lblDOB
             // 
@@ -306,27 +292,17 @@
             this.lblDOB.Location = new System.Drawing.Point(11, 158);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(47, 19);
-            this.lblDOB.TabIndex = 10;
+            this.lblDOB.TabIndex = 8;
             this.lblDOB.Text = "DOB: ";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(11, 242);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(53, 19);
-            this.lblEmail.TabIndex = 9;
-            this.lblEmail.Text = "Email: ";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(11, 196);
+            this.lblPhone.Location = new System.Drawing.Point(11, 232);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(85, 19);
-            this.lblPhone.TabIndex = 8;
+            this.lblPhone.TabIndex = 12;
             this.lblPhone.Text = "Phone:     +";
             // 
             // lblFirstNAme
@@ -336,7 +312,7 @@
             this.lblFirstNAme.Location = new System.Drawing.Point(12, 24);
             this.lblFirstNAme.Name = "lblFirstNAme";
             this.lblFirstNAme.Size = new System.Drawing.Size(81, 19);
-            this.lblFirstNAme.TabIndex = 7;
+            this.lblFirstNAme.TabIndex = 0;
             this.lblFirstNAme.Text = "FirstName:";
             // 
             // btnCancel
@@ -346,10 +322,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(342, 362);
+            this.btnCancel.Location = new System.Drawing.Point(338, 362);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(104, 32);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -364,25 +340,25 @@
             this.btnSave.Location = new System.Drawing.Point(476, 362);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(106, 32);
-            this.btnSave.TabIndex = 3;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button5
+            // btnLogOut
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(38, 485);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 28);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Log out";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(38, 485);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(76, 28);
+            this.btnLogOut.TabIndex = 4;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // mnuMainMenu
             // 
@@ -401,7 +377,7 @@
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.ShowItemToolTips = true;
             this.mnuMainMenu.Size = new System.Drawing.Size(179, 522);
-            this.mnuMainMenu.TabIndex = 15;
+            this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
             // mnuProfile
@@ -431,7 +407,17 @@
             this.pnlBlueLine.Location = new System.Drawing.Point(157, 0);
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
-            this.pnlBlueLine.TabIndex = 17;
+            this.pnlBlueLine.TabIndex = 1;
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDOB.Location = new System.Drawing.Point(96, 148);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(182, 29);
+            this.dtpDOB.TabIndex = 9;
             // 
             // frmEditMemberProfile
             // 
@@ -440,7 +426,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(800, 522);
             this.Controls.Add(this.pnlBlueLine);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.grpEditProfileDetails);
             this.Controls.Add(this.pnlHeader);
@@ -475,7 +461,6 @@
         private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label lblNewPassword;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblOldPassword;
         private System.Windows.Forms.Panel pnlDetails;
         private System.Windows.Forms.TextBox txtEmail;
@@ -487,8 +472,7 @@
         private System.Windows.Forms.Label lblFirstNAme;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.DateTimePicker dtpDOB;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.MenuStrip mnuMainMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuProfile;
         private System.Windows.Forms.Panel pnlBlueLine;
@@ -498,5 +482,6 @@
         private System.Windows.Forms.RadioButton radMale;
         private System.Windows.Forms.TextBox txtSecondName;
         private System.Windows.Forms.Label lblSecondName;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
     }
 }

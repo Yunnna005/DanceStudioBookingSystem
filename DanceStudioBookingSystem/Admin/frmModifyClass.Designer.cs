@@ -87,11 +87,13 @@
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.mnuMainMenu.Size = new System.Drawing.Size(655, 31);
-            this.mnuMainMenu.TabIndex = 9;
+            this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
             // mnuClasses
             // 
+            this.mnuClasses.Checked = true;
+            this.mnuClasses.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnuClasses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnutScheduleClass,
             this.mnutModifyClass,
@@ -110,6 +112,8 @@
             // 
             // mnutModifyClass
             // 
+            this.mnutModifyClass.Checked = true;
+            this.mnutModifyClass.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mnutModifyClass.Name = "mnutModifyClass";
             this.mnutModifyClass.Size = new System.Drawing.Size(209, 30);
             this.mnutModifyClass.Text = "Modify Class";
@@ -145,7 +149,7 @@
             this.lblModifyClass.Location = new System.Drawing.Point(276, 46);
             this.lblModifyClass.Name = "lblModifyClass";
             this.lblModifyClass.Size = new System.Drawing.Size(124, 25);
-            this.lblModifyClass.TabIndex = 10;
+            this.lblModifyClass.TabIndex = 1;
             this.lblModifyClass.Text = "Modify Class";
             // 
             // grpUpdateDetails
@@ -170,26 +174,32 @@
             this.grpUpdateDetails.Location = new System.Drawing.Point(16, 415);
             this.grpUpdateDetails.Name = "grpUpdateDetails";
             this.grpUpdateDetails.Size = new System.Drawing.Size(627, 284);
-            this.grpUpdateDetails.TabIndex = 12;
+            this.grpUpdateDetails.TabIndex = 3;
             this.grpUpdateDetails.TabStop = false;
             this.grpUpdateDetails.Text = "Update Current Class Details";
             this.grpUpdateDetails.Visible = false;
             // 
             // cboInstructor
             // 
+            this.cboInstructor.DropDownHeight = 80;
+            this.cboInstructor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboInstructor.FormattingEnabled = true;
+            this.cboInstructor.IntegralHeight = false;
             this.cboInstructor.Location = new System.Drawing.Point(432, 94);
             this.cboInstructor.Name = "cboInstructor";
             this.cboInstructor.Size = new System.Drawing.Size(125, 29);
-            this.cboInstructor.TabIndex = 7;
+            this.cboInstructor.TabIndex = 9;
             // 
             // cboTime
             // 
+            this.cboTime.DropDownHeight = 80;
+            this.cboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTime.FormattingEnabled = true;
+            this.cboTime.IntegralHeight = false;
             this.cboTime.Location = new System.Drawing.Point(432, 41);
             this.cboTime.Name = "cboTime";
             this.cboTime.Size = new System.Drawing.Size(125, 29);
-            this.cboTime.TabIndex = 6;
+            this.cboTime.TabIndex = 7;
             // 
             // txtName
             // 
@@ -198,7 +208,7 @@
             this.txtName.Location = new System.Drawing.Point(151, 77);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(142, 25);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 1;
             // 
             // lblName
             // 
@@ -207,7 +217,7 @@
             this.lblName.Location = new System.Drawing.Point(71, 77);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(59, 21);
-            this.lblName.TabIndex = 37;
+            this.lblName.TabIndex = 0;
             this.lblName.Text = "Name: ";
             // 
             // dtpDate
@@ -228,7 +238,7 @@
             this.txtType.Location = new System.Drawing.Point(151, 119);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(142, 25);
-            this.txtType.TabIndex = 4;
+            this.txtType.TabIndex = 3;
             // 
             // txtCapacity
             // 
@@ -237,7 +247,7 @@
             this.txtCapacity.Location = new System.Drawing.Point(441, 140);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(116, 25);
-            this.txtCapacity.TabIndex = 8;
+            this.txtCapacity.TabIndex = 11;
             // 
             // lblCapacity
             // 
@@ -246,7 +256,7 @@
             this.lblCapacity.Location = new System.Drawing.Point(352, 144);
             this.lblCapacity.Name = "lblCapacity";
             this.lblCapacity.Size = new System.Drawing.Size(72, 21);
-            this.lblCapacity.TabIndex = 33;
+            this.lblCapacity.TabIndex = 10;
             this.lblCapacity.Text = "Capacity:";
             // 
             // txtPrice
@@ -256,7 +266,7 @@
             this.txtPrice.Location = new System.Drawing.Point(441, 182);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(116, 25);
-            this.txtPrice.TabIndex = 9;
+            this.txtPrice.TabIndex = 13;
             // 
             // lblPrice
             // 
@@ -265,7 +275,7 @@
             this.lblPrice.Location = new System.Drawing.Point(352, 186);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(47, 21);
-            this.lblPrice.TabIndex = 31;
+            this.lblPrice.TabIndex = 12;
             this.lblPrice.Text = "Price:";
             // 
             // lblInstructor
@@ -275,7 +285,7 @@
             this.lblInstructor.Location = new System.Drawing.Point(352, 97);
             this.lblInstructor.Name = "lblInstructor";
             this.lblInstructor.Size = new System.Drawing.Size(80, 21);
-            this.lblInstructor.TabIndex = 21;
+            this.lblInstructor.TabIndex = 8;
             this.lblInstructor.Text = "Instructor:";
             // 
             // lblDate
@@ -285,7 +295,7 @@
             this.lblDate.Location = new System.Drawing.Point(71, 162);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(45, 21);
-            this.lblDate.TabIndex = 20;
+            this.lblDate.TabIndex = 4;
             this.lblDate.Text = "Date:";
             // 
             // btnUpdate
@@ -298,7 +308,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(265, 247);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 31);
-            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -310,7 +320,7 @@
             this.lblTime.Location = new System.Drawing.Point(352, 44);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(47, 21);
-            this.lblTime.TabIndex = 17;
+            this.lblTime.TabIndex = 6;
             this.lblTime.Text = "Time:";
             // 
             // lblType
@@ -320,7 +330,7 @@
             this.lblType.Location = new System.Drawing.Point(71, 119);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(49, 21);
-            this.lblType.TabIndex = 16;
+            this.lblType.TabIndex = 2;
             this.lblType.Text = "Type: ";
             // 
             // grpSelectClass
@@ -334,7 +344,7 @@
             this.grpSelectClass.Location = new System.Drawing.Point(16, 74);
             this.grpSelectClass.Name = "grpSelectClass";
             this.grpSelectClass.Size = new System.Drawing.Size(627, 335);
-            this.grpSelectClass.TabIndex = 13;
+            this.grpSelectClass.TabIndex = 2;
             this.grpSelectClass.TabStop = false;
             this.grpSelectClass.Text = "Select Class ";
             // 
@@ -345,18 +355,20 @@
             this.label1.Location = new System.Drawing.Point(229, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 21);
-            this.label1.TabIndex = 24;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Type";
             // 
             // cboType
             // 
+            this.cboType.DropDownHeight = 80;
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboType.FormattingEnabled = true;
+            this.cboType.IntegralHeight = false;
             this.cboType.Location = new System.Drawing.Point(311, 19);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(121, 25);
             this.cboType.TabIndex = 1;
-            this.cboType.Text = "Choose type";
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
             // dgvModifyClassesAdmin
@@ -378,7 +390,7 @@
             this.dgvModifyClassesAdmin.ReadOnly = true;
             this.dgvModifyClassesAdmin.RowHeadersWidth = 62;
             this.dgvModifyClassesAdmin.Size = new System.Drawing.Size(615, 231);
-            this.dgvModifyClassesAdmin.TabIndex = 22;
+            this.dgvModifyClassesAdmin.TabIndex = 2;
             // 
             // CLASSNAME
             // 
@@ -439,7 +451,7 @@
             this.btnSelect.Location = new System.Drawing.Point(281, 289);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(84, 31);
-            this.btnSelect.TabIndex = 2;
+            this.btnSelect.TabIndex = 3;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);

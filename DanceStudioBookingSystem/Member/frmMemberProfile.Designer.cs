@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMemberProfile));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblProfile = new System.Windows.Forms.Label();
@@ -55,7 +52,6 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -243,40 +239,15 @@
             this.dgvClassesMember.AllowUserToAddRows = false;
             this.dgvClassesMember.AllowUserToDeleteRows = false;
             this.dgvClassesMember.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClassesMember.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClassesMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClassesMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CLASSNAME,
-            this.TYPE,
             this.DATE,
             this.TIME,
             this.INSTRUCTOR,
             this.PRICE});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClassesMember.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClassesMember.Location = new System.Drawing.Point(6, 29);
             this.dgvClassesMember.Name = "dgvClassesMember";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClassesMember.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
             this.dgvClassesMember.TabIndex = 0;
             // 
@@ -363,17 +334,10 @@
             this.CLASSNAME.Name = "CLASSNAME";
             this.CLASSNAME.Width = 120;
             // 
-            // TYPE
-            // 
-            this.TYPE.HeaderText = "Type";
-            this.TYPE.Name = "TYPE";
-            this.TYPE.Width = 80;
-            // 
             // DATE
             // 
             this.DATE.HeaderText = "Date";
             this.DATE.Name = "DATE";
-            this.DATE.Width = 80;
             // 
             // TIME
             // 
@@ -385,12 +349,13 @@
             // 
             this.INSTRUCTOR.HeaderText = "Instructor";
             this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.Width = 130;
             // 
             // PRICE
             // 
-            this.PRICE.HeaderText = "Price";
+            this.PRICE.HeaderText = "Price €";
             this.PRICE.Name = "PRICE";
-            this.PRICE.Width = 60;
+            this.PRICE.Width = 85;
             // 
             // frmMemberProfile
             // 
@@ -447,7 +412,6 @@
         private System.Windows.Forms.Button btnCancelClass;
         private System.Windows.Forms.DataGridView dgvClassesMember;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;

@@ -20,6 +20,7 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
             InsertDataToComboBox(cboType);
             InsertDataToComboBox(cboInstructor);
+
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace DanceStudioBookingSystem
             else
             {
                 grpUpdateDetails.Visible = true;
+                DisplayDataFromDataGrid(dgvModifyClassesAdmin, txtName, txtType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice);
             }
         }
     }

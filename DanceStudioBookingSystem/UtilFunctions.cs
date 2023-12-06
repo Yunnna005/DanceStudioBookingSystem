@@ -138,7 +138,7 @@ namespace DanceStudioBookingSystem
         {
             if (comboBox.Name == "cboType")
             {
-                string[] types = { "All","K-pop","Latin","Ballet","Hip-Hop"};
+                string[] types = { "ALL","KPOP","LATIN","BALLET","HIPHOP"};
                 comboBox.Items.AddRange(types);
             }else if (comboBox.Name == "cboInstructor")
             {
@@ -167,41 +167,41 @@ namespace DanceStudioBookingSystem
 
             List<List<string>> kpopDataList = new List<List<string>>()
                 {
-                    new List<string> { "K-pop (Advance)", "2023-11-24", "10:00 AM", "Ji-min Lee", "$15" },
-                    new List<string> { "K-pop (Intermidiate)", "2023-11-25", "02:30 PM", "Hyun-woo Park", "$15" },
-                    new List<string> { "K-pop (Beginer)", "2023-11-27", "04:30 PM", "Soo-jin Kim", "$10" },
-                    new List<string> { "K-pop (Beginer)", "2023-11-26", "06:30 PM", "Ji-min Lee", "$10" },
-                    new List<string> { "K-pop (Intermidiate)", "2023-11-24", "12:30 AM", "Hyun-woo Park", "$10" },
+                    new List<string> { "K-pop (Advance)", "2023-11-24", "10:00", "Ji-min Lee", "15.00" },
+                    new List<string> { "K-pop (Intermidiate)", "2023-11-25", "14:30", "Hyun-woo Park", "15.00" },
+                    new List<string> { "K-pop (Beginer)", "2023-11-27", "15:30", "Soo-jin Kim", "10.00" },
+                    new List<string> { "K-pop (Beginer)", "2023-11-26", "16:30", "Ji-min Lee", "10.00" },
+                    new List<string> { "K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00" },
                 };
 
             List<List<string>> latinDataList = new List<List<string>>()
                 {
-                    new List<string> { "Latin (Advance)", "2023-11-24", "11:00 AM", "Rafael Lopez", "$25" },
-                    new List<string> { "Latin (Intermidiate)", "2023-11-25", "02:30 PM", "Isabella Martinez", "$25" },
-                    new List<string> { "Latin (Beginer)", "2023-11-27", "03:30 PM", "Rafael Lopez", "$20" },
+                    new List<string> { "Latin (Advance)", "2023-11-24", "11:00", "Rafael Lopez", "25.00" },
+                    new List<string> { "Latin (Intermidiate)", "2023-11-25", "14:30", "Isabella Martinez", "25.00" },
+                    new List<string> { "Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00" },
                 };
 
             List<List<string>> BalletDataList = new List<List<string>>()
                 {
-                    new List<string> { "Ballet (Advance)", "2024-01-24", "11:00 AM", "Olivia Smith", "$35" },
+                    new List<string> { "Ballet (Advance)", "2024-01-24", "11:00", "Olivia Smith", "35.00" },
 
                 };
 
             List<List<string>> HipHopDataList = new List<List<string>>()
                 {
-                    new List<string> { "HipHop (Advance)", "2023-11-24", "10:00 AM", "Xavier Ortiz", "$15" },
-                    new List<string> { "HipHop (Advance)", "2023-11-25", "10:00 AM", "Jasmine Williams", "$15" },
-                    new List<string> { "HipHop (Advance)", "2023-11-25", "11:00 AM", "Ji-min Lee", "$15" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "02:30 PM", "Xavier Ortiz", "$15" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "03:30 PM", "Jasmine Williams", "$15" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-26", "02:30 PM", "Malik Johnson", "$15" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-26", "04:30 PM", "Soo-jin Kim", "$10" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-26", "06:30 PM", "Xavier Ortiz", "$10" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-27", "01:30 PM", "Jasmine Williams", "$10" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-27", "02:30 PM", "Malik Johnson", "$10" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "12:30 AM", "Hyun-woo Park", "$10" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "11:30 AM", "Malik Johnson", "$10" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "10:30 AM", "Xavier Ortiz", "$10" },
+                    new List<string> { "HipHop (Advance)", "2023-11-24", "10:00", "Xavier Ortiz", "15.00" },
+                    new List<string> { "HipHop (Advance)", "2023-11-25", "10:00", "Jasmine Williams", "15.00" },
+                    new List<string> { "HipHop (Advance)", "2023-11-25", "11:00", "Ji-min Lee", "15.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "14:30", "Xavier Ortiz", "15.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "15:30", "Jasmine Williams", "15.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-26", "14:30", "Malik Johnson", "15.00" },
+                    new List<string> { "HipHop (Beginer)", "2023-11-26", "16:30", "Soo-jin Kim", "10.00" },
+                    new List<string> { "HipHop (Beginer)", "2023-11-26", "17:30", "Xavier Ortiz", "10.00" },
+                    new List<string> { "HipHop (Beginer)", "2023-11-27", "13:30", "Jasmine Williams", "10.00" },
+                    new List<string> { "HipHop (Beginer)", "2023-11-27", "14:30", "Malik Johnson", "10.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "12:30", "Hyun-woo Park", "10.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "11:30", "Malik Johnson", "10.00" },
+                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "10:30", "Xavier Ortiz", "10.00" },
 
                 };
 
@@ -258,41 +258,41 @@ namespace DanceStudioBookingSystem
             datagrit.Rows.Clear();
             List<List<string>> kpopDataList = new List<List<string>>()
                 {
-                    new List<string> { "K-pop (Advance)","K-POP", "2023-11-24", "10:00 AM", "Ji-min Lee","25", "$15" },
-                    new List<string> { "K-pop (Intermidiate)", "K-POP", "2023-11-25", "02:30 PM", "Hyun-woo Park", "25", "$15" },
-                    new List<string> { "K-pop (Beginer)", "K-POP", "2023-11-27", "04:30 PM", "Soo-jin Kim", "25", "$10" },
-                    new List<string> { "K-pop (Beginer)", "K-POP", "2023-11-26", "06:30 PM", "Ji-min Lee", "25", "$10" },
-                    new List<string> { "K-pop (Intermidiate)", "K-POP", "2023-11-24", "12:30 AM", "Hyun-woo Park", "25", "$10" },
+                    new List<string> { "K-pop (Advance)","KPOP", "2023-11-24", "10:00", "Ji-min Lee","25", "15.00" },
+                    new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-25", "14:30", "Hyun-woo Park", "25", "15.00" },
+                    new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-27", "16:30", "Soo-jin Kim", "25", "10.00" },
+                    new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-26", "18:30", "Ji-min Lee", "25", "10.00" },
+                    new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-24", "12:30", "Hyun-woo Park", "25", "10.00" },
                 };
 
             List<List<string>> latinDataList = new List<List<string>>()
                 {
-                    new List<string> { "Latin (Advance)","LATIN", "2023-11-24", "11:00 AM", "Rafael Lopez","15", "$25" },
-                    new List<string> { "Latin (Intermidiate)", "LATIN", "2023-11-25", "02:30 PM", "Isabella Martinez", "15", "$25" },
-                    new List<string> { "Latin (Beginer)", "LATIN", "2023-11-27", "03:30 PM", "Rafael Lopez", "15", "$20" },
+                    new List<string> { "Latin (Advance)","LATIN", "2023-11-24", "11:00", "Rafael Lopez","15", "25.00" },
+                    new List<string> { "Latin (Intermidiate)", "LATIN", "2023-11-25", "14:30", "Isabella Martinez", "15", "25.00" },
+                    new List<string> { "Latin (Beginer)", "LATIN", "2023-11-27", "15:30", "Rafael Lopez", "15", "20.00" },
                 };
 
             List<List<string>> BalletDataList = new List<List<string>>()
                 {
-                    new List<string> { "Ballet (Advance)","BALLET", "2024-01-24", "11:00 AM", "Olivia Smith","10", "$35" },
+                    new List<string> { "Ballet (Advance)","BALLET", "2024-01-24", "11:00", "Olivia Smith","10", "35.00" },
 
                 };
 
             List<List<string>> HipHopDataList = new List<List<string>>()
                 {
-                    new List<string> { "Hip-Hop (Advance)","HIP-HOP", "2023-11-24", "10:00 AM", "Xavier Ortiz", "25", "$15" },
-                    new List<string> { "Hip-Hop (Advance)", "HIP-HOP", "2023-11-25", "10:00 AM", "Jasmine Williams", "25", "$15" },
-                    new List<string> { "Hip-Hop (Advance)", "HIP-HOP", "2023-11-25", "11:00 AM", "Ji-min Lee", "25", "$15" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-25", "02:30 PM", "Xavier Ortiz", "25", "$15" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-25", "03:30 PM", "Jasmine Williams", "25", "$15" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-26", "02:30 PM", "Malik Johnson", "25", "$15" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIP-HOP", "2023-11-26", "04:30 PM", "Soo-jin Kim", "25", "$10" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIP-HOP", "2023-11-26", "06:30 PM", "Xavier Ortiz", "25", "$10" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIP-HOP", "2023-11-27", "01:30 PM", "Jasmine Williams", "25", "$10" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIP-HOP", "2023-11-27", "02:30 PM", "Malik Johnson", "25", "$10" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-28", "12:30 AM", "Hyun-woo Park", "25", "$10" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-28", "11:30 AM", "Malik Johnson", "25", "$10" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIP-HOP", "2023-11-28", "10:30 AM", "Xavier Ortiz", "25", "$10" },
+                    new List<string> { "Hip-Hop (Advance)","HIPHOP", "2023-11-24", "10:00", "Xavier Ortiz", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Advance)", "HIPHOP", "2023-11-25", "10:00", "Jasmine Williams", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Advance)", "HIPHOP", "2023-11-25", "11:00", "Ji-min Lee", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-25", "14:30", "Xavier Ortiz", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-25", "15:30", "Jasmine Williams", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-26", "14:30", "Malik Johnson", "25", "15.00" },
+                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-26", "16:30", "Soo-jin Kim", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-26", "1118:30", "Xavier Ortiz", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-27", "13:30", "Jasmine Williams", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-27", "14:30", "Malik Johnson", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "12:30", "Hyun-woo Park", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "11:30", "Malik Johnson", "25", "10.00" },
+                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "10:30", "Xavier Ortiz", "25", "10.00" },
 
                 };
             if (comboBox.SelectedIndex == 1)
@@ -371,7 +371,7 @@ namespace DanceStudioBookingSystem
             {
                 minute.Focus();
                 return "The minutes of the class must be in valid format and contain 2 numbers.";
-            }else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59 || minuteValue <= 0))
+            }else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59 ))
             {
                 minute.Focus();
                 return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 0 and 59.";
@@ -438,6 +438,30 @@ namespace DanceStudioBookingSystem
             else
             {
                 return "valid";
+            }
+        }
+
+        public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, TextBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
+            TextBox capacity, TextBox price)
+        {
+            if (datagrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
+
+                if (selectedRow != null)
+                {
+                    name.Text = selectedRow.Cells[0].Value.ToString();
+                    type.Text = selectedRow.Cells[1].Value.ToString();
+                    dateTimePicker.Text = selectedRow.Cells[2].Value.ToString();
+
+                    string time = selectedRow.Cells[3].Value.ToString();
+                    hour.Text = time.Substring(0, 2);
+                    minute.Text = time.Substring(3, 2);
+
+                    instructor.Text = selectedRow.Cells[4].Value.ToString();
+                    capacity.Text = selectedRow.Cells[5].Value.ToString();
+                    price.Text = selectedRow.Cells[6].Value.ToString();
+                }
             }
         }
     }

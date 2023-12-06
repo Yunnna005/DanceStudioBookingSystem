@@ -39,6 +39,7 @@
             this.lblNewPassword = new System.Windows.Forms.Label();
             this.lblOldPassword = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.txtSecondName = new System.Windows.Forms.TextBox();
             this.lblSecondName = new System.Windows.Forms.Label();
             this.radOther = new System.Windows.Forms.RadioButton();
@@ -59,7 +60,6 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
-            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.pnlHeader.SuspendLayout();
             this.grpEditProfileDetails.SuspendLayout();
             this.pnlPassword.SuspendLayout();
@@ -187,6 +187,16 @@
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(287, 269);
             this.pnlDetails.TabIndex = 0;
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDOB.Location = new System.Drawing.Point(96, 148);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(182, 29);
+            this.dtpDOB.TabIndex = 9;
             // 
             // txtSecondName
             // 
@@ -408,16 +418,6 @@
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 1;
-            // 
-            // dtpDOB
-            // 
-            this.dtpDOB.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDOB.Location = new System.Drawing.Point(96, 148);
-            this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(182, 29);
-            this.dtpDOB.TabIndex = 9;
             // 
             // frmEditMemberProfile
             // 

@@ -24,9 +24,9 @@ namespace DanceStudioBookingSystem
             lblWritePhone.Text = "+353852022777";
             lblWriteEmail.Text = "Anna@gmail.com";
 
-            dgvClassesMember.Rows.Add("K-pop (Beginer)", "K-POP", "2023-11-26", "06:30 PM", "Ji-min Lee", "$10");
-            dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "K-POP", "2023-11-24", "12:30 AM", "Hyun-woo Park", "$10");
-            dgvClassesMember.Rows.Add("Latin (Beginer)", "LATIN", "2023-11-27", "03:30 PM", "Rafael Lopez", "$20");
+            dgvClassesMember.Rows.Add("K-pop (Beginer)", "2023-11-26", "18:30", "Ji-min Lee", "10.00");
+            dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00");
+            dgvClassesMember.Rows.Add("Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00");
         }
 
         private void mnuBook_Click(object sender, EventArgs e)

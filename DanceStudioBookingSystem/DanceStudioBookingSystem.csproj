@@ -70,16 +70,16 @@
     <Compile Include="Member\frmUpdateMember.Designer.cs">
       <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn\frmAddMember.cs">
+    <Compile Include="Member\frmAddMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn\frmAddMember.Designer.cs">
+    <Compile Include="Member\frmAddMember.Designer.cs">
       <DependentUpon>frmAddMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn\frmLogIn.cs">
+    <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn\frmLogIn.Designer.cs">
+    <Compile Include="frmLogIn.Designer.cs">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Member\frmMemberProfile.cs">
@@ -100,10 +100,10 @@
     <Compile Include="Admin\frmModifyClass.Designer.cs">
       <DependentUpon>frmModifyClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn\frmResetPassword.cs">
+    <Compile Include="Member\frmResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn\frmResetPassword.Designer.cs">
+    <Compile Include="Member\frmResetPassword.Designer.cs">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\frmScheduleClass.cs">
@@ -127,10 +127,10 @@
     <EmbeddedResource Include="Member\frmUpdateMember.resx">
       <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\frmAddMember.resx">
+    <EmbeddedResource Include="Member\frmAddMember.resx">
       <DependentUpon>frmAddMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\frmLogIn.resx">
+    <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Member\frmMemberProfile.resx">
@@ -142,7 +142,7 @@
     <EmbeddedResource Include="Admin\frmModifyClass.resx">
       <DependentUpon>frmModifyClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\frmResetPassword.resx">
+    <EmbeddedResource Include="Member\frmResetPassword.resx">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmScheduleClass.resx">

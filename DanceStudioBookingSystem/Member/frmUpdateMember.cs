@@ -18,6 +18,11 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
+            txtFirstName.Text = "Anna";
+            txtSecondName.Text = "Kovalenko";
+            dtpDOB.Text = "24/08/2005";
+            txtEmail.Text = "Anna@gmail.com";
+            txtPhone.Text = "3530852433543";
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)

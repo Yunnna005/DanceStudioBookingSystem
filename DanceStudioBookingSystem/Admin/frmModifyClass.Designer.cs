@@ -39,7 +39,6 @@
             this.lblModifyClass = new System.Windows.Forms.Label();
             this.grpUpdateDetails = new System.Windows.Forms.GroupBox();
             this.cboInstructor = new System.Windows.Forms.ComboBox();
-            this.cboTime = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -57,7 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvModifyClassesAdmin = new System.Windows.Forms.DataGridView();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +63,11 @@
             this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.cboTime = new System.Windows.Forms.ComboBox();
+            this.txtMinute = new System.Windows.Forms.TextBox();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.txtHour = new System.Windows.Forms.TextBox();
             this.mnuMainMenu.SuspendLayout();
             this.grpUpdateDetails.SuspendLayout();
             this.grpSelectClass.SuspendLayout();
@@ -155,8 +158,11 @@
             // grpUpdateDetails
             // 
             this.grpUpdateDetails.BackColor = System.Drawing.Color.White;
-            this.grpUpdateDetails.Controls.Add(this.cboInstructor);
             this.grpUpdateDetails.Controls.Add(this.cboTime);
+            this.grpUpdateDetails.Controls.Add(this.txtMinute);
+            this.grpUpdateDetails.Controls.Add(this.lblSymbol);
+            this.grpUpdateDetails.Controls.Add(this.txtHour);
+            this.grpUpdateDetails.Controls.Add(this.cboInstructor);
             this.grpUpdateDetails.Controls.Add(this.txtName);
             this.grpUpdateDetails.Controls.Add(this.lblName);
             this.grpUpdateDetails.Controls.Add(this.dtpDate);
@@ -189,17 +195,6 @@
             this.cboInstructor.Name = "cboInstructor";
             this.cboInstructor.Size = new System.Drawing.Size(125, 29);
             this.cboInstructor.TabIndex = 9;
-            // 
-            // cboTime
-            // 
-            this.cboTime.DropDownHeight = 80;
-            this.cboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTime.FormattingEnabled = true;
-            this.cboTime.IntegralHeight = false;
-            this.cboTime.Location = new System.Drawing.Point(432, 41);
-            this.cboTime.Name = "cboTime";
-            this.cboTime.Size = new System.Drawing.Size(125, 29);
-            this.cboTime.TabIndex = 7;
             // 
             // txtName
             // 
@@ -392,21 +387,6 @@
             this.dgvModifyClassesAdmin.Size = new System.Drawing.Size(615, 231);
             this.dgvModifyClassesAdmin.TabIndex = 2;
             // 
-            // btnSelect
-            // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.btnSelect.FlatAppearance.BorderSize = 0;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(281, 289);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(84, 31);
-            this.btnSelect.TabIndex = 3;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
             // CLASSNAME
             // 
             this.CLASSNAME.HeaderText = "Class Name";
@@ -457,6 +437,59 @@
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
             this.PRICE.Width = 60;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(281, 289);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(84, 31);
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // cboTime
+            // 
+            this.cboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTime.FormattingEnabled = true;
+            this.cboTime.Location = new System.Drawing.Point(503, 43);
+            this.cboTime.Name = "cboTime";
+            this.cboTime.Size = new System.Drawing.Size(52, 25);
+            this.cboTime.TabIndex = 22;
+            // 
+            // txtMinute
+            // 
+            this.txtMinute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtMinute.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinute.Location = new System.Drawing.Point(458, 44);
+            this.txtMinute.Name = "txtMinute";
+            this.txtMinute.Size = new System.Drawing.Size(39, 25);
+            this.txtMinute.TabIndex = 21;
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSymbol.Location = new System.Drawing.Point(443, 43);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(17, 25);
+            this.lblSymbol.TabIndex = 20;
+            this.lblSymbol.Text = ":";
+            // 
+            // txtHour
+            // 
+            this.txtHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtHour.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHour.Location = new System.Drawing.Point(408, 43);
+            this.txtHour.Name = "txtHour";
+            this.txtHour.Size = new System.Drawing.Size(39, 25);
+            this.txtHour.TabIndex = 19;
             // 
             // frmModifyClass
             // 
@@ -513,7 +546,6 @@
         private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cboInstructor;
-        private System.Windows.Forms.ComboBox cboTime;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label1;
@@ -526,5 +558,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.ComboBox cboTime;
+        private System.Windows.Forms.TextBox txtMinute;
+        private System.Windows.Forms.Label lblSymbol;
+        private System.Windows.Forms.TextBox txtHour;
     }
 }

@@ -51,14 +51,14 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(txtName,txtType, cboTime, cboInstructor, txtCapacity, txtPrice) == "valid") 
+            if (ValidClassDetails(txtName,txtType,txtHour,txtMinute,cboTime, cboInstructor, txtCapacity, txtPrice) == "valid") 
             {
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 traverseForm(this, new frmMainMenuAdmin(this));
             }
             else
             {
-                MessageBox.Show(ValidClassDetails(txtName, txtType, cboTime, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboTime, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
         }
 

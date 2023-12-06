@@ -142,8 +142,7 @@ namespace DanceStudioBookingSystem
                 comboBox.Items.AddRange(types);
             }else if(comboBox.Name == "cboTime")
             {
-                string[] time = { "10:00","10:30","11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00",
-                    "17:30","18:00","18:30"};
+                string[] time = { "AM","PM"};
                 comboBox.Items.AddRange(time);
             }else if (comboBox.Name == "cboInstructor")
             {
@@ -348,7 +347,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static string ValidClassDetails(TextBox name, TextBox type,  ComboBox time, ComboBox instructor, TextBox capacity, TextBox price)
+        public static string ValidClassDetails(TextBox name, TextBox type, TextBox hour, TextBox minute, ComboBox time, ComboBox instructor, TextBox capacity, TextBox price)
         {
             if (string.IsNullOrEmpty(name.Text))
             {
@@ -363,9 +362,27 @@ namespace DanceStudioBookingSystem
             {
                 return "The type name must only has letters";
             }
+            else if (string.IsNullOrEmpty(hour.Text) || hour.Text.Length != 2)
+            {
+                hour.Focus();
+                return "The hour of the class must be in valid format and contain 2 numbers.";
+            }else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 12 || HourValue <= 1))
+            {
+                hour.Focus();
+                return "The hour of the class must contain 2 numbers.\n\nThe hour must be between 1 and 12.";
+            }
+            else if (string.IsNullOrEmpty(minute.Text) || minute.Text.Length != 2)
+            {
+                minute.Focus();
+                return "The minutes of the class must be in valid format and contain 2 numbers.";
+            }else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59 || minuteValue <= 0))
+            {
+                minute.Focus();
+                return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 0 and 59.";
+            }
             else if (time.SelectedItem == null)
             {
-                return "Please choose the Time";
+                return "Please select time.";
             }
             else if (instructor.SelectedItem == null)
             {

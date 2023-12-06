@@ -38,6 +38,9 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.lblModifyClass = new System.Windows.Forms.Label();
             this.grpUpdateDetails = new System.Windows.Forms.GroupBox();
+            this.txtMinute = new System.Windows.Forms.TextBox();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.txtHour = new System.Windows.Forms.TextBox();
             this.cboInstructor = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -64,10 +67,6 @@
             this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.cboTime = new System.Windows.Forms.ComboBox();
-            this.txtMinute = new System.Windows.Forms.TextBox();
-            this.lblSymbol = new System.Windows.Forms.Label();
-            this.txtHour = new System.Windows.Forms.TextBox();
             this.mnuMainMenu.SuspendLayout();
             this.grpUpdateDetails.SuspendLayout();
             this.grpSelectClass.SuspendLayout();
@@ -158,7 +157,6 @@
             // grpUpdateDetails
             // 
             this.grpUpdateDetails.BackColor = System.Drawing.Color.White;
-            this.grpUpdateDetails.Controls.Add(this.cboTime);
             this.grpUpdateDetails.Controls.Add(this.txtMinute);
             this.grpUpdateDetails.Controls.Add(this.lblSymbol);
             this.grpUpdateDetails.Controls.Add(this.txtHour);
@@ -184,6 +182,34 @@
             this.grpUpdateDetails.TabStop = false;
             this.grpUpdateDetails.Text = "Update Current Class Details";
             this.grpUpdateDetails.Visible = false;
+            // 
+            // txtMinute
+            // 
+            this.txtMinute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtMinute.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinute.Location = new System.Drawing.Point(458, 44);
+            this.txtMinute.Name = "txtMinute";
+            this.txtMinute.Size = new System.Drawing.Size(39, 25);
+            this.txtMinute.TabIndex = 21;
+            // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSymbol.Location = new System.Drawing.Point(443, 43);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(17, 25);
+            this.lblSymbol.TabIndex = 20;
+            this.lblSymbol.Text = ":";
+            // 
+            // txtHour
+            // 
+            this.txtHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.txtHour.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHour.Location = new System.Drawing.Point(408, 43);
+            this.txtHour.Name = "txtHour";
+            this.txtHour.Size = new System.Drawing.Size(39, 25);
+            this.txtHour.TabIndex = 19;
             // 
             // cboInstructor
             // 
@@ -453,44 +479,6 @@
             this.btnSelect.UseVisualStyleBackColor = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // cboTime
-            // 
-            this.cboTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTime.FormattingEnabled = true;
-            this.cboTime.Location = new System.Drawing.Point(503, 43);
-            this.cboTime.Name = "cboTime";
-            this.cboTime.Size = new System.Drawing.Size(52, 25);
-            this.cboTime.TabIndex = 22;
-            // 
-            // txtMinute
-            // 
-            this.txtMinute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtMinute.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinute.Location = new System.Drawing.Point(458, 44);
-            this.txtMinute.Name = "txtMinute";
-            this.txtMinute.Size = new System.Drawing.Size(39, 25);
-            this.txtMinute.TabIndex = 21;
-            // 
-            // lblSymbol
-            // 
-            this.lblSymbol.AutoSize = true;
-            this.lblSymbol.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSymbol.Location = new System.Drawing.Point(443, 43);
-            this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(17, 25);
-            this.lblSymbol.TabIndex = 20;
-            this.lblSymbol.Text = ":";
-            // 
-            // txtHour
-            // 
-            this.txtHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtHour.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHour.Location = new System.Drawing.Point(408, 43);
-            this.txtHour.Name = "txtHour";
-            this.txtHour.Size = new System.Drawing.Size(39, 25);
-            this.txtHour.TabIndex = 19;
-            // 
             // frmModifyClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,7 +546,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.ComboBox cboTime;
         private System.Windows.Forms.TextBox txtMinute;
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.TextBox txtHour;

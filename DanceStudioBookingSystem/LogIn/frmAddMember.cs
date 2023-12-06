@@ -30,11 +30,10 @@ namespace DanceStudioBookingSystem
             string validationMemberDetails = ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {
-                if (txtPassword.Text == null || txtPassword.Text.Length < 8)
+                if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 8)
                 {
                     MessageBox.Show("The password must contain at least 8 characters", "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtPassword.ResetText();
                     txtPassword.Focus();
                 }
                 else

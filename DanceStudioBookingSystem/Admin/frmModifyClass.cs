@@ -19,7 +19,6 @@ namespace DanceStudioBookingSystem
             parent = parentForm;
             InitializeComponent();
             InsertDataToComboBox(cboType);
-            InsertDataToComboBox(cboTime);
             InsertDataToComboBox(cboInstructor);
         }
 
@@ -60,7 +59,7 @@ namespace DanceStudioBookingSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboTime, cboInstructor, txtCapacity, txtPrice) == "valid")
+            if (ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid")
             {
                 MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -72,7 +71,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboTime, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

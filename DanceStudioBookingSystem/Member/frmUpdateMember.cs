@@ -76,24 +76,31 @@ namespace DanceStudioBookingSystem
         {
             string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
-            {
-                if (string.IsNullOrEmpty(txtOldPassword.Text) && txtOldPassword.Text.Length < 8)
+            {   if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
-                    MessageBox.Show("The password must contain at least 8 characters", "Error",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtOldPassword.Focus();
-                }
-                else if (txtOldPassword.Text != txtNewPassword.Text)
-                {
-                    MessageBox.Show("The passwords do not the same.", "Error",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtOldPassword.Focus();
+                    if (txtOldPassword.Text.Length < 8)
+                    {
+                        MessageBox.Show("The password must contain at least 8 characters", "Error",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtOldPassword.Focus();
+                    }
+                    else if (txtOldPassword.Text != txtNewPassword.Text)
+                    {
+                        MessageBox.Show("The passwords do not the same.", "Error",
+                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtOldPassword.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        traverseForm(this, new frmMemberProfile(this));
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Your chandes was saved.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Your chandes was saved.\n\nThe Password was not changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     traverseForm(this, new frmMemberProfile(this));
-                }
+                }    
             }
             else
             {

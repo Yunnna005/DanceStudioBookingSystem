@@ -140,10 +140,6 @@ namespace DanceStudioBookingSystem
             {
                 string[] types = { "All","K-pop","Latin","Ballet","Hip-Hop"};
                 comboBox.Items.AddRange(types);
-            }else if(comboBox.Name == "cboTime")
-            {
-                string[] time = { "AM","PM"};
-                comboBox.Items.AddRange(time);
             }else if (comboBox.Name == "cboInstructor")
             {
                 string[] instructors = {"Hyun-Woo Park","Isabella Martinez","Jasmine Williams","Ji-Min Lee","Malik Johnson","Olivia Smith",
@@ -347,7 +343,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static string ValidClassDetails(TextBox name, TextBox type, TextBox hour, TextBox minute, ComboBox time, ComboBox instructor, TextBox capacity, TextBox price)
+        public static string ValidClassDetails(TextBox name, TextBox type, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
         {
             if (string.IsNullOrEmpty(name.Text))
             {
@@ -379,10 +375,6 @@ namespace DanceStudioBookingSystem
             {
                 minute.Focus();
                 return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 0 and 59.";
-            }
-            else if (time.SelectedItem == null)
-            {
-                return "Please select time.";
             }
             else if (instructor.SelectedItem == null)
             {

@@ -52,11 +52,11 @@
     <Compile Include="Admin\frmStatistics.Designer.cs">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmBookClass.cs">
+    <Compile Include="Member\frmMakeBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmBookClass.Designer.cs">
-      <DependentUpon>frmBookClass.cs</DependentUpon>
+    <Compile Include="Member\frmMakeBooking.Designer.cs">
+      <DependentUpon>frmMakeBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\frmCancelClass.cs">
       <SubType>Form</SubType>
@@ -64,17 +64,17 @@
     <Compile Include="Admin\frmCancelClass.Designer.cs">
       <DependentUpon>frmCancelClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmEditMemberProfile.cs">
+    <Compile Include="Member\frmUpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmEditMemberProfile.Designer.cs">
-      <DependentUpon>frmEditMemberProfile.cs</DependentUpon>
+    <Compile Include="Member\frmUpdateMember.Designer.cs">
+      <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="LogIn\frmCreateAccount.cs">
+    <Compile Include="LogIn\frmAddMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogIn\frmCreateAccount.Designer.cs">
-      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    <Compile Include="LogIn\frmAddMember.Designer.cs">
+      <DependentUpon>frmAddMember.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn\frmLogIn.cs">
       <SubType>Form</SubType>
@@ -118,17 +118,17 @@
     <EmbeddedResource Include="Admin\frmStatistics.resx">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmBookClass.resx">
-      <DependentUpon>frmBookClass.cs</DependentUpon>
+    <EmbeddedResource Include="Member\frmMakeBooking.resx">
+      <DependentUpon>frmMakeBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmCancelClass.resx">
       <DependentUpon>frmCancelClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmEditMemberProfile.resx">
-      <DependentUpon>frmEditMemberProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Member\frmUpdateMember.resx">
+      <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LogIn\frmCreateAccount.resx">
-      <DependentUpon>frmCreateAccount.cs</DependentUpon>
+    <EmbeddedResource Include="LogIn\frmAddMember.resx">
+      <DependentUpon>frmAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn\frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>

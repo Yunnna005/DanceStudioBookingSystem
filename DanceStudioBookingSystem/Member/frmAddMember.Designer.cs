@@ -75,9 +75,10 @@
             this.lblCreateAccont.AutoSize = true;
             this.lblCreateAccont.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateAccont.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            this.lblCreateAccont.Location = new System.Drawing.Point(100, 23);
+            this.lblCreateAccont.Location = new System.Drawing.Point(133, 28);
+            this.lblCreateAccont.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreateAccont.Name = "lblCreateAccont";
-            this.lblCreateAccont.Size = new System.Drawing.Size(315, 45);
+            this.lblCreateAccont.Size = new System.Drawing.Size(387, 54);
             this.lblCreateAccont.TabIndex = 0;
             this.lblCreateAccont.Text = "Create your account";
             // 
@@ -85,9 +86,10 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(55, 78);
+            this.lblDescription.Location = new System.Drawing.Point(73, 96);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(414, 21);
+            this.lblDescription.Size = new System.Drawing.Size(518, 28);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Create an account to view and manage your dance classes.";
             // 
@@ -95,9 +97,10 @@
             // 
             this.pnlSecondname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.pnlSecondname.Controls.Add(this.txtSecondname);
-            this.pnlSecondname.Location = new System.Drawing.Point(89, 222);
+            this.pnlSecondname.Location = new System.Drawing.Point(119, 273);
+            this.pnlSecondname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSecondname.Name = "pnlSecondname";
-            this.pnlSecondname.Size = new System.Drawing.Size(333, 43);
+            this.pnlSecondname.Size = new System.Drawing.Size(444, 53);
             this.pnlSecondname.TabIndex = 5;
             // 
             // txtSecondname
@@ -106,18 +109,21 @@
             this.txtSecondname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSecondname.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondname.ForeColor = System.Drawing.Color.Black;
-            this.txtSecondname.Location = new System.Drawing.Point(10, 9);
+            this.txtSecondname.Location = new System.Drawing.Point(13, 11);
+            this.txtSecondname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSecondname.MaxLength = 25;
             this.txtSecondname.Name = "txtSecondname";
-            this.txtSecondname.Size = new System.Drawing.Size(313, 26);
+            this.txtSecondname.Size = new System.Drawing.Size(417, 32);
             this.txtSecondname.TabIndex = 0;
             // 
             // lblSecondname
             // 
             this.lblSecondname.AutoSize = true;
             this.lblSecondname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondname.Location = new System.Drawing.Point(91, 199);
+            this.lblSecondname.Location = new System.Drawing.Point(121, 245);
+            this.lblSecondname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSecondname.Name = "lblSecondname";
-            this.lblSecondname.Size = new System.Drawing.Size(76, 20);
+            this.lblSecondname.Size = new System.Drawing.Size(97, 25);
             this.lblSecondname.TabIndex = 4;
             this.lblSecondname.Text = "Last name";
             // 
@@ -125,9 +131,10 @@
             // 
             this.lblDOB.AutoSize = true;
             this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(295, 272);
+            this.lblDOB.Location = new System.Drawing.Point(393, 335);
+            this.lblDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(94, 20);
+            this.lblDOB.Size = new System.Drawing.Size(118, 25);
             this.lblDOB.TabIndex = 8;
             this.lblDOB.Text = "Date of birth";
             // 
@@ -135,9 +142,10 @@
             // 
             this.pnlEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.pnlEmail.Controls.Add(this.txtEmail);
-            this.pnlEmail.Location = new System.Drawing.Point(89, 369);
+            this.pnlEmail.Location = new System.Drawing.Point(119, 454);
+            this.pnlEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlEmail.Name = "pnlEmail";
-            this.pnlEmail.Size = new System.Drawing.Size(333, 43);
+            this.pnlEmail.Size = new System.Drawing.Size(444, 53);
             this.pnlEmail.TabIndex = 11;
             // 
             // txtEmail
@@ -146,18 +154,21 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(10, 9);
+            this.txtEmail.Location = new System.Drawing.Point(13, 11);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(313, 26);
+            this.txtEmail.Size = new System.Drawing.Size(417, 32);
             this.txtEmail.TabIndex = 0;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(93, 345);
+            this.lblEmail.Location = new System.Drawing.Point(124, 425);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblEmail.Size = new System.Drawing.Size(58, 25);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
@@ -166,18 +177,20 @@
             this.pnlPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.pnlPhone.Controls.Add(this.lblPlus);
             this.pnlPhone.Controls.Add(this.txtPhone);
-            this.pnlPhone.Location = new System.Drawing.Point(89, 448);
+            this.pnlPhone.Location = new System.Drawing.Point(119, 551);
+            this.pnlPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPhone.Name = "pnlPhone";
-            this.pnlPhone.Size = new System.Drawing.Size(333, 43);
+            this.pnlPhone.Size = new System.Drawing.Size(444, 53);
             this.pnlPhone.TabIndex = 13;
             // 
             // lblPlus
             // 
             this.lblPlus.AutoSize = true;
             this.lblPlus.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlus.Location = new System.Drawing.Point(4, 3);
+            this.lblPlus.Location = new System.Drawing.Point(5, 4);
+            this.lblPlus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlus.Name = "lblPlus";
-            this.lblPlus.Size = new System.Drawing.Size(31, 32);
+            this.lblPlus.Size = new System.Drawing.Size(39, 41);
             this.lblPlus.TabIndex = 0;
             this.lblPlus.Text = "+";
             // 
@@ -187,18 +200,21 @@
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(35, 9);
+            this.txtPhone.Location = new System.Drawing.Point(47, 11);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.MaxLength = 12;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(288, 26);
+            this.txtPhone.Size = new System.Drawing.Size(384, 32);
             this.txtPhone.TabIndex = 1;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(93, 426);
+            this.lblPhone.Location = new System.Drawing.Point(124, 524);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(50, 20);
+            this.lblPhone.Size = new System.Drawing.Size(66, 25);
             this.lblPhone.TabIndex = 12;
             this.lblPhone.Text = "Phone";
             // 
@@ -206,9 +222,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(93, 508);
+            this.lblPassword.Location = new System.Drawing.Point(124, 625);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(70, 20);
+            this.lblPassword.Size = new System.Drawing.Size(91, 25);
             this.lblPassword.TabIndex = 14;
             this.lblPassword.Text = "Password";
             // 
@@ -216,9 +233,10 @@
             // 
             this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.pnlPassword.Controls.Add(this.txtPassword);
-            this.pnlPassword.Location = new System.Drawing.Point(89, 532);
+            this.pnlPassword.Location = new System.Drawing.Point(119, 655);
+            this.pnlPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPassword.Name = "pnlPassword";
-            this.pnlPassword.Size = new System.Drawing.Size(333, 43);
+            this.pnlPassword.Size = new System.Drawing.Size(444, 53);
             this.pnlPassword.TabIndex = 15;
             // 
             // txtPassword
@@ -227,9 +245,11 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(10, 9);
+            this.txtPassword.Location = new System.Drawing.Point(13, 11);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.MaxLength = 20;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(313, 26);
+            this.txtPassword.Size = new System.Drawing.Size(417, 32);
             this.txtPassword.TabIndex = 0;
             // 
             // btnCreateAccount
@@ -239,9 +259,10 @@
             this.btnCreateAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateAccount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.Location = new System.Drawing.Point(154, 596);
+            this.btnCreateAccount.Location = new System.Drawing.Point(205, 734);
+            this.btnCreateAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(200, 47);
+            this.btnCreateAccount.Size = new System.Drawing.Size(267, 58);
             this.btnCreateAccount.TabIndex = 16;
             this.btnCreateAccount.Text = "Create your account";
             this.btnCreateAccount.UseVisualStyleBackColor = false;
@@ -255,9 +276,10 @@
             this.pnlBottom.Controls.Add(this.lblTermsService);
             this.pnlBottom.Controls.Add(this.lblBottomText);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 659);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 811);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(517, 60);
+            this.pnlBottom.Size = new System.Drawing.Size(689, 74);
             this.pnlBottom.TabIndex = 17;
             // 
             // lblPrivacyPolicy
@@ -265,18 +287,20 @@
             this.lblPrivacyPolicy.AutoSize = true;
             this.lblPrivacyPolicy.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrivacyPolicy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
-            this.lblPrivacyPolicy.Location = new System.Drawing.Point(373, 21);
+            this.lblPrivacyPolicy.Location = new System.Drawing.Point(497, 26);
+            this.lblPrivacyPolicy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrivacyPolicy.Name = "lblPrivacyPolicy";
-            this.lblPrivacyPolicy.Size = new System.Drawing.Size(80, 13);
+            this.lblPrivacyPolicy.Size = new System.Drawing.Size(107, 19);
             this.lblPrivacyPolicy.TabIndex = 3;
             this.lblPrivacyPolicy.Text = "Privacy Policy.";
             // 
             // lblTextAnd
             // 
             this.lblTextAnd.AutoSize = true;
-            this.lblTextAnd.Location = new System.Drawing.Point(352, 21);
+            this.lblTextAnd.Location = new System.Drawing.Point(469, 26);
+            this.lblTextAnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTextAnd.Name = "lblTextAnd";
-            this.lblTextAnd.Size = new System.Drawing.Size(25, 13);
+            this.lblTextAnd.Size = new System.Drawing.Size(32, 17);
             this.lblTextAnd.TabIndex = 2;
             this.lblTextAnd.Text = "and";
             // 
@@ -285,9 +309,10 @@
             this.lblTermsService.AutoSize = true;
             this.lblTermsService.Font = new System.Drawing.Font("Segoe UI", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTermsService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(134)))), ((int)(((byte)(193)))));
-            this.lblTermsService.Location = new System.Drawing.Point(257, 21);
+            this.lblTermsService.Location = new System.Drawing.Point(343, 26);
+            this.lblTermsService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTermsService.Name = "lblTermsService";
-            this.lblTermsService.Size = new System.Drawing.Size(90, 13);
+            this.lblTermsService.Size = new System.Drawing.Size(121, 19);
             this.lblTermsService.TabIndex = 1;
             this.lblTermsService.Text = "Terms of Service";
             // 
@@ -295,9 +320,10 @@
             // 
             this.lblBottomText.AutoSize = true;
             this.lblBottomText.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBottomText.Location = new System.Drawing.Point(45, 21);
+            this.lblBottomText.Location = new System.Drawing.Point(60, 26);
+            this.lblBottomText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBottomText.Name = "lblBottomText";
-            this.lblBottomText.Size = new System.Drawing.Size(215, 13);
+            this.lblBottomText.Size = new System.Drawing.Size(259, 19);
             this.lblBottomText.TabIndex = 0;
             this.lblBottomText.Text = "By creating an account you agree to our ";
             // 
@@ -307,9 +333,10 @@
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Location = new System.Drawing.Point(16, 15);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(24, 23);
+            this.btnBack.Size = new System.Drawing.Size(32, 28);
             this.btnBack.TabIndex = 18;
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBack.UseVisualStyleBackColor = true;
@@ -319,9 +346,10 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(93, 272);
+            this.lblGender.Location = new System.Drawing.Point(124, 335);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(57, 20);
+            this.lblGender.Size = new System.Drawing.Size(74, 25);
             this.lblGender.TabIndex = 6;
             this.lblGender.Text = "Gender";
             // 
@@ -331,17 +359,19 @@
             this.pnlGender.Controls.Add(this.radOther);
             this.pnlGender.Controls.Add(this.radMale);
             this.pnlGender.Controls.Add(this.radFemale);
-            this.pnlGender.Location = new System.Drawing.Point(89, 291);
+            this.pnlGender.Location = new System.Drawing.Point(119, 358);
+            this.pnlGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGender.Name = "pnlGender";
-            this.pnlGender.Size = new System.Drawing.Size(200, 43);
+            this.pnlGender.Size = new System.Drawing.Size(267, 53);
             this.pnlGender.TabIndex = 7;
             // 
             // radOther
             // 
             this.radOther.AutoSize = true;
-            this.radOther.Location = new System.Drawing.Point(138, 15);
+            this.radOther.Location = new System.Drawing.Point(184, 18);
+            this.radOther.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radOther.Name = "radOther";
-            this.radOther.Size = new System.Drawing.Size(51, 17);
+            this.radOther.Size = new System.Drawing.Size(65, 21);
             this.radOther.TabIndex = 2;
             this.radOther.TabStop = true;
             this.radOther.Text = "Other";
@@ -351,9 +381,10 @@
             // 
             this.radMale.AutoSize = true;
             this.radMale.Checked = true;
-            this.radMale.Location = new System.Drawing.Point(6, 15);
+            this.radMale.Location = new System.Drawing.Point(8, 18);
+            this.radMale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radMale.Name = "radMale";
-            this.radMale.Size = new System.Drawing.Size(48, 17);
+            this.radMale.Size = new System.Drawing.Size(59, 21);
             this.radMale.TabIndex = 0;
             this.radMale.TabStop = true;
             this.radMale.Text = "Male";
@@ -362,9 +393,10 @@
             // radFemale
             // 
             this.radFemale.AutoSize = true;
-            this.radFemale.Location = new System.Drawing.Point(65, 15);
+            this.radFemale.Location = new System.Drawing.Point(87, 18);
+            this.radFemale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radFemale.Name = "radFemale";
-            this.radFemale.Size = new System.Drawing.Size(59, 17);
+            this.radFemale.Size = new System.Drawing.Size(75, 21);
             this.radFemale.TabIndex = 1;
             this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
@@ -374,9 +406,10 @@
             // 
             this.pnlFirstname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(252)))), ((int)(((byte)(255)))));
             this.pnlFirstname.Controls.Add(this.txtFirstname);
-            this.pnlFirstname.Location = new System.Drawing.Point(89, 139);
+            this.pnlFirstname.Location = new System.Drawing.Point(119, 171);
+            this.pnlFirstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlFirstname.Name = "pnlFirstname";
-            this.pnlFirstname.Size = new System.Drawing.Size(333, 43);
+            this.pnlFirstname.Size = new System.Drawing.Size(444, 53);
             this.pnlFirstname.TabIndex = 3;
             // 
             // txtFirstname
@@ -385,18 +418,21 @@
             this.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFirstname.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.ForeColor = System.Drawing.Color.Black;
-            this.txtFirstname.Location = new System.Drawing.Point(10, 9);
+            this.txtFirstname.Location = new System.Drawing.Point(13, 11);
+            this.txtFirstname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstname.MaxLength = 25;
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(313, 26);
+            this.txtFirstname.Size = new System.Drawing.Size(417, 32);
             this.txtFirstname.TabIndex = 4;
             // 
             // lblFirstname
             // 
             this.lblFirstname.AutoSize = true;
             this.lblFirstname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstname.Location = new System.Drawing.Point(93, 116);
+            this.lblFirstname.Location = new System.Drawing.Point(124, 143);
+            this.lblFirstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(77, 20);
+            this.lblFirstname.Size = new System.Drawing.Size(99, 25);
             this.lblFirstname.TabIndex = 2;
             this.lblFirstname.Text = "First name";
             // 
@@ -404,18 +440,19 @@
             // 
             this.dtpDOB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDOB.Location = new System.Drawing.Point(295, 296);
+            this.dtpDOB.Location = new System.Drawing.Point(393, 364);
+            this.dtpDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(127, 29);
+            this.dtpDOB.Size = new System.Drawing.Size(168, 34);
             this.dtpDOB.TabIndex = 9;
             this.dtpDOB.Value = new System.DateTime(2023, 12, 5, 0, 0, 0, 0);
             // 
             // frmCreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(517, 719);
+            this.ClientSize = new System.Drawing.Size(689, 885);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.pnlFirstname);
             this.Controls.Add(this.lblFirstname);
@@ -437,6 +474,7 @@
             this.Controls.Add(this.lblCreateAccont);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCreateAccount";

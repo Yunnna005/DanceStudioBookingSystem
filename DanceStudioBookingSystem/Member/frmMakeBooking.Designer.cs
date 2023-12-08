@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookClass));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblBookYourClass = new System.Windows.Forms.Label();
             this.pnlBookClass = new System.Windows.Forms.Panel();
@@ -56,6 +56,11 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.lblPayment = new System.Windows.Forms.Label();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBookAClass = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.lblTYpe = new System.Windows.Forms.Label();
@@ -64,11 +69,6 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.pnlBookClass.SuspendLayout();
             this.pnlPayment.SuspendLayout();
@@ -87,9 +87,10 @@
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.pnlHeader.Controls.Add(this.lblBookYourClass);
-            this.pnlHeader.Location = new System.Drawing.Point(171, 0);
+            this.pnlHeader.Location = new System.Drawing.Point(228, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(630, 72);
+            this.pnlHeader.Size = new System.Drawing.Size(840, 89);
             this.pnlHeader.TabIndex = 2;
             // 
             // lblBookYourClass
@@ -97,9 +98,10 @@
             this.lblBookYourClass.AutoSize = true;
             this.lblBookYourClass.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookYourClass.ForeColor = System.Drawing.Color.White;
-            this.lblBookYourClass.Location = new System.Drawing.Point(154, 18);
+            this.lblBookYourClass.Location = new System.Drawing.Point(205, 22);
+            this.lblBookYourClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBookYourClass.Name = "lblBookYourClass";
-            this.lblBookYourClass.Size = new System.Drawing.Size(329, 40);
+            this.lblBookYourClass.Size = new System.Drawing.Size(417, 50);
             this.lblBookYourClass.TabIndex = 0;
             this.lblBookYourClass.Text = "- BOOK YOUR CLASS -";
             // 
@@ -113,9 +115,10 @@
             this.pnlBookClass.Controls.Add(this.lblTYpe);
             this.pnlBookClass.Controls.Add(this.cboType);
             this.pnlBookClass.ForeColor = System.Drawing.Color.Black;
-            this.pnlBookClass.Location = new System.Drawing.Point(185, 79);
+            this.pnlBookClass.Location = new System.Drawing.Point(247, 97);
+            this.pnlBookClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBookClass.Name = "pnlBookClass";
-            this.pnlBookClass.Size = new System.Drawing.Size(609, 436);
+            this.pnlBookClass.Size = new System.Drawing.Size(812, 537);
             this.pnlBookClass.TabIndex = 3;
             // 
             // pnlPayment
@@ -131,9 +134,10 @@
             this.pnlPayment.Controls.Add(this.lblCardNumber);
             this.pnlPayment.Controls.Add(this.btnPay);
             this.pnlPayment.Controls.Add(this.lblPayment);
-            this.pnlPayment.Location = new System.Drawing.Point(3, 3);
+            this.pnlPayment.Location = new System.Drawing.Point(4, 4);
+            this.pnlPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPayment.Name = "pnlPayment";
-            this.pnlPayment.Size = new System.Drawing.Size(603, 433);
+            this.pnlPayment.Size = new System.Drawing.Size(804, 533);
             this.pnlPayment.TabIndex = 0;
             this.pnlPayment.Visible = false;
             // 
@@ -143,9 +147,10 @@
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(13, 12);
+            this.btnBack.Location = new System.Drawing.Point(17, 15);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(24, 23);
+            this.btnBack.Size = new System.Drawing.Size(32, 28);
             this.btnBack.TabIndex = 10;
             this.btnBack.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBack.UseVisualStyleBackColor = true;
@@ -156,27 +161,31 @@
             this.pnlCVC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
             this.pnlCVC.Controls.Add(this.txtCVC);
             this.pnlCVC.Controls.Add(this.pictureBox5);
-            this.pnlCVC.Location = new System.Drawing.Point(310, 295);
+            this.pnlCVC.Location = new System.Drawing.Point(413, 363);
+            this.pnlCVC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCVC.Name = "pnlCVC";
-            this.pnlCVC.Size = new System.Drawing.Size(119, 37);
+            this.pnlCVC.Size = new System.Drawing.Size(159, 46);
             this.pnlCVC.TabIndex = 8;
             // 
             // txtCVC
             // 
             this.txtCVC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCVC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCVC.Location = new System.Drawing.Point(7, 6);
+            this.txtCVC.Location = new System.Drawing.Point(9, 7);
+            this.txtCVC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCVC.MaxLength = 3;
             this.txtCVC.Name = "txtCVC";
-            this.txtCVC.Size = new System.Drawing.Size(105, 26);
+            this.txtCVC.Size = new System.Drawing.Size(140, 32);
             this.txtCVC.TabIndex = 0;
             this.txtCVC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox5.Location = new System.Drawing.Point(491, 41);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox5.Size = new System.Drawing.Size(36, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -185,9 +194,10 @@
             // 
             this.lblCVC.AutoSize = true;
             this.lblCVC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCVC.Location = new System.Drawing.Point(353, 271);
+            this.lblCVC.Location = new System.Drawing.Point(471, 334);
+            this.lblCVC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCVC.Name = "lblCVC";
-            this.lblCVC.Size = new System.Drawing.Size(40, 21);
+            this.lblCVC.Size = new System.Drawing.Size(48, 28);
             this.lblCVC.TabIndex = 6;
             this.lblCVC.Text = "CVC";
             // 
@@ -196,9 +206,10 @@
             this.pnlExpireDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
             this.pnlExpireDate.Controls.Add(this.cboYearCard);
             this.pnlExpireDate.Controls.Add(this.cboMonth);
-            this.pnlExpireDate.Location = new System.Drawing.Point(172, 295);
+            this.pnlExpireDate.Location = new System.Drawing.Point(229, 363);
+            this.pnlExpireDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlExpireDate.Name = "pnlExpireDate";
-            this.pnlExpireDate.Size = new System.Drawing.Size(119, 37);
+            this.pnlExpireDate.Size = new System.Drawing.Size(159, 46);
             this.pnlExpireDate.TabIndex = 7;
             // 
             // cboYearCard
@@ -207,10 +218,10 @@
             this.cboYearCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboYearCard.FormattingEnabled = true;
             this.cboYearCard.IntegralHeight = false;
-            this.cboYearCard.Location = new System.Drawing.Point(61, 3);
-            this.cboYearCard.Margin = new System.Windows.Forms.Padding(2);
+            this.cboYearCard.Location = new System.Drawing.Point(81, 4);
+            this.cboYearCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboYearCard.Name = "cboYearCard";
-            this.cboYearCard.Size = new System.Drawing.Size(55, 29);
+            this.cboYearCard.Size = new System.Drawing.Size(72, 36);
             this.cboYearCard.TabIndex = 1;
             this.cboYearCard.Text = "Year";
             // 
@@ -220,10 +231,10 @@
             this.cboMonth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMonth.FormattingEnabled = true;
             this.cboMonth.IntegralHeight = false;
-            this.cboMonth.Location = new System.Drawing.Point(2, 3);
-            this.cboMonth.Margin = new System.Windows.Forms.Padding(2);
+            this.cboMonth.Location = new System.Drawing.Point(3, 4);
+            this.cboMonth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMonth.Name = "cboMonth";
-            this.cboMonth.Size = new System.Drawing.Size(55, 29);
+            this.cboMonth.Size = new System.Drawing.Size(72, 36);
             this.cboMonth.TabIndex = 0;
             this.cboMonth.Text = "Month";
             // 
@@ -231,9 +242,10 @@
             // 
             this.lblExpireDate.AutoSize = true;
             this.lblExpireDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpireDate.Location = new System.Drawing.Point(186, 271);
+            this.lblExpireDate.Location = new System.Drawing.Point(248, 334);
+            this.lblExpireDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExpireDate.Name = "lblExpireDate";
-            this.lblExpireDate.Size = new System.Drawing.Size(86, 21);
+            this.lblExpireDate.Size = new System.Drawing.Size(109, 28);
             this.lblExpireDate.TabIndex = 5;
             this.lblExpireDate.Text = "Expire date";
             // 
@@ -242,27 +254,31 @@
             this.pnlCardHolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
             this.pnlCardHolder.Controls.Add(this.txtCardHolder);
             this.pnlCardHolder.Controls.Add(this.pictureBox7);
-            this.pnlCardHolder.Location = new System.Drawing.Point(164, 217);
+            this.pnlCardHolder.Location = new System.Drawing.Point(219, 267);
+            this.pnlCardHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCardHolder.Name = "pnlCardHolder";
-            this.pnlCardHolder.Size = new System.Drawing.Size(272, 41);
+            this.pnlCardHolder.Size = new System.Drawing.Size(363, 50);
             this.pnlCardHolder.TabIndex = 4;
             // 
             // txtCardHolder
             // 
             this.txtCardHolder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCardHolder.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardHolder.Location = new System.Drawing.Point(8, 9);
+            this.txtCardHolder.Location = new System.Drawing.Point(11, 11);
+            this.txtCardHolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCardHolder.MaxLength = 25;
             this.txtCardHolder.Name = "txtCardHolder";
-            this.txtCardHolder.Size = new System.Drawing.Size(257, 26);
+            this.txtCardHolder.Size = new System.Drawing.Size(343, 32);
             this.txtCardHolder.TabIndex = 0;
             this.txtCardHolder.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox7.Location = new System.Drawing.Point(491, 41);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox7.Size = new System.Drawing.Size(36, 30);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
@@ -271,9 +287,10 @@
             // 
             this.lblCardHolder.AutoSize = true;
             this.lblCardHolder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardHolder.Location = new System.Drawing.Point(247, 193);
+            this.lblCardHolder.Location = new System.Drawing.Point(329, 238);
+            this.lblCardHolder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCardHolder.Name = "lblCardHolder";
-            this.lblCardHolder.Size = new System.Drawing.Size(92, 21);
+            this.lblCardHolder.Size = new System.Drawing.Size(115, 28);
             this.lblCardHolder.TabIndex = 3;
             this.lblCardHolder.Text = "Card holder";
             // 
@@ -282,27 +299,31 @@
             this.pnlCardNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(214)))), ((int)(((byte)(241)))));
             this.pnlCardNumber.Controls.Add(this.txtCardNumber);
             this.pnlCardNumber.Controls.Add(this.pictureBox8);
-            this.pnlCardNumber.Location = new System.Drawing.Point(164, 139);
+            this.pnlCardNumber.Location = new System.Drawing.Point(219, 171);
+            this.pnlCardNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCardNumber.Name = "pnlCardNumber";
-            this.pnlCardNumber.Size = new System.Drawing.Size(272, 41);
+            this.pnlCardNumber.Size = new System.Drawing.Size(363, 50);
             this.pnlCardNumber.TabIndex = 2;
             // 
             // txtCardNumber
             // 
             this.txtCardNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCardNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNumber.Location = new System.Drawing.Point(9, 8);
+            this.txtCardNumber.Location = new System.Drawing.Point(12, 10);
+            this.txtCardNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCardNumber.MaxLength = 16;
             this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(257, 26);
+            this.txtCardNumber.Size = new System.Drawing.Size(343, 32);
             this.txtCardNumber.TabIndex = 0;
             this.txtCardNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(368, 33);
+            this.pictureBox8.Location = new System.Drawing.Point(491, 41);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(27, 24);
+            this.pictureBox8.Size = new System.Drawing.Size(36, 30);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
@@ -311,9 +332,10 @@
             // 
             this.lblCardNumber.AutoSize = true;
             this.lblCardNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCardNumber.Location = new System.Drawing.Point(247, 115);
+            this.lblCardNumber.Location = new System.Drawing.Point(329, 142);
+            this.lblCardNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCardNumber.Name = "lblCardNumber";
-            this.lblCardNumber.Size = new System.Drawing.Size(102, 21);
+            this.lblCardNumber.Size = new System.Drawing.Size(126, 28);
             this.lblCardNumber.TabIndex = 1;
             this.lblCardNumber.Text = "Card number";
             // 
@@ -324,9 +346,10 @@
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(256, 351);
+            this.btnPay.Location = new System.Drawing.Point(341, 432);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(83, 39);
+            this.btnPay.Size = new System.Drawing.Size(111, 48);
             this.btnPay.TabIndex = 9;
             this.btnPay.Text = "PAY";
             this.btnPay.UseVisualStyleBackColor = false;
@@ -336,9 +359,10 @@
             // 
             this.lblPayment.AutoSize = true;
             this.lblPayment.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment.Location = new System.Drawing.Point(251, 64);
+            this.lblPayment.Location = new System.Drawing.Point(335, 79);
+            this.lblPayment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPayment.Name = "lblPayment";
-            this.lblPayment.Size = new System.Drawing.Size(98, 30);
+            this.lblPayment.Size = new System.Drawing.Size(130, 37);
             this.lblPayment.TabIndex = 0;
             this.lblPayment.Text = "Payment";
             // 
@@ -347,14 +371,14 @@
             this.dgvClasses.AllowUserToAddRows = false;
             this.dgvClasses.AllowUserToDeleteRows = false;
             this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CLASSNAME,
@@ -362,126 +386,34 @@
             this.time,
             this.instructor,
             this.price});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClasses.DefaultCellStyle = dataGridViewCellStyle26;
-            this.dgvClasses.Location = new System.Drawing.Point(16, 149);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClasses.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClasses.Location = new System.Drawing.Point(21, 183);
+            this.dgvClasses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvClasses.Name = "dgvClasses";
             this.dgvClasses.ReadOnly = true;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasses.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasses.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClasses.RowHeadersWidth = 62;
-            this.dgvClasses.Size = new System.Drawing.Size(587, 184);
+            this.dgvClasses.Size = new System.Drawing.Size(783, 226);
             this.dgvClasses.TabIndex = 3;
-            // 
-            // lblBookAClass
-            // 
-            this.lblBookAClass.AutoSize = true;
-            this.lblBookAClass.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookAClass.Location = new System.Drawing.Point(245, 37);
-            this.lblBookAClass.Name = "lblBookAClass";
-            this.lblBookAClass.Size = new System.Drawing.Size(132, 30);
-            this.lblBookAClass.TabIndex = 0;
-            this.lblBookAClass.Text = "Book a class";
-            // 
-            // btnBook
-            // 
-            this.btnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.btnBook.FlatAppearance.BorderSize = 0;
-            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBook.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBook.ForeColor = System.Drawing.Color.White;
-            this.btnBook.Location = new System.Drawing.Point(259, 358);
-            this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(94, 39);
-            this.btnBook.TabIndex = 4;
-            this.btnBook.Text = "BOOK";
-            this.btnBook.UseVisualStyleBackColor = false;
-            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
-            // 
-            // lblTYpe
-            // 
-            this.lblTYpe.AutoSize = true;
-            this.lblTYpe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTYpe.Location = new System.Drawing.Point(187, 107);
-            this.lblTYpe.Name = "lblTYpe";
-            this.lblTYpe.Size = new System.Drawing.Size(42, 21);
-            this.lblTYpe.TabIndex = 1;
-            this.lblTYpe.Text = "Type";
-            // 
-            // cboType
-            // 
-            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(277, 107);
-            this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 25);
-            this.cboType.TabIndex = 2;
-            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
-            // 
-            // mnuMainMenu
-            // 
-            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
-            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuProfile,
-            this.mnuBook});
-            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(6, 100, 10, 2);
-            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnuMainMenu.ShowItemToolTips = true;
-            this.mnuMainMenu.Size = new System.Drawing.Size(179, 522);
-            this.mnuMainMenu.TabIndex = 0;
-            this.mnuMainMenu.Text = "Menu";
-            // 
-            // mnuProfile
-            // 
-            this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mnuProfile.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuProfile.ForeColor = System.Drawing.Color.Black;
-            this.mnuProfile.Name = "mnuProfile";
-            this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.mnuProfile.Size = new System.Drawing.Size(152, 51);
-            this.mnuProfile.Text = "Profile ";
-            this.mnuProfile.Click += new System.EventHandler(this.mnuProfile_Click);
-            // 
-            // mnuBook
-            // 
-            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuBook.Name = "mnuBook";
-            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
-            this.mnuBook.Size = new System.Drawing.Size(163, 51);
-            this.mnuBook.Text = "Book";
-            // 
-            // pnlBlueLine
-            // 
-            this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.pnlBlueLine.Location = new System.Drawing.Point(157, 0);
-            this.pnlBlueLine.Name = "pnlBlueLine";
-            this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
-            this.pnlBlueLine.TabIndex = 1;
             // 
             // CLASSNAME
             // 
             this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.MinimumWidth = 6;
             this.CLASSNAME.Name = "CLASSNAME";
             this.CLASSNAME.ReadOnly = true;
             this.CLASSNAME.Width = 150;
@@ -519,18 +451,118 @@
             this.price.ReadOnly = true;
             this.price.Width = 80;
             // 
+            // lblBookAClass
+            // 
+            this.lblBookAClass.AutoSize = true;
+            this.lblBookAClass.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookAClass.Location = new System.Drawing.Point(327, 46);
+            this.lblBookAClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBookAClass.Name = "lblBookAClass";
+            this.lblBookAClass.Size = new System.Drawing.Size(172, 37);
+            this.lblBookAClass.TabIndex = 0;
+            this.lblBookAClass.Text = "Book a class";
+            // 
+            // btnBook
+            // 
+            this.btnBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnBook.FlatAppearance.BorderSize = 0;
+            this.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBook.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.ForeColor = System.Drawing.Color.White;
+            this.btnBook.Location = new System.Drawing.Point(345, 441);
+            this.btnBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBook.Name = "btnBook";
+            this.btnBook.Size = new System.Drawing.Size(125, 48);
+            this.btnBook.TabIndex = 4;
+            this.btnBook.Text = "BOOK";
+            this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
+            // 
+            // lblTYpe
+            // 
+            this.lblTYpe.AutoSize = true;
+            this.lblTYpe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTYpe.Location = new System.Drawing.Point(249, 132);
+            this.lblTYpe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTYpe.Name = "lblTYpe";
+            this.lblTYpe.Size = new System.Drawing.Size(53, 28);
+            this.lblTYpe.TabIndex = 1;
+            this.lblTYpe.Text = "Type";
+            // 
+            // cboType
+            // 
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(369, 132);
+            this.cboType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(160, 29);
+            this.cboType.TabIndex = 2;
+            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
+            // 
+            // mnuMainMenu
+            // 
+            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
+            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuProfile,
+            this.mnuBook});
+            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(8, 123, 13, 2);
+            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnuMainMenu.ShowItemToolTips = true;
+            this.mnuMainMenu.Size = new System.Drawing.Size(209, 642);
+            this.mnuMainMenu.TabIndex = 0;
+            this.mnuMainMenu.Text = "Menu";
+            // 
+            // mnuProfile
+            // 
+            this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuProfile.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuProfile.ForeColor = System.Drawing.Color.Black;
+            this.mnuProfile.Name = "mnuProfile";
+            this.mnuProfile.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.mnuProfile.Size = new System.Drawing.Size(186, 64);
+            this.mnuProfile.Text = "Profile ";
+            this.mnuProfile.Click += new System.EventHandler(this.mnuProfile_Click);
+            // 
+            // mnuBook
+            // 
+            this.mnuBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.mnuBook.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuBook.Name = "mnuBook";
+            this.mnuBook.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.mnuBook.Size = new System.Drawing.Size(188, 64);
+            this.mnuBook.Text = "Book";
+            // 
+            // pnlBlueLine
+            // 
+            this.pnlBlueLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.pnlBlueLine.Location = new System.Drawing.Point(209, 0);
+            this.pnlBlueLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlBlueLine.Name = "pnlBlueLine";
+            this.pnlBlueLine.Size = new System.Drawing.Size(29, 644);
+            this.pnlBlueLine.TabIndex = 1;
+            // 
             // frmBookClass
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(800, 522);
+            this.ClientSize = new System.Drawing.Size(1067, 642);
             this.Controls.Add(this.pnlBlueLine);
             this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.pnlBookClass);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmBookClass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Class";

@@ -388,7 +388,7 @@ namespace DanceStudioBookingSystem
             else if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
             {
                 price.Focus();
-                return "Invalid Price";
+                return "Invalid Price. Format is 00.00";
             }
             else
             {

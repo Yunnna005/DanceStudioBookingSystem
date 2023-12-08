@@ -66,10 +66,10 @@
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(770, 31);
+            this.mnuMainMenu.Size = new System.Drawing.Size(1027, 38);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -81,27 +81,27 @@
             this.mnutCancelClass});
             this.mnuClasses.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuClasses.Name = "mnuClasses";
-            this.mnuClasses.Size = new System.Drawing.Size(85, 29);
+            this.mnuClasses.Size = new System.Drawing.Size(105, 36);
             this.mnuClasses.Text = "Classes";
             // 
             // mnutScheduleClass
             // 
             this.mnutScheduleClass.Name = "mnutScheduleClass";
-            this.mnutScheduleClass.Size = new System.Drawing.Size(209, 30);
+            this.mnutScheduleClass.Size = new System.Drawing.Size(262, 36);
             this.mnutScheduleClass.Text = "Schedule Class";
             this.mnutScheduleClass.Click += new System.EventHandler(this.mnutScheduleClass_Click);
             // 
             // mnutModifyClass
             // 
             this.mnutModifyClass.Name = "mnutModifyClass";
-            this.mnutModifyClass.Size = new System.Drawing.Size(209, 30);
+            this.mnutModifyClass.Size = new System.Drawing.Size(262, 36);
             this.mnutModifyClass.Text = "Modify Class";
             this.mnutModifyClass.Click += new System.EventHandler(this.mnutModifyClass_Click);
             // 
             // mnutCancelClass
             // 
             this.mnutCancelClass.Name = "mnutCancelClass";
-            this.mnutCancelClass.Size = new System.Drawing.Size(209, 30);
+            this.mnutCancelClass.Size = new System.Drawing.Size(262, 36);
             this.mnutCancelClass.Text = "Cancel Class";
             this.mnutCancelClass.Click += new System.EventHandler(this.mnutCancelClass_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.mnuStatistics.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuStatistics.Name = "mnuStatistics";
-            this.mnuStatistics.Size = new System.Drawing.Size(96, 29);
+            this.mnuStatistics.Size = new System.Drawing.Size(120, 36);
             this.mnuStatistics.Text = "Statistics";
             this.mnuStatistics.Click += new System.EventHandler(this.mnuStatistics_Click);
             // 
@@ -118,7 +118,7 @@
             this.mnuLogOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuLogOut.Name = "mnuLogOut";
             this.mnuLogOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuLogOut.Size = new System.Drawing.Size(91, 29);
+            this.mnuLogOut.Size = new System.Drawing.Size(115, 36);
             this.mnuLogOut.Text = "Log Out";
             this.mnuLogOut.Click += new System.EventHandler(this.mnuLogOut_Click);
             // 
@@ -135,9 +135,11 @@
             this.grpClasses.Controls.Add(this.cboType);
             this.grpClasses.Controls.Add(this.dgvClassesAdmin);
             this.grpClasses.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpClasses.Location = new System.Drawing.Point(0, 47);
+            this.grpClasses.Location = new System.Drawing.Point(0, 58);
+            this.grpClasses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpClasses.Name = "grpClasses";
-            this.grpClasses.Size = new System.Drawing.Size(770, 330);
+            this.grpClasses.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpClasses.Size = new System.Drawing.Size(1027, 406);
             this.grpClasses.TabIndex = 1;
             this.grpClasses.TabStop = false;
             this.grpClasses.Text = "Classes";
@@ -146,9 +148,10 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(271, 25);
+            this.lblType.Location = new System.Drawing.Point(361, 31);
+            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(42, 21);
+            this.lblType.Size = new System.Drawing.Size(53, 28);
             this.lblType.TabIndex = 0;
             this.lblType.Text = "Type";
             // 
@@ -157,9 +160,10 @@
             this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(361, 25);
+            this.cboType.Location = new System.Drawing.Point(481, 31);
+            this.cboType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboType.Name = "cboType";
-            this.cboType.Size = new System.Drawing.Size(121, 25);
+            this.cboType.Size = new System.Drawing.Size(160, 29);
             this.cboType.TabIndex = 1;
             this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
@@ -177,19 +181,21 @@
             this.INSTRUCTOR,
             this.CAPACITY,
             this.PRICE});
-            this.dgvClassesAdmin.Location = new System.Drawing.Point(6, 60);
+            this.dgvClassesAdmin.Location = new System.Drawing.Point(8, 74);
+            this.dgvClassesAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvClassesAdmin.Name = "dgvClassesAdmin";
             this.dgvClassesAdmin.ReadOnly = true;
             this.dgvClassesAdmin.RowHeadersWidth = 62;
-            this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 257);
+            this.dgvClassesAdmin.Size = new System.Drawing.Size(1003, 316);
             this.dgvClassesAdmin.TabIndex = 2;
             // 
             // CLASSNAME
             // 
             this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.MinimumWidth = 6;
             this.CLASSNAME.Name = "CLASSNAME";
             this.CLASSNAME.ReadOnly = true;
-            this.CLASSNAME.Width = 150;
+            this.CLASSNAME.Width = 200;
             // 
             // Type
             // 
@@ -197,6 +203,7 @@
             this.Type.MinimumWidth = 8;
             this.Type.Name = "Type";
             this.Type.ReadOnly = true;
+            this.Type.Width = 140;
             // 
             // Date
             // 
@@ -204,6 +211,7 @@
             this.Date.MinimumWidth = 8;
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
+            this.Date.Width = 140;
             // 
             // Time
             // 
@@ -211,40 +219,44 @@
             this.Time.MinimumWidth = 8;
             this.Time.Name = "Time";
             this.Time.ReadOnly = true;
+            this.Time.Width = 125;
             // 
             // INSTRUCTOR
             // 
             this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.MinimumWidth = 6;
             this.INSTRUCTOR.Name = "INSTRUCTOR";
             this.INSTRUCTOR.ReadOnly = true;
-            this.INSTRUCTOR.Width = 120;
+            this.INSTRUCTOR.Width = 150;
             // 
             // CAPACITY
             // 
             this.CAPACITY.FillWeight = 60F;
             this.CAPACITY.HeaderText = "Capacity";
+            this.CAPACITY.MinimumWidth = 6;
             this.CAPACITY.Name = "CAPACITY";
             this.CAPACITY.ReadOnly = true;
-            this.CAPACITY.Width = 80;
             // 
             // PRICE
             // 
             this.PRICE.HeaderText = "Price";
+            this.PRICE.MinimumWidth = 6;
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
             this.PRICE.Width = 60;
             // 
             // frmClassesOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(770, 387);
+            this.ClientSize = new System.Drawing.Size(1027, 476);
             this.Controls.Add(this.grpClasses);
             this.Controls.Add(this.mnuMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmClassesOverview";

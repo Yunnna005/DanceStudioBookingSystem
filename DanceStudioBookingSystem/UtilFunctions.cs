@@ -61,12 +61,12 @@ namespace DanceStudioBookingSystem
                 secondname.Focus();
                 return "The Secondname must not contain numbers or symbols.";
             }
-            else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 email.Focus();
                 return "Please enter valid email address";
             }
-            else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 9)
+            else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 12)
             {
                 phone.Focus();
                 return "Please enter valid phone number.";
@@ -119,11 +119,11 @@ namespace DanceStudioBookingSystem
                     }
                 }
                
-                if (digits > 0 && letters == 0 && symbols==0) // string has only digits
+                if (digits > 0 && letters == 0 && symbols==0) 
                 {
                     return "Digits";
                 }
-                else if(letters > 0 && digits == 0 && symbols == 0)// string has only letters
+                else if(letters > 0 && digits == 0 && symbols == 0)
                 {
                     return "Letters";
                 }else if (symbols>0 && digits == 0 && letters == 0)

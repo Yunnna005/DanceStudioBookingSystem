@@ -11,16 +11,16 @@ using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
-    public partial class frmEditMemberProfile : Form
+    public partial class frmUpdateMember : Form
     {
         Form parent;
-        public frmEditMemberProfile(Form parentForm)
+        public frmUpdateMember(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
             txtFirstName.Text = "Anna";
             txtSecondName.Text = "Kovalenko";
-            dtpDOB.Text = "24/08/2005";
+            dtpDOB.Value = new DateTime(2005, 08, 24);
             txtEmail.Text = "Anna@gmail.com";
             txtPhone.Text = "3530852433543";
         }

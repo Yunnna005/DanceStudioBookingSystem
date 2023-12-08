@@ -41,7 +41,7 @@ namespace DanceStudioBookingSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmEditMemberProfile(this));
+            traverseForm(this, new frmUpdateMember(this));
         }
 
         private void btnCancelClass_Click(object sender, EventArgs e)

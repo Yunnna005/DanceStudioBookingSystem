@@ -1,6 +1,6 @@
 ﻿namespace DanceStudioBookingSystem
 {
-    partial class frmEditMemberProfile
+    partial class frmUpdateMember
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditMemberProfile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateMember));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblProfile = new System.Windows.Forms.Label();
             this.grpEditProfileDetails = new System.Windows.Forms.GroupBox();
@@ -210,11 +210,11 @@
             // 
             this.lblSecondName.AutoSize = true;
             this.lblSecondName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondName.Location = new System.Drawing.Point(11, 67);
+            this.lblSecondName.Location = new System.Drawing.Point(12, 67);
             this.lblSecondName.Name = "lblSecondName";
-            this.lblSecondName.Size = new System.Drawing.Size(102, 19);
+            this.lblSecondName.Size = new System.Drawing.Size(79, 19);
             this.lblSecondName.TabIndex = 2;
-            this.lblSecondName.Text = "SecondName:";
+            this.lblSecondName.Text = "LastName:";
             // 
             // radOther
             // 
@@ -419,7 +419,7 @@
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 1;
             // 
-            // frmEditMemberProfile
+            // frmUpdateMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -432,7 +432,7 @@
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmEditMemberProfile";
+            this.Name = "frmUpdateMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Member Profile";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEditMemberProfile_FormClosed);

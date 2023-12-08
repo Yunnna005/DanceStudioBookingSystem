@@ -12,11 +12,11 @@ using static DanceStudioBookingSystem.UtilFunctions;
 namespace DanceStudioBookingSystem
 {
 
-    public partial class frmMainMenuAdmin : Form
+    public partial class frmClassesOverview : Form
     {
         public System.Windows.Forms.DataGridView dgvClassesAdmin;
         Form parent;
-        public frmMainMenuAdmin(Form parentForm)
+        public frmClassesOverview(Form parentForm)
         {
 
             parent = parentForm;

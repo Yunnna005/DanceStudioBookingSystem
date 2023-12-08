@@ -24,12 +24,12 @@ namespace DanceStudioBookingSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if(txtEmail.Text == "Anna@gmail.com" & txtPassword.Text == "123"){
+            if(txtEmail.Text == "Anna@gmail.com" & txtPassword.Text == "12345678"){
                 traverseForm(this, new frmMemberProfile(this));
             }
             else if(txtEmail.Text == "Admin1" & txtPassword.Text == "123")
             {
-                traverseForm(this, new frmMainMenuAdmin(this));
+                traverseForm(this, new frmClassesOverview(this));
             }
             else
             {

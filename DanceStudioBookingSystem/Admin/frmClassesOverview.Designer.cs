@@ -1,6 +1,6 @@
 ﻿namespace DanceStudioBookingSystem
 {
-    partial class frmMainMenuAdmin
+    partial class frmClassesOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenuAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClassesOverview));
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
             this.mnutScheduleClass = new System.Windows.Forms.ToolStripMenuItem();
@@ -234,7 +234,7 @@
             this.PRICE.ReadOnly = true;
             this.PRICE.Width = 60;
             // 
-            // frmMainMenuAdmin
+            // frmClassesOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,7 +247,7 @@
             this.MainMenuStrip = this.mnuMainMenu;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMainMenuAdmin";
+            this.Name = "frmClassesOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMainMenuAdmin_FormClosed);

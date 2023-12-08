@@ -23,7 +23,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmMainMenuAdmin(this));
+            traverseForm(this, new frmClassesOverview(this));
         }
 
         private void mnuStatisticsTool_Click(object sender, EventArgs e)

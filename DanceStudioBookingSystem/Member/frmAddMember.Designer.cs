@@ -115,7 +115,7 @@
             // 
             this.lblSecondname.AutoSize = true;
             this.lblSecondname.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondname.Location = new System.Drawing.Point(71, 148);
+            this.lblSecondname.Location = new System.Drawing.Point(91, 199);
             this.lblSecondname.Name = "lblSecondname";
             this.lblSecondname.Size = new System.Drawing.Size(76, 20);
             this.lblSecondname.TabIndex = 4;
@@ -255,9 +255,9 @@
             this.pnlBottom.Controls.Add(this.lblTermsService);
             this.pnlBottom.Controls.Add(this.lblBottomText);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 665);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 659);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(514, 43);
+            this.pnlBottom.Size = new System.Drawing.Size(517, 60);
             this.pnlBottom.TabIndex = 17;
             // 
             // lblPrivacyPolicy
@@ -415,7 +415,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            this.ClientSize = new System.Drawing.Size(642, 885);
+            this.ClientSize = new System.Drawing.Size(517, 719);
             this.Controls.Add(this.dtpDOB);
             this.Controls.Add(this.pnlFirstname);
             this.Controls.Add(this.lblFirstname);

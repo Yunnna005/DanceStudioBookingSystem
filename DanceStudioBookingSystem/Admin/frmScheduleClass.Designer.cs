@@ -37,7 +37,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.lblInstructor = new System.Windows.Forms.Label();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblCapacity = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.mnutCancelClass = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStatistics = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
+            this.cboType = new System.Windows.Forms.ComboBox();
             this.pnlScheduleClass.SuspendLayout();
             this.mnuMainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             // pnlScheduleClass
             // 
             this.pnlScheduleClass.BackColor = System.Drawing.Color.White;
+            this.pnlScheduleClass.Controls.Add(this.cboType);
             this.pnlScheduleClass.Controls.Add(this.txtMinute);
             this.pnlScheduleClass.Controls.Add(this.lblSymbol);
             this.pnlScheduleClass.Controls.Add(this.txtHour);
@@ -69,7 +70,6 @@
             this.pnlScheduleClass.Controls.Add(this.txtName);
             this.pnlScheduleClass.Controls.Add(this.lblName);
             this.pnlScheduleClass.Controls.Add(this.dtpDate);
-            this.pnlScheduleClass.Controls.Add(this.txtType);
             this.pnlScheduleClass.Controls.Add(this.lblInstructor);
             this.pnlScheduleClass.Controls.Add(this.txtCapacity);
             this.pnlScheduleClass.Controls.Add(this.lblCapacity);
@@ -156,15 +156,6 @@
             this.dtpDate.Size = new System.Drawing.Size(147, 29);
             this.dtpDate.TabIndex = 5;
             this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
-            // 
-            // txtType
-            // 
-            this.txtType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(199, 56);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(147, 25);
-            this.txtType.TabIndex = 3;
             // 
             // lblInstructor
             // 
@@ -340,6 +331,17 @@
             this.mnuBack.Text = "Back";
             this.mnuBack.Click += new System.EventHandler(this.mnuBack_Click);
             // 
+            // cboType
+            // 
+            this.cboType.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboType.FormattingEnabled = true;
+            this.cboType.Location = new System.Drawing.Point(199, 56);
+            this.cboType.Name = "cboType";
+            this.cboType.Size = new System.Drawing.Size(147, 25);
+            this.cboType.TabIndex = 18;
+            // 
             // frmScheduleClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,7 +388,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuStatistics;
         private System.Windows.Forms.Label lblInstructor;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
@@ -394,5 +395,6 @@
         private System.Windows.Forms.TextBox txtMinute;
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.TextBox txtHour;
+        private System.Windows.Forms.ComboBox cboType;
     }
 }

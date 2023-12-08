@@ -19,6 +19,7 @@ namespace DanceStudioBookingSystem
             parent = parentForm;
             InitializeComponent();
             InsertDataToComboBox(cboType);
+            InsertDataToComboBox(cboType2);
             InsertDataToComboBox(cboInstructor);
 
         }
@@ -45,7 +46,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmMainMenuAdmin(this));
+            traverseForm(this, new frmClassesOverview(this));
         }
 
         private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
@@ -60,11 +61,11 @@ namespace DanceStudioBookingSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid")
+            if (ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid")
             {
                 MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                txtName.Clear(); txtType.Clear(); txtCapacity.Clear(); txtPrice.Clear();
+                txtName.Clear(); txtCapacity.Clear(); txtPrice.Clear();
 
                 grpUpdateDetails.Visible = false;
 
@@ -72,7 +73,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidClassDetails(txtName, txtType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -85,7 +86,7 @@ namespace DanceStudioBookingSystem
             else
             {
                 grpUpdateDetails.Visible = true;
-                DisplayDataFromDataGrid(dgvModifyClassesAdmin, txtName, txtType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice);
+                DisplayDataFromDataGrid(dgvModifyClassesAdmin, txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice);
             }
         }
     }

@@ -88,11 +88,11 @@
     <Compile Include="Member\frmMemberProfile.Designer.cs">
       <DependentUpon>frmMemberProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmMainMenuAdmin.cs">
+    <Compile Include="Admin\frmClassesOverview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmMainMenuAdmin.Designer.cs">
-      <DependentUpon>frmMainMenuAdmin.cs</DependentUpon>
+    <Compile Include="Admin\frmClassesOverview.Designer.cs">
+      <DependentUpon>frmClassesOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\frmModifyClass.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Member\frmMemberProfile.resx">
       <DependentUpon>frmMemberProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmMainMenuAdmin.resx">
-      <DependentUpon>frmMainMenuAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\frmClassesOverview.resx">
+      <DependentUpon>frmClassesOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\frmModifyClass.resx">
       <DependentUpon>frmModifyClass.cs</DependentUpon>

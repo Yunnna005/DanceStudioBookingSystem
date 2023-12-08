@@ -38,6 +38,7 @@
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.lblModifyClass = new System.Windows.Forms.Label();
             this.grpUpdateDetails = new System.Windows.Forms.GroupBox();
+            this.cboType2 = new System.Windows.Forms.ComboBox();
             this.txtMinute = new System.Windows.Forms.TextBox();
             this.lblSymbol = new System.Windows.Forms.Label();
             this.txtHour = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblCapacity = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -88,7 +88,7 @@
             this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(655, 31);
+            this.mnuMainMenu.Size = new System.Drawing.Size(661, 31);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -157,6 +157,7 @@
             // grpUpdateDetails
             // 
             this.grpUpdateDetails.BackColor = System.Drawing.Color.White;
+            this.grpUpdateDetails.Controls.Add(this.cboType2);
             this.grpUpdateDetails.Controls.Add(this.txtMinute);
             this.grpUpdateDetails.Controls.Add(this.lblSymbol);
             this.grpUpdateDetails.Controls.Add(this.txtHour);
@@ -164,7 +165,6 @@
             this.grpUpdateDetails.Controls.Add(this.txtName);
             this.grpUpdateDetails.Controls.Add(this.lblName);
             this.grpUpdateDetails.Controls.Add(this.dtpDate);
-            this.grpUpdateDetails.Controls.Add(this.txtType);
             this.grpUpdateDetails.Controls.Add(this.txtCapacity);
             this.grpUpdateDetails.Controls.Add(this.lblCapacity);
             this.grpUpdateDetails.Controls.Add(this.txtPrice);
@@ -182,6 +182,18 @@
             this.grpUpdateDetails.TabStop = false;
             this.grpUpdateDetails.Text = "Update Current Class Details";
             this.grpUpdateDetails.Visible = false;
+            // 
+            // cboType2
+            // 
+            this.cboType2.DropDownHeight = 80;
+            this.cboType2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboType2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboType2.FormattingEnabled = true;
+            this.cboType2.IntegralHeight = false;
+            this.cboType2.Location = new System.Drawing.Point(150, 119);
+            this.cboType2.Name = "cboType2";
+            this.cboType2.Size = new System.Drawing.Size(143, 25);
+            this.cboType2.TabIndex = 22;
             // 
             // txtMinute
             // 
@@ -251,15 +263,6 @@
             this.dtpDate.Size = new System.Drawing.Size(142, 29);
             this.dtpDate.TabIndex = 5;
             this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
-            // 
-            // txtType
-            // 
-            this.txtType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.txtType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(151, 119);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(142, 25);
-            this.txtType.TabIndex = 3;
             // 
             // txtCapacity
             // 
@@ -484,7 +487,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(655, 707);
+            this.ClientSize = new System.Drawing.Size(661, 705);
             this.Controls.Add(this.grpSelectClass);
             this.Controls.Add(this.grpUpdateDetails);
             this.Controls.Add(this.mnuMainMenu);
@@ -531,7 +534,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ToolStripMenuItem mnuBack;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cboInstructor;
         private System.Windows.Forms.TextBox txtName;
@@ -549,5 +551,6 @@
         private System.Windows.Forms.TextBox txtMinute;
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.TextBox txtHour;
+        private System.Windows.Forms.ComboBox cboType2;
     }
 }

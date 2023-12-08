@@ -136,7 +136,7 @@ namespace DanceStudioBookingSystem
 
         public static void InsertDataToComboBox(ComboBox comboBox)
         {
-            if (comboBox.Name == "cboType")
+            if (comboBox.Name == "cboType" || comboBox.Name == "cboType2")
             {
                 string[] types = { "ALL","KPOP","LATIN","BALLET","HIPHOP"};
                 comboBox.Items.AddRange(types);
@@ -343,7 +343,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static string ValidClassDetails(TextBox name, TextBox type, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
+        public static string ValidClassDetails(TextBox name, ComboBox type, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
         {
             if (string.IsNullOrEmpty(name.Text))
             {
@@ -354,9 +354,9 @@ namespace DanceStudioBookingSystem
             {
                 type.Focus();
                 return "Invalid type";
-            }else if (CheckGigits_Letters_Symbolls(type) != "Letters")
+            }else if (type.SelectedItem == null)
             {
-                return "The type name must only has letters";
+                return "Please select the type";
             }
             else if (string.IsNullOrEmpty(hour.Text) || hour.Text.Length != 2)
             {
@@ -441,7 +441,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, TextBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
+        public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, ComboBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
             TextBox capacity, TextBox price)
         {
             if (datagrid.SelectedRows.Count > 0)

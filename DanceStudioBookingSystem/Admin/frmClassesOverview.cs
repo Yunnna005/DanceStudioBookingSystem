@@ -59,5 +59,10 @@ namespace DanceStudioBookingSystem
 
             InsertDataGridAdminView(dgvClassesAdmin, cboType);
         }
+
+        private void mnuDBConnect_Click(object sender, EventArgs e)
+        {
+            traverseForm(this, new frmDBConnect(this));
+        }
     }
 }

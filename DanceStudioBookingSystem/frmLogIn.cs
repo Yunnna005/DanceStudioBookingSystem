@@ -29,7 +29,7 @@ namespace DanceStudioBookingSystem
             }
             else if(txtEmail.Text == "Admin1" & txtPassword.Text == "123")
             {
-                traverseForm(this, new frmClassesOverview(this));
+                traverseForm(this, new frmDBConnect(this));
             }
             else
             {

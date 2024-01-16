@@ -34,6 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvCancelClassesAdmin = new System.Windows.Forms.DataGridView();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuClasses = new System.Windows.Forms.ToolStripMenuItem();
             this.tmnuScheduleClass = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +49,7 @@
             this.mnuStatisticsTool = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBack = new System.Windows.Forms.ToolStripMenuItem();
             this.lblCancelClass = new System.Windows.Forms.Label();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mnuDBConnection = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSelectClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCancelClassesAdmin)).BeginInit();
             this.mnuMainMenu.SuspendLayout();
@@ -128,6 +129,55 @@
             this.dgvCancelClassesAdmin.Size = new System.Drawing.Size(690, 227);
             this.dgvCancelClassesAdmin.TabIndex = 3;
             // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 150;
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.MinimumWidth = 8;
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.MinimumWidth = 8;
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 8;
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.ReadOnly = true;
+            this.INSTRUCTOR.Width = 120;
+            // 
+            // CAPACITY
+            // 
+            this.CAPACITY.HeaderText = "Capacity";
+            this.CAPACITY.Name = "CAPACITY";
+            this.CAPACITY.ReadOnly = true;
+            this.CAPACITY.Width = 80;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 60;
+            // 
             // mnuMainMenu
             // 
             this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
@@ -136,7 +186,8 @@
             this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClasses,
             this.mnuStatisticsTool,
-            this.mnuBack});
+            this.mnuBack,
+            this.mnuDBConnection});
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
@@ -209,54 +260,14 @@
             this.lblCancelClass.TabIndex = 1;
             this.lblCancelClass.Text = "Cancel Class";
             // 
-            // CLASSNAME
+            // mnuDBConnection
             // 
-            this.CLASSNAME.HeaderText = "Class Name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.ReadOnly = true;
-            this.CLASSNAME.Width = 150;
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.MinimumWidth = 8;
-            this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.MinimumWidth = 8;
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Time
-            // 
-            this.Time.HeaderText = "Time";
-            this.Time.MinimumWidth = 8;
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            this.INSTRUCTOR.ReadOnly = true;
-            this.INSTRUCTOR.Width = 120;
-            // 
-            // CAPACITY
-            // 
-            this.CAPACITY.HeaderText = "Capacity";
-            this.CAPACITY.Name = "CAPACITY";
-            this.CAPACITY.ReadOnly = true;
-            this.CAPACITY.Width = 80;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.ReadOnly = true;
-            this.PRICE.Width = 60;
+            this.mnuDBConnection.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnuDBConnection.Name = "mnuDBConnection";
+            this.mnuDBConnection.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mnuDBConnection.Size = new System.Drawing.Size(163, 24);
+            this.mnuDBConnection.Text = "Database Connection";
+            this.mnuDBConnection.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // frmCancelClass
             // 
@@ -307,5 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPACITY;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.ToolStripMenuItem mnuDBConnection;
     }
 }

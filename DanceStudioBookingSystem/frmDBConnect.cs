@@ -8,14 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DanceStudioBookingSystem.UtilFunctions;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmDBConnect : Form
     {
+        Form parent;
+
         OracleConnection conn = new OracleConnection(DBConnect.oraDB);
-        public frmDBConnect()
+        public frmDBConnect(Form parentForm)
         {
+            parent = parentForm;
             InitializeComponent();
         }
 
@@ -27,13 +31,25 @@ namespace DanceStudioBookingSystem
                 conn.Close();
                 lblState.Text = "CLOSED";
                 lblState.ForeColor = Color.Black;
+                btnMenu.Visible = false;
             }
             else
             {
                 conn.Open();
                 lblState.Text = "OPEN";
                 lblState.ForeColor = Color.Red;
+                btnMenu.Visible = true;
             }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            traverseForm(this, new frmClassesOverview(this));
+        }
+
+        private void frmDBConnect_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -1,0 +1,215 @@
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+
+namespace DanceStudioBookingSystem.Member
+{
+    class Members
+    {
+        private int _memberID;
+        private string _firstname;
+        private string _lastname;
+        private string _gender;
+        private string _email;
+        private string _phone;
+        private string _dob;
+        private string _password;
+        private string _status;
+
+        public Members() 
+        { 
+            this._memberID = 0;
+            this._firstname = "";
+            this._lastname = "";
+            this._gender = "";
+            this._email = "";
+            this._phone = "";
+            this._dob = "";
+            this._password = "";
+            this._status = "";
+        }
+
+        //int memberID,string status
+        public Members(string firstname, string lastname, string gender, string email, string phone, string dob, string password)
+        {
+            _firstname = firstname;
+            _lastname = lastname;
+            _gender = gender;
+            _email = email;
+            _phone = phone;
+            _dob = dob;
+            _password = password;
+        }
+
+        public Members(string firstname, string lastname, string gender, string email, string phone, string dob)
+        {
+            _firstname = firstname;
+            _lastname = lastname;
+            _gender = gender;
+            _email = email;
+            _phone = phone;
+            _dob = dob;
+        }
+
+        //getters
+        public int getMemberID() { return _memberID; }
+        public string getFirstname() { return _firstname;}
+        public string getLastname() { return _lastname;}
+        public string getGender() { return _gender;}
+        public string getEmail() { return _email;}
+        public string getPhone() { return _phone;}
+        public string getDOB() { return _dob;}
+        public string getPassword() { return _password;}
+        public string getStatus() 
+        {
+            return _status = "A";
+        }
+
+        //setters
+        public void setMemberID(int MemberID) { _memberID = MemberID; }
+        public void setFirstName(string Firstname) {  _firstname = Firstname; }
+        public void setLastName(string Lastname) {  _lastname = Lastname; }
+        public void setGender(string Gender) {  _gender = Gender; }
+        public void setEmail(string Email) { _email = Email; }
+        public void setPhone(string Phone) { _phone = Phone; }  
+        public void setDOB(string DOB) { _dob = DOB; }
+        public void setPassword(string Password) { _password = Password; }
+        public void setStatus(string Status) { _status = Status; }
+
+
+        public void addMember()
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "INSERT INTO Members Values (" +
+                getNextMemberID() + ",'" +
+                this._firstname + ",'" +
+                this._lastname + ",'" +
+                this._gender + ",'" +
+                this._email + ",'" +
+                this._phone + ",'" +
+                this._dob + ",'" +
+                this._password + "')" + ",'" +
+                this._status + "')";
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
+        }
+
+        public void updateMember()
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "UPDATE Members SET " +
+                "Firstname = " + this._firstname + "," +
+                "Lastname = " + this._lastname + "," +
+                "Gender = " + this._gender + "," +
+                "Email = " + this._email + "," +
+                "Phone = " + this._phone + "," +
+                "DOB = " + this._dob + "' " +
+                "WHERE MemberID = " + this._memberID;
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
+        }
+
+        public void UpdateMemberAndPassword()
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "UPDATE Members SET " +
+                "Firstname = " + this._firstname + "," +
+                "Lastname = " + this._lastname + "," +
+                "Gender = " + this._gender + "," +
+                "Email = " + this._email + "," +
+                "Phone = " + this._phone + "," +
+                "DOB = " + this._dob + "," +
+                "Password = " + this._password + "' " +
+                "WHERE MemberID = " + this._memberID;
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
+        }
+
+        public void deleteMember()
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "UPDATE Members SET " +
+                "Status = " + "D" + "' " +
+                "WHERE MemberID = " + this._memberID;
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
+        }
+
+        public static int getNextMemberID()
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "SELECT MAX(MemberId) FROM Members";
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            //Does dr contain a value or NULL?
+            int nextId;
+            dr.Read();
+
+            if (dr.IsDBNull(0))
+            {
+                nextId = 1;
+            }
+            else
+            {
+                nextId = dr.GetInt32(0) + 1;
+            }
+
+            //Close db connection
+            conn.Close();
+
+            return nextId;
+        }
+    }
+}

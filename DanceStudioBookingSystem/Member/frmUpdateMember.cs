@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DanceStudioBookingSystem.Member;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,11 @@ namespace DanceStudioBookingSystem
         Form parent;
         public frmUpdateMember(Form parentForm)
         {
+
+
+
+
+
             parent = parentForm;
             InitializeComponent();
             txtFirstName.Text = "Anna";
@@ -59,9 +65,17 @@ namespace DanceStudioBookingSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             DialogResult result = MessageBox.Show("Do you want to delete you profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                //Create an instance of Member and instantiate with values from form controls
+                Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
+                    txtPhone.Text, dtpDOB.Text, txtNewPassword.Text);
+
+                //invoke the method to add the data to the Members table
+                aMember.updateMember();
+
                 traverseForm(this, new frmLogIn());
                 MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -97,6 +111,13 @@ namespace DanceStudioBookingSystem
                     }
                     else
                     {
+                        //Create an instance of Member and instantiate with values from form controls
+                        Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
+                        txtPhone.Text, dtpDOB.Text,txtNewPassword.Text);
+
+                        //invoke the method to add the data to the Members table
+                        aMember.UpdateMemberAndPassword();
+
                         MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         traverseForm(this, new frmMemberProfile(this));
                     }
@@ -104,6 +125,15 @@ namespace DanceStudioBookingSystem
                 else
                 {
                     MessageBox.Show("Your chandes was saved.\n\nThe Password was not changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Create an instance of Member and instantiate with values from form controls
+                    Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
+                        txtPhone.Text, dtpDOB.Text);
+
+                    //invoke the method to add the data to the Members table
+                    aMember.updateMember();
+
+
                     traverseForm(this, new frmMemberProfile(this));
                 }    
             }

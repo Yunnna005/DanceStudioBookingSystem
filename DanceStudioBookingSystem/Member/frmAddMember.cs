@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DanceStudioBookingSystem.Member;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,14 @@ namespace DanceStudioBookingSystem
                 else
                 {
                     MessageBox.Show("Account was created. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //Create an instance of Member and instantiate with values from form controls
+                    Members aMember = new Members(txtFirstname.Text, txtSecondname.Text, validationMemberDetails, txtEmail.Text,
+                        txtPhone.Text, dtpDOB.Text, txtPassword.Text);
+
+                    //invoke the method to add the data to the Members table
+                    aMember.addMember();
+                    
                     traverseForm(this, new frmLogIn());
                 }
             }

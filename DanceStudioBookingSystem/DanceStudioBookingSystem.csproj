@@ -155,6 +155,7 @@
     <Compile Include="Admin\frmScheduleClass.Designer.cs">
       <DependentUpon>frmScheduleClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Member\Members.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilFunctions.cs" />

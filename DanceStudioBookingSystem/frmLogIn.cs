@@ -16,6 +16,7 @@ namespace DanceStudioBookingSystem
     {
         private Timer timer = new Timer();
         private int showPasswordDuration = 1000;
+
         public frmLogIn()
         {
             InitializeComponent();

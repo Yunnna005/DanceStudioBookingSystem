@@ -36,6 +36,7 @@ namespace DanceStudioBookingSystem.Member
         //int memberID,string status
         public Members(string firstname, string lastname, string gender, string email, string phone, string dob, string password)
         {
+            _memberID = getNextMemberID();
             _firstname = firstname;
             _lastname = lastname;
             _gender = gender;
@@ -43,6 +44,7 @@ namespace DanceStudioBookingSystem.Member
             _phone = phone;
             _dob = dob;
             _password = password;
+            _status = "A";
         }
 
         public Members(string firstname, string lastname, string gender, string email, string phone, string dob)
@@ -64,10 +66,7 @@ namespace DanceStudioBookingSystem.Member
         public string getPhone() { return _phone;}
         public string getDOB() { return _dob;}
         public string getPassword() { return _password;}
-        public string getStatus() 
-        {
-            return _status = "A";
-        }
+        public string getStatus() {return _status;}
 
         //setters
         public void setMemberID(int MemberID) { _memberID = MemberID; }
@@ -87,15 +86,15 @@ namespace DanceStudioBookingSystem.Member
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             //Define the SQL query to be executed
-            String sqlQuery = "INSERT INTO Members Values (" +
-                getNextMemberID() + ",'" +
-                this._firstname + ",'" +
-                this._lastname + ",'" +
-                this._gender + ",'" +
-                this._email + ",'" +
-                this._phone + ",'" +
-                this._dob + ",'" +
-                this._password + "')" + ",'" +
+            String sqlQuery = "INSERT INTO Members VALUES (" +
+                this._memberID + ",'" +
+                this._firstname + "','" +
+                this._lastname + "','" +
+                this._gender + "','" +
+                this._email + "','" +
+                this._phone + "'," +
+                "TO_DATE('" + this._dob + "', 'mm/dd/yyyy'),'" +
+                this._password + "','" +
                 this._status + "')";
 
             //Execute the SQL query (OracleCommand)
@@ -121,7 +120,7 @@ namespace DanceStudioBookingSystem.Member
                 "Email = " + this._email + "," +
                 "Phone = " + this._phone + "," +
                 "DOB = " + this._dob + "' " +
-                "WHERE MemberID = " + this._memberID;
+                "WHERE Member_ID = " + this._memberID;
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
@@ -147,7 +146,7 @@ namespace DanceStudioBookingSystem.Member
                 "Phone = " + this._phone + "," +
                 "DOB = " + this._dob + "," +
                 "Password = " + this._password + "' " +
-                "WHERE MemberID = " + this._memberID;
+                "WHERE Member_ID = " + this._memberID;
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
@@ -159,25 +158,25 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
-        public void deleteMember()
-        {
-            //Open a db connection
-            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+        //public void deleteMember()
+        //{
+        //    //Open a db connection
+        //    OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
-            //Define the SQL query to be executed
-            String sqlQuery = "UPDATE Members SET " +
-                "Status = " + "D" + "' " +
-                "WHERE MemberID = " + this._memberID;
+        //    //Define the SQL query to be executed
+        //    String sqlQuery = "DELETE Members SET " +
+        //        "Status = " + "D" + "' " +
+        //        "WHERE Member_ID = " + this._memberID;
 
-            //Execute the SQL query (OracleCommand)
-            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-            conn.Open();
+        //    //Execute the SQL query (OracleCommand)
+        //    OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+        //    conn.Open();
 
-            cmd.ExecuteNonQuery();
+        //    cmd.ExecuteNonQuery();
 
-            //Close db connection
-            conn.Close();
-        }
+        //    //Close db connection
+        //    conn.Close();
+        //}
 
         public static int getNextMemberID()
         {
@@ -185,7 +184,7 @@ namespace DanceStudioBookingSystem.Member
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             //Define the SQL query to be executed
-            String sqlQuery = "SELECT MAX(MemberId) FROM Members";
+            String sqlQuery = "SELECT MAX(Member_Id) FROM Members";
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);

@@ -17,11 +17,6 @@ namespace DanceStudioBookingSystem
         Form parent;
         public frmUpdateMember(Form parentForm)
         {
-
-
-
-
-
             parent = parentForm;
             InitializeComponent();
             txtFirstName.Text = "Anna";
@@ -74,7 +69,7 @@ namespace DanceStudioBookingSystem
                     txtPhone.Text, dtpDOB.Text, txtNewPassword.Text);
 
                 //invoke the method to add the data to the Members table
-                aMember.updateMember();
+                aMember.deleteMember();
 
                 traverseForm(this, new frmLogIn());
                 MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -108,6 +103,7 @@ namespace DanceStudioBookingSystem
                         MessageBox.Show("The passwords do not the same.", "Error",
                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtOldPassword.Focus();
+
                     }
                     else
                     {

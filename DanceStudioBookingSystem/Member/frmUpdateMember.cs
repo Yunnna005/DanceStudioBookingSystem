@@ -60,16 +60,9 @@ namespace DanceStudioBookingSystem
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             DialogResult result = MessageBox.Show("Do you want to delete you profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                //Create an instance of Member and instantiate with values from form controls
-                Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
-                    txtPhone.Text, dtpDOB.Text, txtNewPassword.Text);
-
-                //invoke the method to add the data to the Members table
-                aMember.deleteMember();
 
                 traverseForm(this, new frmLogIn());
                 MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);

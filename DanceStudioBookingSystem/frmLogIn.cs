@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DanceStudioBookingSystem.Member;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,7 @@ namespace DanceStudioBookingSystem
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             if(txtEmail.Text == "Anna@gmail.com" & txtPassword.Text == "12345678"){
+                Members loggedInUser = GetMemberFromDatabase(txtEmail, txtPassword);
                 traverseForm(this, new frmMemberProfile(this));
             }
             else if(txtEmail.Text == "Admin1" & txtPassword.Text == "123")

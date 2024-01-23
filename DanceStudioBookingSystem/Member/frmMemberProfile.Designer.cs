@@ -45,17 +45,17 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.grpBookedClasses = new System.Windows.Forms.GroupBox();
             this.dgvClassesMember = new System.Windows.Forms.DataGridView();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelClass = new System.Windows.Forms.Button();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
@@ -251,6 +251,35 @@
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
             this.dgvClassesMember.TabIndex = 0;
             // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.Width = 120;
+            // 
+            // DATE
+            // 
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            // 
+            // TIME
+            // 
+            this.TIME.HeaderText = "Time";
+            this.TIME.Name = "TIME";
+            this.TIME.Width = 80;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.Width = 130;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price €";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.Width = 85;
+            // 
             // btnCancelClass
             // 
             this.btnCancelClass.BackColor = System.Drawing.Color.White;
@@ -295,9 +324,6 @@
             this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
             this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuProfile,
-            this.mnuBook});
             this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
             this.mnuMainMenu.Name = "mnuMainMenu";
@@ -328,35 +354,6 @@
             this.mnuBook.Text = "Book";
             this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.Width = 120;
-            // 
-            // DATE
-            // 
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            // 
-            // TIME
-            // 
-            this.TIME.HeaderText = "Time";
-            this.TIME.Name = "TIME";
-            this.TIME.Width = 80;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            this.INSTRUCTOR.Width = 130;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price €";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.Width = 85;
-            // 
             // frmMemberProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +372,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Profile";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMemberProfile_FormClosed);
+            this.Load += new System.EventHandler(this.frmMemberProfile_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.grpDetails.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DanceStudioBookingSystem.Member;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DanceStudioBookingSystem
 {
@@ -18,15 +20,18 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
-            lblWriteUsername.Text = "Anna Kovalenko";
-            lblWriteDOB.Text = "24/08/2005";
-            lblWriteGender.Text = "Female";
-            lblWritePhone.Text = "+353852022777";
-            lblWriteEmail.Text = "Anna@gmail.com";
 
-            dgvClassesMember.Rows.Add("K-pop (Beginer)", "2023-11-26", "18:30", "Ji-min Lee", "10.00");
-            dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00");
-            dgvClassesMember.Rows.Add("Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00");
+
+
+            //lblWriteUsername.Text = "Anna Kovalenko";
+            //lblWriteDOB.Text = "24/08/2005";
+            //lblWriteGender.Text = "Female";
+            //lblWritePhone.Text = "+353852022777";
+            //lblWriteEmail.Text = "Anna@gmail.com";
+
+            //dgvClassesMember.Rows.Add("K-pop (Beginer)", "2023-11-26", "18:30", "Ji-min Lee", "10.00");
+            //dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00");
+            //dgvClassesMember.Rows.Add("Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00");
         }
 
         private void mnuBook_Click(object sender, EventArgs e)
@@ -60,6 +65,11 @@ namespace DanceStudioBookingSystem
         private void frmMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        private void frmMemberProfile_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

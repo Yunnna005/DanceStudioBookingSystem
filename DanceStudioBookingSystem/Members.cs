@@ -5,6 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Collections;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DanceStudioBookingSystem.Member
 {
@@ -158,25 +162,7 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
-        //public void deleteMember()
-        //{
-        //    //Open a db connection
-        //    OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
-        //    //Define the SQL query to be executed
-        //    String sqlQuery = "DELETE Members SET " +
-        //        "Status = " + "D" + "' " +
-        //        "WHERE Member_ID = " + this._memberID;
-
-        //    //Execute the SQL query (OracleCommand)
-        //    OracleCommand cmd = new OracleCommand(sqlQuery, conn);
-        //    conn.Open();
-
-        //    cmd.ExecuteNonQuery();
-
-        //    //Close db connection
-        //    conn.Close();
-        //}
 
         public static int getNextMemberID()
         {
@@ -209,6 +195,42 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
 
             return nextId;
+        }
+
+        public Members GetMemberFromDatabase(TextBox email, TextBox password)
+        {
+            Members member = null;
+
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                string sqlQuery = "SELECT * FROM Members WHERE Email = :Email AND Password = :Password";
+
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+                    cmd.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
+
+                    conn.Open();
+
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Create a Member object and populate it with data from the database
+                            member = new Members
+                            (
+                                _firstname = reader["Firstname"].ToString(),
+                                _lastname = reader["Lastname"].ToString(),
+                                _dob = reader["DOB"].ToString(),
+                                _gender = reader["Gender"].ToString(),
+                                _phone = reader["Phone"].ToString(),
+                                _email = reader["Email"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+            return member;
         }
     }
 }

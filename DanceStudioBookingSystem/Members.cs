@@ -196,41 +196,5 @@ namespace DanceStudioBookingSystem.Member
 
             return nextId;
         }
-
-        public Members GetMemberFromDatabase(TextBox email, TextBox password)
-        {
-            Members member = null;
-
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                string sqlQuery = "SELECT * FROM Members WHERE Email = :Email AND Password = :Password";
-
-                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
-                {
-                    cmd.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
-                    cmd.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
-
-                    conn.Open();
-
-                    using (OracleDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            // Create a Member object and populate it with data from the database
-                            member = new Members
-                            (
-                                _firstname = reader["Firstname"].ToString(),
-                                _lastname = reader["Lastname"].ToString(),
-                                _dob = reader["DOB"].ToString(),
-                                _gender = reader["Gender"].ToString(),
-                                _phone = reader["Phone"].ToString(),
-                                _email = reader["Email"].ToString()
-                            );
-                        }
-                    }
-                }
-            }
-            return member;
-        }
     }
 }

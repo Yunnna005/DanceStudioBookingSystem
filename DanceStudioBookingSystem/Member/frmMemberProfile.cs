@@ -1,8 +1,10 @@
 ﻿using DanceStudioBookingSystem.Member;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,22 +18,20 @@ namespace DanceStudioBookingSystem
     public partial class frmMemberProfile : Form
     {
         Form parent;
+        private string email;
         public frmMemberProfile(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
 
+        }
 
+        public frmMemberProfile(string email)
+        {
+            InitializeComponent();
+            this.email = email;
 
-            //lblWriteUsername.Text = "Anna Kovalenko";
-            //lblWriteDOB.Text = "24/08/2005";
-            //lblWriteGender.Text = "Female";
-            //lblWritePhone.Text = "+353852022777";
-            //lblWriteEmail.Text = "Anna@gmail.com";
-
-            //dgvClassesMember.Rows.Add("K-pop (Beginer)", "2023-11-26", "18:30", "Ji-min Lee", "10.00");
-            //dgvClassesMember.Rows.Add("K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00");
-            //dgvClassesMember.Rows.Add("Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00");
+            LoadUserDetails();
         }
 
         private void mnuBook_Click(object sender, EventArgs e)
@@ -70,6 +70,39 @@ namespace DanceStudioBookingSystem
         private void frmMemberProfile_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void LoadUserDetails()
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Members WHERE Email = :Email";
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add(":Email", OracleDbType.Varchar2).Value = email;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Display user details in respective controls
+                            lblWriteUsername.Text = reader["Firstname"].ToString() + reader["Lastname"].ToString();
+                            lblWriteDOB.Text = reader["DOB"].ToString();
+                            lblWriteGender.Text = reader["Gender"].ToString();
+                            lblWritePhone.Text = reader["Phone"].ToString();
+                            lblWriteEmail.Text = email;
+                        }
+                        else
+                        {
+                            MessageBox.Show("User not found.");
+                            this.Close();
+                        }
+                    }
+                }
+            }
         }
     }
 }

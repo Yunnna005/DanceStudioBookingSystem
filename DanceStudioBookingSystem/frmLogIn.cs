@@ -1,8 +1,10 @@
 ﻿using DanceStudioBookingSystem.Member;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DanceStudioBookingSystem
 {
@@ -26,9 +29,12 @@ namespace DanceStudioBookingSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            if(txtEmail.Text == "Anna@gmail.com" & txtPassword.Text == "12345678"){
-                Members loggedInUser = GetMemberFromDatabase(txtEmail, txtPassword);
-                traverseForm(this, new frmMemberProfile(this));
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+            if (ValidateLogin(email, password)){
+                frmMemberProfile memberProfile = new frmMemberProfile(email);
+                memberProfile.Show();
+                this.Hide();
             }
             else if(txtEmail.Text == "Admin1" & txtPassword.Text == "123")
             {
@@ -72,6 +78,28 @@ namespace DanceStudioBookingSystem
         private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+
+        private bool ValidateLogin(string email, string password)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Members WHERE Email = :Email AND Password = :Password";
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+                    command.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        return reader.Read(); // Returns true if there is a matching member
+                    }
+                }
+            }
         }
     }
 }

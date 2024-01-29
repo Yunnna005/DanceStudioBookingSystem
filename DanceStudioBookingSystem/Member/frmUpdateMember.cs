@@ -1,4 +1,5 @@
 ﻿using DanceStudioBookingSystem.Member;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,15 +16,19 @@ namespace DanceStudioBookingSystem
     public partial class frmUpdateMember : Form
     {
         Form parent;
+        private string email;
         public frmUpdateMember(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
-            txtFirstName.Text = "Anna";
-            txtSecondName.Text = "Kovalenko";
-            dtpDOB.Value = new DateTime(2005, 08, 24);
-            txtEmail.Text = "Anna@gmail.com";
-            txtPhone.Text = "3530852433543";
+        }
+        public frmUpdateMember(string email)
+        {
+            InitializeComponent();
+
+            this.email = email;
+
+            LoadUserDetails();
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)
@@ -81,7 +86,7 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
+            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {   if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
@@ -101,7 +106,7 @@ namespace DanceStudioBookingSystem
                     else
                     {
                         //Create an instance of Member and instantiate with values from form controls
-                        Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
+                        Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
                         txtPhone.Text, dtpDOB.Text,txtNewPassword.Text);
 
                         //invoke the method to add the data to the Members table
@@ -116,19 +121,19 @@ namespace DanceStudioBookingSystem
                     MessageBox.Show("Your chandes was saved.\n\nThe Password was not changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //Create an instance of Member and instantiate with values from form controls
-                    Members aMember = new Members(txtFirstName.Text, txtSecondName.Text, validationMemberDetails, txtEmail.Text,
+                    Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
                         txtPhone.Text, dtpDOB.Text);
 
                     //invoke the method to add the data to the Members table
-                    aMember.updateMember();
+                    aMember.updateMember(email);
 
 
-                    traverseForm(this, new frmMemberProfile(this));
+                    traverseForm(this, new frmMemberProfile(email));
                 }    
             }
             else
             {
-                MessageBox.Show(ValidationMemberDetails(txtFirstName, txtSecondName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
+                MessageBox.Show(ValidationMemberDetails(txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -136,6 +141,40 @@ namespace DanceStudioBookingSystem
         private void frmEditMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        private void LoadUserDetails()
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Members WHERE Email = :Email";
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add(":Email", OracleDbType.Varchar2).Value = email;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Display user details in respective controls
+                            txtFirstName.Text = reader["Firstname"].ToString();
+                            txtLastName.Text = reader["Lastname"].ToString();
+                            dtpDOB.Text = reader["DOB"].ToString();
+                            //lblWriteGender.Text = reader["Gender"].ToString();
+                            txtPhone.Text = reader["Phone"].ToString();
+                            txtEmail.Text = email;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Member not found.");
+                            this.Close();
+                        }
+                    }
+                }
+            }
         }
     }
 }

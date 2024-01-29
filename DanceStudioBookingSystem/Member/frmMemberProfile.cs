@@ -46,7 +46,7 @@ namespace DanceStudioBookingSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmUpdateMember(this));
+            traverseForm(this, new frmUpdateMember(email));
         }
 
         private void btnCancelClass_Click(object sender, EventArgs e)
@@ -65,11 +65,6 @@ namespace DanceStudioBookingSystem
         private void frmMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
-        }
-
-        private void frmMemberProfile_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void LoadUserDetails()
@@ -97,7 +92,7 @@ namespace DanceStudioBookingSystem
                         }
                         else
                         {
-                            MessageBox.Show("User not found.");
+                            MessageBox.Show("Member not found.");
                             this.Close();
                         }
                     }

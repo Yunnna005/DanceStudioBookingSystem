@@ -9,6 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace DanceStudioBookingSystem.Member
 {
@@ -111,20 +112,20 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
-        public void updateMember()
+        public void updateMember(string email)
         {
             //Open a db connection
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             //Define the SQL query to be executed
-            String sqlQuery = "UPDATE Members SET " +
+            String sqlQuery = "UPDATE Products SET " +
                 "Firstname = " + this._firstname + "," +
-                "Lastname = " + this._lastname + "," +
-                "Gender = " + this._gender + "," +
+                "Lastname = '" + this._lastname + "'," +
+                "Gender = '" + this._gender + "'," +
+                "DOB = '" + "TO_DATE('" + this._dob + "', 'mm/dd/yyyy'),'" + "'," +
                 "Email = " + this._email + "," +
-                "Phone = " + this._phone + "," +
-                "DOB = " + this._dob + "' " +
-                "WHERE Member_ID = " + this._memberID;
+                "Phone = " + this._phone + "' " +
+                "WHERE Email = " + email;
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);

@@ -53,14 +53,16 @@
             this.btnCancelClass = new System.Windows.Forms.Button();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassesMember)).BeginInit();
-            this.mnuMainMenu.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -317,23 +319,6 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // mnuMainMenu
-            // 
-            this.mnuMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.mnuMainMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mnuMainMenu.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuMainMenu.GripMargin = new System.Windows.Forms.Padding(2, 10, 0, 2);
-            this.mnuMainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.mnuMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
-            this.mnuMainMenu.Name = "mnuMainMenu";
-            this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(6, 100, 10, 2);
-            this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnuMainMenu.ShowItemToolTips = true;
-            this.mnuMainMenu.Size = new System.Drawing.Size(179, 522);
-            this.mnuMainMenu.TabIndex = 0;
-            this.mnuMainMenu.Text = "menuStrip1";
-            // 
             // mnuProfile
             // 
             this.mnuProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -354,15 +339,54 @@
             this.mnuBook.Text = "Book";
             this.mnuBook.Click += new System.EventHandler(this.mnuBook_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0, 10, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 100, 0, 2);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.ShowItemToolTips = true;
+            this.menuStrip1.Size = new System.Drawing.Size(165, 522);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "Menu";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 51);
+            this.toolStripMenuItem1.Text = "Profile ";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(163, 51);
+            this.toolStripMenuItem2.Text = "Book";
+            // 
             // frmMemberProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(854, 522);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnlBlueLine);
             this.Controls.Add(this.btnLogOut);
-            this.Controls.Add(this.mnuMainMenu);
             this.Controls.Add(this.grpBookedClasses);
             this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.pnlHeader);
@@ -372,15 +396,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Member Profile";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMemberProfile_FormClosed);
-            this.Load += new System.EventHandler(this.frmMemberProfile_Load);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.grpDetails.ResumeLayout(false);
             this.grpDetails.PerformLayout();
             this.grpBookedClasses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassesMember)).EndInit();
-            this.mnuMainMenu.ResumeLayout(false);
-            this.mnuMainMenu.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,7 +425,6 @@
         private System.Windows.Forms.Label lblWriteUsername;
         private System.Windows.Forms.Panel pnlBlueLine;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.MenuStrip mnuMainMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuProfile;
         private System.Windows.Forms.ToolStripMenuItem mnuBook;
         private System.Windows.Forms.Label lblWriteGender;
@@ -414,5 +436,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

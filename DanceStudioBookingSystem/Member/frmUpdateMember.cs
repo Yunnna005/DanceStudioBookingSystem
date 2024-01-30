@@ -10,23 +10,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DanceStudioBookingSystem
 {
     public partial class frmUpdateMember : Form
     {
         Form parent;
-        private string email;
+        private int memberID;
         public frmUpdateMember(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
         }
-        public frmUpdateMember(string email)
+        public frmUpdateMember(int memberID)
         {
             InitializeComponent();
 
-            this.email = email;
+            this.memberID = memberID;
 
             LoadUserDetails();
         }
@@ -90,27 +91,20 @@ namespace DanceStudioBookingSystem
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
             {   if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
-                    if (txtOldPassword.Text.Length < 8)
+                    if (txtOldPassword.Text.Length < 8 || txtNewPassword.Text.Length < 8)
                     {
                         MessageBox.Show("The password must contain at least 8 characters", "Error",
                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtOldPassword.Focus();
                     }
-                    else if (txtOldPassword.Text != txtNewPassword.Text)
-                    {
-                        MessageBox.Show("The passwords do not the same.", "Error",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtOldPassword.Focus();
-
-                    }
                     else
                     {
                         //Create an instance of Member and instantiate with values from form controls
                         Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
-                        txtPhone.Text, dtpDOB.Text,txtNewPassword.Text);
+                        txtPhone.Text, dtpDOB.Value,txtNewPassword.Text);
 
                         //invoke the method to add the data to the Members table
-                        aMember.UpdateMemberAndPassword();
+                        aMember.UpdateMemberAndPassword(memberID);
 
                         MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         traverseForm(this, new frmMemberProfile(this));
@@ -122,13 +116,13 @@ namespace DanceStudioBookingSystem
 
                     //Create an instance of Member and instantiate with values from form controls
                     Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
-                        txtPhone.Text, dtpDOB.Text);
+                        txtPhone.Text, dtpDOB.Value);
 
                     //invoke the method to add the data to the Members table
-                    aMember.updateMember(email);
+                    aMember.updateMember(memberID);
 
 
-                    traverseForm(this, new frmMemberProfile(email));
+                    traverseForm(this, new frmMemberProfile(memberID));
                 }    
             }
             else
@@ -149,11 +143,12 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Members WHERE Email = :Email";
+                string SQLquery = "SELECT Firstname, Lastname, DOB, Gender, Phone, Email FROM Members WHERE Member_ID = :memberID";
 
-                using (OracleCommand command = new OracleCommand(query, conn))
+                using (OracleCommand command = new OracleCommand(SQLquery, conn))
                 {
-                    command.Parameters.Add(":Email", OracleDbType.Varchar2).Value = email;
+                    // Set the value for the bind variable
+                    command.Parameters.Add(new OracleParameter("memberID", memberID));
 
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
@@ -165,7 +160,7 @@ namespace DanceStudioBookingSystem
                             dtpDOB.Text = reader["DOB"].ToString();
                             //lblWriteGender.Text = reader["Gender"].ToString();
                             txtPhone.Text = reader["Phone"].ToString();
-                            txtEmail.Text = email;
+                            txtEmail.Text = reader["Email"].ToString();
                         }
                         else
                         {

@@ -43,7 +43,7 @@ namespace DanceStudioBookingSystem
 
                     //Create an instance of Member and instantiate with values from form controls
                     Members aMember = new Members(txtFirstname.Text, txtSecondname.Text, validationMemberDetails, txtEmail.Text,
-                        txtPhone.Text, dtpDOB.Text, txtPassword.Text);
+                        txtPhone.Text, dtpDOB.Value, txtPassword.Text);
 
                     //invoke the method to add the data to the Members table
                     aMember.addMember();

@@ -21,7 +21,7 @@ namespace DanceStudioBookingSystem.Member
         private string _gender;
         private string _email;
         private string _phone;
-        private string _dob;
+        private DateTime _dob;
         private string _password;
         private string _status;
 
@@ -33,13 +33,13 @@ namespace DanceStudioBookingSystem.Member
             this._gender = "";
             this._email = "";
             this._phone = "";
-            this._dob = "";
+            this._dob = DateTime.Now;
             this._password = "";
             this._status = "";
         }
 
         //int memberID,string status
-        public Members(string firstname, string lastname, string gender, string email, string phone, string dob, string password)
+        public Members(string firstname, string lastname, string gender, string email, string phone, DateTime dob, string password)
         {
             _memberID = getNextMemberID();
             _firstname = firstname;
@@ -52,7 +52,7 @@ namespace DanceStudioBookingSystem.Member
             _status = "A";
         }
 
-        public Members(string firstname, string lastname, string gender, string email, string phone, string dob)
+        public Members(string firstname, string lastname, string gender, string email, string phone, DateTime dob)
         {
             _firstname = firstname;
             _lastname = lastname;
@@ -69,7 +69,7 @@ namespace DanceStudioBookingSystem.Member
         public string getGender() { return _gender;}
         public string getEmail() { return _email;}
         public string getPhone() { return _phone;}
-        public string getDOB() { return _dob;}
+        public DateTime getDOB() { return _dob;}
         public string getPassword() { return _password;}
         public string getStatus() {return _status;}
 
@@ -80,7 +80,7 @@ namespace DanceStudioBookingSystem.Member
         public void setGender(string Gender) {  _gender = Gender; }
         public void setEmail(string Email) { _email = Email; }
         public void setPhone(string Phone) { _phone = Phone; }  
-        public void setDOB(string DOB) { _dob = DOB; }
+        public void setDOB(DateTime DOB) { _dob = DOB; }
         public void setPassword(string Password) { _password = Password; }
         public void setStatus(string Status) { _status = Status; }
 
@@ -98,7 +98,7 @@ namespace DanceStudioBookingSystem.Member
                 this._gender + "','" +
                 this._email + "','" +
                 this._phone + "'," +
-                "TO_DATE('" + this._dob + "', 'mm/dd/yyyy'),'" +
+                this._dob.ToString("dd-MMM-yyyy") + "'," +
                 this._password + "','" +
                 this._status + "')";
 
@@ -112,20 +112,21 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
-        public void updateMember(string email)
+        public void updateMember(int memberID)
         {
+            //string dob = this._dob.ToString("mm/dd/yyyy");
             //Open a db connection
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             //Define the SQL query to be executed
-            String sqlQuery = "UPDATE Products SET " +
-                "Firstname = " + this._firstname + "," +
+            String sqlQuery = "UPDATE Members SET " +
+                "Firstname = '" + this._firstname + "'," +
                 "Lastname = '" + this._lastname + "'," +
                 "Gender = '" + this._gender + "'," +
-                "DOB = '" + "TO_DATE('" + this._dob + "', 'mm/dd/yyyy'),'" + "'," +
-                "Email = " + this._email + "," +
-                "Phone = " + this._phone + "' " +
-                "WHERE Email = " + email;
+                "DOB = '" + this._dob.ToString("dd-MMM-yyyy") + "'," +
+                "Email = '" + this._email + "'," +
+                "Phone = " + this._phone + " " +
+                "WHERE Member_ID = '" + memberID + "'";
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
@@ -137,21 +138,21 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
-        public void UpdateMemberAndPassword()
+        public void UpdateMemberAndPassword(int memberID)
         {
             //Open a db connection
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             //Define the SQL query to be executed
             String sqlQuery = "UPDATE Members SET " +
-                "Firstname = " + this._firstname + "," +
-                "Lastname = " + this._lastname + "," +
-                "Gender = " + this._gender + "," +
-                "Email = " + this._email + "," +
+                "Firstname = '" + this._firstname + "'," +
+                "Lastname = '" + this._lastname + "'," +
+                "Gender = '" + this._gender + "'," +
+                "Email = '" + this._email + "'," +
                 "Phone = " + this._phone + "," +
-                "DOB = " + this._dob + "," +
-                "Password = " + this._password + "' " +
-                "WHERE Member_ID = " + this._memberID;
+                "DOB = '" + this._dob.ToString("dd-MMM-yyyy") + "'," +
+                "Password = " + this._password + " " +
+                "WHERE Member_ID = '" + memberID + "'";
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);

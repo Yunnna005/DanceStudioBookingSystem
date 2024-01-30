@@ -20,6 +20,7 @@ namespace DanceStudioBookingSystem
     {
         private Timer timer = new Timer();
         private int showPasswordDuration = 1000;
+        int memberID;
 
         public frmLogIn()
         {
@@ -31,8 +32,9 @@ namespace DanceStudioBookingSystem
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
-            if (ValidateLogin(email, password)){
-                frmMemberProfile memberProfile = new frmMemberProfile(email);
+            memberID = ValidateLogin(email, password);
+            if (memberID != 0){
+                frmMemberProfile memberProfile = new frmMemberProfile(memberID);
                 memberProfile.Show();
                 this.Hide();
             }
@@ -81,8 +83,9 @@ namespace DanceStudioBookingSystem
         }
 
 
-        private bool ValidateLogin(string email, string password)
+        private int ValidateLogin(string email, string password)
         {
+            int MemberID;
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
@@ -96,8 +99,13 @@ namespace DanceStudioBookingSystem
 
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
-                        return reader.Read(); // Returns true if there is a matching member
+                        if (reader.Read())
+                        {
+                            return MemberID = (int)reader["Member_ID"];
+
+                        }
                     }
+                    return 0;
                 }
             }
         }

@@ -18,7 +18,7 @@ namespace DanceStudioBookingSystem
     public partial class frmMemberProfile : Form
     {
         Form parent;
-        private string email;
+        private int memberID;
         public frmMemberProfile(Form parentForm)
         {
             parent = parentForm;
@@ -26,12 +26,12 @@ namespace DanceStudioBookingSystem
 
         }
 
-        public frmMemberProfile(string email)
+        public frmMemberProfile(int memberID)
         {
             InitializeComponent();
-            this.email = email;
+            this.memberID = memberID;
 
-            LoadUserDetails();
+            LoadUserDetails(memberID);
         }
 
         private void mnuBook_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace DanceStudioBookingSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmUpdateMember(email));
+            traverseForm(this, new frmUpdateMember(memberID));
         }
 
         private void btnCancelClass_Click(object sender, EventArgs e)
@@ -67,28 +67,29 @@ namespace DanceStudioBookingSystem
             parent.Show();
         }
 
-        private void LoadUserDetails()
+        private void LoadUserDetails(int memberID)
         {
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Members WHERE Email = :Email";
+                string SQLquery = "SELECT Firstname, Lastname, DOB, Gender, Phone, Email FROM Members WHERE Member_ID = :memberID";
 
-                using (OracleCommand command = new OracleCommand(query, conn))
+                using (OracleCommand command = new OracleCommand(SQLquery, conn))
                 {
-                    command.Parameters.Add(":Email", OracleDbType.Varchar2).Value = email;
+                    // Set the value for the bind variable
+                    command.Parameters.Add(new OracleParameter("memberID", memberID));
 
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
                         {
                             // Display user details in respective controls
-                            lblWriteUsername.Text = reader["Firstname"].ToString() + reader["Lastname"].ToString();
+                            lblWriteUsername.Text = reader["Firstname"].ToString()+ " " + reader["Lastname"].ToString();
                             lblWriteDOB.Text = reader["DOB"].ToString();
                             lblWriteGender.Text = reader["Gender"].ToString();
                             lblWritePhone.Text = reader["Phone"].ToString();
-                            lblWriteEmail.Text = email;
+                            lblWriteEmail.Text = reader["Email"].ToString(); ;
                         }
                         else
                         {

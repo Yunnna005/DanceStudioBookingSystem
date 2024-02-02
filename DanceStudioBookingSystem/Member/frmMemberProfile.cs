@@ -34,11 +34,6 @@ namespace DanceStudioBookingSystem
             LoadUserDetails(memberID);
         }
 
-        private void mnuBook_Click(object sender, EventArgs e)
-        {
-            traverseForm(this, new frmBookClass(this));
-        }
-
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             PerformLogOut(this);
@@ -99,6 +94,11 @@ namespace DanceStudioBookingSystem
                     }
                 }
             }
+        }
+
+        private void mnuBook1_Click(object sender, EventArgs e)
+        {
+            traverseForm(this, new frmBookClass(memberID));
         }
     }
 }

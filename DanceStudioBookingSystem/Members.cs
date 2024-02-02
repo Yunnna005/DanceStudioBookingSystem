@@ -87,34 +87,33 @@ namespace DanceStudioBookingSystem.Member
 
         public void addMember()
         {
-            //Open a db connection
+            // Open a db connection
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
-            //Define the SQL query to be executed
+            // Define the SQL query to be executed
             String sqlQuery = "INSERT INTO Members VALUES (" +
                 this._memberID + ",'" +
                 this._firstname + "','" +
                 this._lastname + "','" +
                 this._gender + "','" +
                 this._email + "','" +
-                this._phone + "'," +
-                this._dob.ToString("dd-MMM-yyyy") + "'," +
+                this._phone + "," +
+                this._dob.ToString("dd-MMM-yyyy") + "','" +
                 this._password + "','" +
                 this._status + "')";
 
-            //Execute the SQL query (OracleCommand)
+            // Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
             conn.Open();
 
             cmd.ExecuteNonQuery();
 
-            //Close db connection
+            // Close db connection
             conn.Close();
         }
 
         public void updateMember(int memberID)
         {
-            //string dob = this._dob.ToString("mm/dd/yyyy");
             //Open a db connection
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
@@ -164,7 +163,26 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
         }
 
+        public void DeleteMember(int memberID)
+        {
+            //Open a db connection
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
+            //Define the SQL query to be executed
+            String sqlQuery = "Delete From Members WHERE Member_ID = " + memberID + "";    
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+
+            //cmd.Parameters.Add("Member_ID", @memberID);
+
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
+        }
 
         public static int getNextMemberID()
         {
@@ -197,6 +215,24 @@ namespace DanceStudioBookingSystem.Member
             conn.Close();
 
             return nextId;
+        }
+
+        public void ResetPassword(int memberID, string newPassword){
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            //Define the SQL query to be executed
+            String sqlQuery = "UPDATE Members SET " +
+                "Password = " + newPassword + " " +
+                "WHERE Member_ID = '" + memberID + "'";
+
+            //Execute the SQL query (OracleCommand)
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            //Close db connection
+            conn.Close();
         }
     }
 }

@@ -32,22 +32,26 @@ namespace DanceStudioBookingSystem
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
+            
             memberID = ValidateLogin(email, password);
             if (memberID != 0){
                 frmMemberProfile memberProfile = new frmMemberProfile(memberID);
                 memberProfile.Show();
                 this.Hide();
             }
-            else if(txtEmail.Text == "Admin1" & txtPassword.Text == "123")
+            else if(memberID != 0 && memberID.ToString().Length == 4)
             {
                 traverseForm(this, new frmDBConnect(this));
             }
             else
             {
+                MessageBox.Show(memberID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
+
+            
         }
 
         private void lblForgotPassword_Click(object sender, EventArgs e)

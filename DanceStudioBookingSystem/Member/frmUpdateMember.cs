@@ -36,7 +36,7 @@ namespace DanceStudioBookingSystem
         {
             DialogResult result = MessageBox.Show("Do you want to go to your profile? \n\nYour changes will not be saved.", "Edit Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes){
-                traverseForm(this, new frmMemberProfile(this));
+                traverseForm(this, new frmMemberProfile(memberID));
             }
             else
             {
@@ -69,6 +69,8 @@ namespace DanceStudioBookingSystem
             DialogResult result = MessageBox.Show("Do you want to delete you profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                Members aMember = new Members();
+                aMember.DeleteMember(memberID);
 
                 traverseForm(this, new frmLogIn());
                 MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,7 +84,7 @@ namespace DanceStudioBookingSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Your chandes was not saved.", "Cancel", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            traverseForm(this, new frmMemberProfile(this));
+            traverseForm(this, new frmMemberProfile(memberID));
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -107,7 +109,7 @@ namespace DanceStudioBookingSystem
                         aMember.UpdateMemberAndPassword(memberID);
 
                         MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        traverseForm(this, new frmMemberProfile(this));
+                        traverseForm(this, new frmMemberProfile(memberID));
                     }
                 }
                 else

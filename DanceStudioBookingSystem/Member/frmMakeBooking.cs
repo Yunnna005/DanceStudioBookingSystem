@@ -13,6 +13,7 @@ namespace DanceStudioBookingSystem
     public partial class frmBookClass : Form
     {
         Form parent;
+        private int memberID;
         public frmBookClass(Form parentForm)
         {
             parent = parentForm;
@@ -22,9 +23,15 @@ namespace DanceStudioBookingSystem
             InsertDataToComboBox(cboYearCard);
         }
 
+        public frmBookClass(int memberID)
+        {
+            InitializeComponent();
+            this.memberID = memberID;
+        }
+
         private void mnuProfile_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmMemberProfile(this));
+            traverseForm(this, new frmMemberProfile(memberID));
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -67,6 +74,11 @@ namespace DanceStudioBookingSystem
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
             InsertDataGridMemberView(dgvClasses, cboType);
+        }
+
+        private void frmBookClass_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

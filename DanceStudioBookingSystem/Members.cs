@@ -96,8 +96,8 @@ namespace DanceStudioBookingSystem.Member
                 this._firstname + "','" +
                 this._lastname + "','" +
                 this._gender + "','" +
-                this._email + "','" +
-                this._phone + "," +
+                this._email + "'," +
+                this._phone + ",'" +
                 this._dob.ToString("dd-MMM-yyyy") + "','" +
                 this._password + "','" +
                 this._status + "')";

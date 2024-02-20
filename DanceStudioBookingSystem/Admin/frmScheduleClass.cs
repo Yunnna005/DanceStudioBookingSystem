@@ -18,9 +18,6 @@ namespace DanceStudioBookingSystem
         public frmScheduleClass(Form parentForm)
         {
             parent = parentForm;
-            InitializeComponent();
-            InsertDataToComboBox(cboType);
-            InsertDataToComboBox(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -51,8 +48,15 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(txtName,cboType,txtHour,txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid") 
+            if (ValidClassDetails(txtName,cboType,txtHour,txtMinute, cboInstructor, txtCapacity, txtPrice).Equals("valid")) 
             {
+
+                int capacity = int.Parse(txtCapacity.Text);
+                int price = int.Parse(txtPrice.Text);
+
+                Classes aClass = new Classes(txtName.Text, getTypeID(), dtpDate.Value, txtHour.Text, txtMinute.Text, getInstructorID(), capacity, price);
+                aClass.addClass();
+
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 traverseForm(this, new frmClassesOverview(this));
             }
@@ -60,6 +64,16 @@ namespace DanceStudioBookingSystem
             {
                 MessageBox.Show(ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
+        }
+
+        private int getInstructorID()
+        {
+            throw new NotImplementedException();
+        }
+
+        private string getTypeID()
+        {
+            throw new NotImplementedException();
         }
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)

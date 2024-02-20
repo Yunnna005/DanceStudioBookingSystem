@@ -35,13 +35,16 @@ namespace DanceStudioBookingSystem
             
             memberID = ValidateLogin(email, password);
             if (memberID != 0){
-                frmMemberProfile memberProfile = new frmMemberProfile(memberID);
-                memberProfile.Show();
-                this.Hide();
-            }
-            else if(memberID != 0 && memberID.ToString().Length == 4)
-            {
-                traverseForm(this, new frmDBConnect(this));
+                if (email.StartsWith("admin"))
+                {
+                    traverseForm(this, new frmDBConnect(this));
+                }
+                else
+                {
+                    frmMemberProfile memberProfile = new frmMemberProfile(memberID);
+                    memberProfile.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -49,9 +52,7 @@ namespace DanceStudioBookingSystem
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
-            }
-
-            
+            }  
         }
 
         private void lblForgotPassword_Click(object sender, EventArgs e)

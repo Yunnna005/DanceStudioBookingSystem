@@ -88,6 +88,7 @@
     <Compile Include="Admin\frmStatistics.Designer.cs">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="frmDBConnect.cs">
       <SubType>Form</SubType>

@@ -26,6 +26,7 @@ namespace DanceStudioBookingSystem
         {
             InitializeComponent();
             timer.Tick += Timer_Tick;
+
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -37,14 +38,16 @@ namespace DanceStudioBookingSystem
             if (memberID != 0){
                 if (email.StartsWith("admin"))
                 {
-                    
-                    traverseForm(this, new frmDBConnect(this));
+                    this.Hide();
+                    frmDBConnect nextForm = new frmDBConnect(this);
+                    nextForm.Show();
                 }
                 else
                 {
-                    frmMemberProfile memberProfile = new frmMemberProfile(memberID);
-                    memberProfile.Show();
                     this.Hide();
+                    frmMemberProfile nextForm = new frmMemberProfile(memberID);
+                    nextForm.Show();
+                    
                 }
             }
             else

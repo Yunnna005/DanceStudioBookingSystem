@@ -16,31 +16,42 @@ namespace DanceStudioBookingSystem
     {
         public System.Windows.Forms.DataGridView dgvClassesAdmin;
         Form parent;
+        public frmClassesOverview()
+        {
+            InitializeComponent();
+        }
         public frmClassesOverview(Form parentForm)
         {
-
             parent = parentForm;
-
+            InitializeComponent();
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmScheduleClass(this));
+            frmScheduleClass scheduleClass = new frmScheduleClass(parent);
+            scheduleClass.Show();
+            this.Close();
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmModifyClass(this));
+            frmModifyClass modifyClass = new frmModifyClass(parent);
+            modifyClass.Show(); 
+            this.Close();
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmCancelClass(this));
+            frmCancelClass cancelClass = new frmCancelClass(parent);
+            cancelClass.Show();
+            this.Close();
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmStatistics(this));
+            frmStatistics frmStatistics = new frmStatistics(parent);
+            frmStatistics.Show();
+            this.Close();
         }
 
         private void mnuLogOut_Click(object sender, EventArgs e)
@@ -50,7 +61,7 @@ namespace DanceStudioBookingSystem
 
         private void frmMainMenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            parent.Hide();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +72,9 @@ namespace DanceStudioBookingSystem
 
         private void mnuDBConnect_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmDBConnect(this));
+            frmDBConnect frmDBConnect = new frmDBConnect(parent);
+            frmDBConnect.Show();
+            this.Close();
         }
     }
 }

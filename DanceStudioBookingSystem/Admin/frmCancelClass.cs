@@ -13,32 +13,44 @@ namespace DanceStudioBookingSystem
 {
     public partial class frmCancelClass : Form
     {
-        Form parentForm;
-        public frmCancelClass(Form parent)
+        Form parent;
+        public frmCancelClass()
         {
-            parentForm = parent;
             InitializeComponent();
-            InsertDataToComboBox(cboType);
+        }
+        public frmCancelClass(Form parentForm)
+        {
+            parent = parentForm;
+            InitializeComponent();
+
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmClassesOverview(this));
+            frmClassesOverview frmClassesOverview = new frmClassesOverview(parent);
+            frmClassesOverview.Show();
+            this.Close();
         }
 
         private void mnuStatisticsTool_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmStatistics(this));
+            frmStatistics frmStatistics = new frmStatistics(parent);
+            frmStatistics.Show();
+            this.Close();
         }
 
         private void tmnuScheduleClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmScheduleClass(this));
+            frmScheduleClass scheduleClass = new frmScheduleClass(parent);
+            scheduleClass.Show();
+            this.Close();
         }
 
         private void tmnuModifyClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmModifyClass(this));
+            frmModifyClass modifyClass = new frmModifyClass(parent);
+            modifyClass.Show();
+            this.Close();
         }
 
         private void tmnuCancelClass_Click(object sender, EventArgs e)
@@ -65,7 +77,7 @@ namespace DanceStudioBookingSystem
 
         private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parentForm.Show();
+            parent.Hide();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

@@ -14,19 +14,21 @@ namespace DanceStudioBookingSystem
     public partial class frmModifyClass : Form
     {
         Form parent;
+        public frmModifyClass()
+        {
+            InitializeComponent();
+        }
         public frmModifyClass(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
-            InsertDataToComboBox(cboType);
-            InsertDataToComboBox(cboType2);
-            InsertDataToComboBox(cboInstructor);
-
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmScheduleClass(this));
+            frmScheduleClass scheduleClass = new frmScheduleClass(parent);
+            scheduleClass.Show();
+            this.Close();
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
@@ -36,22 +38,28 @@ namespace DanceStudioBookingSystem
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmCancelClass(this));
+            frmCancelClass cancelClass = new frmCancelClass(parent);
+            cancelClass.Show();
+            this.Close();
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmStatistics(this));
+            frmStatistics frmStatistics = new frmStatistics(parent);
+            frmStatistics.Show();
+            this.Close();
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmClassesOverview(this));
+            frmClassesOverview frmClassesOverview = new frmClassesOverview(parent);
+            frmClassesOverview.Show();
+            this.Close();
         }
 
         private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            parent.Hide();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

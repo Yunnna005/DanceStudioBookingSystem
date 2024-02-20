@@ -17,12 +17,16 @@ namespace DanceStudioBookingSystem
         Form parent;
 
         OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+        public frmDBConnect()
+        {
+            InitializeComponent();
+
+        }
         public frmDBConnect(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
         }
-
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
@@ -44,12 +48,14 @@ namespace DanceStudioBookingSystem
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmClassesOverview(this));
+            frmClassesOverview classesOverview = new frmClassesOverview(parent);
+            classesOverview.Show();
+            this.Close();
         }
 
         private void frmDBConnect_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            parent.Hide();
         }
     }
 }

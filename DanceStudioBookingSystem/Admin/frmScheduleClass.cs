@@ -15,9 +15,14 @@ namespace DanceStudioBookingSystem
     public partial class frmScheduleClass : Form
     {
         Form parent;
+        public frmScheduleClass()
+        {
+            InitializeComponent();
+        }
         public frmScheduleClass(Form parentForm)
         {
             parent = parentForm;
+            InitializeComponent();
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -27,22 +32,30 @@ namespace DanceStudioBookingSystem
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmModifyClass(this));
+            frmModifyClass modifyClass = new frmModifyClass(parent);
+            modifyClass.Show();
+            this.Close();
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmCancelClass(this));
+            frmCancelClass cancelClass = new frmCancelClass(parent);
+            cancelClass.Show();
+            this.Close();
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmStatistics(this));
+            frmStatistics frmStatistics = new frmStatistics(parent);
+            frmStatistics.Show();
+            this.Close();
         }
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            traverseForm(this, new frmClassesOverview(this));
+            frmClassesOverview frmClassesOverview = new frmClassesOverview(parent);
+            frmClassesOverview.Show();
+            this.Close();
         }
 
 
@@ -58,7 +71,10 @@ namespace DanceStudioBookingSystem
                 aClass.addClass();
 
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                traverseForm(this, new frmClassesOverview(this));
+
+                frmClassesOverview frmClassesOverview = new frmClassesOverview(parent);
+                frmClassesOverview.Show();
+                this.Close();
             }
             else
             {
@@ -78,7 +94,7 @@ namespace DanceStudioBookingSystem
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            parent.Hide();
         }
     }
 }

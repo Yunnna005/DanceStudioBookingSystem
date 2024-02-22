@@ -18,11 +18,16 @@ namespace DanceStudioBookingSystem
         public frmScheduleClass()
         {
             InitializeComponent();
+            InsertDataToComboBox(cboType);
+            InsertDataToComboBox(cboInstructor);
+
         }
         public frmScheduleClass(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
+            InsertDataToComboBox(cboType);
+            InsertDataToComboBox(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -65,7 +70,7 @@ namespace DanceStudioBookingSystem
             {
 
                 int capacity = int.Parse(txtCapacity.Text);
-                int price = int.Parse(txtPrice.Text);
+                float price = float.Parse(txtPrice.Text);
 
                 Classes aClass = new Classes(txtName.Text, getTypeID(), dtpDate.Value, txtHour.Text, txtMinute.Text, getInstructorID(), capacity, price);
                 aClass.addClass();
@@ -82,19 +87,24 @@ namespace DanceStudioBookingSystem
             } 
         }
 
-        private int getInstructorID()
+        private int getInstructorID() // change
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
-        private string getTypeID()
+        private string getTypeID() // change
         {
-            throw new NotImplementedException();
+            return "Y";
         }
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Hide();
+        }
+
+        private void cboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,6 +17,7 @@ namespace DanceStudioBookingSystem
         private string _time_hour;
         private string _time_minute;
         private int _instructorID;
+        private int _avaliablePlaces;
         private int _capacity;
         private float _price;
 
@@ -29,11 +30,12 @@ namespace DanceStudioBookingSystem
             this._time_hour = "0";
             this._time_minute = "0";
             this._instructorID = 0;
+            this._avaliablePlaces = 0;
             this._capacity = 0;
             this._price = 0;
         }
 
-        public Classes(string name, string type, DateTime date, string time_hour, string time_minute, int instructor, int capacity, float price)
+        public Classes(string name, string type, DateTime date, string time_hour, string time_minute, int instructorID, int capacity, float price)
         {
             _classID = getNextClassID();
             _name = name;
@@ -41,7 +43,8 @@ namespace DanceStudioBookingSystem
             _date = date;
             _time_hour = time_hour;
             _time_minute = time_minute;
-            _instructorID = instructor;
+            _instructorID = instructorID;
+            _avaliablePlaces = 13;  // change
             _capacity = capacity;
             _price = price;
         }
@@ -53,6 +56,7 @@ namespace DanceStudioBookingSystem
         public string getTimeHour() { return _time_hour; }
         public string getTimeMinute() { return _time_minute; }
         public int getInstructor() { return _instructorID; }
+        public int getAvaliablePlaces() { return _avaliablePlaces; }
         public int getCapacity() { return _capacity; }
         public float getPrice() { return _price; }
 
@@ -63,6 +67,7 @@ namespace DanceStudioBookingSystem
         public void setTimeHour(string time_hour) {  _time_hour = time_hour; }
         public void setTimeMinute(string time_minute) {  _time_minute = time_minute; }
         public void setInstructor(int instructor) {  _instructorID = instructor; }
+        public void setAvaliablePlaces(int avaliablePlaces) {  _avaliablePlaces = avaliablePlaces;}
         public void setCapacity(int capacity) {  _capacity = capacity; }
         public void setPrice(float price) {  _price = price; }
 
@@ -72,15 +77,16 @@ namespace DanceStudioBookingSystem
             string timeCode = _time_hour.ToString() + ":" + _time_minute;
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
-            String sqlQuery = "INSERT INTO Classes VALUES ('" +
+            String sqlQuery = "INSERT INTO Classes VALUES (" +
                 _classID + ",'" +
                 _name + "','" +
-                _typeID + "','" +
                 _date.ToString("dd-MMM-yyyy") + "','" +
-                timeCode + " ', '" +
-                _instructorID + "'," +
+                timeCode + " ', " +
+                _avaliablePlaces + " , " +
                 _capacity + "," +
-                _price + ")";
+                _price + "," +
+                _instructorID + ",'" +
+                _typeID +  "')";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
             conn.Open();

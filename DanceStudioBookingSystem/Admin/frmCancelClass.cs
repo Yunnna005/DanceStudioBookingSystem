@@ -27,30 +27,22 @@ namespace DanceStudioBookingSystem
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            frmClassesOverview frmClassesOverview = new frmClassesOverview(parent);
-            frmClassesOverview.Show();
-            this.Close();
+            traverseForm(this, new frmClassesOverview(this));
         }
 
         private void mnuStatisticsTool_Click(object sender, EventArgs e)
         {
-            frmStatistics frmStatistics = new frmStatistics(parent);
-            frmStatistics.Show();
-            this.Close();
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void tmnuScheduleClass_Click(object sender, EventArgs e)
         {
-            frmScheduleClass scheduleClass = new frmScheduleClass(parent);
-            scheduleClass.Show();
-            this.Close();
+            traverseForm(this, new frmScheduleClass(this));
         }
 
         private void tmnuModifyClass_Click(object sender, EventArgs e)
         {
-            frmModifyClass modifyClass = new frmModifyClass(parent);
-            modifyClass.Show();
-            this.Close();
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void tmnuCancelClass_Click(object sender, EventArgs e)
@@ -77,7 +69,7 @@ namespace DanceStudioBookingSystem
 
         private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Hide();
+            Application.Exit();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

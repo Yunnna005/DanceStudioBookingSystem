@@ -32,12 +32,12 @@ namespace DanceStudioBookingSystem
 
         private void tmnuModifyClass_Click(object sender, EventArgs e)
         {
-            //traverseForm(this, new frmModifyClass(this));
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void tmnuCancelClass_Click(object sender, EventArgs e)
         {
-            //traverseForm(this, new frmCancelClass(this));
+            traverseForm(this, new frmCancelClass(this));
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuBack_Click(object sender, EventArgs e)
         {
-            //traverseForm(this, new frmClassesOverview(this));
+            traverseForm(this, new frmClassesOverview(this));
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace DanceStudioBookingSystem
 
         private void frmStatistics_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Hide();
+            Application.Exit();
         }
     }
 }

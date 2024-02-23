@@ -94,7 +94,6 @@
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(147, 25);
             this.cboType.TabIndex = 18;
-            this.cboType.SelectedIndexChanged += new System.EventHandler(this.cboType_SelectedIndexChanged);
             // 
             // txtMinute
             // 

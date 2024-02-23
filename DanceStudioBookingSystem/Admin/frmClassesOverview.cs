@@ -28,30 +28,22 @@ namespace DanceStudioBookingSystem
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
         {
-            frmScheduleClass scheduleClass = new frmScheduleClass(parent);
-            scheduleClass.Show();
-            this.Close();
+            traverseForm(this, new frmScheduleClass(this));
         }
 
         private void mnutModifyClass_Click(object sender, EventArgs e)
         {
-            frmModifyClass modifyClass = new frmModifyClass(parent);
-            modifyClass.Show(); 
-            this.Close();
+            traverseForm(this, new frmModifyClass(this));
         }
 
         private void mnutCancelClass_Click(object sender, EventArgs e)
         {
-            frmCancelClass cancelClass = new frmCancelClass(parent);
-            cancelClass.Show();
-            this.Close();
+            traverseForm(this, new frmCancelClass(this));
         }
 
         private void mnuStatistics_Click(object sender, EventArgs e)
         {
-            frmStatistics frmStatistics = new frmStatistics(parent);
-            frmStatistics.Show();
-            this.Close();
+            traverseForm(this, new frmStatistics(this));
         }
 
         private void mnuLogOut_Click(object sender, EventArgs e)
@@ -59,9 +51,9 @@ namespace DanceStudioBookingSystem
             PerformLogOut(this);
         }
 
-        private void frmMainMenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmClassesOverview_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Hide();
+            Application.Exit();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,9 +64,7 @@ namespace DanceStudioBookingSystem
 
         private void mnuDBConnect_Click(object sender, EventArgs e)
         {
-            frmDBConnect frmDBConnect = new frmDBConnect(parent);
-            frmDBConnect.Show();
-            this.Close();
+            traverseForm(this, new frmDBConnect(this));
         }
     }
 }

@@ -48,14 +48,12 @@ namespace DanceStudioBookingSystem
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            frmClassesOverview classesOverview = new frmClassesOverview(parent);
-            classesOverview.Show();
-            this.Close();
+            traverseForm(this, new frmClassesOverview(this));
         }
 
         private void frmDBConnect_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Hide();
+            Application.Exit();
         }
     }
 }

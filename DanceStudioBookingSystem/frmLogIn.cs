@@ -38,16 +38,11 @@ namespace DanceStudioBookingSystem
             if (memberID != 0){
                 if (email.StartsWith("admin"))
                 {
-                    this.Hide();
-                    frmDBConnect nextForm = new frmDBConnect(this);
-                    nextForm.Show();
+                    traverseForm(this, new frmDBConnect(this));
                 }
                 else
                 {
-                    this.Hide();
-                    frmMemberProfile nextForm = new frmMemberProfile(memberID);
-                    nextForm.Show();
-                    
+                    traverseForm(this, new frmMemberProfile(memberID));                 
                 }
             }
             else

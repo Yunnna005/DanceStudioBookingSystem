@@ -55,13 +55,13 @@ namespace DanceStudioBookingSystem
 
         private void frmClassesOverview_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parent.Show();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            //InsertDataGridAdminView(dgvClassesAdmin, cboType);
+            InsertDataGridAdminView(dgvClassesAdmin, cboType);
         }
 
         private void mnuDBConnect_Click(object sender, EventArgs e)

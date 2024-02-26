@@ -220,7 +220,7 @@
             this.Type.MinimumWidth = 8;
             this.Type.Name = "Type";
             this.Type.ReadOnly = true;
-            this.Type.Width = 140;
+            this.Type.Width = 80;
             // 
             // Date
             // 

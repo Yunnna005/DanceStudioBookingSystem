@@ -8,6 +8,7 @@ using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace DanceStudioBookingSystem
@@ -261,110 +262,18 @@ namespace DanceStudioBookingSystem
             string query = "SELECT * FROM Classes";
             OracleCommand command = new OracleCommand(query, conn);
 
-
+            Classes aClass = new Classes();
             using (OracleDataReader reader = command.ExecuteReader())
             {
                 datagrit.Rows.Clear(); 
                 while (reader.Read())
                 {
-                    if(comboBox.SelectedIndex == 0)
+                    if (reader["Type_ID"].ToString() == aClass.getTypeID(comboBox.Text))
                     {
-                        //
+                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["Type_ID"], reader["DateCode"], reader["TimeCode"], reader["AvaliablePlaces"], reader["Capacity"], reader["Instructor_ID"], reader["Price"]);
                     }
                 }
 
-            }
-
-
-
-
-
-
-            datagrit.Rows.Clear();
-            //List<List<string>> kpopDataList = new List<List<string>>()
-            //    {
-            //        new List<string> { "K-pop (Advance)","KPOP", "2023-11-24", "10:00", "Ji-min Lee","25", "15.00" },
-            //        new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-25", "14:30", "Hyun-woo Park", "25", "15.00" },
-            //        new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-27", "16:30", "Soo-jin Kim", "25", "10.00" },
-            //        new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-26", "18:30", "Ji-min Lee", "25", "10.00" },
-            //        new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-24", "12:30", "Hyun-woo Park", "25", "10.00" },
-            //    };
-
-            List<List<string>> latinDataList = new List<List<string>>()
-                {
-                    new List<string> { "Latin (Advance)","LATIN", "2023-11-24", "11:00", "Rafael Lopez","15", "25.00" },
-                    new List<string> { "Latin (Intermidiate)", "LATIN", "2023-11-25", "14:30", "Isabella Martinez", "15", "25.00" },
-                    new List<string> { "Latin (Beginer)", "LATIN", "2023-11-27", "15:30", "Rafael Lopez", "15", "20.00" },
-                };
-
-            List<List<string>> BalletDataList = new List<List<string>>()
-                {
-                    new List<string> { "Ballet (Advance)","BALLET", "2024-01-24", "11:00", "Olivia Smith","10", "35.00" },
-
-                };
-
-            List<List<string>> HipHopDataList = new List<List<string>>()
-                {
-                    new List<string> { "Hip-Hop (Advance)","HIPHOP", "2023-11-24", "10:00", "Xavier Ortiz", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Advance)", "HIPHOP", "2023-11-25", "10:00", "Jasmine Williams", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Advance)", "HIPHOP", "2023-11-25", "11:00", "Ji-min Lee", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-25", "14:30", "Xavier Ortiz", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-25", "15:30", "Jasmine Williams", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-26", "14:30", "Malik Johnson", "25", "15.00" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-26", "16:30", "Soo-jin Kim", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-26", "1118:30", "Xavier Ortiz", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-27", "13:30", "Jasmine Williams", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Beginer)", "HIPHOP", "2023-11-27", "14:30", "Malik Johnson", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "12:30", "Hyun-woo Park", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "11:30", "Malik Johnson", "25", "10.00" },
-                    new List<string> { "Hip-Hop (Intermidiate)", "HIPHOP", "2023-11-28", "10:30", "Xavier Ortiz", "25", "10.00" },
-
-                };
-            if (comboBox.SelectedIndex == 1)
-            {
-                foreach (var rowData in kpopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 2)
-            {
-                foreach (var rowData in latinDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 3)
-            {
-                foreach (var rowData in BalletDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 4)
-            {
-                foreach (var rowData in HipHopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }else if (comboBox.SelectedIndex == 0)
-            {
-                foreach (var rowData in kpopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in latinDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in BalletDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in HipHopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
             }
         }
 

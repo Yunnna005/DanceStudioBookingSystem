@@ -153,7 +153,7 @@ namespace DanceStudioBookingSystem
             return nextId;
         }
 
-        private string getTypeID(string type)
+        public string getTypeID(string type)
         {
             string typeID;
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
@@ -199,53 +199,6 @@ namespace DanceStudioBookingSystem
                         }
                     }
                     return 0;
-                }
-            }
-        }
-        private void FillTypes(System.Windows.Forms.ComboBox cboType)
-        {
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-                string query = "SELECT Type FROM Class_Types";
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        // Clear existing items in ComboBox
-                        cboType.Items.Clear();
-
-                        // Populate ComboBox with data
-                        while (reader.Read())
-                        {
-                            string itemName = reader.GetString(0);
-                            cboType.Items.Add(itemName);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void FillInstructors(System.Windows.Forms.ComboBox cboInstructors)
-        {
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-                string query = "SELECT FullName FROM Instructors";
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        // Clear existing items in ComboBox
-                        cboInstructors.Items.Clear();
-
-                        // Populate ComboBox with data
-                        while (reader.Read())
-                        {
-                            string fullName = reader.GetString(0);
-                            cboInstructors.Items.Add(fullName);
-                        }
-                    }
                 }
             }
         }

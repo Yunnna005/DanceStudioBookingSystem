@@ -74,7 +74,7 @@ namespace DanceStudioBookingSystem
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InsertDataGridAdminView(dgvCancelClassesAdmin, cboType);
+            //InsertDataGridAdminView(dgvCancelClassesAdmin, cboType);
         }
     }
 }

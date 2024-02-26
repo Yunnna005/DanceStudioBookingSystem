@@ -78,6 +78,7 @@
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.btnConnect);
             this.Name = "frmDBConnect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDBConnect";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDBConnect_FormClosed);
             this.ResumeLayout(false);

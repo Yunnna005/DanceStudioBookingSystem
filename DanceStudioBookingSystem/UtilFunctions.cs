@@ -256,15 +256,39 @@ namespace DanceStudioBookingSystem
 
         public static void InsertDataGridAdminView(DataGridView datagrit, ComboBox comboBox)
         {
-            datagrit.Rows.Clear();
-            List<List<string>> kpopDataList = new List<List<string>>()
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string query = "SELECT * FROM Classes";
+            OracleCommand command = new OracleCommand(query, conn);
+
+
+            using (OracleDataReader reader = command.ExecuteReader())
+            {
+                datagrit.Rows.Clear(); 
+                while (reader.Read())
                 {
-                    new List<string> { "K-pop (Advance)","KPOP", "2023-11-24", "10:00", "Ji-min Lee","25", "15.00" },
-                    new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-25", "14:30", "Hyun-woo Park", "25", "15.00" },
-                    new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-27", "16:30", "Soo-jin Kim", "25", "10.00" },
-                    new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-26", "18:30", "Ji-min Lee", "25", "10.00" },
-                    new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-24", "12:30", "Hyun-woo Park", "25", "10.00" },
-                };
+                    if(comboBox.SelectedIndex == 0)
+                    {
+                        //
+                    }
+                }
+
+            }
+
+
+
+
+
+
+            datagrit.Rows.Clear();
+            //List<List<string>> kpopDataList = new List<List<string>>()
+            //    {
+            //        new List<string> { "K-pop (Advance)","KPOP", "2023-11-24", "10:00", "Ji-min Lee","25", "15.00" },
+            //        new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-25", "14:30", "Hyun-woo Park", "25", "15.00" },
+            //        new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-27", "16:30", "Soo-jin Kim", "25", "10.00" },
+            //        new List<string> { "K-pop (Beginer)", "KPOP", "2023-11-26", "18:30", "Ji-min Lee", "25", "10.00" },
+            //        new List<string> { "K-pop (Intermidiate)", "KPOP", "2023-11-24", "12:30", "Hyun-woo Park", "25", "10.00" },
+            //    };
 
             List<List<string>> latinDataList = new List<List<string>>()
                 {
@@ -464,6 +488,45 @@ namespace DanceStudioBookingSystem
                     price.Text = selectedRow.Cells[6].Value.ToString();
                 }
             }
+        }
+
+        public static void LoadTypes(ComboBox cboType)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string query = "SELECT Type FROM Class_Types";
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+            using (OracleDataReader dr = cmd.ExecuteReader())
+            {
+                cboType.Items.Clear();
+
+                while (dr.Read())
+                {
+                    string itemName = dr.GetString(0);
+                    cboType.Items.Add(itemName);
+                }
+            }
+        }
+
+        public static void Loadnstructors(ComboBox cboInstructors)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string query = "SELECT FullName FROM Instructors";
+            OracleCommand command = new OracleCommand(query, conn);
+            
+            using (OracleDataReader reader = command.ExecuteReader())
+            {
+                cboInstructors.Items.Clear();
+                while (reader.Read())
+                {
+                    string fullName = reader.GetString(0);
+                    cboInstructors.Items.Add(fullName);
+                }
+                    
+            }
+            
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DanceStudioBookingSystem
@@ -35,16 +36,16 @@ namespace DanceStudioBookingSystem
             this._price = 0;
         }
 
-        public Classes(string name, string type, DateTime date, string time_hour, string time_minute, int instructorID, int capacity, float price)
+        public Classes(string name, ComboBox type, DateTime date, string time_hour, string time_minute, ComboBox instructorID, int capacity, float price)
         {
             _classID = getNextClassID();
             _name = name;
-            _typeID = type;
+            _typeID = getTypeID(type.Text);
             _date = date;
             _time_hour = time_hour;
             _time_minute = time_minute;
-            _instructorID = instructorID;
-            _avaliablePlaces = 13;  // change
+            _instructorID = getInstructorID(instructorID.Text);
+            _avaliablePlaces = capacity;
             _capacity = capacity;
             _price = price;
         }
@@ -150,6 +151,103 @@ namespace DanceStudioBookingSystem
             conn.Close();
 
             return nextId;
+        }
+
+        private string getTypeID(string type)
+        {
+            string typeID;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Class_Types WHERE Type = :type";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = type;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return typeID = (string)reader["Type_ID"];
+
+                        }
+                    }
+                    return "Not Found";
+                }
+            }
+        }
+
+        public int getInstructorID(string instructor)
+        {
+            int instructorID;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Instructors WHERE FullName = :instructor";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = instructor;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return instructorID = (int)reader["Instructor_ID"];
+
+                        }
+                    }
+                    return 0;
+                }
+            }
+        }
+        private void FillTypes(System.Windows.Forms.ComboBox cboType)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+                string query = "SELECT Type FROM Class_Types";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        // Clear existing items in ComboBox
+                        cboType.Items.Clear();
+
+                        // Populate ComboBox with data
+                        while (reader.Read())
+                        {
+                            string itemName = reader.GetString(0);
+                            cboType.Items.Add(itemName);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void FillInstructors(System.Windows.Forms.ComboBox cboInstructors)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+                string query = "SELECT FullName FROM Instructors";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        // Clear existing items in ComboBox
+                        cboInstructors.Items.Clear();
+
+                        // Populate ComboBox with data
+                        while (reader.Read())
+                        {
+                            string fullName = reader.GetString(0);
+                            cboInstructors.Items.Add(fullName);
+                        }
+                    }
+                }
+            }
         }
     }
 }

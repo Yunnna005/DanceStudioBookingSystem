@@ -19,11 +19,13 @@ namespace DanceStudioBookingSystem
         public frmClassesOverview()
         {
             InitializeComponent();
+            LoadTypes(cboType);
         }
         public frmClassesOverview(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
+            LoadTypes(cboType);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace DanceStudioBookingSystem
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            InsertDataGridAdminView(dgvClassesAdmin, cboType);
+            //InsertDataGridAdminView(dgvClassesAdmin, cboType);
         }
 
         private void mnuDBConnect_Click(object sender, EventArgs e)

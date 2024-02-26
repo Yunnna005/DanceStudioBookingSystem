@@ -23,16 +23,15 @@ namespace DanceStudioBookingSystem
         public frmScheduleClass()
         {
             InitializeComponent();
-            InsertDataToComboBox(cboType);
-            InsertDataToComboBox(cboInstructor);
-
+            LoadTypes(cboType);
+            Loadnstructors(cboInstructor);
         }
         public frmScheduleClass(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
-            InsertDataToComboBox(cboType);
-            InsertDataToComboBox(cboInstructor);
+            LoadTypes(cboType);
+            Loadnstructors(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace DanceStudioBookingSystem
                 int capacity = int.Parse(txtCapacity.Text);
                 float price = float.Parse(txtPrice.Text);
 
-                Classes aClass = new Classes(txtName.Text, getTypeID(cboType.Text), dtpDate.Value, txtHour.Text, txtMinute.Text, getInstructorID(cboInstructor.Text), capacity, price);
+                Classes aClass = new Classes(txtName.Text, cboType, dtpDate.Value, txtHour.Text, txtMinute.Text, cboInstructor, capacity, price);
                 aClass.addClass();
 
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,83 +80,12 @@ namespace DanceStudioBookingSystem
                 MessageBox.Show(ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private string getTypeID(string type) // change
-        {
-            string typeID;
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-
-                string query = "SELECT * FROM Class_Types WHERE Type = :type";
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = type;
-
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return typeID = (string)reader["Instructor_ID"];
-
-                        }
-                    }
-                    return "Not Found";
-                }
-            }
-        }
-
-        private int getInstructorID(string instructor) // change
-        {
-            int instructorID;
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-
-                string query = "SELECT * FROM Instructors WHERE FullName = :instructor";
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = instructor;
-
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return instructorID = (int)reader["Instructor_ID"];
-
-                        }
-                    }
-                    return 0;
-                }
-            }
-        }
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void FillTypes()
-        {
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-                string query = "SELECT Type FROM Class_Types";
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        // Clear existing items in ComboBox
-                        cboType.Items.Clear();
-
-                        // Populate ComboBox with data
-                        while (reader.Read())
-                        {
-                            string itemName = reader.GetString(0); // Assuming the column is of string type
-                            cboType.Items.Add(itemName);
-                        }
-                    }
-                }
-            }
-        }
+        
     }
 }

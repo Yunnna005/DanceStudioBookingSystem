@@ -107,7 +107,8 @@ namespace DanceStudioBookingSystem
                 "TimeCode = '" + timeCode + "'," +
                 "Instructor_ID = " + _instructorID + "," +
                 "Capacity = " + _capacity + "," +
-                "Price = " + _price + ")";
+                "Price = " + _price + " " + 
+                "WHERE Class_ID = '" + classID + "'";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
             conn.Open();
@@ -160,7 +161,7 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Class_Types WHERE Type = :type";
+                string query = "SELECT Type_ID FROM Class_Types WHERE Type = :type";
                 using (OracleCommand command = new OracleCommand(query, conn))
                 {
                     command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = type;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.Remoting.Lifetime;
@@ -10,6 +11,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DanceStudioBookingSystem
 {
@@ -384,17 +387,17 @@ namespace DanceStudioBookingSystem
 
                 if (selectedRow != null)
                 {
-                    name.Text = selectedRow.Cells[0].Value.ToString();
-                    type.Text = selectedRow.Cells[1].Value.ToString();
-                    dateTimePicker.Text = selectedRow.Cells[2].Value.ToString();
+                    name.Text = selectedRow.Cells[1].Value.ToString();
+                    type.Text = selectedRow.Cells[2].Value.ToString();
+                    dateTimePicker.Text = selectedRow.Cells[3].Value.ToString();
 
-                    string time = selectedRow.Cells[3].Value.ToString();
+                    string time = selectedRow.Cells[4].Value.ToString();
                     hour.Text = time.Substring(0, 2);
                     minute.Text = time.Substring(3, 2);
 
-                    instructor.Text = selectedRow.Cells[4].Value.ToString();
-                    capacity.Text = selectedRow.Cells[5].Value.ToString();
-                    price.Text = selectedRow.Cells[6].Value.ToString();
+                    capacity.Text = selectedRow.Cells[6].Value.ToString();
+                    instructor.Text = selectedRow.Cells[7].Value.ToString();
+                    price.Text = selectedRow.Cells[8].Value.ToString();
                 }
             }
         }
@@ -436,6 +439,55 @@ namespace DanceStudioBookingSystem
                     
             }
             
+        }
+        public static int FindMemberID(string email, string password)
+        {
+            int MemberID;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Members WHERE Email = :Email AND Password = :Password";
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+                    command.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return MemberID = (int)reader["Member_ID"];
+
+                        }
+                    }
+                    return 0;
+                }
+            }
+        }
+
+        public static int FindClassID(DataGridView datagrid)
+        {
+            if (datagrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
+
+                if (selectedRow != null && selectedRow.Cells[0].Value != null)
+                {
+                    string classIdString = selectedRow.Cells[0].Value.ToString();
+
+                    if (int.TryParse(classIdString, out int classId))
+                    {
+                        return classId;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            return -1;
         }
     }
 }

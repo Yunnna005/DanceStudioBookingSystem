@@ -17,11 +17,17 @@ namespace DanceStudioBookingSystem
         public frmModifyClass()
         {
             InitializeComponent();
+            LoadTypes(cboType);
+            LoadTypes(cboType2);
+            Loadnstructors(cboInstructor);
         }
         public frmModifyClass(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
+            LoadTypes(cboType);
+            LoadTypes(cboType2);
+            Loadnstructors(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -51,7 +57,7 @@ namespace DanceStudioBookingSystem
 
         private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parent.Show();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,13 +69,18 @@ namespace DanceStudioBookingSystem
         {
             if (ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid")
             {
-                MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int capacity = int.Parse(txtCapacity.Text);
+                float price = float.Parse(txtPrice.Text);
 
-                txtName.Clear(); txtCapacity.Clear(); txtPrice.Clear();
+                Classes aClass = new Classes(txtName.Text, cboType, dtpDate.Value, txtHour.Text, txtMinute.Text, cboInstructor, capacity, price);
+                aClass.modifyClass(FindClassID(dgvModifyClassesAdmin));
+
+                MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 grpUpdateDetails.Visible = false;
 
                 dgvModifyClassesAdmin.Rows.Clear();
+                
             }
             else
             {

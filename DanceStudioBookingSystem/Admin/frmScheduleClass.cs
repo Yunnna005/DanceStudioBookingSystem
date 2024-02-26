@@ -83,9 +83,7 @@ namespace DanceStudioBookingSystem
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parent.Show();
         }
-
-        
     }
 }

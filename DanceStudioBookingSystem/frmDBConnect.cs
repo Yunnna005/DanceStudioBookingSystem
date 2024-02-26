@@ -53,7 +53,7 @@ namespace DanceStudioBookingSystem
 
         private void frmDBConnect_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parent.Show();
         }
     }
 }

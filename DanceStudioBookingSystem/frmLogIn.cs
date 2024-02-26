@@ -34,7 +34,7 @@ namespace DanceStudioBookingSystem
             string email = txtEmail.Text;
             string password = txtPassword.Text;
             
-            memberID = ValidateLogin(email, password);
+            memberID = FindMemberID(email, password);
             if (memberID != 0){
                 if (email.StartsWith("admin"))
                 {
@@ -84,34 +84,6 @@ namespace DanceStudioBookingSystem
         private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-
-        private int ValidateLogin(string email, string password)
-        {
-            int MemberID;
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-
-                string query = "SELECT * FROM Members WHERE Email = :Email AND Password = :Password";
-
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    command.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
-                    command.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
-
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return MemberID = (int)reader["Member_ID"];
-
-                        }
-                    }
-                    return 0;
-                }
-            }
         }
     }
 }

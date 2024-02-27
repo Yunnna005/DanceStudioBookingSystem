@@ -14,6 +14,7 @@ namespace DanceStudioBookingSystem
     {
         Form parent;
         private int memberID;
+        private int classID;
         public frmBookClass(Form parentForm)
         {
             parent = parentForm;
@@ -41,6 +42,11 @@ namespace DanceStudioBookingSystem
         {
             if (cboType.SelectedItem!=null)
             {
+                classID = FindClassID_Member(dgvClasses);
+
+
+                MessageBox.Show(classID.ToString());
+
                 pnlPayment.Visible = true;
             }
             else
@@ -60,8 +66,9 @@ namespace DanceStudioBookingSystem
         {
             if (ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC)=="valid")
             {
-                long cardNumber = long.Parse(txtCardNumber.Text);
-                Bookings newBook = new Bookings(txtCardHolder.Text, cardNumber, memberID, FindClassID(dgvClasses));
+
+
+                Bookings newBook = new Bookings(txtCardHolder.Text, txtCardNumber.Text, memberID, classID);
                 newBook.addBooking();
 
                 MessageBox.Show("Thank you. The class was bought.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,11 +88,6 @@ namespace DanceStudioBookingSystem
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
             InsertDataGridMemberView(dgvClasses, cboType);
-        }
-
-        private void frmBookClass_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

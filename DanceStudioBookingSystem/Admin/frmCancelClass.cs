@@ -66,7 +66,7 @@ namespace DanceStudioBookingSystem
                 {
                      
                     Classes aClass = new Classes();
-                    aClass.cancelClass(FindClassID(dgvCancelClassesAdmin));
+                    aClass.cancelClass(FindClassID_Admin(dgvCancelClassesAdmin));
 
                     MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvCancelClassesAdmin.Rows.Clear();

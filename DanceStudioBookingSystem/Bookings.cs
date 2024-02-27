@@ -11,9 +11,9 @@ namespace DanceStudioBookingSystem
     {
         private int _bookingID;
         private string _cardHolder;
-        private long _cardNumber;
+        private string _cardNumber;
         private DateTime _paymentDate;
-        private float _price;
+        private int _price;
         private int _memberID;
         private int _classID;
 
@@ -22,20 +22,21 @@ namespace DanceStudioBookingSystem
         {
             _bookingID = 0;
             _cardHolder = "";
-            _cardNumber = 0;
+            _cardNumber = "";
             _paymentDate = DateTime.Now;
             _price = 0;
             _memberID = 0;
             _classID = 0;
         }
 
-        public Bookings(string cardName, long cardNumber, int memberID, int classID) 
+        public Bookings(string cardName, string cardNumber, int memberID, int classID) 
         {
             _bookingID = getNextBookingsID();
             _cardHolder = cardName;
             _cardNumber = cardNumber;
             _paymentDate = DateTime.Now;
-            _price = getPrice(classID);
+            //_price = getPrice(classID);
+            _price = 10;
             _memberID = memberID;
             _classID = classID;
 
@@ -43,15 +44,15 @@ namespace DanceStudioBookingSystem
 
         //getters
         public string getCardHolder() { return _cardHolder; }
-        public long getCardNumber() { return _cardNumber; }
+        public string getCardNumber() { return _cardNumber; }
         public DateTime getPaymentDate() { return _paymentDate; }
-        public float getPrice() { return _price; }
+        public int getPrice() { return _price; }
 
         //setters
         public void setCardHolder(string cardHolder) { _cardHolder = cardHolder; }
-        public void setCardNUmber(long cardNumber) { _cardNumber = cardNumber; }
+        public void setCardNUmber(string cardNumber) { _cardNumber = cardNumber; }
         public void setPaymentDate(DateTime paymentDate) { _paymentDate = paymentDate; }
-        public void setPrice(float price) { _price = price; }
+        public void setPrice(int price) { _price = price; }
 
 
         public void addBooking()
@@ -61,8 +62,8 @@ namespace DanceStudioBookingSystem
             //check database variables
             String sqlQuery = "INSERT INTO Bookings VALUES (" +
                 _bookingID + ",'" +
-                _cardHolder + "'," +
-                _cardNumber + ",'" +
+                _cardHolder + "','" +
+                _cardNumber + "','" +
                 _paymentDate.ToString("dd-MMM-yyyy") + "'," +
                 _price + "," +
                 _memberID + "," +
@@ -86,7 +87,7 @@ namespace DanceStudioBookingSystem
             conn.Close();
         }
 
-        private float getPrice(int classID)
+        private int getPrice(int classID)
         {
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
@@ -102,7 +103,7 @@ namespace DanceStudioBookingSystem
                     {
                         if (reader.Read())
                         {
-                            return (float)reader["Price"];
+                            return (int)reader["Price"];
                         }
                     }
                 }

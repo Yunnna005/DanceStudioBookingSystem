@@ -73,7 +73,7 @@ namespace DanceStudioBookingSystem
                 float price = float.Parse(txtPrice.Text);
 
                 Classes aClass = new Classes(txtName.Text, cboType2, dtpDate.Value, txtHour.Text, txtMinute.Text, cboInstructor, capacity, price);
-                aClass.modifyClass(FindClassID(dgvModifyClassesAdmin));
+                aClass.modifyClass(FindClassID_Admin(dgvModifyClassesAdmin));
 
                 MessageBox.Show("The class was modified", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

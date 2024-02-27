@@ -1,8 +1,10 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using DanceStudioBookingSystem.Member;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Runtime.Remoting.Lifetime;
@@ -386,7 +388,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static int FindClassID(DataGridView datagrid)
+        public static int FindClassID_Admin(DataGridView datagrid)
         {
             if (datagrid.SelectedRows.Count > 0)
             {
@@ -407,6 +409,53 @@ namespace DanceStudioBookingSystem
                 }
             }
             return -1;
+        }
+
+        public static int FindClassID_Member(DataGridView datagrid)
+        {
+            int classID = 0;
+
+            if (datagrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
+
+                if (selectedRow != null && selectedRow.Cells[0].Value != null)
+                {
+                    string className = selectedRow.Cells[0].Value.ToString();
+                    string classDate = selectedRow.Cells[1].Value.ToString();
+                    string classTime = selectedRow.Cells[2].Value.ToString();
+
+                    classDate = classDate.Substring(0, 10);
+                    //DateTime classDate2 = DateTime.ParseExact(classDate, "dd/MMM/yyyy", null);
+
+                    MessageBox.Show(className + classDate + classTime);
+
+
+                    OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+                    conn.Open();
+
+                    string query = "SELECT Class_ID FROM Classes WHERE Name = :className AND DateCode = To_DATE(:classDate2) AND TimeCode = :classTime";
+
+                    using (OracleCommand command = new OracleCommand(query, conn))
+                    {
+
+                        command.Parameters.Add("Name", OracleDbType.Varchar2).Value = className;
+                        //command.Parameters.Add("DateCode", OracleDbType.Date).Value = classDate2;
+                        command.Parameters.Add("TimeCode", OracleDbType.Varchar2).Value = classTime; 
+
+                        using (OracleDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                classID = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+
+            return classID;
         }
     }
 }

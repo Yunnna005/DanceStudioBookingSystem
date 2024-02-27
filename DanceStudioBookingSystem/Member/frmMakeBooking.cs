@@ -18,7 +18,7 @@ namespace DanceStudioBookingSystem
         {
             parent = parentForm;
             InitializeComponent();
-            InsertDataToComboBox(cboType);
+            LoadTypes(cboType);
             InsertDataToComboBox(cboMonth);
             InsertDataToComboBox(cboYearCard);
         }
@@ -27,6 +27,9 @@ namespace DanceStudioBookingSystem
         {
             InitializeComponent();
             this.memberID = memberID;
+            LoadTypes(cboType);
+            InsertDataToComboBox(cboMonth);
+            InsertDataToComboBox(cboYearCard);
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)
@@ -57,8 +60,12 @@ namespace DanceStudioBookingSystem
         {
             if (ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC)=="valid")
             {
+                long cardNumber = long.Parse(txtCardNumber.Text);
+                Bookings newBook = new Bookings(txtCardHolder.Text, cardNumber, memberID, FindClassID(dgvClasses));
+                newBook.addBooking();
+
                 MessageBox.Show("Thank you. The class was bought.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                traverseForm(this, new frmMemberProfile(this));
+                traverseForm(this, new frmMemberProfile(memberID));
             }
             else
             {

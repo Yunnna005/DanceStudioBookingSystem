@@ -121,7 +121,7 @@ namespace DanceStudioBookingSystem
 
         private void frmStatistics_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            parent.Show();
         }
     }
 }

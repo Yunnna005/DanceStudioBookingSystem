@@ -164,7 +164,7 @@ namespace DanceStudioBookingSystem
                 string query = "SELECT Type_ID FROM Class_Types WHERE Type = :type";
                 using (OracleCommand command = new OracleCommand(query, conn))
                 {
-                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = type;
+                    command.Parameters.Add("Type", OracleDbType.Varchar2).Value = type;
 
                     using (OracleDataReader reader = command.ExecuteReader())
                     {
@@ -200,6 +200,30 @@ namespace DanceStudioBookingSystem
                         }
                     }
                     return 0;
+                }
+            }
+        }
+        public string getInstructorName(int instructorID)
+        {
+            string instructorName;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT FullName FROM Instructors WHERE Instructor_ID = :instructorID";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Instructor_ID", OracleDbType.Varchar2).Value = instructorID;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return instructorName = (string)reader["FullName"];
+
+                        }
+                    }
+                    return "Not found";
                 }
             }
         }

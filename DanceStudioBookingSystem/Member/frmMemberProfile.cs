@@ -31,7 +31,8 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
             this.memberID = memberID;
 
-            LoadUserDetails(memberID);
+            LoadMemberDetails(memberID);
+            LoadMemberBookings(memberID, dgvClassesMember);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -62,7 +63,11 @@ namespace DanceStudioBookingSystem
             parent.Show();
         }
 
-        private void LoadUserDetails(int memberID)
+        private void mnuBook1_Click(object sender, EventArgs e)
+        {
+            traverseForm(this, new frmBookClass(memberID));
+        }
+        private void LoadMemberDetails(int memberID)
         {
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
@@ -80,7 +85,7 @@ namespace DanceStudioBookingSystem
                         if (reader.Read())
                         {
                             // Display user details in respective controls
-                            lblWriteUsername.Text = reader["Firstname"].ToString()+ " " + reader["Lastname"].ToString();
+                            lblWriteUsername.Text = reader["Firstname"].ToString() + " " + reader["Lastname"].ToString();
                             lblWriteDOB.Text = reader["DOB"].ToString();
                             lblWriteGender.Text = reader["Gender"].ToString();
                             lblWritePhone.Text = reader["Phone"].ToString();
@@ -96,9 +101,56 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        private void mnuBook1_Click(object sender, EventArgs e)
+        private void LoadMemberBookings(int memberID, DataGridView dataGrid)
         {
-            traverseForm(this, new frmBookClass(memberID));
+            Classes aClass = new Classes();
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+
+            string SQLquery = "SELECT * FROM Bookings WHERE Member_ID = :memberID";
+
+            using (OracleCommand command = new OracleCommand(SQLquery, conn))
+            {
+                // Set the value for the bind variable
+                command.Parameters.Add(new OracleParameter("memberID", memberID));
+
+                using (OracleDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // For each booking, fetch details from Classes table using ClassID
+                        int classID = Convert.ToInt32(reader["ClassID"]);
+                        string classDetailsQuery = "SELECT * FROM Classes WHERE ClassID = :classID";
+
+                        using (OracleCommand classDetailsCommand = new OracleCommand(classDetailsQuery, conn))
+                        {
+                            classDetailsCommand.Parameters.Add(new OracleParameter("classID", classID));
+
+                            using (OracleDataReader classReader = classDetailsCommand.ExecuteReader())
+                            {
+                                if (classReader.Read())
+                                {
+                                    // Display details in DataGridView
+                                    int instructorID = (int)reader["Instructor_ID"];
+                                    string instructorName = aClass.getInstructorName(instructorID);
+
+                                    dataGrid.Rows.Add(
+                                        classReader["Name"],
+                                        classReader["DateCode"],
+                                        classReader["TimeCode"],
+                                        instructorName,
+                                        classReader["Price"]
+                                    );
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Class Details is not found");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

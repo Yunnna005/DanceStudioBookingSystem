@@ -141,120 +141,39 @@ namespace DanceStudioBookingSystem
 
         public static void InsertDataToComboBox(ComboBox comboBox)
         {
-            if (comboBox.Name == "cboType" || comboBox.Name == "cboType2")
-            {
-                string[] types = { "ALL","KPOP","LATIN","BALLET","HIPHOP"};
-                comboBox.Items.AddRange(types);
-            }else if (comboBox.Name == "cboInstructor")
-            {
-                string[] instructors = {"Hyun-Woo Park","Isabella Martinez","Jasmine Williams","Ji-Min Lee","Malik Johnson","Olivia Smith",
-                    "Rafael Lopez","Soo-Jin Kim","Xavier Ortiz"};
-                comboBox.Items.AddRange(instructors);
-            }else if (comboBox.Name == "cboYear" || comboBox.Name == "cboYearPopularStyle")
-            {
-                string[] year = {"2018","2019","2020","2021","2022","2023"};
-                comboBox.Items.AddRange(year);
-            }else if (comboBox.Name == "cboMonth")
+            if (comboBox.Name == "cboMonth")
             {
                 string[] month = { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
                 comboBox.Items.AddRange(month);
-            }else if (comboBox.Name == "cboYearCard")
+            }
+            else if (comboBox.Name == "cboYearCard")
             {
                 string[] yearCard = { "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34" };
                 comboBox.Items.AddRange(yearCard);
             }
-            
         }
 
         public static void InsertDataGridMemberView(DataGridView datagrit, ComboBox comboBox)
         {
-            datagrit.Rows.Clear();
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string query = "SELECT * FROM Classes";
+            OracleCommand command = new OracleCommand(query, conn);
 
-            List<List<string>> kpopDataList = new List<List<string>>()
-                {
-                    new List<string> { "K-pop (Advance)", "2023-11-24", "10:00", "Ji-min Lee", "15.00" },
-                    new List<string> { "K-pop (Intermidiate)", "2023-11-25", "14:30", "Hyun-woo Park", "15.00" },
-                    new List<string> { "K-pop (Beginer)", "2023-11-27", "15:30", "Soo-jin Kim", "10.00" },
-                    new List<string> { "K-pop (Beginer)", "2023-11-26", "16:30", "Ji-min Lee", "10.00" },
-                    new List<string> { "K-pop (Intermidiate)", "2023-11-24", "12:30", "Hyun-woo Park", "10.00" },
-                };
-
-            List<List<string>> latinDataList = new List<List<string>>()
-                {
-                    new List<string> { "Latin (Advance)", "2023-11-24", "11:00", "Rafael Lopez", "25.00" },
-                    new List<string> { "Latin (Intermidiate)", "2023-11-25", "14:30", "Isabella Martinez", "25.00" },
-                    new List<string> { "Latin (Beginer)", "2023-11-27", "15:30", "Rafael Lopez", "20.00" },
-                };
-
-            List<List<string>> BalletDataList = new List<List<string>>()
-                {
-                    new List<string> { "Ballet (Advance)", "2024-01-24", "11:00", "Olivia Smith", "35.00" },
-
-                };
-
-            List<List<string>> HipHopDataList = new List<List<string>>()
-                {
-                    new List<string> { "HipHop (Advance)", "2023-11-24", "10:00", "Xavier Ortiz", "15.00" },
-                    new List<string> { "HipHop (Advance)", "2023-11-25", "10:00", "Jasmine Williams", "15.00" },
-                    new List<string> { "HipHop (Advance)", "2023-11-25", "11:00", "Ji-min Lee", "15.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "14:30", "Xavier Ortiz", "15.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-25", "15:30", "Jasmine Williams", "15.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-26", "14:30", "Malik Johnson", "15.00" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-26", "16:30", "Soo-jin Kim", "10.00" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-26", "17:30", "Xavier Ortiz", "10.00" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-27", "13:30", "Jasmine Williams", "10.00" },
-                    new List<string> { "HipHop (Beginer)", "2023-11-27", "14:30", "Malik Johnson", "10.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "12:30", "Hyun-woo Park", "10.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "11:30", "Malik Johnson", "10.00" },
-                    new List<string> { "HipHop (Intermidiate)", "2023-11-28", "10:30", "Xavier Ortiz", "10.00" },
-
-                };
-
-            if (comboBox.SelectedIndex == 1)
+            Classes aClass = new Classes();
+            using (OracleDataReader reader = command.ExecuteReader())
             {
-                foreach (var rowData in kpopDataList)
+                datagrit.Rows.Clear();
+                while (reader.Read())
                 {
-                    datagrit.Rows.Add(rowData.ToArray());
+                    if (reader["Type_ID"].ToString() == aClass.getTypeID(comboBox.Text))
+                    {
+                        int instructorID = (int)reader["Instructor_ID"];
+                        string instructorName = aClass.getInstructorName(instructorID);
+                        datagrit.Rows.Add(reader["Name"], reader["DateCode"], reader["TimeCode"], instructorName, reader["Price"]);
+                    }
                 }
-            }
-            else if (comboBox.SelectedIndex == 2)
-            {
-                foreach (var rowData in latinDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 3)
-            {
-                foreach (var rowData in BalletDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }
-            else if (comboBox.SelectedIndex == 4)
-            {
-                foreach (var rowData in HipHopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-            }else if (comboBox.SelectedIndex == 0)
-            {
-                foreach (var rowData in kpopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in latinDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in BalletDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
-                foreach (var rowData in HipHopDataList)
-                {
-                    datagrit.Rows.Add(rowData.ToArray());
-                }
+
             }
         }
 

@@ -29,17 +29,15 @@ namespace DanceStudioBookingSystem
             _classID = 0;
         }
 
-        public Bookings(string cardName, string cardNumber, int memberID, int classID) 
+        public Bookings(string cardName, string cardNumber, int memberID, int classID)
         {
             _bookingID = getNextBookingsID();
             _cardHolder = cardName;
             _cardNumber = cardNumber;
             _paymentDate = DateTime.Now;
-            //_price = getPrice(classID);
-            _price = 10;
+            _price = getPrice(classID);
             _memberID = memberID;
             _classID = classID;
-
         }
 
         //getters
@@ -89,28 +87,37 @@ namespace DanceStudioBookingSystem
 
         private int getPrice(int classID)
         {
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            try
             {
-                string sqlQuery = "SELECT Price FROM Classes WHERE Class_ID = :classID";
-
-                conn.Open();
-
-                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
                 {
-                    cmd.Parameters.Add(new OracleParameter("classID", classID));
+                    string sqlQuery = "SELECT Price FROM Classes WHERE Class_ID = :classID";
 
-                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+
+                    using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                     {
-                        if (reader.Read())
+                        cmd.Parameters.Add("classID", OracleDbType.Int32).Value = classID;
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
                         {
-                            return (int)reader["Price"];
+                            if (reader.Read())
+                            {
+                                return reader.GetInt32(reader.GetOrdinal("Price"));
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error fetching price: " + ex.Message);
+                // Handle the exception or log it as needed
+            }
 
-            return 0;
+            return 0; // Default value if the price cannot be retrieved
         }
+
 
         public static int getNextBookingsID()
         {
@@ -139,3 +146,4 @@ namespace DanceStudioBookingSystem
         }
     }
 }
+

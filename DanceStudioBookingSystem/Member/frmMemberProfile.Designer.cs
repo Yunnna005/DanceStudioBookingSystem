@@ -45,11 +45,6 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.grpBookedClasses = new System.Windows.Forms.GroupBox();
             this.dgvClassesMember = new System.Windows.Forms.DataGridView();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelClass = new System.Windows.Forms.Button();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -58,6 +53,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuProfile1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.class_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
@@ -243,44 +244,16 @@
             this.dgvClassesMember.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvClassesMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClassesMember.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.class_id,
             this.CLASSNAME,
             this.DATE,
             this.TIME,
             this.INSTRUCTOR,
             this.PRICE});
-            this.dgvClassesMember.Location = new System.Drawing.Point(6, 29);
+            this.dgvClassesMember.Location = new System.Drawing.Point(2, 28);
             this.dgvClassesMember.Name = "dgvClassesMember";
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
             this.dgvClassesMember.TabIndex = 0;
-            // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class name";
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.Width = 120;
-            // 
-            // DATE
-            // 
-            this.DATE.HeaderText = "Date";
-            this.DATE.Name = "DATE";
-            // 
-            // TIME
-            // 
-            this.TIME.HeaderText = "Time";
-            this.TIME.Name = "TIME";
-            this.TIME.Width = 80;
-            // 
-            // INSTRUCTOR
-            // 
-            this.INSTRUCTOR.HeaderText = "Instructor";
-            this.INSTRUCTOR.Name = "INSTRUCTOR";
-            this.INSTRUCTOR.Width = 130;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "Price €";
-            this.PRICE.Name = "PRICE";
-            this.PRICE.Width = 85;
             // 
             // btnCancelClass
             // 
@@ -379,6 +352,41 @@
             this.mnuBook1.Text = "Book";
             this.mnuBook1.Click += new System.EventHandler(this.mnuBook1_Click);
             // 
+            // class_id
+            // 
+            this.class_id.HeaderText = "ID";
+            this.class_id.Name = "class_id";
+            this.class_id.Width = 30;
+            // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class name";
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.Width = 120;
+            // 
+            // DATE
+            // 
+            this.DATE.HeaderText = "Date";
+            this.DATE.Name = "DATE";
+            // 
+            // TIME
+            // 
+            this.TIME.HeaderText = "Time";
+            this.TIME.Name = "TIME";
+            this.TIME.Width = 80;
+            // 
+            // INSTRUCTOR
+            // 
+            this.INSTRUCTOR.HeaderText = "Instructor";
+            this.INSTRUCTOR.Name = "INSTRUCTOR";
+            this.INSTRUCTOR.Width = 130;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "Price €";
+            this.PRICE.Name = "PRICE";
+            this.PRICE.Width = 85;
+            // 
             // frmMemberProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,13 +440,14 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Button btnCancelClass;
         private System.Windows.Forms.DataGridView dgvClassesMember;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuProfile1;
+        private System.Windows.Forms.ToolStripMenuItem mnuBook1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn class_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuProfile1;
-        private System.Windows.Forms.ToolStripMenuItem mnuBook1;
     }
 }

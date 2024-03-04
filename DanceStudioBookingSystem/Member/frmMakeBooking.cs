@@ -42,10 +42,10 @@ namespace DanceStudioBookingSystem
         {
             if (cboType.SelectedItem!=null)
             {
-                classID = FindClassID_Member(dgvClasses);
+                DataGridViewRow selectedRow = dgvClasses.SelectedRows[0];
 
-
-                MessageBox.Show(classID.ToString());
+                string classIDString = selectedRow.Cells[0].Value.ToString();
+                classID = int.Parse(classIDString);
 
                 pnlPayment.Visible = true;
             }
@@ -66,8 +66,6 @@ namespace DanceStudioBookingSystem
         {
             if (ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC)=="valid")
             {
-
-
                 Bookings newBook = new Bookings(txtCardHolder.Text, txtCardNumber.Text, memberID, classID);
                 newBook.addBooking();
 

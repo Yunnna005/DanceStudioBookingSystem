@@ -50,12 +50,63 @@ namespace DanceStudioBookingSystem
             DialogResult result = MessageBox.Show("Are you sure you want to cancel class?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
+                int bookingID = FindBookingID(memberID, dgvClassesMember);
+
+                Bookings cancelBooking = new Bookings();
+                cancelBooking.cancelBooking(bookingID);
+
+                dgvClassesMember.Rows.Clear();
+
+                LoadMemberBookings(memberID, dgvClassesMember);
+
                 MessageBox.Show("The class was canceled.", "Cancelled Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (result == DialogResult.No)
             {
                 return;
             }
+        }
+
+        private int FindBookingID(int memberID, DataGridView dgvClassesMember)
+        {
+            int bookingID = 0;
+
+            if (dgvClassesMember.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
+
+                // Assuming columns 0, 1, and 2 contain the data you want
+                int classID = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                // Use these values to query the database and retrieve the Booking ID
+                using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+                {
+                    conn.Open();
+
+                    string SQLquery = "SELECT Booking_ID FROM Bookings WHERE Class_ID = :classID AND Member_ID = :memberID";
+
+                    using (OracleCommand command = new OracleCommand(SQLquery, conn))
+                    {
+                        command.Parameters.Add(new OracleParameter("classID", classID));
+                        command.Parameters.Add(new OracleParameter("memberID", memberID));
+
+                        using (OracleDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Booking ID found in the database
+                                bookingID = Convert.ToInt32(reader["Booking_ID"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Booking not found in the database.");
+                            }
+                        }
+                    }
+                }
+            }
+
+            return bookingID;
         }
 
         private void frmMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
@@ -89,7 +140,7 @@ namespace DanceStudioBookingSystem
                             lblWriteDOB.Text = reader["DOB"].ToString();
                             lblWriteGender.Text = reader["Gender"].ToString();
                             lblWritePhone.Text = reader["Phone"].ToString();
-                            lblWriteEmail.Text = reader["Email"].ToString(); ;
+                            lblWriteEmail.Text = reader["Email"].ToString(); 
                         }
                         else
                         {
@@ -103,7 +154,6 @@ namespace DanceStudioBookingSystem
 
         private void LoadMemberBookings(int memberID, DataGridView dataGrid)
         {
-            Classes aClass = new Classes();
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
             conn.Open();
 
@@ -119,8 +169,8 @@ namespace DanceStudioBookingSystem
                     while (reader.Read())
                     {
                         // For each booking, fetch details from Classes table using ClassID
-                        int classID = Convert.ToInt32(reader["ClassID"]);
-                        string classDetailsQuery = "SELECT * FROM Classes WHERE ClassID = :classID";
+                        int classID = Convert.ToInt32(reader["Class_ID"]);
+                        string classDetailsQuery = "SELECT * FROM Classes WHERE Class_ID = :classID";
 
                         using (OracleCommand classDetailsCommand = new OracleCommand(classDetailsQuery, conn))
                         {
@@ -130,11 +180,13 @@ namespace DanceStudioBookingSystem
                             {
                                 if (classReader.Read())
                                 {
+                                    Classes aClass = new Classes();
                                     // Display details in DataGridView
-                                    int instructorID = (int)reader["Instructor_ID"];
+                                    int instructorID = Convert.ToInt32(classReader["Instructor_ID"]);
                                     string instructorName = aClass.getInstructorName(instructorID);
 
                                     dataGrid.Rows.Add(
+                                        classReader["Class_ID"],
                                         classReader["Name"],
                                         classReader["DateCode"],
                                         classReader["TimeCode"],

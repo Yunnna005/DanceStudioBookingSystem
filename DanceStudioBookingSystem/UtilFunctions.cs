@@ -23,8 +23,8 @@ namespace DanceStudioBookingSystem
         private static string gender;
         public static void traverseForm(Form prevForm, Form nextForm)
         {
-                nextForm.Show();
-                prevForm.Hide();
+            nextForm.Show();
+            prevForm.Hide();
         }
 
         public static void PerformLogOut(Form activeForm)
@@ -46,7 +46,7 @@ namespace DanceStudioBookingSystem
             RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
         {
             DateTime selectedDate = dob.Value.Date; // Get the selected date without time
-            int curentAge = DateTime.Now.Date.Year - selectedDate.Year; 
+            int curentAge = DateTime.Now.Date.Year - selectedDate.Year;
 
             if (string.IsNullOrEmpty(firstname.Text))
             {
@@ -77,17 +77,18 @@ namespace DanceStudioBookingSystem
             {
                 phone.Focus();
                 return "Please enter valid phone number.";
-            }else if (CheckGigits_Letters_Symbolls(phone) != "Digits")
+            }
+            else if (CheckGigits_Letters_Symbolls(phone) != "Digits")
             {
                 phone.Focus();
                 return "The phone number can not contain letters or symbols.";
             }
-            else if (curentAge<18 || curentAge > 65)
+            else if (curentAge < 18 || curentAge > 65)
             {
                 return "Your age must be between 18 and 65 included";
             }
             else
-            { 
+            {
                 if (genderMale.Checked)
                 {
                     gender = "Male";
@@ -95,12 +96,12 @@ namespace DanceStudioBookingSystem
                 else if (genderFemale.Checked)
                 {
                     gender = "Female";
-                    
+
                 }
                 else if (genderOther.Checked)
                 {
                     gender = "Other";
-                   
+
                 }
             }
             return gender;
@@ -125,15 +126,16 @@ namespace DanceStudioBookingSystem
                         symbols++;
                     }
                 }
-               
-                if (digits > 0 && letters == 0 && symbols==0) 
+
+                if (digits > 0 && letters == 0 && symbols == 0)
                 {
                     return "Digits";
                 }
-                else if(letters > 0 && digits == 0 && symbols == 0)
+                else if (letters > 0 && digits == 0 && symbols == 0)
                 {
                     return "Letters";
-                }else if (symbols>0 && digits == 0 && letters == 0)
+                }
+                else if (symbols > 0 && digits == 0 && letters == 0)
                 {
                     return "Symbols";
                 }
@@ -172,7 +174,7 @@ namespace DanceStudioBookingSystem
                     {
                         int instructorID = (int)reader["Instructor_ID"];
                         string instructorName = aClass.getInstructorName(instructorID);
-                        datagrit.Rows.Add(reader["Name"], reader["DateCode"], reader["TimeCode"], instructorName, reader["Price"]);
+                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["DateCode"], reader["TimeCode"], instructorName, reader["Price"]);
                     }
                 }
 
@@ -189,7 +191,7 @@ namespace DanceStudioBookingSystem
             Classes aClass = new Classes();
             using (OracleDataReader reader = command.ExecuteReader())
             {
-                datagrit.Rows.Clear(); 
+                datagrit.Rows.Clear();
                 while (reader.Read())
                 {
                     if (reader["Type_ID"].ToString() == aClass.getTypeID(comboBox.Text))
@@ -212,7 +214,8 @@ namespace DanceStudioBookingSystem
             {
                 type.Focus();
                 return "Invalid type";
-            }else if (type.SelectedItem == null)
+            }
+            else if (type.SelectedItem == null)
             {
                 return "Please select the type";
             }
@@ -220,7 +223,8 @@ namespace DanceStudioBookingSystem
             {
                 hour.Focus();
                 return "The hour of the class must be in valid format and contain 2 numbers.";
-            }else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 12 || HourValue <= 1))
+            }
+            else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 12 || HourValue <= 1))
             {
                 hour.Focus();
                 return "The hour of the class must contain 2 numbers.\n\nThe hour must be between 1 and 12.";
@@ -229,7 +233,8 @@ namespace DanceStudioBookingSystem
             {
                 minute.Focus();
                 return "The minutes of the class must be in valid format and contain 2 numbers.";
-            }else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59 ))
+            }
+            else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59))
             {
                 minute.Focus();
                 return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 0 and 59.";
@@ -270,25 +275,31 @@ namespace DanceStudioBookingSystem
             {
                 cardNumber.Focus();
                 return "Please enter a valid card number.\nThe card number must have 16 digits.";
-            } else if (CheckGigits_Letters_Symbolls(cardNumber) != "Digits")
+            }
+            else if (CheckGigits_Letters_Symbolls(cardNumber) != "Digits")
             {
                 cardNumber.Focus();
                 return "Please enter a valid card number\n (only numbers are allowed)";
-            } else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigits_Letters_Symbolls(cardHolder) != "Letters")
+            }
+            else if (string.IsNullOrEmpty(cardHolder.Text) || CheckGigits_Letters_Symbolls(cardHolder) != "Letters")
             {
                 cardHolder.Focus();
                 return "Invalid Card Holder Name";
-            } else if (month.SelectedItem == null)
+            }
+            else if (month.SelectedItem == null)
             {
                 return "Please choose the month";
-            } else if (year.SelectedItem == null)
+            }
+            else if (year.SelectedItem == null)
             {
                 return "Please choose the year";
-            } else if (string.IsNullOrEmpty(cvc.Text) || cvc.Text.Length != 3)
+            }
+            else if (string.IsNullOrEmpty(cvc.Text) || cvc.Text.Length != 3)
             {
                 cvc.Focus();
                 return "Invalid CVC number.";
-            }else if (CheckGigits_Letters_Symbolls(cvc) != "Digits")
+            }
+            else if (CheckGigits_Letters_Symbolls(cvc) != "Digits")
             {
                 cvc.Focus();
                 return "The CVC number must have only numbers.";
@@ -348,7 +359,7 @@ namespace DanceStudioBookingSystem
             conn.Open();
             string query = "SELECT FullName FROM Instructors";
             OracleCommand command = new OracleCommand(query, conn);
-            
+
             using (OracleDataReader reader = command.ExecuteReader())
             {
                 cboInstructors.Items.Clear();
@@ -357,9 +368,9 @@ namespace DanceStudioBookingSystem
                     string fullName = reader.GetString(0);
                     cboInstructors.Items.Add(fullName);
                 }
-                    
+
             }
-            
+
         }
         public static int FindMemberID(string email, string password)
         {
@@ -409,53 +420,6 @@ namespace DanceStudioBookingSystem
                 }
             }
             return -1;
-        }
-
-        public static int FindClassID_Member(DataGridView datagrid)
-        {
-            int classID = 0;
-
-            if (datagrid.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
-
-                if (selectedRow != null && selectedRow.Cells[0].Value != null)
-                {
-                    string className = selectedRow.Cells[0].Value.ToString();
-                    string classDate = selectedRow.Cells[1].Value.ToString();
-                    string classTime = selectedRow.Cells[2].Value.ToString();
-
-                    classDate = classDate.Substring(0, 10);
-                    //DateTime classDate2 = DateTime.ParseExact(classDate, "dd/MMM/yyyy", null);
-
-                    MessageBox.Show(className + classDate + classTime);
-
-
-                    OracleConnection conn = new OracleConnection(DBConnect.oraDB);
-                    conn.Open();
-
-                    string query = "SELECT Class_ID FROM Classes WHERE Name = :className AND DateCode = To_DATE(:classDate2) AND TimeCode = :classTime";
-
-                    using (OracleCommand command = new OracleCommand(query, conn))
-                    {
-
-                        command.Parameters.Add("Name", OracleDbType.Varchar2).Value = className;
-                        //command.Parameters.Add("DateCode", OracleDbType.Date).Value = classDate2;
-                        command.Parameters.Add("TimeCode", OracleDbType.Varchar2).Value = classTime; 
-
-                        using (OracleDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                classID = reader.GetInt32(0);
-                            }
-                        }
-                    }
-                    conn.Close();
-                }
-            }
-
-            return classID;
         }
     }
 }

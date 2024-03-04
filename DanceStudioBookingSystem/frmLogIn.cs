@@ -47,7 +47,6 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(memberID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;

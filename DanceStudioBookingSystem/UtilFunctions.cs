@@ -161,7 +161,7 @@ namespace DanceStudioBookingSystem
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
             conn.Open();
-            string query = "SELECT * FROM Classes";
+            string query = "SELECT * FROM Classes WHERE AvaliablePlaces > 0";
             OracleCommand command = new OracleCommand(query, conn);
 
             Classes aClass = new Classes();
@@ -175,6 +175,7 @@ namespace DanceStudioBookingSystem
                         int instructorID = (int)reader["Instructor_ID"];
                         string instructorName = aClass.getInstructorName(instructorID);
                         datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["DateCode"], reader["TimeCode"], instructorName, reader["Price"]);
+
                     }
                 }
 

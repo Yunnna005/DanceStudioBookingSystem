@@ -19,6 +19,7 @@ namespace DanceStudioBookingSystem
     {
         Form parent;
         private int memberID;
+        int classID;
         public frmMemberProfile(Form parentForm)
         {
             parent = parentForm;
@@ -55,6 +56,10 @@ namespace DanceStudioBookingSystem
                 Bookings cancelBooking = new Bookings();
                 cancelBooking.cancelBooking(bookingID);
 
+                classID = FindClassID(dgvClassesMember);
+                Classes aClass = new Classes();
+                aClass.UpdateAvaliablePlaces_CancelProcess(classID);
+
                 dgvClassesMember.Rows.Clear();
 
                 LoadMemberBookings(memberID, dgvClassesMember);
@@ -67,6 +72,17 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        private int FindClassID(DataGridView dataGrid)
+        {
+            if (dataGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
+
+                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            }
+            return classID;
+        }
+
         private int FindBookingID(int memberID, DataGridView dgvClassesMember)
         {
             int bookingID = 0;
@@ -75,8 +91,7 @@ namespace DanceStudioBookingSystem
             {
                 DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
 
-                // Assuming columns 0, 1, and 2 contain the data you want
-                int classID = Convert.ToInt32(selectedRow.Cells[0].Value);
+                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
 
                 // Use these values to query the database and retrieve the Booking ID
                 using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
@@ -135,9 +150,10 @@ namespace DanceStudioBookingSystem
                     {
                         if (reader.Read())
                         {
+                            string DOB = reader["DOB"].ToString();
                             // Display user details in respective controls
                             lblWriteUsername.Text = reader["Firstname"].ToString() + " " + reader["Lastname"].ToString();
-                            lblWriteDOB.Text = reader["DOB"].ToString();
+                            lblWriteDOB.Text = DOB.Substring(0, 10);
                             lblWriteGender.Text = reader["Gender"].ToString();
                             lblWritePhone.Text = reader["Phone"].ToString();
                             lblWriteEmail.Text = reader["Email"].ToString(); 

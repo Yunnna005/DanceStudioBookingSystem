@@ -69,6 +69,9 @@ namespace DanceStudioBookingSystem
                 Bookings newBook = new Bookings(txtCardHolder.Text, txtCardNumber.Text, memberID, classID);
                 newBook.addBooking();
 
+                Classes aClass = new Classes();
+                aClass.UpdateAvaliablePlaces_BookProcess(classID);
+
                 MessageBox.Show("Thank you. The class was bought.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 traverseForm(this, new frmMemberProfile(memberID));
             }

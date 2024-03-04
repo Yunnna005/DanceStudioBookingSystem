@@ -128,6 +128,29 @@ namespace DanceStudioBookingSystem
             conn.Close();
         }
 
+        public void UpdateAvaliablePlaces_BookProcess(int classID)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            String sqlQuery = "UPDATE Classes SET AvaliablePlaces = AvaliablePlaces-1 WHERE Class_ID = " + classID;
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UpdateAvaliablePlaces_CancelProcess(int classID)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            String sqlQuery = "UPDATE Classes SET AvaliablePlaces = AvaliablePlaces+1 WHERE Class_ID = " + classID;
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public static int getNextClassID()
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);

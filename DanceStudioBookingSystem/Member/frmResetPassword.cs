@@ -13,6 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Data.SqlClient;
 using Oracle.ManagedDataAccess.Client;
 using DanceStudioBookingSystem.Member;
+using System.Net.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace DanceStudioBookingSystem
 {
@@ -34,17 +37,24 @@ namespace DanceStudioBookingSystem
             string email = txtEmail.Text;
             if (ValidateMember(email) != 0)
             {
-                if (string.IsNullOrEmpty(txtNewPassword.Text) && string.IsNullOrEmpty(txtConfirmPassword.Text))
+                if (string.IsNullOrEmpty(txtNewPassword.Text) || string.IsNullOrEmpty(txtConfirmPassword.Text))
                 {
                     MessageBox.Show("Please enter the password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtNewPassword.Focus();
                 }
                 else
-                {     
-                    Members aMember = new Members();
-                    aMember.ResetPassword(ValidateMember(email), txtConfirmPassword.Text);
-                    MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    traverseForm(this, new frmLogIn());
+                {
+                    if (txtNewPassword.Text.Length<8 || txtConfirmPassword.Text.Length<8)
+                    {
+                        MessageBox.Show("The password must be qual or more than 8 characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Members aMember = new Members();
+                        aMember.ResetPassword(ValidateMember(email), txtConfirmPassword.Text);
+                        MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        traverseForm(this, new frmLogIn()); 
+                    }
                 }
             }
             else

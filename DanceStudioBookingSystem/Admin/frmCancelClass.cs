@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace DanceStudioBookingSystem
     public partial class frmCancelClass : Form
     {
         Form parent;
+        string type;
         public frmCancelClass()
         {
             InitializeComponent();
@@ -64,14 +66,26 @@ namespace DanceStudioBookingSystem
                 DialogResult result = MessageBox.Show("Are you sure you want to cancel class?", "Cancel Class", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                     
                     Classes aClass = new Classes();
+                    aClass.Update_Qty_of_class_type_Cancel(FindClassType(dgvCancelClassesAdmin));
+
                     aClass.cancelClass(FindClassID_Admin(dgvCancelClassesAdmin));
 
                     MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvCancelClassesAdmin.Rows.Clear();
                 }
             }
+        }
+
+        private string FindClassType(DataGridView datagrid)
+        {
+            if (datagrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
+
+                type = selectedRow.Cells[2].Value.ToString();
+            }
+            return type;
         }
 
         private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)

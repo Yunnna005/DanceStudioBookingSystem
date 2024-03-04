@@ -71,6 +71,9 @@ namespace DanceStudioBookingSystem
                 Classes aClass = new Classes(txtName.Text, cboType, dtpDate.Value, txtHour.Text, txtMinute.Text, cboInstructor, capacity, price);
                 aClass.addClass();
 
+                string type = aClass.getTypeID(cboType.Text);
+                aClass.Update_Qty_of_class_type_Schedule(type);
+
                 MessageBox.Show("The class was created", "Succefull", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 traverseForm(this, new frmClassesOverview(this));

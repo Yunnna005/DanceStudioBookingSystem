@@ -223,7 +223,7 @@ namespace DanceStudioBookingSystem.Member
             //Define the SQL query to be executed
             String sqlQuery = "UPDATE Members SET " +
                 "Password = " + newPassword + " " +
-                "WHERE Member_ID = '" + memberID + "'";
+                "WHERE Member_ID = " + memberID;
 
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);

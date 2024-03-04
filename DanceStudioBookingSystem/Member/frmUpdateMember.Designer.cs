@@ -199,6 +199,7 @@
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(182, 29);
             this.dtpDOB.TabIndex = 9;
+            this.dtpDOB.Value = new System.DateTime(2024, 3, 4, 0, 0, 0, 0);
             // 
             // txtLastName
             // 

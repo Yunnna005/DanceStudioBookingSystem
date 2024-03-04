@@ -169,7 +169,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(147, 29);
             this.dtpDate.TabIndex = 5;
-            this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
+            this.dtpDate.Value = new System.DateTime(2024, 3, 4, 0, 0, 0, 0);
             // 
             // lblInstructor
             // 

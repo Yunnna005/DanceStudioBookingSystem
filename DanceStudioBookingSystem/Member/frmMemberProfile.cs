@@ -76,7 +76,7 @@ namespace DanceStudioBookingSystem
         {
             if (dataGrid.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
+                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
 
                 classID = Convert.ToInt32(selectedRow.Cells[0].Value);
             }

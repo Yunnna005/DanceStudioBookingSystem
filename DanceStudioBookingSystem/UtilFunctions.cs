@@ -225,10 +225,10 @@ namespace DanceStudioBookingSystem
                 hour.Focus();
                 return "The hour of the class must be in valid format and contain 2 numbers.";
             }
-            else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 12 || HourValue <= 1))
+            else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 24 || HourValue <= 1))
             {
                 hour.Focus();
-                return "The hour of the class must contain 2 numbers.\n\nThe hour must be between 1 and 12.";
+                return "The hour of the class must contain 2 numbers.\n\nThe hour must be between 01 and 24.";
             }
             else if (string.IsNullOrEmpty(minute.Text) || minute.Text.Length != 2)
             {
@@ -238,7 +238,7 @@ namespace DanceStudioBookingSystem
             else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59))
             {
                 minute.Focus();
-                return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 0 and 59.";
+                return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 00 and 59.";
             }
             else if (instructor.SelectedItem == null)
             {

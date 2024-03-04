@@ -59,7 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.dgvModifyClassesAdmin = new System.Windows.Forms.DataGridView();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.class_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +68,7 @@
             this.CAPACITY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.INSTRUCTOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.mnuMainMenu.SuspendLayout();
             this.grpUpdateDetails.SuspendLayout();
             this.grpSelectClass.SuspendLayout();
@@ -267,7 +267,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(142, 29);
             this.dtpDate.TabIndex = 5;
-            this.dtpDate.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
+            this.dtpDate.Value = new System.DateTime(2024, 3, 4, 0, 0, 0, 0);
             // 
             // txtCapacity
             // 
@@ -425,21 +425,6 @@
             this.dgvModifyClassesAdmin.Size = new System.Drawing.Size(615, 231);
             this.dgvModifyClassesAdmin.TabIndex = 2;
             // 
-            // btnSelect
-            // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
-            this.btnSelect.FlatAppearance.BorderSize = 0;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(281, 289);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(84, 31);
-            this.btnSelect.TabIndex = 3;
-            this.btnSelect.Text = "Select";
-            this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
             // class_id
             // 
             this.class_id.HeaderText = "ID";
@@ -507,6 +492,21 @@
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
             this.PRICE.Width = 60;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(193)))), ((int)(((byte)(233)))));
+            this.btnSelect.FlatAppearance.BorderSize = 0;
+            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelect.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.ForeColor = System.Drawing.Color.White;
+            this.btnSelect.Location = new System.Drawing.Point(281, 289);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(84, 31);
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // frmModifyClass
             // 

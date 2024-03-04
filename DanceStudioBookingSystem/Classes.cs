@@ -151,6 +151,40 @@ namespace DanceStudioBookingSystem
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
+        public void Update_Qty_of_class_type_Schedule(string typeID)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                String sqlQuery = "UPDATE Class_Types SET Qty_of_classes = Qty_of_classes + 1 WHERE Type_ID = :Type_ID";
+
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.Add("Type_ID", OracleDbType.Varchar2).Value = typeID;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void Update_Qty_of_class_type_Cancel(string typeID)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                String sqlQuery = "UPDATE Class_Types SET Qty_of_classes = Qty_of_classes - 1 WHERE Type_ID = :Type_ID";
+
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.Add("Type_ID", OracleDbType.Varchar2).Value = typeID;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         public static int getNextClassID()
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);

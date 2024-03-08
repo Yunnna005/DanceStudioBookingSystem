@@ -166,10 +166,11 @@
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(199, 94);
             this.dtpDate.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
+            this.dtpDate.MinDate = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(147, 29);
             this.dtpDate.TabIndex = 5;
-            this.dtpDate.Value = new System.DateTime(2024, 3, 4, 0, 0, 0, 0);
+            this.dtpDate.Value = new System.DateTime(2024, 3, 8, 0, 0, 0, 0);
             // 
             // lblInstructor
             // 

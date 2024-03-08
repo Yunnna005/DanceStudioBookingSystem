@@ -252,6 +252,7 @@
             this.PRICE});
             this.dgvClassesMember.Location = new System.Drawing.Point(2, 28);
             this.dgvClassesMember.Name = "dgvClassesMember";
+            this.dgvClassesMember.RowHeadersVisible = false;
             this.dgvClassesMember.Size = new System.Drawing.Size(563, 206);
             this.dgvClassesMember.TabIndex = 0;
             // 
@@ -362,7 +363,7 @@
             // 
             this.CLASSNAME.HeaderText = "Class name";
             this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.Width = 120;
+            this.CLASSNAME.Width = 140;
             // 
             // DATE
             // 

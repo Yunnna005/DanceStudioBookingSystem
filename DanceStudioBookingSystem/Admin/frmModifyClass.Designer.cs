@@ -264,10 +264,11 @@
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(151, 156);
             this.dtpDate.MaxDate = new System.DateTime(2029, 12, 29, 0, 0, 0, 0);
+            this.dtpDate.MinDate = new System.DateTime(2024, 3, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(142, 29);
             this.dtpDate.TabIndex = 5;
-            this.dtpDate.Value = new System.DateTime(2024, 3, 4, 0, 0, 0, 0);
+            this.dtpDate.Value = new System.DateTime(2024, 3, 8, 0, 0, 0, 0);
             // 
             // txtCapacity
             // 
@@ -421,6 +422,7 @@
             this.dgvModifyClassesAdmin.Location = new System.Drawing.Point(6, 52);
             this.dgvModifyClassesAdmin.Name = "dgvModifyClassesAdmin";
             this.dgvModifyClassesAdmin.ReadOnly = true;
+            this.dgvModifyClassesAdmin.RowHeadersVisible = false;
             this.dgvModifyClassesAdmin.RowHeadersWidth = 62;
             this.dgvModifyClassesAdmin.Size = new System.Drawing.Size(615, 231);
             this.dgvModifyClassesAdmin.TabIndex = 2;

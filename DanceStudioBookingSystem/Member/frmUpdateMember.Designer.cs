@@ -234,13 +234,11 @@
             // radFemale
             // 
             this.radFemale.AutoSize = true;
-            this.radFemale.Checked = true;
             this.radFemale.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radFemale.Location = new System.Drawing.Point(152, 107);
             this.radFemale.Name = "radFemale";
             this.radFemale.Size = new System.Drawing.Size(63, 19);
             this.radFemale.TabIndex = 6;
-            this.radFemale.TabStop = true;
             this.radFemale.Text = "Female";
             this.radFemale.UseVisualStyleBackColor = true;
             // 

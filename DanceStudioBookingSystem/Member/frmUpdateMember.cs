@@ -141,6 +141,7 @@ namespace DanceStudioBookingSystem
 
         private void LoadUserDetails()
         {
+            string gender;
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
@@ -160,7 +161,8 @@ namespace DanceStudioBookingSystem
                             txtFirstName.Text = reader["Firstname"].ToString();
                             txtLastName.Text = reader["Lastname"].ToString();
                             dtpDOB.Text = reader["DOB"].ToString();
-                            //lblWriteGender.Text = reader["Gender"].ToString();
+                            gender = reader["Gender"].ToString();
+                            CheckGenderBox(radMale, radFemale, radOther, gender);
                             txtPhone.Text = reader["Phone"].ToString();
                             txtEmail.Text = reader["Email"].ToString();
                         }
@@ -171,6 +173,21 @@ namespace DanceStudioBookingSystem
                         }
                     }
                 }
+            }
+        }
+
+        private void CheckGenderBox(RadioButton male, RadioButton female, RadioButton other, string gender)
+        {
+            if (gender.Equals("Male"))
+            {
+                male.Checked = true;
+            }else if (gender.Equals("Female"))
+            {
+                female.Checked = true;
+            }
+            else
+            {
+                other.Checked = true;
             }
         }
     }

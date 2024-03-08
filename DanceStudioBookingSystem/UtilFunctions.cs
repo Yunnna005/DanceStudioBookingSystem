@@ -73,6 +73,15 @@ namespace DanceStudioBookingSystem
                 email.Focus();
                 return "Please enter valid email address";
             }
+            else if (IsEmailAlreadyExists(email.Text))
+            {
+                email.Focus();
+                return "Email already exists.";
+            }else if (email.Text.ToLower().Contains("admin"))
+            {
+                email.Focus();
+                return "Email cannot have word: admin.";
+            }
             else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 12)
             {
                 phone.Focus();
@@ -204,21 +213,28 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static string ValidClassDetails(TextBox name, ComboBox type, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
+        public static string ValidClassDetails(TextBox name, ComboBox type, DateTimePicker date, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
         {
+            DateTime selectedDate = date.Value;
+            DateTime currentDate = DateTime.Now;
+            string time =  hour.Text + ":" + hour.Text;
             if (string.IsNullOrEmpty(name.Text))
             {
                 name.Focus();
-                return "Invalid class name";
+                return "Invalid class name.";
             }
             else if (string.IsNullOrEmpty(type.Text))
             {
                 type.Focus();
-                return "Invalid type";
+                return "Invalid type.";
             }
             else if (type.SelectedItem == null)
             {
                 return "Please select the type";
+            }else if (selectedDate <= currentDate.Date)
+            {
+                date.Focus();
+                return "Selected date is in the past.";
             }
             else if (string.IsNullOrEmpty(hour.Text) || hour.Text.Length != 2)
             {
@@ -421,6 +437,19 @@ namespace DanceStudioBookingSystem
                 }
             }
             return -1;
+        }
+        static bool IsEmailAlreadyExists(string email)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            string sqlQuery = "SELECT COUNT(*) FROM Members WHERE Email = :Email";
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return count > 0;
         }
     }
 }

@@ -23,7 +23,6 @@ namespace DanceStudioBookingSystem.Member
         private string _phone;
         private DateTime _dob;
         private string _password;
-        private string _status;
 
         public Members() 
         { 
@@ -35,7 +34,6 @@ namespace DanceStudioBookingSystem.Member
             this._phone = "";
             this._dob = DateTime.Now;
             this._password = "";
-            this._status = "";
         }
 
         //int memberID,string status
@@ -49,7 +47,6 @@ namespace DanceStudioBookingSystem.Member
             _phone = phone;
             _dob = dob;
             _password = password;
-            _status = "A";
         }
 
         public Members(string firstname, string lastname, string gender, string email, string phone, DateTime dob)
@@ -71,7 +68,6 @@ namespace DanceStudioBookingSystem.Member
         public string getPhone() { return _phone;}
         public DateTime getDOB() { return _dob;}
         public string getPassword() { return _password;}
-        public string getStatus() {return _status;}
 
         //setters
         public void setMemberID(int MemberID) { _memberID = MemberID; }
@@ -82,7 +78,6 @@ namespace DanceStudioBookingSystem.Member
         public void setPhone(string Phone) { _phone = Phone; }  
         public void setDOB(DateTime DOB) { _dob = DOB; }
         public void setPassword(string Password) { _password = Password; }
-        public void setStatus(string Status) { _status = Status; }
 
 
         public void addMember()
@@ -99,8 +94,7 @@ namespace DanceStudioBookingSystem.Member
                 this._email + "'," +
                 this._phone + ",'" +
                 this._dob.ToString("dd-MMM-yyyy") + "','" +
-                this._password + "','" +
-                this._status + "')";
+                this._password + "')";
 
             // Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);

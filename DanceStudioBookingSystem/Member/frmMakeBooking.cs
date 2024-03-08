@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,7 +48,14 @@ namespace DanceStudioBookingSystem
                 string classIDString = selectedRow.Cells[0].Value.ToString();
                 classID = int.Parse(classIDString);
 
-                pnlPayment.Visible = true;
+                if (isAlreadyBooked(classID, memberID))
+                {
+                    MessageBox.Show("You already booked this class. Please choope another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    pnlPayment.Visible = true;
+                }   
             }
             else
             {
@@ -56,6 +64,21 @@ namespace DanceStudioBookingSystem
              
         }
 
+        static bool isAlreadyBooked(int classID, int memberID)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            String sqlQuery = "SELECT COUNT(*) FROM Bookings WHERE Class_ID = :classID AND Member_ID = :memberID";
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            cmd.Parameters.Add("Class_ID", OracleDbType.Int32).Value = classID;
+            cmd.Parameters.Add("Member_ID", OracleDbType.Int32).Value = memberID;
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            return count > 0;
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             pnlPayment.Visible = false;

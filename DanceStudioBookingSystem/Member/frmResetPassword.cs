@@ -37,24 +37,31 @@ namespace DanceStudioBookingSystem
             string email = txtEmail.Text;
             if (ValidateMember(email) != 0)
             {
-                if (string.IsNullOrEmpty(txtNewPassword.Text) || string.IsNullOrEmpty(txtConfirmPassword.Text))
+                if (!isAdminEmail(email))
                 {
-                    MessageBox.Show("Please enter the password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtNewPassword.Focus();
-                }
-                else
-                {
-                    if (txtNewPassword.Text.Length<8 || txtConfirmPassword.Text.Length<8)
+                    if (string.IsNullOrEmpty(txtNewPassword.Text) || string.IsNullOrEmpty(txtConfirmPassword.Text))
                     {
-                        MessageBox.Show("The password must be qual or more than 8 characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please enter the password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtNewPassword.Focus();
                     }
                     else
                     {
-                        Members aMember = new Members();
-                        aMember.ResetPassword(ValidateMember(email), txtConfirmPassword.Text);
-                        MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        traverseForm(this, new frmLogIn()); 
+                        if (txtNewPassword.Text.Length < 8 || txtConfirmPassword.Text.Length < 8)
+                        {
+                            MessageBox.Show("The password must be qual or more than 8 characters", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            Members aMember = new Members();
+                            aMember.ResetPassword(ValidateMember(email), txtConfirmPassword.Text);
+                            MessageBox.Show("The Password was reset. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            traverseForm(this, new frmLogIn());
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Email that contains word: admin cannot change password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -62,6 +69,18 @@ namespace DanceStudioBookingSystem
                 MessageBox.Show("Invalid Username and/or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
+            }
+        }
+
+        private bool isAdminEmail(string email)
+        {
+            if (email.ToLower().Contains("admin"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

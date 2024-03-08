@@ -62,7 +62,7 @@ namespace DanceStudioBookingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice).Equals("valid"))
+            if (ValidClassDetails(txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice).Equals("valid"))
             {
 
                 int capacity = int.Parse(txtCapacity.Text);
@@ -80,7 +80,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidClassDetails(txtName, cboType, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ValidClassDetails(txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

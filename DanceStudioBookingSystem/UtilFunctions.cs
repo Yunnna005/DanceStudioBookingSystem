@@ -269,6 +269,9 @@ namespace DanceStudioBookingSystem
             {
                 price.Focus();
                 return "Invalid Price. Format is 00.00";
+            }else if (IsDateTimeAlreadyExists(selectedDate, time))
+            {
+                return "The Date and Time already taken.";
             }
             else
             {
@@ -450,6 +453,35 @@ namespace DanceStudioBookingSystem
             int count = Convert.ToInt32(cmd.ExecuteScalar());
 
             return count > 0;
+        }
+
+        static bool IsDateTimeAlreadyExists(DateTime date, string time)
+        {
+            string onlydate = date.ToString("dd-MMM-yyyy");
+
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string sqlQuery = "SELECT COUNT(*) FROM Classes WHERE DateCode = :onlydate AND TimeCode = :time";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                {
+                    cmd.Parameters.Add("DateCode", onlydate);
+                    cmd.Parameters.Add("TimeCode", time);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return true;
+
+                        }
+                    }
+                    return false;
+                }
+            }
         }
     }
 }

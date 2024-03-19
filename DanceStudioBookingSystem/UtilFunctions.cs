@@ -77,7 +77,8 @@ namespace DanceStudioBookingSystem
             {
                 email.Focus();
                 return "Email already exists.";
-            }else if (email.Text.ToLower().Contains("admin"))
+            }
+            else if (email.Text.ToLower().Contains("admin"))
             {
                 email.Focus();
                 return "Email cannot have word: admin.";
@@ -217,7 +218,7 @@ namespace DanceStudioBookingSystem
         {
             DateTime selectedDate = date.Value;
             DateTime currentDate = DateTime.Now;
-            string time =  hour.Text + ":" + hour.Text;
+            string time = hour.Text + ":" + minute.Text;
             if (string.IsNullOrEmpty(name.Text))
             {
                 name.Focus();
@@ -231,7 +232,8 @@ namespace DanceStudioBookingSystem
             else if (type.SelectedItem == null)
             {
                 return "Please select the type";
-            }else if (selectedDate <= currentDate.Date)
+            }
+            else if (selectedDate <= currentDate.Date)
             {
                 date.Focus();
                 return "Selected date is in the past.";
@@ -269,7 +271,8 @@ namespace DanceStudioBookingSystem
             {
                 price.Focus();
                 return "Invalid Price. Format is 00.00";
-            }else if (IsDateTimeAlreadyExists(selectedDate, time))
+            }
+            else if (IsDateTimeAlreadyExists(selectedDate, time))
             {
                 return "The Date and Time already taken.";
             }
@@ -457,30 +460,51 @@ namespace DanceStudioBookingSystem
 
         static bool IsDateTimeAlreadyExists(DateTime date, string time)
         {
-            string onlydate = date.ToString("dd-MMM-yyyy");
+            DateTime dbDateCode;
+            string dbDateCodeString;
+            int hour = int.Parse(time.Substring(0, 2));
+            int minute = int.Parse(time.Substring(3, 2));
+            DateTime timeslot = date.AddHours(hour).AddMinutes(minute);
+
+            string dateString = timeslot.ToString("dd-MMM-yy");
+            string timeString = timeslot.ToString("HH:mm");
 
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
 
-                string sqlQuery = "SELECT COUNT(*) FROM Classes WHERE DateCode = :onlydate AND TimeCode = :time";
+                string sqlQuery = "SELECT * FROM Classes WHERE DateCode = :dateString";
                 using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    cmd.Parameters.Add("DateCode", onlydate);
-                    cmd.Parameters.Add("TimeCode", time);
-
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    cmd.Parameters.Add("dateString", dateString);
 
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            return true;
+                            dbDateCode = (DateTime)reader["DateCode"];
+                            dbDateCodeString = dbDateCode.ToString("dd-MMM-yy");
 
+                            string dbTimeCode = (string)reader["TimeCode"];
+
+                            DateTime dbDateTime = DateTime.ParseExact($"{dbDateCodeString} {dbTimeCode}", "dd-MMM-yy HH:mm", CultureInfo.InvariantCulture);
+
+                            double hourDifference = (timeslot - dbDateTime).TotalMinutes;
+
+                            MessageBox.Show(hourDifference.ToString());
+                            if (Math.Abs(hourDifference) <= 59)
+                            {
+                                return true; // Conflicting time slot found
+                            }
+                            else
+                            {
+                                return false;
+                                //because it read first date in bd and it's 10:10 it goes to false if input is 11;30 when db also have this. I need that it cheked all dates first.
+                            }
                         }
                     }
-                    return false;
-                }
+                    return true;
+                } 
             }
         }
     }

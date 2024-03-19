@@ -82,7 +82,7 @@ namespace DanceStudioBookingSystem
                 _classID + ",'" +
                 _name + "','" +
                 _date.ToString("dd-MMM-yyyy") + "','" +
-                timeCode + " ', " +
+                timeCode + "', " +
                 _avaliablePlaces + " , " +
                 _capacity + "," +
                 _price + "," +

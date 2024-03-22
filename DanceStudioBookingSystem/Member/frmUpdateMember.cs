@@ -89,9 +89,10 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetails(txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
+            string validationMemberDetails = ValidationMemberDetailsForUpdate(memberID, txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
             if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
-            {   if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
+            {   
+                if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
                     if (txtOldPassword.Text.Length < 8 || txtNewPassword.Text.Length < 8)
                     {

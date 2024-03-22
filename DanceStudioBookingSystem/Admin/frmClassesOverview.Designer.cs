@@ -197,6 +197,7 @@
             this.dgvClassesAdmin.ReadOnly = true;
             this.dgvClassesAdmin.RowHeadersVisible = false;
             this.dgvClassesAdmin.RowHeadersWidth = 62;
+            this.dgvClassesAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClassesAdmin.Size = new System.Drawing.Size(752, 257);
             this.dgvClassesAdmin.TabIndex = 2;
             // 

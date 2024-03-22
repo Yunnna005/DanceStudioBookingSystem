@@ -130,6 +130,7 @@
             this.dgvCancelClassesAdmin.ReadOnly = true;
             this.dgvCancelClassesAdmin.RowHeadersVisible = false;
             this.dgvCancelClassesAdmin.RowHeadersWidth = 62;
+            this.dgvCancelClassesAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCancelClassesAdmin.Size = new System.Drawing.Size(690, 227);
             this.dgvCancelClassesAdmin.TabIndex = 3;
             // 

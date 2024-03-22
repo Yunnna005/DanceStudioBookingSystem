@@ -235,6 +235,30 @@ namespace DanceStudioBookingSystem
                 }
             }
         }
+        public string getTypeName(string typeId)
+        {
+            string typeName;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Class_Types WHERE Type = :typeId";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Type", OracleDbType.Varchar2).Value = typeId;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return typeName = (string)reader["Type"];
+
+                        }
+                    }
+                    return "Not Found";
+                }
+            }
+        }
 
         public int getInstructorID(string instructor)
         {

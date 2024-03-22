@@ -116,6 +116,80 @@ namespace DanceStudioBookingSystem
             }
             return gender;
         }
+        public static string ValidationMemberDetailsForUpdate(int member_id, TextBox firstname, TextBox secondname, TextBox email, TextBox phone,
+            RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
+        {
+            DateTime selectedDate = dob.Value.Date; // Get the selected date without time
+            int curentAge = DateTime.Now.Date.Year - selectedDate.Year;
+
+            if (string.IsNullOrEmpty(firstname.Text))
+            {
+                firstname.Focus();
+                return "Please enter valid First Name.";
+            }
+            else if (CheckGigits_Letters_Symbolls(firstname) != "Letters")
+            {
+                firstname.Focus();
+                return "The Firstname must not contain numbers or symbols.";
+            }
+            else if (string.IsNullOrEmpty(secondname.Text))
+            {
+                secondname.Focus();
+                return "Please enter valid Second Name.";
+            }
+            else if (CheckGigits_Letters_Symbolls(secondname) != "Letters")
+            {
+                secondname.Focus();
+                return "The Secondname must not contain numbers or symbols.";
+            }
+            else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            {
+                email.Focus();
+                return "Please enter valid email address";
+            }
+            else if (IsEmailAlreadyExists(email.Text) && !IsMemberEmail(email.Text, member_id))
+            {
+                email.Focus();
+                return "Email already exists.";
+            }
+            else if (email.Text.ToLower().Contains("admin"))
+            {
+                email.Focus();
+                return "Email cannot have word: admin.";
+            }
+            else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 12)
+            {
+                phone.Focus();
+                return "Please enter valid phone number.";
+            }
+            else if (CheckGigits_Letters_Symbolls(phone) != "Digits")
+            {
+                phone.Focus();
+                return "The phone number can not contain letters or symbols.";
+            }
+            else if (curentAge < 18 || curentAge > 65)
+            {
+                return "Your age must be between 18 and 65 included";
+            }
+            else
+            {
+                if (genderMale.Checked)
+                {
+                    gender = "Male";
+                }
+                else if (genderFemale.Checked)
+                {
+                    gender = "Female";
+
+                }
+                else if (genderOther.Checked)
+                {
+                    gender = "Other";
+
+                }
+            }
+            return gender;
+        }
         public static string CheckGigits_Letters_Symbolls(TextBox text)
         {
             int digits = 0, letters = 0, symbols = 0;
@@ -164,6 +238,10 @@ namespace DanceStudioBookingSystem
             {
                 string[] yearCard = { "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34" };
                 comboBox.Items.AddRange(yearCard);
+            }else if(comboBox.Name == "cboYear")
+            {
+                string[] yearCard = { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034" };
+                comboBox.Items.AddRange(yearCard);
             }
         }
 
@@ -171,7 +249,7 @@ namespace DanceStudioBookingSystem
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
             conn.Open();
-            string query = "SELECT * FROM Classes WHERE AvaliablePlaces > 0";
+            string query = "SELECT * FROM Classes WHERE AvaliablePlaces > 0 AND DateCode >= TRUNC(SYSDATE)";
             OracleCommand command = new OracleCommand(query, conn);
 
             Classes aClass = new Classes();
@@ -271,6 +349,9 @@ namespace DanceStudioBookingSystem
             {
                 price.Focus();
                 return "Invalid Price. Format is 00.00";
+            }else if (!IsClassScheduledBetween9_6(selectedDate, time))
+            {
+                return "The class must be between 9:00 and 18:00";
             }
             else if (IsDateTimeAlreadyExists(selectedDate, time))
             {
@@ -334,7 +415,7 @@ namespace DanceStudioBookingSystem
         }
 
         public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, ComboBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
-            TextBox capacity, TextBox price)
+             TextBox capacity, TextBox price)
         {
             if (datagrid.SelectedRows.Count > 0)
             {
@@ -458,16 +539,33 @@ namespace DanceStudioBookingSystem
             return count > 0;
         }
 
+        static bool IsMemberEmail(string email, int memberID)
+        {
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                string sqlQuery = "SELECT COUNT(*) FROM Members WHERE Email = :Email AND Member_ID = :memberID";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+                {
+                    conn.Open();
+
+                    cmd.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+                    cmd.Parameters.Add("Member_ID", OracleDbType.Varchar2).Value = memberID;
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    // If count is exactly 1, the email exists and matches the provided one
+                    return count == 1;
+                }
+            }
+        }
+
         static bool IsDateTimeAlreadyExists(DateTime date, string time)
         {
-            DateTime dbDateCode;
-            string dbDateCodeString;
             int hour = int.Parse(time.Substring(0, 2));
             int minute = int.Parse(time.Substring(3, 2));
             DateTime timeslot = date.AddHours(hour).AddMinutes(minute);
 
             string dateString = timeslot.ToString("dd-MMM-yy");
-            string timeString = timeslot.ToString("HH:mm");
 
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
@@ -482,12 +580,9 @@ namespace DanceStudioBookingSystem
                     {
                         while (reader.Read())
                         {
-                            dbDateCode = (DateTime)reader["DateCode"];
-                            dbDateCodeString = dbDateCode.ToString("dd-MMM-yy");
-
                             string dbTimeCode = (string)reader["TimeCode"];
 
-                            DateTime dbDateTime = DateTime.ParseExact($"{dbDateCodeString} {dbTimeCode}", "dd-MMM-yy HH:mm", CultureInfo.InvariantCulture);
+                            DateTime dbDateTime = DateTime.ParseExact($"{dateString} {dbTimeCode}", "dd-MMM-yy HH:mm", CultureInfo.InvariantCulture);
 
                             double hourDifference = (timeslot - dbDateTime).TotalMinutes;
 
@@ -496,16 +591,83 @@ namespace DanceStudioBookingSystem
                             {
                                 return true; // Conflicting time slot found
                             }
-                            else
-                            {
-                                return false;
-                                //because it read first date in bd and it's 10:10 it goes to false if input is 11;30 when db also have this. I need that it cheked all dates first.
-                            }
                         }
                     }
-                    return true;
-                } 
+                }
             }
+
+            return false; // No conflicting time slots found
+        }
+
+        static bool IsClassScheduledBetween9_6(DateTime date, string time)
+        {
+            int hour = int.Parse(time.Substring(0, 2));
+            int minute = int.Parse(time.Substring(3, 2));
+            DateTime classStartTime = date.AddHours(hour).AddMinutes(minute);
+
+            // Define the start and end time boundaries
+            DateTime startTimeBoundary = date.Date.AddHours(9); // 9:00 AM
+            DateTime endTimeBoundary = date.Date.AddHours(18); // 6:00 PM
+
+            // Check if the class start time is between 9:00 and 18:00
+            bool startTimeWithinBoundary = classStartTime >= startTimeBoundary && classStartTime < endTimeBoundary;
+
+            // Return true if class start time falls within the boundary
+            return startTimeWithinBoundary;
+        }
+
+        public static float CalculateTotalPriceByYear(string selectedYear)
+        {
+            float totalPrice = 0;
+
+            // Construct the SQL query to fetch classes for the selected year
+            string query = "SELECT Price FROM Classes WHERE EXTRACT(YEAR FROM DateCode) = :selectedYear";
+
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    // Bind the selected year parameter
+                    command.Parameters.Add("selectedYear", OracleDbType.Varchar2).Value = selectedYear;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        // Iterate through the result set and sum up the prices
+                        while (reader.Read())
+                        {
+                            float classPrice = (float)reader["Price"];
+                            totalPrice += classPrice;
+                        }
+                    }
+                }
+            }
+
+            return totalPrice;
+        }
+
+        public static string PopularDanceStyles()
+        {
+            string result = "";
+
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            string sqlQuery = "SELECT Type, Qty_Of_Classes FROM Class_Types";
+            OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+            conn.Open();
+
+            using (OracleDataReader reader = cmd.ExecuteReader())
+            {
+                // Iterate through the result set and accumulate the string
+                while (reader.Read())
+                {
+                    string classType = (string)reader["Type"];
+                    int qty_of_Type = Convert.ToInt32(reader["Qty_Of_Classes"]);
+
+                    result += $"{classType}: {qty_of_Type}\n"; // Concatenating dance style type and quantity
+                }
+            }
+            return result;
         }
     }
 }

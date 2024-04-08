@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStatistics));
             this.grpAnalyzeYearlyRevenue = new System.Windows.Forms.GroupBox();
             this.btnCalculate = new System.Windows.Forms.Button();
@@ -52,16 +51,16 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.lblFindPopularDanceStyle = new System.Windows.Forms.Label();
             this.grpChartYearlyRevenue = new System.Windows.Forms.GroupBox();
-            this.chtRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpChartPopularDanceStyle = new System.Windows.Forms.GroupBox();
             this.chtPopularDanceStyles = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.grpAnalyzeYearlyRevenue.SuspendLayout();
             this.mnuMainMenu.SuspendLayout();
             this.grpAnalyzePopularDanceStyle.SuspendLayout();
             this.grpChartYearlyRevenue.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chtRevenue)).BeginInit();
             this.grpChartPopularDanceStyle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtPopularDanceStyles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // grpAnalyzeYearlyRevenue
@@ -73,7 +72,7 @@
             this.grpAnalyzeYearlyRevenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAnalyzeYearlyRevenue.Location = new System.Drawing.Point(12, 46);
             this.grpAnalyzeYearlyRevenue.Name = "grpAnalyzeYearlyRevenue";
-            this.grpAnalyzeYearlyRevenue.Size = new System.Drawing.Size(414, 187);
+            this.grpAnalyzeYearlyRevenue.Size = new System.Drawing.Size(402, 187);
             this.grpAnalyzeYearlyRevenue.TabIndex = 1;
             this.grpAnalyzeYearlyRevenue.TabStop = false;
             this.grpAnalyzeYearlyRevenue.Text = "Analyze Yearly Revenue";
@@ -174,7 +173,7 @@
             this.mnuMainMenu.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.mnuMainMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.mnuMainMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.mnuMainMenu.Size = new System.Drawing.Size(882, 31);
+            this.mnuMainMenu.Size = new System.Drawing.Size(854, 31);
             this.mnuMainMenu.TabIndex = 0;
             this.mnuMainMenu.Text = "Menu";
             // 
@@ -193,7 +192,7 @@
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.btnFind);
             this.grpAnalyzePopularDanceStyle.Controls.Add(this.lblFindPopularDanceStyle);
             this.grpAnalyzePopularDanceStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAnalyzePopularDanceStyle.Location = new System.Drawing.Point(459, 46);
+            this.grpAnalyzePopularDanceStyle.Location = new System.Drawing.Point(432, 46);
             this.grpAnalyzePopularDanceStyle.Name = "grpAnalyzePopularDanceStyle";
             this.grpAnalyzePopularDanceStyle.Size = new System.Drawing.Size(414, 187);
             this.grpAnalyzePopularDanceStyle.TabIndex = 2;
@@ -242,41 +241,17 @@
             this.grpChartYearlyRevenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpChartYearlyRevenue.Location = new System.Drawing.Point(11, 249);
             this.grpChartYearlyRevenue.Name = "grpChartYearlyRevenue";
-            this.grpChartYearlyRevenue.Size = new System.Drawing.Size(414, 272);
+            this.grpChartYearlyRevenue.Size = new System.Drawing.Size(403, 272);
             this.grpChartYearlyRevenue.TabIndex = 3;
             this.grpChartYearlyRevenue.TabStop = false;
             this.grpChartYearlyRevenue.Text = "Result";
-            // 
-            // chtRevenue
-            // 
-            chartArea1.AxisX.Title = "Month";
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.Title = "Style";
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.Name = "Yearly Revenue";
-            this.chtRevenue.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtRevenue.Legends.Add(legend1);
-            this.chtRevenue.Location = new System.Drawing.Point(6, 28);
-            this.chtRevenue.Name = "chtRevenue";
-            series1.ChartArea = "Yearly Revenue";
-            series1.Legend = "Legend1";
-            series1.Name = "Income in €";
-            series1.XValueMember = "uyghy";
-            this.chtRevenue.Series.Add(series1);
-            this.chtRevenue.Size = new System.Drawing.Size(390, 232);
-            this.chtRevenue.TabIndex = 0;
-            this.chtRevenue.Text = "Yearly Revenue";
-            title1.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title1.Name = "Yearly Revenue";
-            this.chtRevenue.Titles.Add(title1);
             // 
             // grpChartPopularDanceStyle
             // 
             this.grpChartPopularDanceStyle.BackColor = System.Drawing.Color.White;
             this.grpChartPopularDanceStyle.Controls.Add(this.chtPopularDanceStyles);
             this.grpChartPopularDanceStyle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpChartPopularDanceStyle.Location = new System.Drawing.Point(459, 249);
+            this.grpChartPopularDanceStyle.Location = new System.Drawing.Point(432, 249);
             this.grpChartPopularDanceStyle.Name = "grpChartPopularDanceStyle";
             this.grpChartPopularDanceStyle.Size = new System.Drawing.Size(414, 272);
             this.grpChartPopularDanceStyle.TabIndex = 4;
@@ -299,12 +274,28 @@
             this.chtPopularDanceStyles.TabIndex = 0;
             this.chtPopularDanceStyles.Text = "POpular Dance Styles";
             // 
+            // chtRevenue
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chtRevenue.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtRevenue.Legends.Add(legend1);
+            this.chtRevenue.Location = new System.Drawing.Point(9, 28);
+            this.chtRevenue.Name = "chtRevenue";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtRevenue.Series.Add(series1);
+            this.chtRevenue.Size = new System.Drawing.Size(394, 230);
+            this.chtRevenue.TabIndex = 0;
+            this.chtRevenue.Text = "chart1";
+            // 
             // frmStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(882, 530);
+            this.ClientSize = new System.Drawing.Size(854, 530);
             this.Controls.Add(this.grpChartPopularDanceStyle);
             this.Controls.Add(this.grpChartYearlyRevenue);
             this.Controls.Add(this.grpAnalyzePopularDanceStyle);
@@ -326,9 +317,9 @@
             this.grpAnalyzePopularDanceStyle.ResumeLayout(false);
             this.grpAnalyzePopularDanceStyle.PerformLayout();
             this.grpChartYearlyRevenue.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chtRevenue)).EndInit();
             this.grpChartPopularDanceStyle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chtPopularDanceStyles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,8 +342,8 @@
         private System.Windows.Forms.Label lblFindPopularDanceStyle;
         private System.Windows.Forms.Label lblPopularDanseStype;
         private System.Windows.Forms.GroupBox grpChartYearlyRevenue;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtRevenue;
         private System.Windows.Forms.GroupBox grpChartPopularDanceStyle;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtPopularDanceStyles;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtRevenue;
     }
 }

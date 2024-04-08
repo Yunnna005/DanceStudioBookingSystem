@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -94,6 +95,11 @@ namespace DanceStudioBookingSystem
         private void frmStatistics_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
+        }
+
+        private void frmStatistics_Load(object sender, EventArgs e)
+        {
+            //String strSQL = "SELECT SUM(Price), to_Char(Sale_Date,'MM') FROM Sales GROUP BY to_Char(Sale_Date,'MM') ORDER char(Sale_Date, 'MM')";
         }
     }
 }

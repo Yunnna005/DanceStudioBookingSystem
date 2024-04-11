@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -21,12 +22,14 @@ namespace DanceStudioBookingSystem
     class UtilFunctions
     {
         private static string gender;
+        //Switch Between Forms
         public static void traverseForm(Form prevForm, Form nextForm)
         {
             nextForm.Show();
             prevForm.Hide();
         }
 
+        //Perform Log Out, open LogIn form
         public static void PerformLogOut(Form activeForm)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -41,7 +44,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
-
+        //Validates Member Details
         public static string ValidationMemberDetails(TextBox firstname, TextBox secondname, TextBox email, TextBox phone,
             RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
         {
@@ -116,6 +119,8 @@ namespace DanceStudioBookingSystem
             }
             return gender;
         }
+
+        //Validates Member Details in frmUpdateMember
         public static string ValidationMemberDetailsForUpdate(int member_id, TextBox firstname, TextBox secondname, TextBox email, TextBox phone,
             RadioButton genderMale, RadioButton genderFemale, RadioButton genderOther, DateTimePicker dob)
         {
@@ -190,6 +195,8 @@ namespace DanceStudioBookingSystem
             }
             return gender;
         }
+
+        //Check digits, letters, symbolls
         public static string CheckGigits_Letters_Symbolls(TextBox text)
         {
             int digits = 0, letters = 0, symbols = 0;
@@ -227,6 +234,7 @@ namespace DanceStudioBookingSystem
             return "empty";
         }
 
+        //Insert Data To ComboBoxes
         public static void InsertDataToComboBox(ComboBox comboBox)
         {
             if (comboBox.Name == "cboMonth")
@@ -240,11 +248,12 @@ namespace DanceStudioBookingSystem
                 comboBox.Items.AddRange(yearCard);
             }else if(comboBox.Name == "cboYear")
             {
-                string[] yearCard = { "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034" };
+                string[] yearCard = {"2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034" };
                 comboBox.Items.AddRange(yearCard);
             }
         }
 
+        //Insert data to DataGrid in Member View
         public static void InsertDataGridMemberView(DataGridView datagrit, ComboBox comboBox)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
@@ -270,6 +279,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Insert Data to DataGrid in Admin View
         public static void InsertDataGridAdminView(DataGridView datagrit, ComboBox comboBox)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
@@ -292,6 +302,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Validates Class Details
         public static string ValidClassDetails(TextBox name, ComboBox type, DateTimePicker date, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
         {
             DateTime selectedDate = date.Value;
@@ -363,6 +374,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Check Price format
         public static bool IsValidPriceFormat(string price)
         {
             string format = @"^\d{2}\.\d{2}$"; //Format 00.00
@@ -373,6 +385,7 @@ namespace DanceStudioBookingSystem
             return false;
         }
 
+        //Validates Card Details
         public static string ValidationCardDetails(TextBox cardNumber, TextBox cardHolder, ComboBox month, ComboBox year, TextBox cvc)
         {
             if (string.IsNullOrEmpty(cardNumber.Text) || cardNumber.Text.Length != 16)
@@ -414,6 +427,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Display data from a DataGrid
         public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, ComboBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
              TextBox capacity, TextBox price)
         {
@@ -438,6 +452,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Load Types from database to comboBox 
         public static void LoadTypes(ComboBox cboType)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
@@ -457,7 +472,8 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        public static void Loadnstructors(ComboBox cboInstructors)
+        //Load Instructors from database to comboBox
+        public static void LoadInstructors(ComboBox cboInstructors)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
             conn.Open();
@@ -476,6 +492,8 @@ namespace DanceStudioBookingSystem
             }
 
         }
+
+        //Finds member ID
         public static int FindMemberID(string email, string password)
         {
             int MemberID;
@@ -503,6 +521,7 @@ namespace DanceStudioBookingSystem
             }
         }
 
+        //Finds Class ID for Admin View
         public static int FindClassID_Admin(DataGridView datagrid)
         {
             if (datagrid.SelectedRows.Count > 0)
@@ -525,6 +544,8 @@ namespace DanceStudioBookingSystem
             }
             return -1;
         }
+
+        //Checks if email already exists in the database
         static bool IsEmailAlreadyExists(string email)
         {
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
@@ -539,6 +560,7 @@ namespace DanceStudioBookingSystem
             return count > 0;
         }
 
+        //Checks if member insert the same email that they already have
         static bool IsMemberEmail(string email, int memberID)
         {
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
@@ -553,12 +575,12 @@ namespace DanceStudioBookingSystem
 
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    // If count is exactly 1, the email exists and matches the provided one
                     return count == 1;
                 }
             }
         }
 
+        //Checks if date and time of this date already exists in the database
         static bool IsDateTimeAlreadyExists(DateTime date, string time)
         {
             int hour = int.Parse(time.Substring(0, 2));
@@ -595,17 +617,16 @@ namespace DanceStudioBookingSystem
                     }
                 }
             }
-
             return false; // No conflicting time slots found
         }
 
+        //Checks if Class scheduled between 9:00 and 18:00 
         static bool IsClassScheduledBetween9_6(DateTime date, string time)
         {
             int hour = int.Parse(time.Substring(0, 2));
             int minute = int.Parse(time.Substring(3, 2));
             DateTime classStartTime = date.AddHours(hour).AddMinutes(minute);
 
-            // Define the start and end time boundaries
             DateTime startTimeBoundary = date.Date.AddHours(9); // 9:00 AM
             DateTime endTimeBoundary = date.Date.AddHours(18); // 6:00 PM
 
@@ -616,6 +637,7 @@ namespace DanceStudioBookingSystem
             return startTimeWithinBoundary;
         }
 
+        //Calculate Revenue of the selected year
         public static float CalculateTotalPriceByYear(string selectedYear)
         {
             float totalPrice = 0;
@@ -647,6 +669,7 @@ namespace DanceStudioBookingSystem
             return totalPrice;
         }
 
+        //Finds popular dance styles
         public static string PopularDanceStyles()
         {
             string result = "";
@@ -668,6 +691,221 @@ namespace DanceStudioBookingSystem
                 }
             }
             return result;
+        }
+
+        //Finds class ID
+        public static int FindClassID(DataGridView dataGrid)
+        {
+            int classID = 0;
+            if (dataGrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
+
+                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
+            }
+            return classID;
+        }
+
+        //Finds booking id
+        public static int FindBookingID(int memberID, DataGridView dgvClassesMember)
+        {
+            int bookingID = 0;
+            int classID = 0;
+
+            if (dgvClassesMember.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
+
+                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+                using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+                {
+                    conn.Open();
+
+                    string SQLquery = "SELECT Booking_ID FROM Bookings WHERE Class_ID = :classID AND Member_ID = :memberID";
+
+                    using (OracleCommand command = new OracleCommand(SQLquery, conn))
+                    {
+                        command.Parameters.Add(new OracleParameter("classID", classID));
+                        command.Parameters.Add(new OracleParameter("memberID", memberID));
+
+                        using (OracleDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Booking ID found in the database
+                                bookingID = Convert.ToInt32(reader["Booking_ID"]);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Booking not found in the database.");
+                            }
+                        }
+                    }
+                }
+            }
+            return bookingID;
+        }
+
+        //Finds Member ID using email
+        public static int ValidateMember(string email)
+        {
+            int MemberID;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM Members WHERE Email = :Email";
+
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
+
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return MemberID = (int)reader["Member_ID"];
+
+                        }
+                    }
+                    return 0;
+                }
+            }
+        }
+
+        //Checks Gender Box
+        public static void CheckGenderBox(RadioButton male, RadioButton female, RadioButton other, string gender)
+        {
+            if (gender.Equals("Male"))
+            {
+                male.Checked = true;
+            }
+            else if (gender.Equals("Female"))
+            {
+                female.Checked = true;
+            }
+            else
+            {
+                other.Checked = true;
+            }
+        }
+
+        //Finds Class Type
+        public static string FindClassType(DataGridView datagrid)
+        {
+            string type = "";
+            if (datagrid.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
+
+                type = selectedRow.Cells[2].Value.ToString();
+            }
+            return type;
+        }
+
+        //Insert data into chart for revenue
+        public static void InsertIntoChartRevenue(string selectedYear, Chart chtRevenue)
+        {
+
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+
+            string strSQL = "SELECT EXTRACT(MONTH FROM Payment_Date), SUM(Price) " +
+                            "FROM Bookings " +
+                            "WHERE EXTRACT(YEAR FROM Payment_Date) = :selectedYear " +
+                            "GROUP BY EXTRACT(MONTH FROM Payment_Date)";
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                conn.Open();
+
+                OracleCommand cmd = new OracleCommand(strSQL, conn);
+                cmd.Parameters.Add(":selectedYear", OracleDbType.Varchar2).Value = selectedYear; // Add parameter and assign value
+
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                da.Fill(dt);
+
+                decimal[] Amounts = new decimal[12]; // Array to store revenue for each month
+
+                for (int i = 0; i < 12; i++)
+                {
+                    Amounts[i] = 0;
+                }
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    int month = Convert.ToInt32(row[0]) - 1;
+                    Amounts[month] = Convert.ToDecimal(row[1]);
+                }
+
+                string[] Months = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+                chtRevenue.Series[0].Points.DataBindXY(Months, Amounts);
+
+                chtRevenue.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                chtRevenue.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                chtRevenue.Series[0].LegendText = "Income in €";
+                chtRevenue.ChartAreas["ChartArea1"].AxisX.LabelStyle.Format = "C";
+                chtRevenue.Series[0].Label = "#VALY";
+                chtRevenue.Titles.Add("Yearly Revenue");
+                chtRevenue.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        //Insert data into a chart for popular dance styles
+        public static void InsertIntoChartPopularDanceStyles(Chart chtPopularDanceStyles)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            string sqlQuery = "SELECT Type, Qty_Of_Classes FROM Class_Types";
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                conn.Open();
+
+                OracleCommand cmd = new OracleCommand(sqlQuery, conn);
+                OracleDataAdapter da = new OracleDataAdapter(cmd);
+                da.Fill(dt);
+
+                string[] DanceStyles = new string[dt.Rows.Count];
+                int[] Quantities = new int[dt.Rows.Count];
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DanceStyles[i] = dt.Rows[i]["Type"].ToString();
+                    Quantities[i] = Convert.ToInt32(dt.Rows[i]["Qty_Of_Classes"]);
+                }
+
+                chtPopularDanceStyles.Series[0].Points.DataBindXY(DanceStyles, Quantities);
+                foreach (var point in chtPopularDanceStyles.Series[0].Points)
+                {
+                    point.Label = point.YValues[0].ToString();
+                }
+
+                chtPopularDanceStyles.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                chtPopularDanceStyles.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                chtPopularDanceStyles.Series[0].LegendText = "Quantity of Classes";
+                chtPopularDanceStyles.Titles.Add("Popular Dance Styles");
+                chtPopularDanceStyles.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close(); 
+            }
         }
     }
 }

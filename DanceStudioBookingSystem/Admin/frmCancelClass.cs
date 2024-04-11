@@ -17,7 +17,6 @@ namespace DanceStudioBookingSystem
     public partial class frmCancelClass : Form
     {
         Form parent;
-        string type;
         public frmCancelClass()
         {
             InitializeComponent();
@@ -76,21 +75,9 @@ namespace DanceStudioBookingSystem
                 }
             }
         }
-
-        private string FindClassType(DataGridView datagrid)
-        {
-            if (datagrid.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = datagrid.SelectedRows[0];
-
-                type = selectedRow.Cells[2].Value.ToString();
-            }
-            return type;
-        }
-
         private void frmCancelClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

@@ -24,14 +24,14 @@ namespace DanceStudioBookingSystem
         {
             InitializeComponent();
             LoadTypes(cboType);
-            Loadnstructors(cboInstructor);
+            LoadInstructors(cboInstructor);
         }
         public frmScheduleClass(Form parentForm)
         {
             parent = parentForm;
             InitializeComponent();
             LoadTypes(cboType);
-            Loadnstructors(cboInstructor);
+            LoadInstructors(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -86,7 +86,7 @@ namespace DanceStudioBookingSystem
 
         private void frmScheduleClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
     }
 }

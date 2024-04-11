@@ -19,7 +19,7 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
             LoadTypes(cboType);
             LoadTypes(cboType2);
-            Loadnstructors(cboInstructor);
+            LoadInstructors(cboInstructor);
         }
         public frmModifyClass(Form parentForm)
         {
@@ -27,7 +27,7 @@ namespace DanceStudioBookingSystem
             InitializeComponent();
             LoadTypes(cboType);
             LoadTypes(cboType2);
-            Loadnstructors(cboInstructor);
+            LoadInstructors(cboInstructor);
         }
 
         private void mnutScheduleClass_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace DanceStudioBookingSystem
 
         private void frmModifyClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

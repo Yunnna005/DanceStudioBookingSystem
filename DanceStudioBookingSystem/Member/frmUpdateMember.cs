@@ -29,7 +29,7 @@ namespace DanceStudioBookingSystem
 
             this.memberID = memberID;
 
-            LoadUserDetails();
+            LoadMemberDetails();
         }
 
         private void mnuProfile_Click(object sender, EventArgs e)
@@ -137,10 +137,10 @@ namespace DanceStudioBookingSystem
 
         private void frmEditMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
 
-        private void LoadUserDetails()
+        private void LoadMemberDetails()
         {
             string gender;
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
@@ -174,21 +174,6 @@ namespace DanceStudioBookingSystem
                         }
                     }
                 }
-            }
-        }
-
-        private void CheckGenderBox(RadioButton male, RadioButton female, RadioButton other, string gender)
-        {
-            if (gender.Equals("Male"))
-            {
-                male.Checked = true;
-            }else if (gender.Equals("Female"))
-            {
-                female.Checked = true;
-            }
-            else
-            {
-                other.Checked = true;
             }
         }
     }

@@ -56,7 +56,7 @@ namespace DanceStudioBookingSystem
 
         private void frmCreateAccount_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
     }
 }

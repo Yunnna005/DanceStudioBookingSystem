@@ -284,6 +284,7 @@
             this.Name = "frmClassesOverview";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu Admin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmClassesOverview_FormClosed);
             this.mnuMainMenu.ResumeLayout(false);
             this.mnuMainMenu.PerformLayout();
             this.grpClasses.ResumeLayout(false);

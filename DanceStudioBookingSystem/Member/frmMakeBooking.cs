@@ -106,7 +106,7 @@ namespace DanceStudioBookingSystem
 
         private void frmBookClass_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
 
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)

@@ -53,11 +53,6 @@ namespace DanceStudioBookingSystem
             PerformLogOut(this);
         }
 
-        private void frmClassesOverview_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            parent.Show();
-        }
-
         private void cboType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -67,6 +62,11 @@ namespace DanceStudioBookingSystem
         private void mnuDBConnect_Click(object sender, EventArgs e)
         {
             traverseForm(this, new frmDBConnect(this));
+        }
+
+        private void frmClassesOverview_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

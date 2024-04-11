@@ -57,6 +57,7 @@ namespace DanceStudioBookingSystem
                 cancelBooking.cancelBooking(bookingID);
 
                 classID = FindClassID(dgvClassesMember);
+                MessageBox.Show(FindClassID(dgvClassesMember).ToString());
                 Classes aClass = new Classes();
                 aClass.UpdateAvaliablePlaces_CancelProcess(classID);
 
@@ -72,61 +73,11 @@ namespace DanceStudioBookingSystem
             }
         }
 
-        private int FindClassID(DataGridView dataGrid)
-        {
-            if (dataGrid.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dataGrid.SelectedRows[0];
-
-                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
-            }
-            return classID;
-        }
-
-        private int FindBookingID(int memberID, DataGridView dgvClassesMember)
-        {
-            int bookingID = 0;
-
-            if (dgvClassesMember.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dgvClassesMember.SelectedRows[0];
-
-                classID = Convert.ToInt32(selectedRow.Cells[0].Value);
-
-                // Use these values to query the database and retrieve the Booking ID
-                using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-                {
-                    conn.Open();
-
-                    string SQLquery = "SELECT Booking_ID FROM Bookings WHERE Class_ID = :classID AND Member_ID = :memberID";
-
-                    using (OracleCommand command = new OracleCommand(SQLquery, conn))
-                    {
-                        command.Parameters.Add(new OracleParameter("classID", classID));
-                        command.Parameters.Add(new OracleParameter("memberID", memberID));
-
-                        using (OracleDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                // Booking ID found in the database
-                                bookingID = Convert.ToInt32(reader["Booking_ID"]);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Booking not found in the database.");
-                            }
-                        }
-                    }
-                }
-            }
-
-            return bookingID;
-        }
+        
 
         private void frmMemberProfile_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
+            Application.Exit();
         }
 
         private void mnuBook1_Click(object sender, EventArgs e)

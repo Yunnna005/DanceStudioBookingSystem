@@ -122,33 +122,7 @@ namespace DanceStudioBookingSystem
 
         private void frmResetPassword_FormClosed(object sender, FormClosedEventArgs e)
         {
-            parent.Show();
-        }
-
-        private int ValidateMember(string email)
-        {
-            int MemberID;
-            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
-            {
-                conn.Open();
-
-                string query = "SELECT * FROM Members WHERE Email = :Email";
-
-                using (OracleCommand command = new OracleCommand(query, conn))
-                {
-                    command.Parameters.Add("Email", OracleDbType.Varchar2).Value = email;
-
-                    using (OracleDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            return MemberID = (int)reader["Member_ID"];
-
-                        }
-                    }
-                    return 0;
-                }
-            }
+            Application.Exit();
         }
     }
 }

@@ -126,73 +126,73 @@ namespace DanceStudioBookingSystem
         {
             DateTime selectedDate = dob.Value.Date; // Get the selected date without time
             int curentAge = DateTime.Now.Date.Year - selectedDate.Year;
+            string gender = "";
+
+            if (genderMale.Checked)
+            {
+                gender = "Male";
+            }
+            else if (genderFemale.Checked)
+            {
+                gender = "Female";
+
+            }
+            else if (genderOther.Checked)
+            {
+                gender = "Other";
+
+            }
 
             if (string.IsNullOrEmpty(firstname.Text))
             {
                 firstname.Focus();
                 return "Please enter valid First Name.";
             }
-            else if (CheckGigits_Letters_Symbolls(firstname) != "Letters")
+             if (CheckGigits_Letters_Symbolls(firstname) != "Letters")
             {
                 firstname.Focus();
                 return "The Firstname must not contain numbers or symbols.";
             }
-            else if (string.IsNullOrEmpty(secondname.Text))
+             if (string.IsNullOrEmpty(secondname.Text))
             {
                 secondname.Focus();
                 return "Please enter valid Second Name.";
             }
-            else if (CheckGigits_Letters_Symbolls(secondname) != "Letters")
+            if (CheckGigits_Letters_Symbolls(secondname) != "Letters")
             {
                 secondname.Focus();
                 return "The Secondname must not contain numbers or symbols.";
             }
-            else if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            if (string.IsNullOrEmpty(email.Text) || !Regex.IsMatch(email.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 email.Focus();
                 return "Please enter valid email address";
             }
-            else if (IsEmailAlreadyExists(email.Text) && !IsMemberEmail(email.Text, member_id))
+            if ((!IsMemberEmail(email.Text, member_id)) && IsEmailAlreadyExists(email.Text))
             {
                 email.Focus();
                 return "Email already exists.";
             }
-            else if (email.Text.ToLower().Contains("admin"))
+             if (email.Text.ToLower().Contains("admin"))
             {
                 email.Focus();
                 return "Email cannot have word: admin.";
             }
-            else if (string.IsNullOrEmpty(phone.Text) || phone.Text.Length < 12)
+             if (string.IsNullOrEmpty(phone.Text) && phone.Text.Length < 13)
             {
                 phone.Focus();
                 return "Please enter valid phone number.";
             }
-            else if (CheckGigits_Letters_Symbolls(phone) != "Digits")
+             if (CheckGigits_Letters_Symbolls(phone) != "Digits")
             {
                 phone.Focus();
                 return "The phone number can not contain letters or symbols.";
             }
-            else if (curentAge < 18 || curentAge > 65)
+             if (curentAge < 18 || curentAge > 65)
             {
                 return "Your age must be between 18 and 65 included";
             }
-            else
-            {
-                if (genderMale.Checked)
-                {
-                    gender = "Male";
-                }
-                else if (genderFemale.Checked)
-                {
-                    gender = "Female";
 
-                }
-                else if (genderOther.Checked)
-                {
-                    gender = "Other";
-
-                }
-            }
             return gender;
         }
 

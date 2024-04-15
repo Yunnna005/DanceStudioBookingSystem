@@ -144,7 +144,7 @@ namespace DanceStudioBookingSystem.Member
                 "Email = '" + this._email + "'," +
                 "Phone = " + this._phone + "," +
                 "DOB = '" + this._dob.ToString("dd-MMM-yyyy") + "'," +
-                "Password = " + this._password + " " +
+                "Password = '" + this._password + "' " +
                 "WHERE Member_ID = '" + memberID + "'";
 
             //Execute the SQL query (OracleCommand)

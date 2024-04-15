@@ -308,5 +308,37 @@ namespace DanceStudioBookingSystem
                 }
             }
         }
+
+        public bool CheckIfClassBooked(int classID)
+        {
+            int capacity;
+            int availablePlaces;
+            using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
+            {
+                conn.Open();
+                string query = "SELECT Capacity, AvaliablePlaces FROM Classes WHERE Class_ID = :Class_ID";
+                using (OracleCommand command = new OracleCommand(query, conn))
+                {
+                    command.Parameters.Add("Class_ID", classID);
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            availablePlaces = reader.GetInt32(reader.GetOrdinal("AvaliablePlaces"));
+                            capacity = reader.GetInt32(reader.GetOrdinal("Capacity"));
+
+                            if (capacity > 0 && availablePlaces < capacity)
+                            {
+                                return true; // The class is already booked by someone
+                            }
+
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
     }
 }

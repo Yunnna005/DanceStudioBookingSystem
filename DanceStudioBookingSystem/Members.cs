@@ -43,7 +43,7 @@ namespace DanceStudioBookingSystem.Member
             _firstname = firstname;
             _lastname = lastname;
             _gender = gender;
-            _email = email;
+            _email = email.ToLower();
             _phone = phone;
             _dob = dob;
             _password = password;
@@ -54,7 +54,7 @@ namespace DanceStudioBookingSystem.Member
             _firstname = firstname;
             _lastname = lastname;
             _gender = gender;
-            _email = email;
+            _email = email.ToLower();
             _phone = phone;
             _dob = dob;
         }

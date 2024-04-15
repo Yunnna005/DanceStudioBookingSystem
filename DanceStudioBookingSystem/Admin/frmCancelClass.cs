@@ -66,12 +66,19 @@ namespace DanceStudioBookingSystem
                 if (result == DialogResult.Yes)
                 {
                     Classes aClass = new Classes();
-                    aClass.Update_Qty_of_class_type_Cancel(FindClassType(dgvCancelClassesAdmin));
+                    if (aClass.CheckIfClassBooked(FindClassID_Admin(dgvCancelClassesAdmin))) //if true that class is booked bu=y someone, cannot be canceled
+                    {
+                        MessageBox.Show("The class is already booked by someone and cannot be canceled.\n\nIf you need to change something go to the Modify Class.");
+                    }
+                    else
+                    {
+                        aClass.Update_Qty_of_class_type_Cancel(FindClassType(dgvCancelClassesAdmin));
 
-                    aClass.cancelClass(FindClassID_Admin(dgvCancelClassesAdmin));
+                        aClass.cancelClass(FindClassID_Admin(dgvCancelClassesAdmin));
 
-                    MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dgvCancelClassesAdmin.Rows.Clear();
+                        MessageBox.Show("The Class was canceled.\n\nThe email about canceled class was sent to all members that had it.", "Cancel Class", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgvCancelClassesAdmin.Rows.Clear();
+                    }
                 }
             }
         }

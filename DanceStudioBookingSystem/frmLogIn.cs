@@ -31,7 +31,7 @@ namespace DanceStudioBookingSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string email = txtEmail.Text.ToLower();
             string password = txtPassword.Text;
             
             memberID = FindMemberID(email, password);

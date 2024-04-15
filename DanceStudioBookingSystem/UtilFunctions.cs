@@ -271,7 +271,8 @@ namespace DanceStudioBookingSystem
                     {
                         int instructorID = (int)reader["Instructor_ID"];
                         string instructorName = aClass.getInstructorName(instructorID);
-                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["DateCode"], reader["TimeCode"], instructorName, reader["Price"]);
+                        string dateFormatted = ((DateTime)reader["DateCode"]).ToString("dd-MMM-yyyy");
+                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], dateFormatted, reader["TimeCode"], instructorName, reader["Price"]);
 
                     }
                 }
@@ -295,7 +296,8 @@ namespace DanceStudioBookingSystem
                 {
                     if (reader["Type_ID"].ToString() == aClass.getTypeID(comboBox.Text))
                     {
-                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["Type_ID"], reader["DateCode"], reader["TimeCode"], reader["AvaliablePlaces"], reader["Capacity"], reader["Instructor_ID"], reader["Price"]);
+                        string dateFormatted = ((DateTime)reader["DateCode"]).ToString("dd-MMM-yyyy");
+                        datagrit.Rows.Add(reader["Class_ID"], reader["Name"], reader["Type_ID"], dateFormatted, reader["TimeCode"], reader["AvaliablePlaces"], reader["Capacity"], reader["Instructor_ID"], reader["Price"]);
                     }
                 }
 

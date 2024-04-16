@@ -162,6 +162,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilFunctions.cs" />
+    <Compile Include="UtilFunctions_DB.cs" />
     <EmbeddedResource Include="Admin\frmStatistics.resx">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </EmbeddedResource>

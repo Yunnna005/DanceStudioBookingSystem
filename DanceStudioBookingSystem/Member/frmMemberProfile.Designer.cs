@@ -56,9 +56,9 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuProfile1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pnlHeader.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBookedClasses.SuspendLayout();
@@ -348,26 +348,6 @@
             this.mnuBook.Size = new System.Drawing.Size(163, 51);
             this.mnuBook.Text = "Book";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0, 10, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuProfile1,
-            this.mnuBook1});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 100, 0, 2);
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.ShowItemToolTips = true;
-            this.menuStrip1.Size = new System.Drawing.Size(165, 522);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "Menu";
-            // 
             // mnuProfile1
             // 
             this.mnuProfile1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -388,6 +368,26 @@
             this.mnuBook1.Size = new System.Drawing.Size(163, 51);
             this.mnuBook1.Text = "Book";
             this.mnuBook1.Click += new System.EventHandler(this.mnuBook1_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(245)))), ((int)(((byte)(251)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(0, 10, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuProfile1,
+            this.mnuBook1});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 100, 0, 2);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.ShowItemToolTips = true;
+            this.menuStrip1.Size = new System.Drawing.Size(165, 522);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "Menu";
             // 
             // frmMemberProfile
             // 
@@ -442,14 +442,14 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Button btnCancelClass;
         private System.Windows.Forms.DataGridView dgvClassesMember;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuProfile1;
-        private System.Windows.Forms.ToolStripMenuItem mnuBook1;
         private System.Windows.Forms.DataGridViewTextBoxColumn class_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CLASSNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn INSTRUCTOR;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.ToolStripMenuItem mnuProfile1;
+        private System.Windows.Forms.ToolStripMenuItem mnuBook1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

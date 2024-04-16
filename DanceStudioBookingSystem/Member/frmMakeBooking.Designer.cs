@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookClass));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.lblBookYourClass = new System.Windows.Forms.Label();
             this.pnlBookClass = new System.Windows.Forms.Panel();
@@ -56,12 +56,6 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.lblPayment = new System.Windows.Forms.Label();
             this.dgvClasses = new System.Windows.Forms.DataGridView();
-            this.Class_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblBookAClass = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.lblTYpe = new System.Windows.Forms.Label();
@@ -70,6 +64,12 @@
             this.mnuProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBook = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBlueLine = new System.Windows.Forms.Panel();
+            this.Class_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CLASSNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlHeader.SuspendLayout();
             this.pnlBookClass.SuspendLayout();
             this.pnlPayment.SuspendLayout();
@@ -351,14 +351,14 @@
             this.dgvClasses.AllowUserToAddRows = false;
             this.dgvClasses.AllowUserToDeleteRows = false;
             this.dgvClasses.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClasses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Class_id,
@@ -367,78 +367,30 @@
             this.time,
             this.instructor,
             this.price});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClasses.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClasses.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClasses.Location = new System.Drawing.Point(16, 149);
             this.dgvClasses.Name = "dgvClasses";
             this.dgvClasses.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClasses.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClasses.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClasses.RowHeadersVisible = false;
             this.dgvClasses.RowHeadersWidth = 62;
             this.dgvClasses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClasses.Size = new System.Drawing.Size(587, 184);
             this.dgvClasses.TabIndex = 3;
-            // 
-            // Class_id
-            // 
-            this.Class_id.HeaderText = "ID";
-            this.Class_id.Name = "Class_id";
-            this.Class_id.ReadOnly = true;
-            this.Class_id.Width = 50;
-            // 
-            // CLASSNAME
-            // 
-            this.CLASSNAME.HeaderText = "Class Name";
-            this.CLASSNAME.MinimumWidth = 6;
-            this.CLASSNAME.Name = "CLASSNAME";
-            this.CLASSNAME.ReadOnly = true;
-            this.CLASSNAME.Width = 170;
-            // 
-            // date
-            // 
-            this.date.FillWeight = 50F;
-            this.date.HeaderText = "Date";
-            this.date.MinimumWidth = 8;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 80;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "Time";
-            this.time.MinimumWidth = 8;
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Width = 80;
-            // 
-            // instructor
-            // 
-            this.instructor.HeaderText = "Instructor";
-            this.instructor.MinimumWidth = 8;
-            this.instructor.Name = "instructor";
-            this.instructor.ReadOnly = true;
-            this.instructor.Width = 130;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.MinimumWidth = 8;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 80;
             // 
             // lblBookAClass
             // 
@@ -533,6 +485,53 @@
             this.pnlBlueLine.Name = "pnlBlueLine";
             this.pnlBlueLine.Size = new System.Drawing.Size(22, 523);
             this.pnlBlueLine.TabIndex = 1;
+            // 
+            // Class_id
+            // 
+            this.Class_id.HeaderText = "ID";
+            this.Class_id.Name = "Class_id";
+            this.Class_id.ReadOnly = true;
+            this.Class_id.Width = 50;
+            // 
+            // CLASSNAME
+            // 
+            this.CLASSNAME.HeaderText = "Class Name";
+            this.CLASSNAME.MinimumWidth = 6;
+            this.CLASSNAME.Name = "CLASSNAME";
+            this.CLASSNAME.ReadOnly = true;
+            this.CLASSNAME.Width = 170;
+            // 
+            // date
+            // 
+            this.date.FillWeight = 50F;
+            this.date.HeaderText = "Date";
+            this.date.MinimumWidth = 8;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Time";
+            this.time.MinimumWidth = 8;
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            this.time.Width = 80;
+            // 
+            // instructor
+            // 
+            this.instructor.HeaderText = "Instructor";
+            this.instructor.MinimumWidth = 8;
+            this.instructor.Name = "instructor";
+            this.instructor.ReadOnly = true;
+            this.instructor.Width = 130;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 8;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 80;
             // 
             // frmBookClass
             // 

@@ -305,7 +305,7 @@ namespace DanceStudioBookingSystem
         }
 
         //Validates Class Details
-        public static string ValidClassDetails(TextBox name, ComboBox type, DateTimePicker date, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
+        public static string ValidClassDetails(int class_ID,TextBox name, ComboBox type, DateTimePicker date, TextBox hour, TextBox minute, ComboBox instructor, TextBox capacity, TextBox price)
         {
             DateTime selectedDate = date.Value;
             DateTime currentDate = DateTime.Now;
@@ -315,58 +315,59 @@ namespace DanceStudioBookingSystem
                 name.Focus();
                 return "Invalid class name.";
             }
-            else if (string.IsNullOrEmpty(type.Text))
+            if (string.IsNullOrEmpty(type.Text))
             {
                 type.Focus();
                 return "Invalid type.";
             }
-            else if (type.SelectedItem == null)
+            if (type.SelectedItem == null)
             {
                 return "Please select the type";
             }
-            else if (selectedDate <= currentDate.Date)
+            if (selectedDate <= currentDate.Date)
             {
                 date.Focus();
                 return "Selected date is in the past.";
             }
-            else if (string.IsNullOrEmpty(hour.Text) || hour.Text.Length != 2)
+            if (string.IsNullOrEmpty(hour.Text) || hour.Text.Length != 2)
             {
                 hour.Focus();
                 return "The hour of the class must be in valid format and contain 2 numbers.";
             }
-            else if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 24 || HourValue <= 1))
+            if (CheckGigits_Letters_Symbolls(hour) != "Digits" || (!int.TryParse(hour.Text, out int HourValue) || HourValue > 24 || HourValue <= 1))
             {
                 hour.Focus();
                 return "The hour of the class must contain 2 numbers.\n\nThe hour must be between 01 and 24.";
             }
-            else if (string.IsNullOrEmpty(minute.Text) || minute.Text.Length != 2)
+            if (string.IsNullOrEmpty(minute.Text) || minute.Text.Length != 2)
             {
                 minute.Focus();
                 return "The minutes of the class must be in valid format and contain 2 numbers.";
             }
-            else if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59))
+            if (CheckGigits_Letters_Symbolls(minute) != "Digits" || (!int.TryParse(minute.Text, out int minuteValue) || minuteValue > 59))
             {
                 minute.Focus();
                 return "The minutes of the class must contain 2 numbers.\n\nThe minute must be between 00 and 59.";
             }
-            else if (instructor.SelectedItem == null)
+            if (instructor.SelectedItem == null)
             {
                 return "Please choose the Instructor";
             }
-            else if (string.IsNullOrEmpty(capacity.Text) || (!int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0))
+            if (string.IsNullOrEmpty(capacity.Text) || (!int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0))
             {
                 capacity.Focus();
                 return "Invalid Capacity";
             }
-            else if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
+            if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
             {
                 price.Focus();
                 return "Invalid Price. Format is 00.00";
-            }else if (!IsClassScheduledBetween9_6(selectedDate, time))
+            }
+            if (!IsClassScheduledBetween9_6(selectedDate, time))
             {
                 return "The class must be between 9:00 and 18:00";
             }
-            else if (IsDateTimeAlreadyExists(selectedDate, time))
+            if (IsDateTimeAlreadyExists(selectedDate, time) && !IsClassDetails(class_ID, time, selectedDate))
             {
                 return "The Date and Time already taken.";
             }
@@ -907,6 +908,51 @@ namespace DanceStudioBookingSystem
             finally
             {
                 conn.Close(); 
+            }
+        }
+        public static bool IsClassDetails(int classID, string time, DateTime date)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string sqlQuery = "SELECT DateCode, TimeCode FROM Classes WHERE Class_ID = :Class_ID AND DateCode = :DateCode AND TimeCode = :TimeCode";
+            using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+            {
+
+                cmd.Parameters.Add("Class_ID", OracleDbType.Int32).Value = classID;
+                cmd.Parameters.Add("DateCode", OracleDbType.Date).Value = date;
+                cmd.Parameters.Add("TimeCode", OracleDbType.Varchar2).Value = time;
+
+                using (OracleDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return true;
+
+                    }
+                }
+                return false;
+            }
+        }
+        public static bool IsMemberPassword(int memberID, string password)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string sqlQuery = "SELECT Password FROM Members WHERE Member_ID = :memberID AND Password = :password";
+            using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+            {
+
+                cmd.Parameters.Add("Member_ID", OracleDbType.Int32).Value = memberID;
+                cmd.Parameters.Add("Password", OracleDbType.Varchar2).Value = password;
+
+                using (OracleDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return true;
+
+                    }
+                }
+                return false;
             }
         }
     }

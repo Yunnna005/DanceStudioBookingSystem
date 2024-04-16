@@ -94,24 +94,31 @@ namespace DanceStudioBookingSystem
             {   
                 if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
-                    if (txtOldPassword.Text.Length < 8 || txtNewPassword.Text.Length < 8)
+                    if (IsMemberPassword(memberID, txtOldPassword.Text))
                     {
-                        MessageBox.Show("The password must contain at least 8 characters", "Error",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtOldPassword.Focus();
+                        if (txtOldPassword.Text.Length < 8 || txtNewPassword.Text.Length < 8)
+                        {
+                            MessageBox.Show("The password must contain at least 8 characters", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtOldPassword.Focus();
+                        }
+                        else
+                        {
+                            //Create an instance of Member and instantiate with values from form controls
+                            Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
+                            txtPhone.Text, dtpDOB.Value, txtNewPassword.Text);
+
+                            //invoke the method to add the data to the Members table
+                            aMember.UpdateMemberAndPassword(memberID);
+
+                            MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            traverseForm(this, new frmMemberProfile(memberID));
+                        }
                     }
                     else
                     {
-                        //Create an instance of Member and instantiate with values from form controls
-                        Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
-                        txtPhone.Text, dtpDOB.Value,txtNewPassword.Text);
-
-                        //invoke the method to add the data to the Members table
-                        aMember.UpdateMemberAndPassword(memberID);
-
-                        MessageBox.Show("Your chandes was saved.\n\nThe Password was changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        traverseForm(this, new frmMemberProfile(memberID));
-                    }
+                        MessageBox.Show("Incorect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }   
                 }
                 else
                 {

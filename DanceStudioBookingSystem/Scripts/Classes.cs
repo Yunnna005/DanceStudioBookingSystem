@@ -1,93 +1,88 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DanceStudioBookingSystem
 {
     class Classes
     {
-        private int _classID;
-        private string _name;
-        private string _typeID;
-        private DateTime _date;
-        private string _time_hour;
-        private string _time_minute;
-        private int _instructorID;
-        private int _avaliablePlaces;
-        private int _capacity;
-        private float _price;
+        private int classID;
+        private string name;
+        private string typeID;
+        private DateTime date;
+        private string time_hour;
+        private string time_minute;
+        private int instructorID;
+        private int avaliablePlaces;
+        private int capacity;
+        private float price;
 
         public Classes() 
         { 
-            _classID = 0;
-            this._name = "";
-            this._typeID = "";
-            this._date = DateTime.Now;
-            this._time_hour = "0";
-            this._time_minute = "0";
-            this._instructorID = 0;
-            this._avaliablePlaces = 0;
-            this._capacity = 0;
-            this._price = 0;
+            this.classID = 0;
+            this.name = "";
+            this.typeID = "";
+            this.date = DateTime.Now;
+            this.time_hour = "0";
+            this.time_minute = "0";
+            this.instructorID = 0;
+            this.avaliablePlaces = 0;
+            this.capacity = 0;
+            this.price = 0;
         }
 
         public Classes(string name, ComboBox type, DateTime date, string time_hour, string time_minute, ComboBox instructorID, int capacity, float price)
         {
-            _classID = getNextClassID();
-            _name = name;
-            _typeID = getTypeID(type.Text);
-            _date = date;
-            _time_hour = time_hour;
-            _time_minute = time_minute;
-            _instructorID = getInstructorID(instructorID.Text);
-            _avaliablePlaces = capacity;
-            _capacity = capacity;
-            _price = price;
+            this.classID = getNextClassID();
+            this.name = name;
+            this.typeID = getTypeID(type.Text);
+            this.date = date;
+            this.time_hour = time_hour;
+            this.time_minute = time_minute;
+            this.instructorID = getInstructorID(instructorID.Text);
+            this.avaliablePlaces = capacity;
+            this.capacity = capacity;
+            this.price = price;
         }
 
         //getters
-        public string getName() { return _name; }
-        public string getType() { return _typeID; }
-        public DateTime getDate() { return _date; }
-        public string getTimeHour() { return _time_hour; }
-        public string getTimeMinute() { return _time_minute; }
-        public int getInstructor() { return _instructorID; }
-        public int getAvaliablePlaces() { return _avaliablePlaces; }
-        public int getCapacity() { return _capacity; }
-        public float getPrice() { return _price; }
+        public string getName() { return name; }
+        public string getType() { return typeID; }
+        public DateTime getDate() { return date; }
+        public string getTimeHour() { return time_hour; }
+        public string getTimeMinute() { return time_minute; }
+        public int getInstructor() { return instructorID; }
+        public int getAvaliablePlaces() { return avaliablePlaces; }
+        public int getCapacity() { return capacity; }
+        public float getPrice() { return price; }
 
         //setters
-        public void setName(string name) { _name = name; }
-        public void setType(string type) { _typeID = type; }
-        public void setDate(DateTime date) { _date = date; }
-        public void setTimeHour(string time_hour) {  _time_hour = time_hour; }
-        public void setTimeMinute(string time_minute) {  _time_minute = time_minute; }
-        public void setInstructor(int instructor) {  _instructorID = instructor; }
-        public void setAvaliablePlaces(int avaliablePlaces) {  _avaliablePlaces = avaliablePlaces;}
-        public void setCapacity(int capacity) {  _capacity = capacity; }
-        public void setPrice(float price) {  _price = price; }
+        public void setName(string name) { this.name = name; }
+        public void setType(string type) { this.typeID = type; }
+        public void setDate(DateTime date) { this.date = date; }
+        public void setTimeHour(string time_hour) {  this.time_hour = time_hour; }
+        public void setTimeMinute(string time_minute) {  this.time_minute = time_minute; }
+        public void setInstructor(int instructor) {  this.instructorID = instructor; }
+        public void setAvaliablePlaces(int avaliablePlaces) {  this.avaliablePlaces = avaliablePlaces;}
+        public void setCapacity(int capacity) {  this.capacity = capacity; }
+        public void setPrice(float price) {  this.price = price; }
 
 
         public void addClass()
         {
-            string timeCode = _time_hour.ToString() + ":" + _time_minute;
+            string timeCode = time_hour.ToString() + ":" + time_minute;
             OracleConnection conn = new OracleConnection(DBConnect.oraDB);
 
             String sqlQuery = "INSERT INTO Classes VALUES (" +
-                _classID + ",'" +
-                _name + "','" +
-                _date.ToString("dd-MMM-yyyy") + "','" +
+                classID + ",'" +
+                name + "','" +
+                date.ToString("dd-MMM-yyyy") + "','" +
                 timeCode + "', " +
-                _avaliablePlaces + " , " +
-                _capacity + "," +
-                _price + "," +
-                _instructorID + ",'" +
-                _typeID +  "')";
+                avaliablePlaces + " , " +
+                capacity + "," +
+                price + "," +
+                instructorID + ",'" +
+                typeID +  "')";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
             conn.Open();
@@ -97,17 +92,17 @@ namespace DanceStudioBookingSystem
 
         public void modifyClass(int classID)
         {
-            string timeCode = _time_hour.ToString()+":"+_time_minute;
+            string timeCode = time_hour.ToString()+":"+time_minute;
             OracleConnection conn = new OracleConnection( DBConnect.oraDB);
 
             String sqlQuery = "UPDATE Classes SET " +
-                "Name = '" + _name + "'," +
-                "Type_ID = '" + _typeID + "'," +
-                "DateCode = '" + _date.ToString("dd-MMM-yyyy") + "'," +
+                "Name = '" + name + "'," +
+                "Type_ID = '" + typeID + "'," +
+                "DateCode = '" + date.ToString("dd-MMM-yyyy") + "'," +
                 "TimeCode = '" + timeCode + "'," +
-                "Instructor_ID = " + _instructorID + "," +
-                "Capacity = " + _capacity + "," +
-                "Price = " + _price + " " + 
+                "Instructor_ID = " + instructorID + "," +
+                "Capacity = " + capacity + "," +
+                "Price = " + price + " " + 
                 "WHERE Class_ID = '" + classID + "'";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
@@ -218,16 +213,16 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT Type_ID FROM Class_Types WHERE Type = :type";
-                using (OracleCommand command = new OracleCommand(query, conn))
+                string sqlQuery = "SELECT Type_ID FROM Class_Types WHERE Type = :type";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    command.Parameters.Add("Type", OracleDbType.Varchar2).Value = type;
+                    cmd.Parameters.Add("Type", OracleDbType.Varchar2).Value = type;
 
-                    using (OracleDataReader reader = command.ExecuteReader())
+                    using (OracleDataReader rd = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rd.Read())
                         {
-                            return typeID = (string)reader["Type_ID"];
+                            return typeID = (string)rd["Type_ID"];
 
                         }
                     }
@@ -242,16 +237,16 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Class_Types WHERE Type = :typeId";
-                using (OracleCommand command = new OracleCommand(query, conn))
+                string sqlQuery = "SELECT * FROM Class_Types WHERE Type = :typeId";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    command.Parameters.Add("Type", OracleDbType.Varchar2).Value = typeId;
+                    cmd.Parameters.Add("Type", OracleDbType.Varchar2).Value = typeId;
 
-                    using (OracleDataReader reader = command.ExecuteReader())
+                    using (OracleDataReader rd = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rd.Read())
                         {
-                            return typeName = (string)reader["Type"];
+                            return typeName = (string)rd["Type"];
 
                         }
                     }
@@ -267,17 +262,16 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT * FROM Instructors WHERE FullName = :instructor";
-                using (OracleCommand command = new OracleCommand(query, conn))
+                string sqlQuery = "SELECT * FROM Instructors WHERE FullName = :instructor";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    command.Parameters.Add("FullName", OracleDbType.Varchar2).Value = instructor;
+                    cmd.Parameters.Add("FullName", OracleDbType.Varchar2).Value = instructor;
 
-                    using (OracleDataReader reader = command.ExecuteReader())
+                    using (OracleDataReader rd = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rd.Read())
                         {
-                            return instructorID = (int)reader["Instructor_ID"];
-
+                            return instructorID = (int)rd["Instructor_ID"];
                         }
                     }
                     return 0;
@@ -291,16 +285,16 @@ namespace DanceStudioBookingSystem
             {
                 conn.Open();
 
-                string query = "SELECT FullName FROM Instructors WHERE Instructor_ID = :instructorID";
-                using (OracleCommand command = new OracleCommand(query, conn))
+                string sqlQuery = "SELECT FullName FROM Instructors WHERE Instructor_ID = :instructorID";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    command.Parameters.Add("Instructor_ID", OracleDbType.Varchar2).Value = instructorID;
+                    cmd.Parameters.Add("Instructor_ID", OracleDbType.Varchar2).Value = instructorID;
 
-                    using (OracleDataReader reader = command.ExecuteReader())
+                    using (OracleDataReader rd = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rd.Read())
                         {
-                            return instructorName = (string)reader["FullName"];
+                            return instructorName = (string)rd["FullName"];
 
                         }
                     }
@@ -316,16 +310,16 @@ namespace DanceStudioBookingSystem
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
-                string query = "SELECT Capacity, AvaliablePlaces FROM Classes WHERE Class_ID = :Class_ID";
-                using (OracleCommand command = new OracleCommand(query, conn))
+                string sqlQuery = "SELECT Capacity, AvaliablePlaces FROM Classes WHERE Class_ID = :Class_ID";
+                using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    command.Parameters.Add("Class_ID", classID);
-                    using (OracleDataReader reader = command.ExecuteReader())
+                    cmd.Parameters.Add("Class_ID", classID);
+                    using (OracleDataReader rd = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rd.Read())
                         {
-                            availablePlaces = reader.GetInt32(reader.GetOrdinal("AvaliablePlaces"));
-                            capacity = reader.GetInt32(reader.GetOrdinal("Capacity"));
+                            availablePlaces = rd.GetInt32(rd.GetOrdinal("AvaliablePlaces"));
+                            capacity = rd.GetInt32(rd.GetOrdinal("Capacity"));
 
                             if (capacity > 0 && availablePlaces < capacity)
                             {

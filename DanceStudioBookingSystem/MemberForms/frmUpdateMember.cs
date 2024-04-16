@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static DanceStudioBookingSystem.UtilFunctions_DB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DanceStudioBookingSystem
@@ -89,8 +90,8 @@ namespace DanceStudioBookingSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetailsForUpdate(memberID, txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
-            if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
+            string validationMemberDetails = ValidationMemberDetails(memberID, txtFirstName, txtLastName, txtEmail, txtPhone, dtpDOB);
+            if (validationMemberDetails == "valid")
             {   
                 if (!string.IsNullOrEmpty(txtOldPassword.Text) || !string.IsNullOrEmpty(txtNewPassword.Text))
                 {
@@ -105,7 +106,7 @@ namespace DanceStudioBookingSystem
                         else
                         {
                             //Create an instance of Member and instantiate with values from form controls
-                            Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
+                            Members aMember = new Members(txtFirstName.Text, txtLastName.Text, GetGender(radMale, radFemale, radOther), txtEmail.Text,
                             txtPhone.Text, dtpDOB.Value, txtNewPassword.Text);
 
                             //invoke the method to add the data to the Members table
@@ -125,7 +126,7 @@ namespace DanceStudioBookingSystem
                     MessageBox.Show("Your chandes was saved.\n\nThe Password was not changed.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //Create an instance of Member and instantiate with values from form controls
-                    Members aMember = new Members(txtFirstName.Text, txtLastName.Text, validationMemberDetails, txtEmail.Text,
+                    Members aMember = new Members(txtFirstName.Text, txtLastName.Text, GetGender(radMale, radFemale, radOther), txtEmail.Text,
                         txtPhone.Text, dtpDOB.Value);
 
                     //invoke the method to add the data to the Members table
@@ -137,7 +138,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidationMemberDetails(txtFirstName, txtLastName, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
+                MessageBox.Show(ValidationMemberDetails(0,txtFirstName, txtLastName, txtEmail, txtPhone, dtpDOB), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

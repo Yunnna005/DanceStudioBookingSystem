@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using Timer = System.Windows.Forms.Timer;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static DanceStudioBookingSystem.UtilFunctions_DB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Data.SqlClient;
 using Oracle.ManagedDataAccess.Client;
@@ -34,7 +35,7 @@ namespace DanceStudioBookingSystem
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Text;
+            string email = txtEmail.Text.ToLower();
             if (ValidateMember(email) != 0)
             {
                 if (!isAdminEmail(email))

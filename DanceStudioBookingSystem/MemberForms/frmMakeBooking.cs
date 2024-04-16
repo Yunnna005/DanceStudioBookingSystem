@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static DanceStudioBookingSystem.UtilFunctions_DB;
 
 namespace DanceStudioBookingSystem
 {

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static DanceStudioBookingSystem.UtilFunctions;
+using static DanceStudioBookingSystem.UtilFunctions_DB;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -34,7 +35,7 @@ namespace DanceStudioBookingSystem
             string email = txtEmail.Text.ToLower();
             string password = txtPassword.Text;
             
-            memberID = FindMemberID(email, password);
+            memberID = FindMemberID(email.ToLower(), password);
             if (memberID != 0){
                 if (email.StartsWith("admin"))
                 {

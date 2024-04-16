@@ -9,48 +9,48 @@ namespace DanceStudioBookingSystem
 {
     class Bookings
     {
-        private int _bookingID;
-        private string _cardHolder;
-        private string _cardNumber;
-        private DateTime _paymentDate;
-        private int _price;
-        private int _memberID;
-        private int _classID;
+        private int bookingID;
+        private string cardHolder;
+        private string cardNumber;
+        private DateTime paymentDate;
+        private int price;
+        private int memberID;
+        private int classID;
 
 
         public Bookings()
         {
-            _bookingID = 0;
-            _cardHolder = "";
-            _cardNumber = "";
-            _paymentDate = DateTime.Now;
-            _price = 0;
-            _memberID = 0;
-            _classID = 0;
+            this.bookingID = 0;
+            this.cardHolder = "";
+            this.cardNumber = "";
+            this.paymentDate = DateTime.Now;
+            this.price = 0;
+            this.memberID = 0;
+            this.classID = 0;
         }
 
         public Bookings(string cardName, string cardNumber, int memberID, int classID)
         {
-            _bookingID = getNextBookingsID();
-            _cardHolder = cardName;
-            _cardNumber = cardNumber;
-            _paymentDate = DateTime.Now;
-            _price = getPrice(classID);
-            _memberID = memberID;
-            _classID = classID;
+            this.bookingID = getNextBookingsID();
+            this.cardHolder = cardName;
+            this.cardNumber = cardNumber;
+            this.paymentDate = DateTime.Now;
+            this.price = getPrice(classID);
+            this.memberID = memberID;
+            this.classID = classID;
         }
 
         //getters
-        public string getCardHolder() { return _cardHolder; }
-        public string getCardNumber() { return _cardNumber; }
-        public DateTime getPaymentDate() { return _paymentDate; }
-        public int getPrice() { return _price; }
+        public string getCardHolder() { return cardHolder; }
+        public string getCardNumber() { return cardNumber; }
+        public DateTime getPaymentDate() { return paymentDate; }
+        public int getPrice() { return price; }
 
         //setters
-        public void setCardHolder(string cardHolder) { _cardHolder = cardHolder; }
-        public void setCardNUmber(string cardNumber) { _cardNumber = cardNumber; }
-        public void setPaymentDate(DateTime paymentDate) { _paymentDate = paymentDate; }
-        public void setPrice(int price) { _price = price; }
+        public void setCardHolder(string cardHolder) { this.cardHolder = cardHolder; }
+        public void setCardNUmber(string cardNumber) { this.cardNumber = cardNumber; }
+        public void setPaymentDate(DateTime paymentDate) { this.paymentDate = paymentDate; }
+        public void setPrice(int price) { this.price = price; }
 
 
         public void addBooking()
@@ -59,13 +59,13 @@ namespace DanceStudioBookingSystem
 
             //check database variables
             String sqlQuery = "INSERT INTO Bookings VALUES (" +
-                _bookingID + ",'" +
-                _cardHolder + "','" +
-                _cardNumber + "','" +
-                _paymentDate.ToString("dd-MMM-yyyy") + "'," +
-                _price + "," +
-                _memberID + "," +
-                _classID + ")";
+                bookingID + ",'" +
+                cardHolder + "','" +
+                cardNumber + "','" +
+                paymentDate.ToString("dd-MMM-yyyy") + "'," +
+                price + "," +
+                memberID + "," +
+                classID + ")";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
             conn.Open();

@@ -83,43 +83,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\frmStatistics.cs">
+    <Compile Include="AdminForms\frmStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmStatistics.Designer.cs">
+    <Compile Include="AdminForms\frmStatistics.Designer.cs">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bookings.cs" />
-    <Compile Include="Classes.cs" />
-    <Compile Include="DBConnect.cs" />
+    <Compile Include="Scripts\Bookings.cs" />
+    <Compile Include="Scripts\Classes.cs" />
+    <Compile Include="Scripts\DBConnect.cs" />
     <Compile Include="frmDBConnect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDBConnect.Designer.cs">
       <DependentUpon>frmDBConnect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmMakeBooking.cs">
+    <Compile Include="MemberForms\frmMakeBooking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmMakeBooking.Designer.cs">
+    <Compile Include="MemberForms\frmMakeBooking.Designer.cs">
       <DependentUpon>frmMakeBooking.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmCancelClass.cs">
+    <Compile Include="AdminForms\frmCancelClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmCancelClass.Designer.cs">
+    <Compile Include="AdminForms\frmCancelClass.Designer.cs">
       <DependentUpon>frmCancelClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmUpdateMember.cs">
+    <Compile Include="MemberForms\frmUpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmUpdateMember.Designer.cs">
+    <Compile Include="MemberForms\frmUpdateMember.Designer.cs">
       <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmAddMember.cs">
+    <Compile Include="MemberForms\frmAddMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmAddMember.Designer.cs">
+    <Compile Include="MemberForms\frmAddMember.Designer.cs">
       <DependentUpon>frmAddMember.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogIn.cs">
@@ -128,75 +128,75 @@
     <Compile Include="frmLogIn.Designer.cs">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmMemberProfile.cs">
+    <Compile Include="MemberForms\frmMemberProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmMemberProfile.Designer.cs">
+    <Compile Include="MemberForms\frmMemberProfile.Designer.cs">
       <DependentUpon>frmMemberProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmClassesOverview.cs">
+    <Compile Include="AdminForms\frmClassesOverview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmClassesOverview.Designer.cs">
+    <Compile Include="AdminForms\frmClassesOverview.Designer.cs">
       <DependentUpon>frmClassesOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmModifyClass.cs">
+    <Compile Include="AdminForms\frmModifyClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmModifyClass.Designer.cs">
+    <Compile Include="AdminForms\frmModifyClass.Designer.cs">
       <DependentUpon>frmModifyClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member\frmResetPassword.cs">
+    <Compile Include="MemberForms\frmResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Member\frmResetPassword.Designer.cs">
+    <Compile Include="MemberForms\frmResetPassword.Designer.cs">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\frmScheduleClass.cs">
+    <Compile Include="AdminForms\frmScheduleClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmScheduleClass.Designer.cs">
+    <Compile Include="AdminForms\frmScheduleClass.Designer.cs">
       <DependentUpon>frmScheduleClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Members.cs" />
+    <Compile Include="Scripts\Members.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilFunctions.cs" />
-    <Compile Include="UtilFunctions_DB.cs" />
-    <EmbeddedResource Include="Admin\frmStatistics.resx">
+    <Compile Include="Scripts\UtilFunctions.cs" />
+    <Compile Include="Scripts\UtilFunctions_DB.cs" />
+    <EmbeddedResource Include="AdminForms\frmStatistics.resx">
       <DependentUpon>frmStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDBConnect.resx">
       <DependentUpon>frmDBConnect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmMakeBooking.resx">
+    <EmbeddedResource Include="MemberForms\frmMakeBooking.resx">
       <DependentUpon>frmMakeBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmCancelClass.resx">
+    <EmbeddedResource Include="AdminForms\frmCancelClass.resx">
       <DependentUpon>frmCancelClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmUpdateMember.resx">
+    <EmbeddedResource Include="MemberForms\frmUpdateMember.resx">
       <DependentUpon>frmUpdateMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmAddMember.resx">
+    <EmbeddedResource Include="MemberForms\frmAddMember.resx">
       <DependentUpon>frmAddMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogIn.resx">
       <DependentUpon>frmLogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmMemberProfile.resx">
+    <EmbeddedResource Include="MemberForms\frmMemberProfile.resx">
       <DependentUpon>frmMemberProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmClassesOverview.resx">
+    <EmbeddedResource Include="AdminForms\frmClassesOverview.resx">
       <DependentUpon>frmClassesOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmModifyClass.resx">
+    <EmbeddedResource Include="AdminForms\frmModifyClass.resx">
       <DependentUpon>frmModifyClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Member\frmResetPassword.resx">
+    <EmbeddedResource Include="MemberForms\frmResetPassword.resx">
       <DependentUpon>frmResetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\frmScheduleClass.resx">
+    <EmbeddedResource Include="AdminForms\frmScheduleClass.resx">
       <DependentUpon>frmScheduleClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -228,6 +228,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.1\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

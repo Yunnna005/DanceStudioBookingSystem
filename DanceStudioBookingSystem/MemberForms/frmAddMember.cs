@@ -29,8 +29,8 @@ namespace DanceStudioBookingSystem
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string validationMemberDetails = ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB);
-            if (validationMemberDetails == "Male" || validationMemberDetails == "Female" || validationMemberDetails == "Other")
+            string validationMemberDetails = ValidationMemberDetails(0,txtFirstname, txtSecondname, txtEmail, txtPhone, dtpDOB);
+            if (validationMemberDetails == "valid")
             {
                 if (string.IsNullOrEmpty(txtPassword.Text) || txtPassword.Text.Length < 8)
                 {
@@ -42,14 +42,14 @@ namespace DanceStudioBookingSystem
                 {
                     MessageBox.Show("Account was created. Go to Log in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Members aMember = new Members(txtFirstname.Text, txtSecondname.Text, validationMemberDetails, txtEmail.Text,txtPhone.Text, dtpDOB.Value, txtPassword.Text);
+                    Members aMember = new Members(txtFirstname.Text, txtSecondname.Text, GetGender(radMale, radFemale, radOther), txtEmail.Text,txtPhone.Text, dtpDOB.Value, txtPassword.Text);
                     aMember.addMember();
                     traverseForm(this, new frmLogIn());
                 }
             }
             else
             {
-                MessageBox.Show(ValidationMemberDetails(txtFirstname, txtSecondname, txtEmail, txtPhone, radMale, radFemale, radOther, dtpDOB), "Error",
+                MessageBox.Show(ValidationMemberDetails(0,txtFirstname, txtSecondname, txtEmail, txtPhone, dtpDOB), "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

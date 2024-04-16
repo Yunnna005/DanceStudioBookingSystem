@@ -138,7 +138,9 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidationMemberDetails(0,txtFirstName, txtLastName, txtEmail, txtPhone, dtpDOB), "Error",
+                //MessageBox.Show(ValidationMemberDetails(0,txtFirstName, txtLastName, txtEmail, txtPhone, dtpDOB), "Error",
+                //       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(validationMemberDetails, "Error",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -60,10 +60,14 @@ namespace DanceStudioBookingSystem
                 email.Focus();
                 return "Please enter valid email address";
             }
-            if ((!IsMemberEmail(email.Text.ToLower(), member_id)) && IsEmailAlreadyExists(email.Text.ToLower()))
+            if (IsEmailAlreadyExists(email.Text.ToLower()))
             {
-                email.Focus();
-                return "Email already exists.";
+                if (!IsMemberEmail(email.Text.ToLower(), member_id))
+                {
+
+                    email.Focus();
+                    return "Email already exists.";
+                }
             }
              if (email.Text.ToLower().Contains("admin"))
             {

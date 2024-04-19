@@ -88,7 +88,8 @@ namespace DanceStudioBookingSystem
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC)=="valid")
+            string validationDetails = ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC);
+            if (validationDetails.Equals("valid"))
             {
                 Bookings newBook = new Bookings(txtCardHolder.Text, txtCardNumber.Text, memberID, classID);
                 newBook.addBooking();
@@ -101,7 +102,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidationCardDetails(txtCardNumber, txtCardHolder, cboMonth, cboYearCard, txtCVC), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(validationDetails, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }   
         }
 

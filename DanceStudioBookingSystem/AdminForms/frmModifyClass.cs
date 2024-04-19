@@ -68,7 +68,8 @@ namespace DanceStudioBookingSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (ValidClassDetails(FindClassID_Admin(dgvModifyClassesAdmin),txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice) == "valid")
+            string validationDetails = ValidClassDetails(FindClassID_Admin(dgvModifyClassesAdmin), txtName, cboType2, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice);
+            if (validationDetails.Equals("valid"))
             {
                 int capacity = int.Parse(txtCapacity.Text);
                 float price = float.Parse(txtPrice.Text);
@@ -85,7 +86,7 @@ namespace DanceStudioBookingSystem
             }
             else
             {
-                MessageBox.Show(ValidClassDetails(FindClassID_Admin(dgvModifyClassesAdmin), txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(validationDetails, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,7 +99,7 @@ namespace DanceStudioBookingSystem
             else
             {
                 grpUpdateDetails.Visible = true;
-                DisplayDataFromDataGrid(dgvModifyClassesAdmin, txtName, cboType, dtpDate, txtHour, txtMinute, cboInstructor, txtCapacity, txtPrice);
+                DisplayDataFromDataGrid(dgvModifyClassesAdmin, txtName, dtpDate, txtHour, txtMinute, txtCapacity, txtPrice);
             }
         }
     }

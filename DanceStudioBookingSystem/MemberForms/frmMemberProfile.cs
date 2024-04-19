@@ -58,7 +58,6 @@ namespace DanceStudioBookingSystem
                 cancelBooking.cancelBooking(bookingID);
 
                 classID = FindClassID(dgvClassesMember);
-                MessageBox.Show(FindClassID(dgvClassesMember).ToString());
                 Classes aClass = new Classes();
                 aClass.UpdateAvaliablePlaces_CancelProcess(classID);
 

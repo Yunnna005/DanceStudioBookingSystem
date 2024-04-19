@@ -189,7 +189,6 @@ namespace DanceStudioBookingSystem
 
                             double hourDifference = (timeslot - dbDateTime).TotalMinutes;
 
-                            MessageBox.Show(hourDifference.ToString());
                             if (Math.Abs(hourDifference) <= 59)
                             {
                                 return true; // Conflicting time slot found

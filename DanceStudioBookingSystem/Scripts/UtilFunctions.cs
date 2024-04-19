@@ -48,7 +48,7 @@ namespace DanceStudioBookingSystem
              if (string.IsNullOrEmpty(secondname.Text))
             {
                 secondname.Focus();
-                return "Please enter valid Second Name.";
+                return "Please enter valid Last Name.";
             }
             if (CheckGigits_Letters_Symbolls(secondname) != "Letters")
             {
@@ -201,7 +201,7 @@ namespace DanceStudioBookingSystem
             if (string.IsNullOrEmpty(capacity.Text) || (!int.TryParse(capacity.Text, out int capacityValue) || capacityValue > 30 || capacityValue <= 0))
             {
                 capacity.Focus();
-                return "Invalid Capacity";
+                return "Invalid Capacity (max: 30)";
             }
             if (string.IsNullOrEmpty(price.Text) || !IsValidPriceFormat(price.Text))
             {
@@ -299,8 +299,7 @@ namespace DanceStudioBookingSystem
             return type;
         }
         //Display data from a DataGrid
-        public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, ComboBox type, DateTimePicker dateTimePicker, TextBox hour, TextBox minute, ComboBox instructor,
-             TextBox capacity, TextBox price)
+        public static void DisplayDataFromDataGrid(DataGridView datagrid, TextBox name, DateTimePicker dateTimePicker, TextBox hour, TextBox minute,TextBox capacity, TextBox price)
         {
             if (datagrid.SelectedRows.Count > 0)
             {
@@ -309,7 +308,6 @@ namespace DanceStudioBookingSystem
                 if (selectedRow != null)
                 {
                     name.Text = selectedRow.Cells[1].Value.ToString();
-                    type.Text = selectedRow.Cells[2].Value.ToString();
                     dateTimePicker.Text = selectedRow.Cells[3].Value.ToString();
 
                     string time = selectedRow.Cells[4].Value.ToString();
@@ -317,7 +315,6 @@ namespace DanceStudioBookingSystem
                     minute.Text = time.Substring(3, 2);
 
                     capacity.Text = selectedRow.Cells[6].Value.ToString();
-                    instructor.Text = selectedRow.Cells[7].Value.ToString();
                     price.Text = selectedRow.Cells[8].Value.ToString();
                 }
             }

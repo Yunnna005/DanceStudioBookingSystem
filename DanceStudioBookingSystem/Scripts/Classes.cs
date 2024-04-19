@@ -78,7 +78,7 @@ namespace DanceStudioBookingSystem
                 name + "','" +
                 date.ToString("dd-MMM-yyyy") + "','" +
                 timeCode + "', " +
-                avaliablePlaces + " , " +
+                avaliablePlaces + "," +
                 capacity + "," +
                 price + "," +
                 instructorID + ",'" +

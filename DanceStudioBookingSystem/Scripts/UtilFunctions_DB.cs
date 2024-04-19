@@ -204,23 +204,20 @@ namespace DanceStudioBookingSystem
         public static float CalculateTotalPriceByYear(string selectedYear)
         {
             float totalPrice = 0;
-            string sqlQuery = "SELECT Price FROM Classes WHERE EXTRACT(YEAR FROM DateCode) = :selectedYear";
+            string sqlQuery = "SELECT SUM(Price) AS TotalPrice FROM Bookings WHERE EXTRACT(YEAR FROM Payment_Date) = :selectedYear";
             using (OracleConnection conn = new OracleConnection(DBConnect.oraDB))
             {
                 conn.Open();
 
                 using (OracleCommand cmd = new OracleCommand(sqlQuery, conn))
                 {
-                    // Bind the selected year parameter
                     cmd.Parameters.Add("selectedYear", OracleDbType.Varchar2).Value = selectedYear;
 
                     using (OracleDataReader dr = cmd.ExecuteReader())
                     {
-                        // Iterate through the result set and sum up the prices
-                        while (dr.Read())
+                        if (dr.Read() && dr["TotalPrice"] != DBNull.Value)
                         {
-                            float classPrice = (float)dr["Price"];
-                            totalPrice += classPrice;
+                            totalPrice = Convert.ToSingle(dr["TotalPrice"]);
                         }
                     }
                 }

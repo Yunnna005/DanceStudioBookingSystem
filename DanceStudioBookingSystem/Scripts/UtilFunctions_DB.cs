@@ -459,5 +459,25 @@ namespace DanceStudioBookingSystem
                 return false;
             }
         }
+
+        public static bool IsBookedClass(int memberID)
+        {
+            OracleConnection conn = new OracleConnection(DBConnect.oraDB);
+            conn.Open();
+            string sqlQuery = "SELECT Member_Id FROM Bookings WHERE Member_ID = :memberID";
+            using(OracleCommand cmd = new OracleCommand(sqlQuery, conn))
+            {
+                cmd.Parameters.Add("Member_ID", memberID);
+
+                using(OracleDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
     }
 }

@@ -155,7 +155,7 @@ namespace DanceStudioBookingSystem
                                     dataGrid.Rows.Add(
                                         classReader["Class_ID"],
                                         classReader["Name"],
-                                        classReader["DateCode"],
+                                        ((DateTime)classReader["DateCode"]).ToString("dd-MMM-yyyy"),
                                         classReader["TimeCode"],
                                         instructorName,
                                         classReader["Price"]

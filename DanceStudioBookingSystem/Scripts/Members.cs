@@ -167,7 +167,7 @@ namespace DanceStudioBookingSystem.Member
             //Execute the SQL query (OracleCommand)
             OracleCommand cmd = new OracleCommand(sqlQuery, conn);
 
-            //cmd.Parameters.Add("Member_ID", @memberID);
+            cmd.Parameters.Add("Member_ID", @memberID);
 
             conn.Open();
 

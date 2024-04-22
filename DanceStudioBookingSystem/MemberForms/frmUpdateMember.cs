@@ -70,11 +70,18 @@ namespace DanceStudioBookingSystem
             DialogResult result = MessageBox.Show("Do you want to delete you profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Members aMember = new Members();
-                aMember.DeleteMember(memberID);
+                if (IsBookedClass(memberID))
+                {
+                    MessageBox.Show("Before delete your profile please cancel all booked classes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Members aMember = new Members();
+                    aMember.DeleteMember(memberID);
 
-                traverseForm(this, new frmLogIn());
-                MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    traverseForm(this, new frmLogIn());
+                    MessageBox.Show("Your profile was deleted.", "Delete Profile", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else if (result == DialogResult.No)
             {

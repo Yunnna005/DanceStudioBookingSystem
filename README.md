@@ -6,4 +6,15 @@ Developed a robust booking system for a dance studio, providing users with a sea
 
 ## More info: [Open in my portfolio](https://yunnna005.github.io/AnnaKovalenko.github.io/portfolio/portfolio-4/)
 
-The system cannot be run without connection to the BD. The DB connection requires username and password.
+## System Interface
+
+**Start Pages**
+[Start Pages](/ImagesReadme/Start_page.png)
+
+**Member View**
+[Member View](/ImagesReadme/MemberView_pages.png)
+
+**Admin View**
+[Admin View](/ImagesReadme/AdminView_pages.png)
+
+_The system cannot be run without connection to the BD. The DB connection requires username and password_.

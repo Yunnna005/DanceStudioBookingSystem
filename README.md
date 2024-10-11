@@ -9,12 +9,12 @@ Developed a robust booking system for a dance studio, providing users with a sea
 ## System Interface
 
 **Start Pages**
-[Start Pages](/ImagesReadme/Start_page.png)
+![Start Pages](/ImagesReadme/Start_page.png)
 
 **Member View**
-[Member View](/ImagesReadme/MemberView_pages.png)
+![Member View](/ImagesReadme/MemberView_pages.png)
 
 **Admin View**
-[Admin View](/ImagesReadme/AdminView_pages.png)
+![Admin View](/ImagesReadme/AdminView_pages.png)
 
 _The system cannot be run without connection to the BD. The DB connection requires username and password_.
